@@ -1,0 +1,97 @@
+{
+  "accessory": [
+    {
+      "name": "Lesser pendant",
+      "lvl": 1,
+      "attackPower": 1,
+      "spellPower": 1,
+      "healingPower": 1,
+      "criticalChance": null,
+      "criticalDamage": null,
+      "energy": null,
+      "momentum": 5,
+      "health": 1,
+      "defense": 1,
+      "resistance": 1,
+      "dodge": 0.05,
+      "parry": 0.05,
+      "regeneration": 0.05
+    },
+    {
+      "name": "Greater pendant",
+      "lvl": 2,
+      "attackPower": 1,
+      "spellPower": 1,
+      "healingPower": 1,
+      "criticalChance": null,
+      "criticalDamage": null,
+      "energy": null,
+      "momentum": 5,
+      "health": 1,
+      "defense": 1,
+      "resistance": 1,
+      "dodge": 0.05,
+      "parry": 0.05,
+      "regeneration": 0.05
+    }
+    ],
+    "armor": [
+      {
+        "name": "Leather set",
+        "lvl": 1,
+        "health": 10,
+        "defense": 1,
+        "resistance": 1,
+        "dodge": 0.1,
+        "parry": null,
+        "regeneration": null
+      }
+    ],
+    "boots": [
+      {
+        "name": "Half a set of shoes",
+        "lvl": 1,
+        "dodge": 0.1,
+        "energy": null,
+        "momentum": 5
+      }
+    ],
+    "helm": [
+      {
+        "name": "Cigarette",
+        "lvl": 1,
+        "attackPower": null,
+        "spellPower": null,
+        "healingPower": null,
+        "criticalChance": null,
+        "criticalDamage": null,
+        "energy": null,
+        "momentum": null,
+        "health": 1,
+        "defense": null,
+        "resistance": 1
+      }
+    ],
+    "potion": [
+      {
+        "name": "Lesser health potion",
+        "lvl": 1,
+        "health": 50
+      }
+    ],
+    "weapon": [
+      {
+        "name": "Short sword",
+        "lvl": 1,
+        "attackPower": 10,
+        "spellPower": null,
+        "healingPower": null,
+        "criticalChance": 0.1,
+        "criticalDamage": 0.1,
+        "parry": null,
+        "regeneration": null,
+        "energy": 1,
+        "momentum": 10
+      }
+    ]
+}

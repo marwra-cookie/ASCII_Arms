@@ -1,0 +1,62 @@
+{
+    "accessory":
+      {
+        "1": ["Charm of the Sparrow", "Amulet of Beginnings", "Simple Ring"],
+        "2": ["Pendant of the River", "Band of the Dawn"],
+        "3": ["Locket of Whispers", "Medallion of Insight"],
+        "4": ["Sigil of the Fallen", "Talisman of Shadows"],
+        "5": ["Orb of Eternity", "Heart of the Void"]
+      },
+    "armor":
+      {
+        "1": ["Ragged Hide", "Tattered Leathers"],
+        "2": ["Stitched Leather", "Hardened Hide"],
+        "3": ["Chainmail of Fortitude", "Scaled Armor"],
+        "4": ["Plate of the Guardian", "Bulwark Armor"],
+        "5": ["Titanium Aegis", "Dragonbone Plate"]
+      },
+    "boots":
+      {
+        "1": ["Traveler's Boots", "Muddied Shoes"],
+        "2": ["Swiftstride Boots", "Leather Greaves"],
+        "3": ["Boots of the Wind", "Fleetfoot Boots"],
+        "4": ["Stalwart Greaves", "Boots of the Ram"],
+        "5": ["Winged Sandals", "Ethereal Striders"]
+      },
+    "helm":
+      {
+        "1": ["Iron Skullcap", "Worn Cap"],
+        "2": ["Leather Cowl", "Studded Cap"],
+        "3": ["Helm of the Wanderer", "Mystic Circlet"],
+        "4": ["Crown of Valor", "Savage Helm"],
+        "5": ["Dragon's Crown", "Celestial Coronet"]
+      },
+    "potion":
+      {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": []
+      },
+    "weapon":
+      {
+        "1": ["Rusty", "Worn", "Cracked"],
+        "2": ["Sturdy", "Sharpened", "Reliable"],
+        "3": ["Enchanted", "Gleaming", "Runed"],
+        "4": ["Vicious", "Savage", "Bloodstained"],
+        "5": ["Legendary", "Mythic", "Celestial"]
+      },
+    "identity": [
+      "of Fortitude",
+      "of the Bear",
+      "of Resilience",
+      "of the Novice",
+      "of Vigilance",
+      "of Swiftness",
+      "of the Cheetah",
+      "of the Damned",
+      "of Infinite Power",
+      "of Eternal Light"
+    ]
+}

@@ -1,0 +1,56 @@
+{
+  "direct": [
+    {
+      "name": "Strike",
+      "lvl": 1,
+      "attackBase": 10,
+      "attackScaling": 0.1,
+      "spellBase": null,
+      "spellScaling": null,
+      "healBase": null,
+      "healScaling": null,
+      "cost": 1,
+      "gain": null
+    },
+    {
+      "name": "Fireball",
+      "lvl": 1,
+      "attackBase": null,
+      "attackScaling": null,
+      "spellBase": 20,
+      "spellScaling": 0.25,
+      "healBase": null,
+      "healScaling": null,
+      "cost": 2,
+      "gain": null
+    }
+  ],
+  "passive": [
+    {
+      "name": "Bleed",
+      "lvl": 1,
+      "attackBase": 5,
+      "attackScaling": 0.3,
+      "spellBase": null,
+      "spellScaling": null,
+      "healBase": null,
+      "healScaling": null,
+      "cost": 1,
+      "gain": 1,
+      "rounds": 3
+    },
+    {
+      "name": "Burn",
+      "lvl": 1,
+      "attackBase": null,
+      "attackScaling": null,
+      "spellBase": 2,
+      "spellScaling": 0.1,
+      "healBase": null,
+      "healScaling": null,
+      "cost": null,
+      "gain": 1,
+      "rounds": 1
+    }
+  ]
+}
