@@ -1,27 +1,11 @@
-from colorama import Fore
+from src.graphics import *
 from tabulate import tabulate
+
 
 class Entity:
 
-    def __init__(self, name):
-        self.name = name
-        self.lvl = 1
-
-        self.attackPower = None
-        self.spellPower = None
-        self.healingPower = None
-        self.criticalChance = None
-        self.criticalDamage = None
-
-        self.health = None
-        self.defense = None
-        self.resistance = None
-        self.dodge = None
-        self.parry = None
-        self.regeneration = None
-
-        self.momentum = None
-        self.energy = None
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
 
         self.spells = [4]
 
@@ -29,72 +13,83 @@ class Entity:
         return f"{self.lvl}"
 
     def get_attack_power(self) -> str:
-        return Fore.RED + f"{self.attackPower}" + Fore.RESET
+        return red(self.attackPower)
 
     def get_spell_power(self) -> str:
-        return Fore.LIGHTMAGENTA_EX + f"{self.spellPower}" + Fore.RESET
+        return bright(magenta(self.spellPower))
 
     def get_healing_power(self) -> str:
-        return Fore.LIGHTGREEN_EX + f"{self.healingPower}" + Fore.RESET
+        return bright(green(self.healingPower))
 
     def get_critical_chance(self) -> str:
-        return Fore.LIGHTRED_EX + f"{self.criticalChance * 100}%" + Fore.RESET
+        return bright(red(str(self.criticalChance * 100) + "%"))
 
     def get_critical_damage(self) -> str:
-        return Fore.LIGHTRED_EX + f"{self.criticalDamage * 100}%" + Fore.RESET
+        return bright(red(str(self.criticalDamage * 100) + "%"))
 
     def get_health(self) -> str:
-        return Fore.GREEN + f"{self.health}" + Fore.RESET
+        return green(self.health)
 
     def get_defense(self) -> str:
-        return Fore.LIGHTYELLOW_EX + f"{self.defense}" + Fore.RESET
+        return bright(yellow(self.defense))
 
     def get_resistance(self) -> str:
-        return Fore.LIGHTCYAN_EX + f"{self.resistance}" + Fore.RESET
+        return bright(cyan(self.resistance))
 
     def get_dodge(self) -> str:
-        return f"{self.dodge * 100}%"
+        return str(self.dodge * 100) + "%"
 
     def get_parry(self) -> str:
-        return f"{self.parry * 100}%"
+        return str(self.parry * 100) + "%"
 
     def get_regeneration(self) -> str:
-        return f"{self.regeneration * 100}%"
+        return str(self.regeneration * 100) + "%"
 
     def get_momentum(self) -> str:
-        return f"{self.momentum}"
+        return str(self.momentum)
 
     def get_energy(self) -> str:
-        return Fore.YELLOW + f"{self.energy}" + Fore.RESET
+        return yellow(self.energy)
 
     def get_stats(self) -> str:
         str = tabulate(
             [
                 [
-                    "Attack Power",
-                    self.get_attack_power(),
                     "Health",
                     self.get_health(),
+                    "Attack Power",
+                    self.get_attack_power(),
                     "Momentum",
                     self.get_momentum(),
                 ],
                 [
-                    "Spell Power",
-                    self.get_spell_power(),
                     "Defense",
                     self.get_defense(),
+                    "Spell Power",
+                    self.get_spell_power(),
                     "Energy",
                     self.get_energy(),
                 ],
                 [
-                    "Healing Power",
-                    self.get_healing_power(),
                     "Resistance",
                     self.get_resistance(),
+                    "Healing Power",
+                    self.get_healing_power(),
                 ],
-                ["Critical Chance", self.get_critical_chance(), "Dodge", self.get_dodge()],
-                ["Critical Damage", self.get_critical_damage(), "Parry", self.get_parry()]
-            ])
+                [
+                    "Dodge",
+                    self.get_dodge(),
+                    "Critical Chance",
+                    self.get_critical_chance(),
+                ],
+                [
+                    "Parry",
+                    self.get_parry(),
+                    "Critical Damage",
+                    self.get_critical_damage(),
+                ],
+            ]
+        )
 
         return str
 

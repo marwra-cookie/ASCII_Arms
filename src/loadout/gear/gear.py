@@ -11,4 +11,9 @@ class Gear:
         self.__dict__.update(kwargs)
 
     def __str__(self) -> str:
-        return self.name
+        stats = ""
+
+        for stat in self.__dict__:
+            stats += f"\n{stat} {self.__dict__[stat]}"
+
+        return stats
