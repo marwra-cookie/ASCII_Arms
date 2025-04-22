@@ -1,97 +1,126 @@
 {
-  "accessory": [
-    {
-      "name": "Lesser pendant",
-      "lvl": 1,
-      "attackPower": 1,
-      "spellPower": 1,
-      "healingPower": 1,
-      "criticalChance": null,
-      "criticalDamage": null,
-      "energy": null,
-      "momentum": 5,
-      "health": 1,
-      "defense": 1,
-      "resistance": 1,
-      "dodge": 0.05,
-      "parry": 0.05,
-      "regeneration": 0.05
-    },
-    {
-      "name": "Greater pendant",
-      "lvl": 2,
-      "attackPower": 1,
-      "spellPower": 1,
-      "healingPower": 1,
-      "criticalChance": null,
-      "criticalDamage": null,
-      "energy": null,
-      "momentum": 5,
-      "health": 1,
-      "defense": 1,
-      "resistance": 1,
-      "dodge": 0.05,
-      "parry": 0.05,
-      "regeneration": 0.05
-    }
+    "accessory": [
+        {
+            "id": 1,
+            "name": "Necklace",
+            "level": 1,
+            "attackPower": 1,
+            "spellPower": 1,
+            "healingPower": 1,
+            "health": 1,
+            "defense": 1,
+            "resistance": 1,
+            "dodge": 0.1,
+            "parry": 0.1
+        },
+        {
+            "id": 2,
+            "name": "Wooden Brooch",
+            "level": 1,
+            "attackPower": 1,
+            "healingPower": 6,
+            "criticalDamage": 0.04,
+            "armorPenetration": 0.02,
+            "defense": 4,
+            "dodge": 0.02,
+            "regeneration": 0.04
+        }
     ],
     "armor": [
-      {
-        "name": "Leather set",
-        "lvl": 1,
-        "health": 10,
-        "defense": 1,
-        "resistance": 1,
-        "dodge": 0.1,
-        "parry": null,
-        "regeneration": null
-      }
+        {
+            "id": 3,
+            "name": "Leather set",
+            "level": 1,
+            "health": 100,
+            "defense": 1
+        },
+        {
+            "id": 4,
+            "name": "Torn Harness of Fortitude",
+            "level": 1,
+            "health": 113,
+            "defense": 19
+        },
+        {
+            "id": 5,
+            "name": "Sun-faded Robe of the Oak",
+            "level": 1,
+            "resistance": 4,
+            "parry": 0.01
+        }
     ],
     "boots": [
-      {
-        "name": "Half a set of shoes",
-        "lvl": 1,
-        "dodge": 0.1,
-        "energy": null,
-        "momentum": 5
-      }
+        {
+            "id": 6,
+            "name": "Half a set of shoes",
+            "level": 1,
+            "dodge": 0.1
+        },
+        {
+            "id": 7,
+            "name": "Frayed Sandals of the Cheetah",
+            "level": 1,
+            "dodge": 0.02
+        }
     ],
     "helm": [
-      {
-        "name": "Cigarette",
-        "lvl": 1,
-        "attackPower": null,
-        "spellPower": null,
-        "healingPower": null,
-        "criticalChance": null,
-        "criticalDamage": null,
-        "energy": null,
-        "momentum": null,
-        "health": 1,
-        "defense": null,
-        "resistance": 1
-      }
+        {
+            "id": 8,
+            "name": "Threaded Cowl of the Oak",
+            "level": 1,
+            "resistance": 15,
+            "attackPower": 2
+        },
+        {
+            "id": 9,
+            "name": "Bent Cap of Eternal Light",
+            "level": 1,
+            "healingPower": 11,
+            "momentum": 8
+        },
+        {
+            "id": 14,
+            "name": "Leather Headwrap of Fortitude",
+            "level": 1,
+            "health": 70,
+            "attackPower": 16
+        },
+        {
+            "id": 15,
+            "name": "Rustcap of the Bear",
+            "level": 1,
+            "attackPower": 2,
+            "momentum": 8
+        }
     ],
-    "potion": [
-      {
-        "name": "Lesser health potion",
-        "lvl": 1,
-        "health": 50
-      }
-    ],
+    "potion": [],
     "weapon": [
-      {
-        "name": "Short sword",
-        "lvl": 1,
-        "attackPower": 10,
-        "spellPower": null,
-        "healingPower": null,
-        "criticalChance": 0.1,
-        "criticalDamage": 0.1,
-        "parry": null,
-        "regeneration": null,
-        "energy": 1,
-        "momentum": 10
-      }
+        {
+            "id": 10,
+            "name": "Short sword",
+            "level": 1,
+            "attackPower": 10,
+            "criticalDamage": 0.1,
+            "parry": 0.1,
+            "energy": 1
+        },
+        {
+            "id": 11,
+            "name": "Wormwood Wand Wand of Infinite Power",
+            "level": 1,
+            "spellPower": 9
+        },
+        {
+            "id": 12,
+            "name": "Wobbly Mace Crossbow of the Novice",
+            "level": 1,
+            "momentum": 1
+        },
+        {
+            "id": 13,
+            "name": "Rusty Dagger of the Damned",
+            "level": 1,
+            "criticalDamage": 0.01
+        }
     ]
 }

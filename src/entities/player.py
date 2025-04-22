@@ -1,6 +1,6 @@
 from src.entities.entity import Entity
 from tabulate import tabulate
-from src.manager import *
+from src.gear_manager import *
 
 
 class Player(Entity):
@@ -8,7 +8,7 @@ class Player(Entity):
     def __init__(self, name):
         stats = {
             "name": name,
-            "lvl": 1,
+            "level": 1,
             "attackPower": 10,
             "spellPower": 10,
             "healingPower": 10,
@@ -36,15 +36,17 @@ class Player(Entity):
         }
 
     def get_gear(self) -> str:
+
+        print(self.gear.get("helm", "None"))
         table = tabulate(
             [
                 ["Slot", "Name"],
-                ["Helm:", self.gear["helm"]],
-                ["Armor:", self.gear["armor"]],
-                ["Boots:", self.gear["boots"]],
-                ["Accessory:", self.gear["accessory"]],
-                ["Weapon:", self.gear["weapon"]],
-                ["Potion:", self.gear["potion"]],
+                ["Helm:", self.gear.get("helm", "None")],
+                ["Armor:", self.gear.get("armor", "None")],
+                ["Boots:", self.gear.get("boots", "None")],
+                ["Accessory:", self.gear.get("accessory", "None")],
+                ["Weapon:", self.gear.get("weapon", "None")],
+                ["Potion:", self.gear.get("potion", "None")],
             ],
             headers="firstrow",
         )

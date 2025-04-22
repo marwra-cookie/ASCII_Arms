@@ -1,5 +1,6 @@
 import os
-from manager import *
+from gear_manager import *
+
 
 class Game:
 
@@ -59,10 +60,12 @@ class Game:
     def menu_gear(self):
         while True:
             os.system("cls")
-            print(f"GEAR"
-                  f"\n\n{self.player.get_gear()}"
-                  f"\n\n1. More details"
-                  f"\n\n3. Back")
+            print(
+                f"GEAR"
+                f"\n\n{self.player.get_gear()}"
+                f"\n\n1. More details"
+                f"\n\n3. Back"
+            )
 
             choice = input("> ")
 
@@ -76,10 +79,12 @@ class Game:
     def menu_gear_details(self):
         while True:
             os.system("cls")
-            print(f"GEAR"
-                  f"\n\n{self.player.get_gear()}"
-                  f"\n\n*Enter item for more information"
-                  f"\n\n3. Back")
+            print(
+                f"GEAR"
+                f"\n\n{self.player.get_gear()}"
+                f"\n\n*Enter item for more information"
+                f"\n\n3. Back"
+            )
 
             choice = input("> ")
 
@@ -91,9 +96,7 @@ class Game:
     def menu_spells(self):
         while True:
             os.system("cls")
-            print(f"SPELLS"
-                  f"\n\n{self.player.get_spells()}"
-                  f"\n\n3. Back")
+            print(f"SPELLS" f"\n\n{self.player.get_spells()}" f"\n\n3. Back")
 
             choice = input("> ")
 
@@ -108,13 +111,12 @@ class Game:
 
     def menu(self):
 
-
         while True:
             os.system("cls")
 
             print(
                 f"--- DMG SIM ---"
-                f"\n{self.player.name} lvl{self.player.lvl}"
+                f"\n{self.player.name} lvl.{self.player.level}"
                 f"\n\n1. Combat"
                 f"\n2. Character"
                 f"\n3. Save"

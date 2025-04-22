@@ -16,6 +16,20 @@ Style.DIM + 'and in dim text' + Style.RESET_ALL
 """
 
 
+def print_stat(stat) -> str:
+    result = [stat[0].upper()]
+
+    for char in stat[1:]:
+        if char.isupper():
+            result.extend([" ", char.upper()])
+        else:
+            result.append(char)
+
+    msg = "".join(result)
+
+    return msg
+
+
 def red(msg) -> str:
     return Fore.RED + f"{msg} " + Fore.RESET
 

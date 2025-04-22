@@ -9,8 +9,8 @@ class Entity:
 
         self.spells = [4]
 
-    def get_lvl(self) -> str:
-        return f"{self.lvl}"
+    def get_level(self) -> str:
+        return str(self.level)
 
     def get_attack_power(self) -> str:
         return red(self.attackPower)
@@ -22,10 +22,10 @@ class Entity:
         return bright(green(self.healingPower))
 
     def get_critical_chance(self) -> str:
-        return bright(red(str(self.criticalChance * 100) + "%"))
+        return bright(red(str(int(self.criticalChance * 100)) + "%"))
 
     def get_critical_damage(self) -> str:
-        return bright(red(str(self.criticalDamage * 100) + "%"))
+        return bright(red(str(int(self.criticalDamage * 100)) + "%"))
 
     def get_health(self) -> str:
         return green(self.health)
@@ -37,13 +37,13 @@ class Entity:
         return bright(cyan(self.resistance))
 
     def get_dodge(self) -> str:
-        return str(self.dodge * 100) + "%"
+        return str(int(self.dodge * 100)) + "%"
 
     def get_parry(self) -> str:
-        return str(self.parry * 100) + "%"
+        return str(int(self.parry * 100)) + "%"
 
     def get_regeneration(self) -> str:
-        return str(self.regeneration * 100) + "%"
+        return str(int(self.regeneration * 100)) + "%"
 
     def get_momentum(self) -> str:
         return str(self.momentum)

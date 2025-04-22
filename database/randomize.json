@@ -1,62 +1,317 @@
 {
-    "accessory":
-      {
-        "1": ["Charm of the Sparrow", "Amulet of Beginnings", "Simple Ring"],
-        "2": ["Pendant of the River", "Band of the Dawn"],
-        "3": ["Locket of Whispers", "Medallion of Insight"],
-        "4": ["Sigil of the Fallen", "Talisman of Shadows"],
-        "5": ["Orb of Eternity", "Heart of the Void"]
-      },
-    "armor":
-      {
-        "1": ["Ragged Hide", "Tattered Leathers"],
-        "2": ["Stitched Leather", "Hardened Hide"],
-        "3": ["Chainmail of Fortitude", "Scaled Armor"],
-        "4": ["Plate of the Guardian", "Bulwark Armor"],
-        "5": ["Titanium Aegis", "Dragonbone Plate"]
-      },
-    "boots":
-      {
-        "1": ["Traveler's Boots", "Muddied Shoes"],
-        "2": ["Swiftstride Boots", "Leather Greaves"],
-        "3": ["Boots of the Wind", "Fleetfoot Boots"],
-        "4": ["Stalwart Greaves", "Boots of the Ram"],
-        "5": ["Winged Sandals", "Ethereal Striders"]
-      },
-    "helm":
-      {
-        "1": ["Iron Skullcap", "Worn Cap"],
-        "2": ["Leather Cowl", "Studded Cap"],
-        "3": ["Helm of the Wanderer", "Mystic Circlet"],
-        "4": ["Crown of Valor", "Savage Helm"],
-        "5": ["Dragon's Crown", "Celestial Coronet"]
-      },
-    "potion":
-      {
-        "1": [],
-        "2": [],
-        "3": [],
-        "4": [],
-        "5": []
-      },
-    "weapon":
-      {
-        "1": ["Rusty", "Worn", "Cracked"],
-        "2": ["Sturdy", "Sharpened", "Reliable"],
-        "3": ["Enchanted", "Gleaming", "Runed"],
-        "4": ["Vicious", "Savage", "Bloodstained"],
-        "5": ["Legendary", "Mythic", "Celestial"]
-      },
-    "identity": [
-      "of Fortitude",
-      "of the Bear",
-      "of Resilience",
-      "of the Novice",
-      "of Vigilance",
-      "of Swiftness",
-      "of the Cheetah",
-      "of the Damned",
-      "of Infinite Power",
-      "of Eternal Light"
+  "accessory": {
+    "1": [
+      "Charm of the Sparrow",
+      "Amulet of Beginnings",
+      "Simple Ring",
+      "Trinket of Pebbles",
+      "Wooden Brooch",
+      "Rusty Chain",
+      "Threaded Band",
+      "Copper Loop",
+      "Woven Charm",
+      "Ring of Dust"
+    ],
+    "2": [
+      "Pendant of the River",
+      "Band of the Dawn",
+      "Silverleaf Pendant",
+      "Moonlit Band",
+      "Charm of the Shore",
+      "Tidewoven Ring",
+      "Pendant of Whispers",
+      "Starborn Loop",
+      "Band of Embers"
+    ],
+    "3": [
+      "Locket of Whispers",
+      "Medallion of Insight",
+      "Ring of Echoes",
+      "Charm of Depths",
+      "Pendant of Harmony",
+      "Token of Truth",
+      "Whispering Sigil",
+      "Runed Loop",
+      "Sigil of Calm"
+    ],
+    "4": [
+      "Sigil of the Fallen",
+      "Talisman of Shadows",
+      "Charm of the Eclipse",
+      "Talisman of Storms",
+      "Sigil of Emberlight",
+      "Amulet of the Void",
+      "Fangbound Ring",
+      "Eye of the Tyrant",
+      "Embersteel Band"
+    ],
+    "5": [
+      "Orb of Eternity",
+      "Heart of the Void",
+      "Relic of the Ancients",
+      "Shard of the Nexus",
+      "Tear of the Moon",
+      "Halo of the Unseen",
+      "Amulet of Aeons",
+      "Eternal Loop",
+      "Sigil of Infinity"
     ]
+  },
+  "armor": {
+    "1": [
+      "Ragged Hide",
+      "Tattered Leathers",
+      "Patchwork Vest",
+      "Frayed Tunic",
+      "Scrap Mail",
+      "Dusty Jerkin",
+      "Sun-faded Robe",
+      "Torn Harness",
+      "Woolen Wrap"
+    ],
+    "2": [
+      "Stitched Leather",
+      "Hardened Hide",
+      "Reinforced Hide",
+      "Traveler's Plate",
+      "Coppermail Vest",
+      "Bound Leathers",
+      "Hardened Jerkin",
+      "Boiled Leather",
+      "Mercenary Gear"
+    ],
+    "3": [
+      "Chainmail of Fortitude",
+      "Scaled Armor",
+      "Brassscale Plate",
+      "Knights Mail",
+      "Hollowguard Armor",
+      "Gilded Vestments",
+      "Moonforged Cuirass",
+      "Stonebound Plate",
+      "Frostchain Harness"
+    ],
+    "4": [
+      "Plate of the Guardian",
+      "Bulwark Armor",
+      "Stormforged Plate",
+      "Wardens Shell",
+      "Sentinels Vest",
+      "Skullcrusher Armor",
+      "Earthsteel Mantle",
+      "Forgeplate Battlearmor",
+      "Thornforged Shell"
+    ],
+    "5": [
+      "Titanium Aegis",
+      "Dragonbone Plate",
+      "Titanhide Bulwark",
+      "Vestments of the Fallen Star",
+      "Prismplate Armor",
+      "Astral Aegis",
+      "Worldbreaker Harness",
+      "Obsidian Guard",
+      "Ebonsteel Bastion"
+    ]
+  },
+  "boots": {
+    "1": [
+      "Traveler's Boots",
+      "Muddied Shoes",
+      "Frayed Sandals",
+      "Patched Walkers",
+      "Worn Shoes",
+      "Dustfoot Boots",
+      "Ragged Soles",
+      "Travelers Threads",
+      "Hide Wraps"
+    ],
+    "2": [
+      "Swiftstride Boots",
+      "Leather Greaves",
+      "Quickstride Boots",
+      "Softstep Greaves",
+      "Padded Walkers",
+      "Laced Pathfinders",
+      "Mudguard Boots",
+      "Swamptrek Sandals",
+      "Shinwraps Speed"
+    ],
+    "3": [
+      "Boots of the Wind",
+      "Fleetfoot Boots",
+      "Ghoststep Boots",
+      "Windsprint Soles",
+      "Silentstep Greaves",
+      "Swiftpadded Sandals",
+      "Moonrunner Boots",
+      "Gravelfoot Greaves",
+      "Pathfinder Walkers"
+    ],
+    "4": [
+      "Stalwart Greaves",
+      "Boots of the Ram",
+      "Treads Falcon",
+      "Greaves Gale",
+      "Boots Iron March",
+      "Stormtrack Soles",
+      "Voidrunner Boots",
+      "Ashen Greaves",
+      "Stride Precision"
+    ],
+    "5": [
+      "Winged Sandals",
+      "Ethereal Striders",
+      "Sandals First Flame",
+      "Phasewalk Boots",
+      "Chrono-Stride Greaves",
+      "Stormpiercer Walkers",
+      "Boots Celestial Gate",
+      "Skystrider Treads",
+      "Everspeed Soles"
+    ]
+  },
+  "helm": {
+    "1": [
+      "Iron Skullcap",
+      "Worn Cap",
+      "Cracked Visor",
+      "Leather Headwrap",
+      "Bent Cap",
+      "Wool Hood",
+      "Sunbleached Helm",
+      "Rustcap",
+      "Threaded Cowl"
+    ],
+    "2": [
+      "Leather Cowl",
+      "Studded Cap",
+      "Hunters Hood",
+      "Copper Helm",
+      "Guards Wrap",
+      "Scalebound Cap",
+      "Wardens Mask",
+      "Scouts Circlet",
+      "Emberplate Visor"
+    ],
+    "3": [
+      "Helm of the Wanderer",
+      "Mystic Circlet",
+      "Helm Focus",
+      "Watchers Mask",
+      "Moonsteel Circlet",
+      "Spirit Helm",
+      "Crest Owl",
+      "Vigilant Crown",
+      "Bronzebound Mask"
+    ],
+    "4": [
+      "Crown of Valor",
+      "Savage Helm",
+      "Helm Stormbound",
+      "Voidhelm",
+      "Skullhelm Shadows",
+      "Crown Iron Will",
+      "Gaze Forgotten",
+      "Helm Emberlord",
+      "Greystone Mask"
+    ],
+    "5": [
+      "Dragon's Crown",
+      "Celestial Coronet",
+      "Crown Infinity",
+      "Helm Black Star",
+      "Eclipse Visor",
+      "Helm Astral Warden",
+      "Eye Titan",
+      "Warborn Circlet",
+      "Crown Endless Vigil"
+    ]
+  },
+  "potion": {
+    "1": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": []
+  },
+  "weapon": {
+    "1": [
+      "Rusty",
+      "Worn",
+      "Cracked",
+      "Rusty Shard",
+      "Splintered Stick",
+      "Bent Blade",
+      "Cracked Pike",
+      "Wobbly Mace",
+      "Wormwood Wand",
+      "Dull Knife"
+    ],
+    "2": [
+      "Sturdy",
+      "Sharpened",
+      "Reliable",
+      "Iron Brand",
+      "Stout Hammer",
+      "Tempered Sword",
+      "Sharpened Spear",
+      "Stonecarver Axe",
+      "Oakstaff",
+      "Elven Knife"
+    ],
+    "3": [
+      "Enchanted",
+      "Gleaming",
+      "Runed",
+      "Arcblade",
+      "Mooncarver",
+      "Runebound Saber",
+      "Stormcaller",
+      "Twilight Mace",
+      "Whisperfang",
+      "Soulpiercer"
+    ],
+    "4": [
+      "Vicious",
+      "Savage",
+      "Bloodstained",
+      "Skullreaver",
+      "Voidtouched Edge",
+      "Blazefury Staff",
+      "Hammer Depths",
+      "Claw Ruin",
+      "Flametongue Blade",
+      "Specters Bite"
+    ],
+    "5": [
+      "Legendary",
+      "Mythic",
+      "Celestial",
+      "Fang Oblivion",
+      "Star-Eater",
+      "Scythe Infinity",
+      "Ashbringer Reborn",
+      "Eye Maelstrom",
+      "Edge Creation",
+      "Sunpiercer"
+    ]
+  },
+  "identity": {
+    "attackPower": " of the Bear",
+    "spellPower": " of Infinite Power",
+    "healingPower": " of Eternal Light",
+    "criticalChance": " of Vigilance",
+    "criticalDamage": " of the Damned",
+    "armorPenetration": " of Piercing Blades",
+    "spellPenetration": " of Arcane Breach",
+    "momentum": " of the Novice",
+    "energy": " of Swiftness",
+    "health": " of Fortitude",
+    "defense": " of Resilience",
+    "resistance": " of the Oak",
+    "dodge": " of the Cheetah",
+    "parry": " of Vigilance",
+    "regeneration": " of Fortitude"
+  }
 }
