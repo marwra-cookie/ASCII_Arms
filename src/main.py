@@ -7,10 +7,10 @@ from gear_manager import *
 
 
 def testbench():
-    debug = create_gear("helm", 1)
+    # debug = create_gear("helm", 1)
 
     print(red(f"\n\nDEBUG:"))
-    print(f"{debug}")
+    # print(f"{debug}")
 
 
 def new_save() -> Game:

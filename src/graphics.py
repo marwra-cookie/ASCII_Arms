@@ -30,6 +30,10 @@ def print_stat(stat) -> str:
     return msg
 
 
+def white(msg) -> str:
+    return Fore.WHITE + f"{msg} " + Fore.RESET
+
+
 def red(msg) -> str:
     return Fore.RED + f"{msg} " + Fore.RESET
 

@@ -60,31 +60,7 @@ class Game:
     def menu_gear(self):
         while True:
             os.system("cls")
-            print(
-                f"GEAR"
-                f"\n\n{self.player.get_gear()}"
-                f"\n\n1. More details"
-                f"\n\n3. Back"
-            )
-
-            choice = input("> ")
-
-            if choice == "2":
-                self.menu_gear_details()
-            elif choice == "3":
-                break
-            else:
-                print(f"{error}")
-
-    def menu_gear_details(self):
-        while True:
-            os.system("cls")
-            print(
-                f"GEAR"
-                f"\n\n{self.player.get_gear()}"
-                f"\n\n*Enter item for more information"
-                f"\n\n3. Back"
-            )
+            print(f"GEAR" f"\n\n{self.player.get_gear()}" f"\n\n3. Back")
 
             choice = input("> ")
 

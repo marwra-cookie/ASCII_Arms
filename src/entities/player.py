@@ -36,17 +36,15 @@ class Player(Entity):
         }
 
     def get_gear(self) -> str:
-
-        print(self.gear.get("helm", "None"))
         table = tabulate(
             [
-                ["Slot", "Name"],
-                ["Helm:", self.gear.get("helm", "None")],
-                ["Armor:", self.gear.get("armor", "None")],
-                ["Boots:", self.gear.get("boots", "None")],
-                ["Accessory:", self.gear.get("accessory", "None")],
-                ["Weapon:", self.gear.get("weapon", "None")],
-                ["Potion:", self.gear.get("potion", "None")],
+                ["Slot", "Item"],
+                ["Helm:", self.gear["helm"]],
+                ["Armor:", self.gear["armor"]],
+                ["Boots:", self.gear["boots"]],
+                ["Accessory:", self.gear["accessory"]],
+                ["Weapon:", self.gear["weapon"]],
+                ["Potion:", self.gear["potion"]],
             ],
             headers="firstrow",
         )
