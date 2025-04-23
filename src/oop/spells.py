@@ -1,4 +1,4 @@
-class Spell:
+class Spells:
 
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
@@ -12,7 +12,7 @@ class Spell:
         return str
 
 
-class Passive(Spell):
+class Passive(Spells):
 
     def __init__(self, **kwargs):
         self.rounds = kwargs["rounds"]
@@ -26,7 +26,7 @@ class Passive(Spell):
         return str
 
 
-class Direct(Spell):
+class Direct(Spells):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

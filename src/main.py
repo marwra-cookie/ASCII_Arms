@@ -1,7 +1,5 @@
-import os
 import time
 from launcher import rows
-from graphics import *
 from game import *
 
 

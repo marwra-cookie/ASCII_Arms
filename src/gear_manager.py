@@ -531,7 +531,6 @@ def load_gear():
                             item["stats"][stat] = Parry(item["stats"][stat])
                         case "regeneration":
                             item["stats"][stat] = Regeneration(item["stats"][stat])
-                print(type(item))
                 match g:
                     case "accessory":
                         armory[g].append(Accessory(**item))

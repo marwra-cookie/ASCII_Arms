@@ -1,4 +1,4 @@
-from src.graphics import *
+from src.oop.graphics import *
 
 
 class Stats:
@@ -91,7 +91,7 @@ class Energy(Stats):
 class HealingPower(Stats):
 
     def __init__(self, value):
-        name = "HealingPower"
+        name = "Healing Power"
         color = bright(green(value))
         super().__init__(value, name, color)
 

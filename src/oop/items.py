@@ -1,8 +1,4 @@
-from tabulate import tabulate
-from src.graphics import *
-
-
-class Item:
+class Items:
 
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
@@ -18,19 +14,19 @@ class Item:
         return msg
 
 
-class Accessory(Item):
+class Accessory(Items):
     pass
 
 
-class Armor(Item):
+class Armor(Items):
     pass
 
 
-class Boots(Item):
+class Boots(Items):
     pass
 
 
-class Helm(Item):
+class Helm(Items):
     pass
 
 
@@ -40,5 +36,5 @@ class Potion:
         self.__dict__.update(kwargs)
 
 
-class Weapon(Item):
+class Weapon(Items):
     pass
