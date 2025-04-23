@@ -1,18 +1,10 @@
 import json
 import random
-from src.graphics import *
-from src.loadout.gear.accessory import Accessory
-from src.loadout.gear.armor import Armor
-from src.loadout.gear.boots import Boots
-from src.loadout.gear.gear import Gear
-from src.loadout.gear.helm import Helm
-from src.loadout.gear.potion import Potion
-from src.loadout.gear.weapon import Weapon
-from src.loadout.spells.direct import Direct
-from src.loadout.spells.passive import Passive
-from src.loadout.spells.spells import Spells
+
+from oop import *
 
 error = "Invalid option... Please try again!"
+
 
 armory = {
     "accessory": [],
@@ -83,16 +75,17 @@ def set_gear_stats(slot, level) -> dict:
     match slot:
         case "helm":
             quality = [6, 5, 4, 3, 2]
-            base_stats = [
-                "health",
-                "defense",
-                "resistance",
-                "attackPower",
-                "spellPower",
-                "healingPower",
-                "energy",
-                "momentum",
-            ]
+
+            base_stats = {
+                "health": None,
+                "defense": None,
+                "resistance": None,
+                "attackPower": None,
+                "spellPower": None,
+                "healingPower": None,
+                "energy": None,
+                "momentum": None,
+            }
 
             quantity = quality[level - 1]
 
@@ -104,26 +97,25 @@ def set_gear_stats(slot, level) -> dict:
             name = set_identity(name, base_stats)
 
             stats = {
-                "id": get_max_gear_id() + 1,
-                "name": name,
-                "level": level,
+                "base": {"id": get_max_gear_id() + 1, "name": name, "level": level},
+                "stats": {},
             }
 
             for stat in base_stats:
-                stats[stat] = set_stat(stat, level)
+                stats["stats"][stat] = set_stat(stat, level)
 
             return stats
 
         case "armor":
             quality = [4, 4, 3, 2, 1]
-            base_stats = [
-                "health",
-                "defense",
-                "resistance",
-                "dodge",
-                "parry",
-                "regeneration",
-            ]
+            base_stats = {
+                "health": None,
+                "defense": None,
+                "resistance": None,
+                "dodge": None,
+                "parry": None,
+                "regeneration": None,
+            }
 
             quantity = quality[level - 1]
 
@@ -135,23 +127,22 @@ def set_gear_stats(slot, level) -> dict:
             name = set_identity(name, base_stats)
 
             stats = {
-                "id": get_max_gear_id() + 1,
-                "name": name,
-                "level": level,
+                "base": {"id": get_max_gear_id() + 1, "name": name, "level": level},
+                "stats": {},
             }
 
             for stat in base_stats:
-                stats[stat] = set_stat(stat, level)
+                stats["stats"][stat] = set_stat(stat, level)
 
             return stats
 
         case "boots":
             quality = [2, 2, 1, 1, 0]
-            base_stats = [
-                "dodge",
-                "energy",
-                "momentum",
-            ]
+            base_stats = {
+                "dodge": None,
+                "energy": None,
+                "momentum": None,
+            }
 
             quantity = quality[level - 1]
 
@@ -163,35 +154,34 @@ def set_gear_stats(slot, level) -> dict:
             name = set_identity(name, base_stats)
 
             stats = {
-                "id": get_max_gear_id() + 1,
-                "name": name,
-                "level": level,
+                "base": {"id": get_max_gear_id() + 1, "name": name, "level": level},
+                "stats": {},
             }
 
             for stat in base_stats:
-                stats[stat] = set_stat(stat, level)
+                stats["stats"][stat] = set_stat(stat, level)
 
             return stats
 
         case "accessory":
             quality = [7, 6, 5, 4, 3]
-            base_stats = [
-                "attackPower",
-                "spellPower",
-                "healingPower",
-                "criticalChance",
-                "criticalDamage",
-                "armorPenetration",
-                "spellPenetration",
-                "energy",
-                "momentum",
-                "health",
-                "defense",
-                "resistance",
-                "dodge",
-                "parry",
-                "regeneration",
-            ]
+            base_stats = {
+                "attackPower": None,
+                "spellPower": None,
+                "healingPower": None,
+                "criticalChance": None,
+                "criticalDamage": None,
+                "armorPenetration": None,
+                "spellPenetration": None,
+                "energy": None,
+                "momentum": None,
+                "health": None,
+                "defense": None,
+                "resistance": None,
+                "dodge": None,
+                "parry": None,
+                "regeneration": None,
+            }
 
             quantity = quality[level - 1]
 
@@ -201,9 +191,8 @@ def set_gear_stats(slot, level) -> dict:
                 quantity -= 1
 
             stats = {
-                "id": get_max_gear_id() + 1,
-                "name": name,
-                "level": level,
+                "base": {"id": get_max_gear_id() + 1, "name": name, "level": level},
+                "stats": {},
             }
 
             for stat in base_stats:
@@ -212,7 +201,7 @@ def set_gear_stats(slot, level) -> dict:
                     nr = int(nr / 3)
 
                 if nr > 0:
-                    stats[stat] = nr
+                    stats["stats"][stat] = set_stat(stat, level)
 
             return stats
 
@@ -245,146 +234,145 @@ def set_gear_stats(slot, level) -> dict:
             name = set_identity(f"{name} {weapon}", base_stats)
 
             stats = {
-                "id": get_max_gear_id() + 1,
-                "name": name,
-                "level": level,
+                "base": {"id": get_max_gear_id() + 1, "name": name, "level": level},
+                "stats": {},
             }
 
             for stat in base_stats:
-                stats[stat] = set_stat(stat, level)
+                stats["stats"][stat] = set_stat(stat, level)
 
             return stats
     return {}
 
 
-def set_stat(stat, level):
-    match stat:
+def set_stat(name, level):
+    match name:
         case "attackPower":
-            return set_attack_power(level)
+            return AttackPower(set_attack_power(level))
         case "spellPower":
-            return set_spell_power(level)
+            return SpellPower(set_spell_power(level))
         case "healingPower":
-            return set_healing_power(level)
+            return HealingPower(set_healing_power(level))
         case "criticalChance":
-            return set_critical_chance(level)
+            return CriticalChance(set_critical_chance(level))
         case "criticalDamage":
-            return set_critical_damage(level)
+            return CriticalDamage(set_critical_damage(level))
         case "armorPenetration":
-            return set_armor_penetration(level)
+            return ArmorPenetration(set_armor_penetration(level))
         case "spellPenetration":
-            return set_spell_penetration(level)
+            return SpellPenetration(set_spell_penetration(level))
         case "energy":
-            return set_energy()
+            return Energy(set_energy())
         case "momentum":
-            return set_momentum(level)
+            return Momentum(set_momentum(level))
         case "health":
-            return set_health(level)
+            return Health(set_health(level))
         case "defense":
-            return set_defense(level)
+            return Defense(set_defense(level))
         case "resistance":
-            return set_resistance(level)
+            return Resistance(set_resistance(level))
         case "dodge":
-            return set_dodge(level)
+            return Dodge(set_dodge(level))
         case "parry":
-            return set_parry(level)
+            return Parry(set_parry(level))
         case "regeneration":
-            return set_regeneration(level)
+            return Regeneration(set_regeneration(level))
     return None
 
 
 def set_weapon_stats(name) -> list:
     match name:
         case "Sword":
-            base_stats = [
-                "attackPower",
-                "armorPenetration",
-                "criticalChance",
-                "energy",
-                "parry",
-            ]
+            base_stats = {
+                "attackPower": None,
+                "armorPenetration": None,
+                "criticalChance": None,
+                "energy": None,
+                "parry": None,
+            }
 
             return base_stats
         case "Dagger":
-            base_stats = [
-                "attackPower",
-                "armorPenetration",
-                "criticalDamage",
-                "momentum",
-                "parry",
-            ]
+            base_stats = {
+                "attackPower": None,
+                "armorPenetration": None,
+                "criticalDamage": None,
+                "momentum": None,
+                "parry": None,
+            }
 
             return base_stats
         case "Mace":
-            base_stats = [
-                "attackPower",
-                "armorPenetration",
-                "criticalDamage",
-                "energy",
-                "parry",
-            ]
+            base_stats = {
+                "attackPower": None,
+                "armorPenetration": None,
+                "criticalDamage": None,
+                "energy": None,
+                "parry": None,
+            }
 
             return base_stats
 
         case "Axe":
-            base_stats = [
-                "attackPower",
-                "armorPenetration",
-                "criticalDamage",
-                "energy",
-                "parry",
-            ]
+            base_stats = {
+                "attackPower": None,
+                "armorPenetration": None,
+                "criticalDamage": None,
+                "energy": None,
+                "parry": None,
+            }
 
             return base_stats
 
         case "Bow":
-            base_stats = [
-                "attackPower",
-                "armorPenetration",
-                "criticalChance",
-                "energy",
-                "momentum",
-            ]
+            base_stats = {
+                "attackPower": None,
+                "armorPenetration": None,
+                "criticalChance": None,
+                "energy": None,
+                "momentum": None,
+            }
 
             return base_stats
         case "Crossbow":
-            base_stats = [
-                "attackPower",
-                "armorPenetration",
-                "criticalDamage",
-                "energy",
-                "momentum",
-            ]
+            base_stats = {
+                "attackPower": None,
+                "armorPenetration": None,
+                "criticalDamage": None,
+                "energy": None,
+                "momentum": None,
+            }
 
             return base_stats
         case "Staff":
-            base_stats = [
-                "spellPower",
-                "healingPower",
-                "spellPenetration",
-                "criticalDamage",
-                "energy",
-            ]
+            base_stats = {
+                "spellPower": None,
+                "healingPower": None,
+                "spellPenetration": None,
+                "criticalDamage": None,
+                "energy": None,
+            }
 
             return base_stats
         case "Scythe":
-            base_stats = [
-                "spellPower",
-                "healingPower",
-                "spellPenetration",
-                "criticalDamage",
-                "energy",
-                "parry",
-            ]
+            base_stats = {
+                "spellPower": None,
+                "healingPower": None,
+                "spellPenetration": None,
+                "criticalDamage": None,
+                "energy": None,
+                "parry": None,
+            }
 
             return base_stats
         case "Wand":
-            base_stats = [
-                "spellPower",
-                "healingPower",
-                "spellPenetration",
-                "criticalChance",
-                "momentum",
-            ]
+            base_stats = {
+                "spellPower": None,
+                "healingPower": None,
+                "spellPenetration": None,
+                "criticalChance": None,
+                "momentum": None,
+            }
 
             return base_stats
     return []
@@ -501,6 +489,8 @@ def save_gear(slot, gear):
 
 
 def load_gear():
+    """"""
+
     gear_types = list(armory.keys())
 
     with open(f"database/gear.json", "r") as file:
@@ -508,6 +498,40 @@ def load_gear():
 
         for g in gear_types:
             for item in data[g]:
+
+                for stat in item["stats"]:
+                    match stat:
+                        case "attackPower":
+                            item["stats"][stat] = AttackPower(item["stats"][stat])
+                        case "spellPower":
+                            item["stats"][stat] = SpellPower(item["stats"][stat])
+                        case "healingPower":
+                            item["stats"][stat] = HealingPower(item["stats"][stat])
+                        case "criticalChance":
+                            item["stats"][stat] = CriticalChance(item["stats"][stat])
+                        case "criticalDamage":
+                            item["stats"][stat] = CriticalDamage(item["stats"][stat])
+                        case "armorPenetration":
+                            item["stats"][stat] = ArmorPenetration(item["stats"][stat])
+                        case "spellPenetration":
+                            item["stats"][stat] = SpellPenetration(item["stats"][stat])
+                        case "energy":
+                            item["stats"][stat] = Energy(item["stats"][stat])
+                        case "momentum":
+                            item["stats"][stat] = Momentum(item["stats"][stat])
+                        case "health":
+                            item["stats"][stat] = Health(item["stats"][stat])
+                        case "defense":
+                            item["stats"][stat] = Defense(item["stats"][stat])
+                        case "resistance":
+                            item["stats"][stat] = Resistance(item["stats"][stat])
+                        case "dodge":
+                            item["stats"][stat] = Dodge(item["stats"][stat])
+                        case "parry":
+                            item["stats"][stat] = Parry(item["stats"][stat])
+                        case "regeneration":
+                            item["stats"][stat] = Regeneration(item["stats"][stat])
+                print(type(item))
                 match g:
                     case "accessory":
                         armory[g].append(Accessory(**item))
@@ -550,10 +574,17 @@ def get_max_gear_id():
 
 def get_gear(name):
     for slot in armory:
-        if len(slot) != None:
-            for item in armory[slot]:
-                if item.name == name:
-                    return item
+        for item in armory[slot]:
+            if item.base["name"] == name:
+                return item
+    return None
+
+
+def get_gear_id(i):
+    for slot in armory:
+        for item in armory[slot]:
+            if item.base["id"] == i:
+                return item
     return None
 
 
@@ -572,5 +603,13 @@ def get_spell(name):
     for category in spellbook:
         for item in spellbook[category]:
             if item.name == name:
+                return item
+    return None
+
+
+def get_spell_id(i):
+    for category in spellbook:
+        for item in spellbook[category]:
+            if item.id == i:
                 return item
     return None

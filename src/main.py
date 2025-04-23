@@ -1,9 +1,8 @@
 import os
-from src.entities.player import Player
 import time
-from src.game import Game
 from launcher import rows
-from gear_manager import *
+from graphics import *
+from game import *
 
 
 def testbench():

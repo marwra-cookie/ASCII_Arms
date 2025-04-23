@@ -1,126 +1,64 @@
 {
     "accessory": [
         {
-            "id": 1,
-            "name": "Necklace",
-            "level": 1,
-            "attackPower": 1,
-            "spellPower": 1,
-            "healingPower": 1,
-            "health": 1,
-            "defense": 1,
-            "resistance": 1,
-            "dodge": 0.1,
-            "parry": 0.1
-        },
-        {
-            "id": 2,
-            "name": "Wooden Brooch",
-            "level": 1,
-            "attackPower": 1,
-            "healingPower": 6,
-            "criticalDamage": 0.04,
-            "armorPenetration": 0.02,
-            "defense": 4,
-            "dodge": 0.02,
-            "regeneration": 0.04
+            "base": {
+                "id": 1,
+                "name": "Necklace",
+                "level": 1
+            },
+            "stats": {
+                "attackPower": 1,
+                "spellPower": 1,
+                "healingPower": 1,
+                "health": 1,
+                "defense": 1,
+                "resistance": 1,
+                "dodge": 0.1,
+                "parry": 0.1
+            }
         }
     ],
     "armor": [
         {
-            "id": 3,
-            "name": "Leather set",
-            "level": 1,
-            "health": 100,
-            "defense": 1
-        },
-        {
-            "id": 4,
-            "name": "Torn Harness of Fortitude",
-            "level": 1,
-            "health": 113,
-            "defense": 19
-        },
-        {
-            "id": 5,
-            "name": "Sun-faded Robe of the Oak",
-            "level": 1,
-            "resistance": 4,
-            "parry": 0.01
+            "base": {
+                "id": 3,
+                "name": "Leather set",
+                "level": 1
+            },
+            "stats": {
+                "health": 100,
+                "defense": 1
+            }
         }
     ],
     "boots": [
         {
-            "id": 6,
-            "name": "Half a set of shoes",
-            "level": 1,
-            "dodge": 0.1
-        },
-        {
-            "id": 7,
-            "name": "Frayed Sandals of the Cheetah",
-            "level": 1,
-            "dodge": 0.02
+            "base": {
+                "id": 6,
+                "name": "Half a set of shoes",
+                "level": 1
+            },
+            "stats": {
+                "dodge": 0.1
+            }
         }
     ],
-    "helm": [
-        {
-            "id": 8,
-            "name": "Threaded Cowl of the Oak",
-            "level": 1,
-            "resistance": 15,
-            "attackPower": 2
-        },
-        {
-            "id": 9,
-            "name": "Bent Cap of Eternal Light",
-            "level": 1,
-            "healingPower": 11,
-            "momentum": 8
-        },
-        {
-            "id": 14,
-            "name": "Leather Headwrap of Fortitude",
-            "level": 1,
-            "health": 70,
-            "attackPower": 16
-        },
-        {
-            "id": 15,
-            "name": "Rustcap of the Bear",
-            "level": 1,
-            "attackPower": 2,
-            "momentum": 8
-        }
-    ],
+    "helm": {
+    },
     "potion": [],
     "weapon": [
         {
-            "id": 10,
-            "name": "Short sword",
-            "level": 1,
-            "attackPower": 10,
-            "criticalDamage": 0.1,
-            "parry": 0.1,
-            "energy": 1
-        },
-        {
-            "id": 11,
-            "name": "Wormwood Wand Wand of Infinite Power",
-            "level": 1,
-            "spellPower": 9
-        },
-        {
-            "id": 12,
-            "name": "Wobbly Mace Crossbow of the Novice",
-            "level": 1,
-            "momentum": 1
-        },
-        {
-            "id": 13,
-            "name": "Rusty Dagger of the Damned",
-            "level": 1,
-            "criticalDamage": 0.01
+            "base": {
+                "id": 10,
+                "name": "Short sword",
+                "level": 1
+            },
+            "stats": {
+                "attackPower": 10,
+                "criticalDamage": 0.1,
+                "parry": 0.1,
+                "energy": 1
+            }
         }
     ]
 }
