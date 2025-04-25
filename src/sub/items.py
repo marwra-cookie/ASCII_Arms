@@ -1,15 +1,16 @@
 class Items:
 
     def __init__(self, **kwargs):
+        self.stats = kwargs
         self.__dict__.update(kwargs)
 
     def __str__(self) -> str:
         stats = self.__dict__
 
-        msg = f"({stats['base']['level']})\t{stats['base']['name']}\t\t"
+        msg = f"({stats['basic']['level']})\t{stats['basic']['name']}\t"
 
         for stat in stats["stats"]:
-            msg += f" {stats["stats"][stat].color}"
+            msg += f" {stats["stats"][stat].get_color()}"
 
         return msg
 

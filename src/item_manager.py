@@ -1,10 +1,7 @@
 import json
 import random
 
-from oop import *
-
-error = "Invalid option... Please try again!"
-
+from sub import *
 
 armory = {
     "accessory": [],
@@ -14,57 +11,55 @@ armory = {
     "weapon": [],
 }
 
-spellbook = {"direct": [], "passive": []}
+
+def create_random_item(level):
+    item_types = list(armory.keys())
+
+    slots = len(item_types) - 1
+    slot = item_types[random.randint(0, slots)]
+
+    item = create_item(slot, level)
+
+    return item
 
 
-def create_random_gear(level):
-    gear_types = list(armory.keys())
-
-    slots = len(gear_types) - 1
-    slot = gear_types[random.randint(0, slots)]
-
-    gear = create_gear(slot, level)
-
-    return gear
-
-
-def create_gear(slot, level):
+def create_item(slot, level):
 
     match slot:
         case "helm":
-            helm = Helm(**set_gear_stats(slot, level))
+            helm = Helm(**set_item_stats(slot, level))
             armory["helm"].append(helm)
 
-            save_gear("helm", helm)
+            save_item("helm", helm)
             return helm
         case "armor":
-            armor = Armor(**set_gear_stats(slot, level))
+            armor = Armor(**set_item_stats(slot, level))
             armory["armor"].append(armor)
 
-            save_gear("armor", armor)
+            save_item("armor", armor)
             return armor
         case "boots":
-            boots = Boots(**set_gear_stats(slot, level))
+            boots = Boots(**set_item_stats(slot, level))
             armory["boots"].append(boots)
 
-            save_gear("boots", boots)
+            save_item("boots", boots)
             return boots
         case "accessory":
-            accessory = Accessory(**set_gear_stats(slot, level))
+            accessory = Accessory(**set_item_stats(slot, level))
             armory["accessory"].append(accessory)
 
-            save_gear("accessory", accessory)
+            save_item("accessory", accessory)
             return accessory
         case "weapon":
-            weapon = Weapon(**set_gear_stats(slot, level))
+            weapon = Weapon(**set_item_stats(slot, level))
             armory["weapon"].append(weapon)
 
-            save_gear("weapon", weapon)
+            save_item("weapon", weapon)
             return weapon
     return None
 
 
-def set_gear_stats(slot, level) -> dict:
+def set_item_stats(slot, level) -> dict:
 
     with open(f"database/randomize.json", "r") as file:
         data = json.load(file)
@@ -97,7 +92,7 @@ def set_gear_stats(slot, level) -> dict:
             name = set_identity(name, base_stats)
 
             stats = {
-                "base": {"id": get_max_gear_id() + 1, "name": name, "level": level},
+                "basic": {"id": get_last_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -127,7 +122,7 @@ def set_gear_stats(slot, level) -> dict:
             name = set_identity(name, base_stats)
 
             stats = {
-                "base": {"id": get_max_gear_id() + 1, "name": name, "level": level},
+                "basic": {"id": get_last_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -154,7 +149,7 @@ def set_gear_stats(slot, level) -> dict:
             name = set_identity(name, base_stats)
 
             stats = {
-                "base": {"id": get_max_gear_id() + 1, "name": name, "level": level},
+                "basic": {"id": get_last_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -191,7 +186,7 @@ def set_gear_stats(slot, level) -> dict:
                 quantity -= 1
 
             stats = {
-                "base": {"id": get_max_gear_id() + 1, "name": name, "level": level},
+                "basic": {"id": get_last_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -234,7 +229,7 @@ def set_gear_stats(slot, level) -> dict:
             name = set_identity(f"{name} {weapon}", base_stats)
 
             stats = {
-                "base": {"id": get_max_gear_id() + 1, "name": name, "level": level},
+                "basic": {"id": get_last_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -480,23 +475,23 @@ def set_momentum(level) -> int:
     return stat
 
 
-def save_gear(slot, gear):
-    with open(f"database/gear.json", "r+") as file:
+def save_item(slot, item):
+    with open(f"database/items.json", "r+") as file:
         data = json.load(file)
-        data[slot].append(gear.__dict__)
+        data[slot].append(item.__dict__)
         file.seek(0)
         json.dump(data, file, indent=4)
 
 
-def load_gear():
+def load_items():
     """"""
 
-    gear_types = list(armory.keys())
+    item_types = list(armory.keys())
 
-    with open(f"database/gear.json", "r") as file:
+    with open(f"database/items.json", "r") as file:
         data = json.load(file)
 
-        for g in gear_types:
+        for g in item_types:
             for item in data[g]:
 
                 for stat in item["stats"]:
@@ -546,21 +541,7 @@ def load_gear():
                         armory[g].append(Weapon(**item))
 
 
-def load_spells():
-    spell_type = list(spellbook.keys())
-
-    with open(f"database/spells.json", "r") as file:
-        data = json.load(file)
-
-        for s in spell_type:
-            for spell in data[s]:
-                if s == "direct":
-                    spellbook[s].append(Direct(**spell))
-                elif s == "passive":
-                    spellbook[s].append(Passive(**spell))
-
-
-def get_max_gear_id():
+def get_last_id():
     i = 0
 
     for category in armory:
@@ -571,44 +552,17 @@ def get_max_gear_id():
     return i
 
 
-def get_gear(name):
+def get_item_name(name):
     for slot in armory:
         for item in armory[slot]:
-            if item.base["name"] == name:
+            if item.basic["name"] == name:
                 return item
     return None
 
 
-def get_gear_id(i):
+def get_item_id(i):
     for slot in armory:
         for item in armory[slot]:
-            if item.base["id"] == i:
-                return item
-    return None
-
-
-def get_max_spell_id():
-    i = 0
-
-    for category in spellbook:
-        for spell in spellbook[category]:
-            if spell.id > i:
-                i = spell.id
-
-    return i
-
-
-def get_spell(name):
-    for category in spellbook:
-        for item in spellbook[category]:
-            if item.name == name:
-                return item
-    return None
-
-
-def get_spell_id(i):
-    for category in spellbook:
-        for item in spellbook[category]:
-            if item.id == i:
+            if item.basic["id"] == i:
                 return item
     return None

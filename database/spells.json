@@ -1,56 +1,1123 @@
 {
   "direct": [
     {
-      "name": "Strike",
-      "level": 1,
-      "attackBase": 10,
-      "attackScaling": 0.1,
-      "spellBase": null,
-      "spellScaling": null,
-      "healBase": null,
-      "healScaling": null,
-      "cost": 1,
-      "gain": null
+      "basic": {
+        "id": 1,
+        "name": "Cinder Shard",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "spellBase": 23
+        },
+        "scaling": 0.16,
+        "cost": 1
+      }
     },
     {
-      "name": "Fireball",
-      "level": 1,
-      "attackBase": null,
-      "attackScaling": null,
-      "spellBase": 20,
-      "spellScaling": 0.25,
-      "healBase": null,
-      "healScaling": null,
-      "cost": 2,
-      "gain": null
+      "basic": {
+        "id": 2,
+        "name": "Stormforged Shroud",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "spellBase": 9,
+          "healBase": 9
+        },
+        "scaling": 0.4,
+        "cost": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 3,
+        "name": "Spectral Flare",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "spellBase": 45
+        },
+        "scaling": 0.29,
+        "cost": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 4,
+        "name": "Cinder Quake",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "spellBase": 28
+        },
+        "scaling": 0.19,
+        "cost": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 5,
+        "name": "Verdant Cascade",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "spellBase": 21
+        },
+        "scaling": 0.5,
+        "cost": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 6,
+        "name": "Shadowed Rift",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "spellBase": 31
+        },
+        "scaling": 0.26,
+        "cost": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 7,
+        "name": "Ember Tempest",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "spellBase": 12
+        },
+        "scaling": 0.13,
+        "cost": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 8,
+        "name": "Searing Vortex",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "spellBase": 35
+        },
+        "scaling": 0.27,
+        "cost": 4
+      }
+    },
+    {
+      "basic": {
+        "id": 9,
+        "name": "Moonlit Maelstrom",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "spellBase": 34,
+          "healBase": 22
+        },
+        "scaling": 0.24,
+        "cost": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 10,
+        "name": "Shadowed Lance",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "attackBase": 18,
+          "spellBase": 18
+        },
+        "scaling": 0.18,
+        "cost": 4
+      }
+    },
+    {
+      "basic": {
+        "id": 11,
+        "name": "Ember Lance",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "attackBase": 19,
+          "spellBase": 19
+        },
+        "scaling": 0.31,
+        "cost": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 12,
+        "name": "Stormforged Vortex",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "spellBase": 36
+        },
+        "scaling": 0.28,
+        "cost": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 13,
+        "name": "Ironclad Fury",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "attackBase": 48,
+          "spellBase": 10
+        },
+        "scaling": 0.15,
+        "cost": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 14,
+        "name": "Obsidian Vortex",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "spellBase": 8
+        },
+        "scaling": 0.38,
+        "cost": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 15,
+        "name": "Astral Maelstrom",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "attackBase": 5,
+          "spellBase": 8,
+          "healBase": 8
+        },
+        "scaling": 0.68,
+        "cost": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 16,
+        "name": "Verdant Bolt",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "spellBase": 23,
+          "healBase": 38
+        },
+        "scaling": 0.23,
+        "cost": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 17,
+        "name": "Frostbound Quake",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "spellBase": 23
+        },
+        "scaling": 0.33,
+        "cost": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 18,
+        "name": "Thunderous Torrent",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "spellBase": 28
+        },
+        "scaling": 0.27,
+        "cost": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 19,
+        "name": "Searing Bolt",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "spellBase": 24
+        },
+        "scaling": 0.12,
+        "cost": 4
+      }
+    },
+    {
+      "basic": {
+        "id": 20,
+        "name": "Stormforged Lance",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "attackBase": 19,
+          "spellBase": 19
+        },
+        "scaling": 0.31,
+        "cost": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 41,
+        "name": "Eclipse Blitz",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "spellBase": 11
+        },
+        "scaling": 0.62,
+        "cost": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 42,
+        "name": "Void Rend",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "spellBase": 30
+        },
+        "scaling": 0.21,
+        "cost": 4,
+        "gain": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 43,
+        "name": "Mystic Crescendo",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "spellBase": 18
+        },
+        "scaling": 0.2,
+        "cost": 2,
+        "gain": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 44,
+        "name": "Gale Torrent",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "spellBase": 15
+        },
+        "scaling": 0.36,
+        "cost": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 45,
+        "name": "Nightfall Crescendo",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "spellBase": 47
+        },
+        "scaling": 0.11,
+        "cost": 5,
+        "gain": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 46,
+        "name": "Mystic Surge",
+        "level": 5
+      },
+      "stats": {
+        "base": {
+          "spellBase": 44
+        },
+        "scaling": 0.23,
+        "cost": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 47,
+        "name": "Celestial Cleave",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "attackBase": 22,
+          "spellBase": 22,
+          "healBase": 20
+        },
+        "scaling": 0.31,
+        "cost": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 48,
+        "name": "Radiant Cleave",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "attackBase": 9,
+          "spellBase": 9
+        },
+        "scaling": 0.37,
+        "cost": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 49,
+        "name": "Blazing Surge",
+        "level": 5
+      },
+      "stats": {
+        "base": {
+          "spellBase": 56
+        },
+        "scaling": 0.16,
+        "cost": 3,
+        "gain": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 50,
+        "name": "Wildfire Surge",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "spellBase": 42
+        },
+        "scaling": 0.26,
+        "cost": 5,
+        "gain": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 51,
+        "name": "Nightfall Rift",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "spellBase": 11
+        },
+        "scaling": 0.7,
+        "cost": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 52,
+        "name": "Eclipse Cleave",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "attackBase": 12,
+          "spellBase": 12
+        },
+        "scaling": 0.46,
+        "cost": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 53,
+        "name": "Sunder",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "attackBase": 22
+        },
+        "scaling": 0.23,
+        "cost": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 54,
+        "name": "Specter Blitz",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "spellBase": 11,
+          "healBase": 22
+        },
+        "scaling": 0.09,
+        "cost": 4,
+        "gain": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 55,
+        "name": "Gale Surge",
+        "level": 5
+      },
+      "stats": {
+        "base": {
+          "spellBase": 36
+        },
+        "scaling": 0.2,
+        "cost": 5
+      }
+    },
+    {
+      "basic": {
+        "id": 56,
+        "name": "Nightfall Torrent",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "spellBase": 37
+        },
+        "scaling": 0.18,
+        "cost": 3,
+        "gain": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 57,
+        "name": "Shimmering Bolt",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "spellBase": 6
+        },
+        "scaling": 0.54,
+        "cost": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 58,
+        "name": "Shimmering Wave",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "spellBase": 20
+        },
+        "scaling": 0.24,
+        "cost": 2,
+        "gain": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 59,
+        "name": "Nightfall Rend",
+        "level": 5
+      },
+      "stats": {
+        "base": {
+          "attackBase": 27,
+          "spellBase": 27
+        },
+        "scaling": 0.24,
+        "cost": 5,
+        "gain": 4
+      }
+    },
+    {
+      "basic": {
+        "id": 60,
+        "name": "Gale Rend",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "attackBase": 32,
+          "spellBase": 32,
+          "healBase": 26
+        },
+        "scaling": 0.34,
+        "cost": 2
+      }
     }
   ],
   "passive": [
     {
-      "name": "Bleed",
-      "level": 1,
-      "attackBase": 5,
-      "attackScaling": 0.3,
-      "spellBase": null,
-      "spellScaling": null,
-      "healBase": null,
-      "healScaling": null,
-      "cost": 1,
-      "gain": 1,
-      "rounds": 3
+      "basic": {
+        "id": 21,
+        "name": "Ebon Warden",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "attackBase": 4,
+          "spellBase": 4,
+          "healBase": 4
+        },
+        "scaling": 0.06,
+        "cost": 3,
+        "rounds": 4
+      }
     },
     {
-      "name": "Burn",
-      "level": 1,
-      "attackBase": null,
-      "attackScaling": null,
-      "spellBase": 2,
-      "spellScaling": 0.1,
-      "healBase": null,
-      "healScaling": null,
-      "cost": null,
-      "gain": 1,
-      "rounds": 1
+      "basic": {
+        "id": 22,
+        "name": "Wild Veil",
+        "level": 5
+      },
+      "stats": {
+        "base": {
+          "spellBase": 17
+        },
+        "scaling": 0.08,
+        "cost": 1,
+        "rounds": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 23,
+        "name": "Silent Frost",
+        "level": 5
+      },
+      "stats": {
+        "base": {
+          "spellBase": 5
+        },
+        "scaling": 0.04,
+        "cost": 4,
+        "rounds": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 24,
+        "name": "Stone Barrier",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "healBase": 8
+        },
+        "scaling": 0.07,
+        "cost": 1,
+        "rounds": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 25,
+        "name": "Wild Banner",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "healBase": 3
+        },
+        "scaling": 0.17,
+        "cost": 3,
+        "rounds": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 28,
+        "name": "Ebon Embrace",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "spellBase": 3,
+          "healBase": 5
+        },
+        "scaling": 0.11,
+        "cost": 3,
+        "rounds": 5
+      }
+    },
+    {
+      "basic": {
+        "id": 29,
+        "name": "Arcane Oath",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "spellBase": 6
+        },
+        "scaling": 0.13,
+        "cost": 1,
+        "rounds": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 30,
+        "name": "Phantom Barrier",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "spellBase": 3
+        },
+        "scaling": 0.12,
+        "cost": 2,
+        "rounds": 4
+      }
+    },
+    {
+      "basic": {
+        "id": 33,
+        "name": "Wild Barrier",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "healBase": 14
+        },
+        "scaling": 0.07,
+        "cost": 1,
+        "rounds": 6
+      }
+    },
+    {
+      "basic": {
+        "id": 34,
+        "name": "Arcane Aura",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "spellBase": 5
+        },
+        "scaling": 0.15,
+        "cost": 1,
+        "rounds": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 35,
+        "name": "Phantom Mantle",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "attackBase": 3,
+          "spellBase": 3,
+          "healBase": 3
+        },
+        "scaling": 0.07,
+        "cost": 1,
+        "rounds": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 36,
+        "name": "Radiant Barrier",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "spellBase": 3,
+          "healBase": 7
+        },
+        "scaling": 0.13,
+        "cost": 2,
+        "rounds": 5
+      }
+    },
+    {
+      "basic": {
+        "id": 37,
+        "name": "Glacial Echo",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "spellBase": 7
+        },
+        "scaling": 0.12,
+        "cost": 4,
+        "rounds": 6
+      }
+    },
+    {
+      "basic": {
+        "id": 38,
+        "name": "Silent Aura",
+        "level": 5
+      },
+      "stats": {
+        "base": {
+          "spellBase": 18
+        },
+        "scaling": 0.07,
+        "cost": 3,
+        "rounds": 6
+      }
+    },
+    {
+      "basic": {
+        "id": 39,
+        "name": "Echoing Ward",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "attackBase": 6,
+          "spellBase": 6
+        },
+        "scaling": 0.1,
+        "cost": 3,
+        "rounds": 4
+      }
+    },
+    {
+      "basic": {
+        "id": 40,
+        "name": "Soul Echo",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "spellBase": 1
+        },
+        "scaling": 0.18,
+        "cost": 2,
+        "rounds": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 61,
+        "name": "Aegis Halo",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "healBase": 8
+        },
+        "scaling": 0.17,
+        "cost": 1,
+        "rounds": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 62,
+        "name": "Crystal Beacon",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "spellBase": 5
+        },
+        "scaling": 0.13,
+        "cost": 1,
+        "rounds": 3,
+        "gain": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 63,
+        "name": "Stalwart Shroud",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "healBase": 6
+        },
+        "scaling": 0.12,
+        "cost": 2,
+        "rounds": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 65,
+        "name": "Frost Ward",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "spellBase": 4
+        },
+        "scaling": 0.29,
+        "cost": 1,
+        "rounds": 2,
+        "gain": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 66,
+        "name": "Verdant Beacon",
+        "level": 5
+      },
+      "stats": {
+        "base": {
+          "healBase": 15
+        },
+        "scaling": 0.04,
+        "cost": 3,
+        "rounds": 7,
+        "gain": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 67,
+        "name": "Aegis Omen",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "healBase": 6
+        },
+        "scaling": 0.09,
+        "cost": 1,
+        "rounds": 5,
+        "gain": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 68,
+        "name": "Ember Embrace",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "spellBase": 5
+        },
+        "scaling": 0.03,
+        "cost": 4,
+        "rounds": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 69,
+        "name": "Ironhide Seal",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "attackBase": 10
+        },
+        "scaling": 0.1,
+        "cost": 2,
+        "rounds": 5,
+        "gain": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 70,
+        "name": "Stalwart Barrier",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "attackBase": 4
+        },
+        "scaling": 0.09,
+        "cost": 4,
+        "rounds": 6
+      }
+    },
+    {
+      "basic": {
+        "id": 71,
+        "name": "Vigilant Enchantment",
+        "level": 5
+      },
+      "stats": {
+        "base": {
+          "attackBase": 9,
+          "spellBase": 9,
+          "healBase": 7
+        },
+        "scaling": 0.03,
+        "cost": 5,
+        "rounds": 6,
+        "gain": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 73,
+        "name": "Ebon Beacon",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "attackBase": 3,
+          "spellBase": 3,
+          "healBase": 3
+        },
+        "scaling": 0.17,
+        "cost": 1,
+        "rounds": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 74,
+        "name": "Phantasmal Echo",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "spellBase": 3
+        },
+        "scaling": 0.16,
+        "cost": 1,
+        "rounds": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 75,
+        "name": "Rune Sanctuary",
+        "level": 1
+      },
+      "stats": {
+        "base": {
+          "spellBase": 1,
+          "healBase": 1
+        },
+        "scaling": 0.27,
+        "cost": 2,
+        "rounds": 4
+      }
+    },
+    {
+      "basic": {
+        "id": 76,
+        "name": "Aegis Enchantment",
+        "level": 3
+      },
+      "stats": {
+        "base": {
+          "healBase": 11
+        },
+        "scaling": 0.04,
+        "cost": 4,
+        "rounds": 5,
+        "gain": 1
+      }
+    },
+    {
+      "basic": {
+        "id": 77,
+        "name": "Vigilant Barrier",
+        "level": 5
+      },
+      "stats": {
+        "base": {
+          "attackBase": 9
+        },
+        "scaling": 0.04,
+        "cost": 5,
+        "rounds": 3
+      }
+    },
+    {
+      "basic": {
+        "id": 78,
+        "name": "Ironhide Barrier",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "attackBase": 4
+        },
+        "scaling": 0.11,
+        "cost": 1,
+        "rounds": 5
+      }
+    },
+    {
+      "basic": {
+        "id": 79,
+        "name": "Ember Sanctuary",
+        "level": 4
+      },
+      "stats": {
+        "base": {
+          "spellBase": 5
+        },
+        "scaling": 0.04,
+        "cost": 5,
+        "rounds": 5,
+        "gain": 2
+      }
+    },
+    {
+      "basic": {
+        "id": 80,
+        "name": "Hallowed Shroud",
+        "level": 2
+      },
+      "stats": {
+        "base": {
+          "spellBase": 3,
+          "healBase": 3
+        },
+        "scaling": 0.17,
+        "cost": 2,
+        "rounds": 3
+      }
     }
   ]
 }

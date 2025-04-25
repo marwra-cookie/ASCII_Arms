@@ -1,7 +1,7 @@
 {
     "accessory": [
         {
-            "base": {
+            "basic": {
                 "id": 1,
                 "name": "Necklace",
                 "level": 1
@@ -20,7 +20,7 @@
     ],
     "armor": [
         {
-            "base": {
+            "basic": {
                 "id": 3,
                 "name": "Leather set",
                 "level": 1
@@ -33,9 +33,9 @@
     ],
     "boots": [
         {
-            "base": {
+            "basic": {
                 "id": 6,
-                "name": "Half a set of shoes",
+                "name": "Set of shoes",
                 "level": 1
             },
             "stats": {
@@ -48,7 +48,7 @@
     "potion": [],
     "weapon": [
         {
-            "base": {
+            "basic": {
                 "id": 10,
                 "name": "Short sword",
                 "level": 1

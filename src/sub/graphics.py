@@ -15,6 +15,8 @@ Back.GREEN + 'and with a green background' + Back.Reset
 Style.DIM + 'and in dim text' + Style.RESET_ALL
 """
 
+error = "Invalid option... Please try again!"
+
 
 def white(msg) -> str:
     return Fore.WHITE + f"{msg}" + Fore.RESET

@@ -1,5 +1,5 @@
 import os
-from gear_manager import *
+from item_manager import *
 
 
 class Game:
@@ -41,7 +41,7 @@ class Game:
             print(
                 f"CHARACTER"
                 f"\n\n{self.player.get_stats()}"
-                f"\n\n1. Gear"
+                f"\n\n1. Items"
                 f"\n2. Spells"
                 f"\n\n3. Back"
             )
@@ -49,7 +49,7 @@ class Game:
             choice = input("> ")
 
             if choice == "1":
-                self.menu_gear()
+                self.menu_items()
             elif choice == "2":
                 self.menu_spells()
             elif choice == "3":
@@ -57,11 +57,10 @@ class Game:
             else:
                 print(f"{error}")
 
-    def menu_gear(self):
+    def menu_items(self):
         while True:
             os.system("cls")
-            print(f"GEAR" f"\n\n{self.player.get_gear()}" f"\n\n3. Back")
-
+            print(f"GEAR" f"\n\n{self.player.get_items()}" f"\n3. Back")
             choice = input("> ")
 
             if choice == "3":

@@ -1,10 +1,12 @@
 import time
 from launcher import rows
 from game import *
+from item_manager import *
+from spell_manager import *
 
 
 def testbench():
-    # debug = create_gear("helm", 1)
+    # debug = create_item("helm", 1)
 
     print(red(f"\n\nDEBUG:"))
     # print(f"{debug}")
@@ -78,17 +80,23 @@ def start_game(save):
     save.run()
 
 
+def set_starter_items(save):
+    save.player.add_item(get_item_name("Necklace"))
+    save.player.add_item(get_item_name("Leather set"))
+    save.player.add_item(get_item_name("Set of shoes"))
+    save.player.add_item(get_item_name("Short sword"))
+    save.player.spells[0] = get_spell_id(1)
+
+
 def start_screen():
     print("--- WELCOME TO DMG SIM ---" "\nA damage simulation game in Python")
 
-    load_gear()
+    load_items()
     load_spells()
+
     save = select_save()
-    save.player.gear["accessory"] = get_gear("Necklace")
-    save.player.gear["armor"] = get_gear("Leather set")
-    save.player.gear["boots"] = get_gear("Half a set of shoes")
-    save.player.gear["weapon"] = get_gear("Short sword")
-    save.player.spells[0] = get_spell("Strike")
+    set_starter_items(save)
+
     start_game(save)
 
 
