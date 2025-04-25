@@ -6,7 +6,7 @@ class Spells:
     def __str__(self) -> str:
         stats = self.__dict__
 
-        msg = f"[{stats['basic']['level']}] {type(self).__name__[0]}'\t{stats['basic']['name']}\t"
+        msg = f"{type(self).__name__}\t[{stats['basic']['level']}] {stats['basic']['name']}\t"
 
         for stat in stats["stats"]:
             if stat == "base":
