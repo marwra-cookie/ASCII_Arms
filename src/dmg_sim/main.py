@@ -57,7 +57,7 @@ def select_save():
 
 
 def load_game():
-    if Game.player.name != "Test":
+    if Game.player.name != "TEST BOT 🤖":
         r = "■" * rows
         tot = 100
         percent = tot / rows
