@@ -1,7 +1,9 @@
+from sub import *
+
+
 import json
 import random
 
-from sub import *
 
 armory = {
     "accessory": [],

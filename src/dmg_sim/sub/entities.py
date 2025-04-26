@@ -11,9 +11,7 @@ class Entities:
 
     def get_stats(self) -> str:
         stats = self.__dict__
-        print(
-            stats["attackPower"].get_color(),
-        )
+
         str = tabulate(
             [
                 ["Defensive", "", "Offensive", "", "Extra", ""],

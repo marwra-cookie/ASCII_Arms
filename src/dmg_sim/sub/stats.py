@@ -1,4 +1,4 @@
-from src.sub.graphics import *
+from . import *
 
 
 class Stats:

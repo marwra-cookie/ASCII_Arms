@@ -1,0 +1,2 @@
+[tool.poetry.scripts]
+dmg-sim = "dmg_sim.main:start_screen"

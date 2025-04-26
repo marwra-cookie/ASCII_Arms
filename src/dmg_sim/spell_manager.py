@@ -1,7 +1,8 @@
+from sub import *
+
+
 import json
 import random
-
-from sub import *
 
 
 spellbook = {"direct": [], "passive": []}
