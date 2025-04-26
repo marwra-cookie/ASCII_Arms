@@ -12,15 +12,14 @@ class ArmorPenetration(Stats):
 
     def __init__(self, value):
         name = "Armor Penetration"
-        color = dim(red(f"{int(value * 100)}")) + "%"
-
+        self.icon = "⛓️‍💥"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = red(self.value)
+        color = f"️‍{red(self.value)}"
         return color
 
 
@@ -28,15 +27,14 @@ class AttackPower(Stats):
 
     def __init__(self, value):
         name = "Attack Power"
-        color = red(value)
-
+        self.icon = "⚔️"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = red(self.value)
+        color = f"{red(self.value)}"
         return color
 
 
@@ -44,13 +42,14 @@ class CriticalChance(Stats):
 
     def __init__(self, value):
         name = "Critical Chance"
+        self.icon = "🎯"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = bright(red(f"{int(self.value * 100)}")) + "%"
+        color = f"{bright(red(f"{int(self.value * 100)}"))}%"
         return color
 
 
@@ -58,13 +57,14 @@ class CriticalDamage(Stats):
 
     def __init__(self, value):
         name = "Critical Damage"
+        self.icon = "💥"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = bright(red(f"{int(self.value * 100)}")) + "%"
+        color = f"{bright(red(f"{int(self.value * 100)}"))}%"
         return color
 
 
@@ -72,13 +72,14 @@ class Defense(Stats):
 
     def __init__(self, value):
         name = "Defense"
+        self.icon = "🛡️"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = bright(yellow(self.value))
+        color = f"{bright(yellow(self.value))}"
         return color
 
 
@@ -86,13 +87,14 @@ class Dodge(Stats):
 
     def __init__(self, value):
         name = "Dodge"
+        self.icon = "👟"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = f"{int(self.value * 100)}" + "%"
+        color = f"{int(self.value * 100)}%"
         return color
 
 
@@ -100,13 +102,14 @@ class Energy(Stats):
 
     def __init__(self, value):
         name = "Energy"
+        self.icon = "⚡"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = yellow(self.value)
+        color = f"{yellow(self.value)}"
         return color
 
 
@@ -114,13 +117,14 @@ class HealingPower(Stats):
 
     def __init__(self, value):
         name = "Healing Power"
+        self.icon = "️❤️‍🩹"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = bright(green(self.value))
+        color = f"️‍{bright(green(self.value))}"
         return color
 
 
@@ -128,14 +132,14 @@ class Health(Stats):
 
     def __init__(self, value):
         name = "Health"
-
+        self.icon = "💖"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = green(self.value)
+        color = f"{green(self.value)}"
         return color
 
 
@@ -143,7 +147,7 @@ class Momentum(Stats):
 
     def __init__(self, value):
         name = "Momentum"
-
+        self.icon = "💨"
         super().__init__(value, name)
 
     def __str__(self) -> str:
@@ -158,14 +162,14 @@ class Parry(Stats):
 
     def __init__(self, value):
         name = "Parry"
-
+        self.icon = "🤺"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = f"{int(self.value * 100)}" + "%"
+        color = f"{int(self.value * 100)}%"
         return color
 
 
@@ -173,14 +177,14 @@ class Regeneration(Stats):
 
     def __init__(self, value):
         name = "Regeneration"
-
+        self.icon = "🦇"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = magenta(f"{int(self.value * 100)}") + "%"
+        color = f"{magenta(f"{int(self.value * 100)}")}%"
         return color
 
 
@@ -188,13 +192,14 @@ class Resistance(Stats):
 
     def __init__(self, value):
         name = "Resistance"
+        self.icon = "🔥"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = bright(cyan(self.value))
+        color = f"{bright(cyan(self.value))}"
         return color
 
 
@@ -202,13 +207,14 @@ class SpellPenetration(Stats):
 
     def __init__(self, value):
         name = "Spell Penetration"
+        self.icon = "🌗"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = dim(blue(f"{int(self.value * 100)}")) + "%"
+        color = f"{dim(blue(f"{int(self.value * 100)}"))}%"
         return color
 
 
@@ -216,13 +222,14 @@ class SpellPower(Stats):
 
     def __init__(self, value):
         name = "Spell Power"
+        self.icon = "✨"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = bright(magenta(self.value))
+        color = f"{bright(magenta(self.value))}"
         return color
 
 
@@ -230,14 +237,14 @@ class AttackBase(Stats):
 
     def __init__(self, value):
         name = "Base Attack Damage"
-
+        self.icon = "⚔️"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = red(self.value)
+        color = f"{red(self.value)}"
         return color
 
 
@@ -245,14 +252,14 @@ class SpellBase(Stats):
 
     def __init__(self, value):
         name = "Base Spell Damage"
-
+        self.icon = "✨"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = bright(magenta(self.value))
+        color = f"{bright(magenta(self.value))}"
         return color
 
 
@@ -260,21 +267,21 @@ class HealingBase(Stats):
 
     def __init__(self, value):
         name = "Base Healing"
-
+        self.icon = "❤️‍🩹"
         super().__init__(value, name)
 
     def __str__(self) -> str:
         return self.name
 
     def get_color(self) -> str:
-        color = bright(green(self.value))
+        color = f"️{bright(green(self.value))}"
         return color
 
 
 class Scaling(Stats):
     def __init__(self, value):
         name = "Power Scaling"
-
+        self.icon = "〽️"
         super().__init__(value, name)
 
     def __str__(self) -> str:
@@ -288,6 +295,7 @@ class Scaling(Stats):
 class Cost(Stats):
     def __init__(self, value):
         name = "Cost amount"
+        self.icon = "⚡"
         super().__init__(value, name)
 
     def __str__(self) -> str:
@@ -301,7 +309,7 @@ class Cost(Stats):
 class Rounds(Stats):
     def __init__(self, value):
         name = "Number of rounds"
-
+        self.icon = "♻️"
         super().__init__(value, name)
 
     def __str__(self) -> str:
@@ -315,7 +323,7 @@ class Rounds(Stats):
 class Gain(Stats):
     def __init__(self, value):
         name = "Energy gained"
-
+        self.icon = "⚡"
         super().__init__(value, name)
 
     def __str__(self) -> str:

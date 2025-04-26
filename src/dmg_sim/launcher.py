@@ -13,7 +13,6 @@ def update():
 
 def open_new_window(path):
     system_platform = platform.system()
-    print(system_platform)
 
     if system_platform == "Windows":
         subprocess.Popen(

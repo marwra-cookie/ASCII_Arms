@@ -7,59 +7,48 @@ class Entities:
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
 
-        self.spells = [4]
+        self.spells = {
+            "1": None,
+            "2": None,
+            "3": None,
+            "4": None,
+        }
 
     def get_stats(self) -> str:
         stats = self.__dict__
 
         str = tabulate(
             [
-                ["Defensive", "", "Offensive", "", "Extra", ""],
+                ["Defensive", "Offensive", "Extra"],
                 [
-                    "Health",
-                    stats["health"].get_color(),
-                    "Attack Power",
-                    stats["attackPower"].get_color(),
-                    "Momentum",
-                    stats["momentum"].get_color(),
+                    f"{stats["health"].name} {stats["health"].icon}: {stats["health"].get_color()}",
+                    f"{stats["attackPower"].name} {stats["attackPower"].icon}: {stats["attackPower"].get_color()}",
+                    f"{stats["momentum"].name} {stats["momentum"].icon}: {stats["momentum"].get_color()}",
                 ],
                 [
-                    "Defense",
-                    stats["defense"].get_color(),
-                    "Spell Power",
-                    stats["spellPower"].get_color(),
-                    "Energy",
-                    stats["energy"].get_color(),
+                    f"{stats["defense"].name} {stats["defense"].icon}: {stats["defense"].get_color()}",
+                    f"{stats["spellPower"].name} {stats["spellPower"].icon}: {stats["spellPower"].get_color()}",
+                    f"{stats["energy"].name} {stats["energy"].icon}: {stats["energy"].get_color()}",
                 ],
                 [
-                    "Resistance",
-                    stats["resistance"].get_color(),
-                    "Healing Power",
-                    stats["healingPower"].get_color(),
+                    f"{stats["resistance"].name} {stats["resistance"].icon}: {stats["resistance"].get_color()}",
+                    f"{stats["healingPower"].name} {stats["healingPower"].icon}: {stats["healingPower"].get_color()}",
                 ],
                 [
-                    "Dodge",
-                    stats["dodge"].get_color(),
-                    "Critical Chance",
-                    stats["criticalChance"].get_color(),
+                    f"{stats["dodge"].name} {stats["dodge"].icon}: {stats["dodge"].get_color()}",
+                    f"{stats["criticalChance"].name} {stats["criticalChance"].icon}: {stats["criticalChance"].get_color()}",
                 ],
                 [
-                    "Parry",
-                    stats["parry"].get_color(),
-                    "Critical Damage",
-                    stats["criticalDamage"].get_color(),
+                    f"{stats["parry"].name} {stats["parry"].icon}: {stats["parry"].get_color()}",
+                    f"{stats["criticalDamage"].name} {stats["criticalDamage"].icon}: {stats["criticalDamage"].get_color()}",
+                ],
+                [
+                    f"{stats["regeneration"].name} {stats["regeneration"].icon}: {stats["regeneration"].get_color()}",
+                    f"{stats["armorPenetration"].name} {stats["armorPenetration"].icon}: {stats["armorPenetration"].get_color()}",
                 ],
                 [
                     "",
-                    "",
-                    "Armor Penetration",
-                    stats["armorPenetration"].get_color(),
-                ],
-                [
-                    "",
-                    "",
-                    "Spell Penetration",
-                    stats["spellPenetration"].get_color(),
+                    f"{stats["spellPenetration"].name} {stats["spellPenetration"].icon}: {stats["spellPenetration"].get_color()}",
                 ],
             ],
             headers="firstrow",
@@ -71,7 +60,7 @@ class Entities:
         slots = []
 
         for i, spell in enumerate(self.spells):
-            slots.append([f"Slot {i + 1}:", self.spells[i]])
+            slots.append([f"🔮 Slot {spell}:", self.spells[spell]])
 
         table = tabulate(slots, headers=["Slot", "Name"])
 
@@ -148,12 +137,12 @@ class Player(Entities):
         table = tabulate(
             [
                 ["Slot", "Item"],
-                ["Helm:", self.items["helm"]],
-                ["Armor:", self.items["armor"]],
-                ["Boots:", self.items["boots"]],
-                ["Accessory:", self.items["accessory"]],
-                ["Weapon:", self.items["weapon"]],
-                ["Potion:", self.items["potion"]],
+                ["🪖 Helm:", self.items["helm"]],
+                ["👕 Armor:", self.items["armor"]],
+                ["🥾 Boots:", self.items["boots"]],
+                ["📿 Accessory:", self.items["accessory"]],
+                ["🗡️ Weapon:", self.items["weapon"]],
+                ["🧪 Potion:", self.items["potion"]],
             ],
             headers="firstrow",
         )

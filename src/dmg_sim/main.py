@@ -7,7 +7,7 @@ import time
 
 def new_save():
     update()
-    print("CREATING NEW GAME" "\n\nEnter your player name:")
+    print("Start New Adventure!\n\n🧙‍♂️ Enter your name:")
     name = input("> ")
 
     player = Player(name)
@@ -16,7 +16,7 @@ def new_save():
     player.add_item(get_item_name("Leather set"))
     player.add_item(get_item_name("Set of shoes"))
     player.add_item(get_item_name("Short sword"))
-    player.spells[0] = get_spell_id(1)
+    player.spells["1"] = get_spell_id(1)
 
     Game.player = player
 
@@ -31,20 +31,19 @@ def open_save():
 
     data = Game
     """
-
+    print("\n1. 📂 Open Save File" "\n2. 🧙‍♂️ Start New Game")
     player = Player("Test")
 
     player.add_item(get_item_name("Necklace"))
     player.add_item(get_item_name("Leather set"))
     player.add_item(get_item_name("Set of shoes"))
     player.add_item(get_item_name("Short sword"))
-    player.spells[0] = get_spell_id(1)
-
+    player.spells["1"] = get_spell_id(1)
     Game.player = player
 
 
 def select_save():
-    print("\n1. Open save file" "\n2. New game")
+    print("\n1. 📂 Open Save File" "\n2. 👶 Start New Game")
 
     while True:
         choice = input("> ")
@@ -66,18 +65,19 @@ def load_game():
         while len(r) > 0:
             update()
             print(f"Entering game as {Game.player.name}!\n")
-            print(f"{tot}% {r}")
+            print(f"🔄 {tot}% {r}")
             tot -= percent
             r = r[:-1]
             time.sleep(0.1)
 
     update()
+    print("✅ Ready for adventure!")
     input("> Press any key to continue...")
     Game.menu()
 
 
 def start_screen():
-    print("--- WELCOME TO DMG SIM ---" "\nA damage simulation game in Python")
+    print("⚔️ WELCOME TO DMG SIM 🛡️" "\n🎯 A Damage Simulation Game Build in Python 🐍")
 
     load_items()
     load_spells()

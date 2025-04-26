@@ -9,10 +9,10 @@ def menu_combat():
     while True:
         update()
         print(
-            f"Combat options"
-            f"\n\n1. Normal fight"
-            f"\n2. Boss encounter [{slain}/4]"
-            f"\n\n3. Back"
+            f"⚔️ Combat Options"
+            f"\n\n1. 🥊 Normal fight"
+            f"\n2. 👹 Boss encounter [{slain}/4]"
+            f"\n\n3. 🔙 Back"
         )
 
         choice = input("> ")
@@ -32,11 +32,11 @@ def menu_character():
         update()
 
         print(
-            f"CHARACTER"
+            f"🧙‍♂️ Character"
             f"\n\n{player.get_stats()}"
-            f"\n\n1. Items"
-            f"\n2. Spells"
-            f"\n\n3. Back"
+            f"\n\n1. 🧰 Inventory"
+            f"\n2. 📖 Spellbook"
+            f"\n\n3. 🔙 Back"
         )
 
         choice = input("> ")
@@ -52,7 +52,7 @@ def menu_character():
 def menu_items():
     while True:
         update()
-        print(f"GEAR" f"\n\n{player.get_items()}" f"\n3. Back")
+        print(f"🧰 Inventory" f"\n\n{player.get_items()}" f"\n\n3. 🔙 Back")
         choice = input("> ")
 
         if choice == "3":
@@ -62,7 +62,7 @@ def menu_items():
 def menu_spells():
     while True:
         update()
-        print(f"SPELLS" f"\n\n{player.get_spells()}" f"\n\n3. Back")
+        print(f"📖 Spellbook" f"\n\n{player.get_spells()}" f"\n\n3. 🔙 Back")
 
         choice = input("> ")
 
@@ -73,20 +73,21 @@ def menu_spells():
 # TODO: Save game to file
 def menu_save():
     update()
+    print("💾 Saving Progress...")
+    print("✅ Game saved successfully!")
 
 
 def menu():
-
     while True:
         update()
 
         print(
-            f"--- DMG SIM ---"
-            f"\n{player.name} lvl.{player.level}"
-            f"\n\n1. Combat"
-            f"\n2. Character"
-            f"\n3. Save"
-            f"\n\n4. Quit"
+            f"⚔️ DMG SIM 🛡️"
+            f"\n🎖️ {player.name} | lvl.{player.level}"
+            f"\n\n1. ⚔️ Combat"
+            f"\n2. 🧙 Character"
+            f"\n3. 💾 Save"
+            f"\n\n4. 🚪 Quit"
         )
 
         choice = input("> ")

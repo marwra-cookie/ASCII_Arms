@@ -11,9 +11,11 @@ class Spells:
         for stat in stats["stats"]:
             if stat == "base":
                 for base in stats["stats"]["base"]:
-                    msg += f" {stats["stats"]["base"][base].get_color()}"
+                    msg += f"{stats["stats"]["base"][base].icon} {stats["stats"]["base"][base].get_color()}  "
             else:
-                msg += f" {stats["stats"][stat].get_color()}"
+                msg += (
+                    f"{stats["stats"][stat].icon} {stats["stats"][stat].get_color()}  "
+                )
 
         return msg
 

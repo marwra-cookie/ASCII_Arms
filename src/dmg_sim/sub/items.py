@@ -10,7 +10,7 @@ class Items:
         msg = f"({stats['basic']['level']})\t{stats['basic']['name']}\t"
 
         for stat in stats["stats"]:
-            msg += f" {stats["stats"][stat].get_color()}"
+            msg += f"{stats["stats"][stat].icon} {stats["stats"][stat].get_color()}  "
 
         return msg
 

@@ -9,7 +9,6 @@ spellbook = {"direct": [], "passive": []}
 
 
 def load_spells():
-    """"""
 
     spell_types = list(spellbook.keys())
 
