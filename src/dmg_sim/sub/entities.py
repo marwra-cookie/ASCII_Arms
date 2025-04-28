@@ -8,10 +8,10 @@ class Entities:
         self.__dict__.update(kwargs)
 
         self.spells = {
-            "1": None,
-            "2": None,
-            "3": None,
-            "4": None,
+            "Slot 1": None,
+            "Slot 2": None,
+            "Slot 3": None,
+            "Slot 4": None,
         }
 
     def get_stats(self) -> str:
@@ -21,34 +21,34 @@ class Entities:
             [
                 ["Defensive", "Offensive", "Extra"],
                 [
-                    f"{stats["health"].name} {stats["health"].icon}: {stats["health"].get_color()}",
-                    f"{stats["attackPower"].name} {stats["attackPower"].icon}: {stats["attackPower"].get_color()}",
-                    f"{stats["momentum"].name} {stats["momentum"].icon}: {stats["momentum"].get_color()}",
+                    f"{stats["health"].name}: {stats["health"].get_color()}",
+                    f"{stats["attackPower"].name}: {stats["attackPower"].get_color()}",
+                    f"{stats["momentum"].name}: {stats["momentum"].get_color()}",
                 ],
                 [
-                    f"{stats["defense"].name} {stats["defense"].icon}: {stats["defense"].get_color()}",
-                    f"{stats["spellPower"].name} {stats["spellPower"].icon}: {stats["spellPower"].get_color()}",
-                    f"{stats["energy"].name} {stats["energy"].icon}: {stats["energy"].get_color()}",
+                    f"{stats["defense"].name}: {stats["defense"].get_color()}",
+                    f"{stats["spellPower"].name}: {stats["spellPower"].get_color()}",
+                    f"{stats["energy"].name}: {stats["energy"].get_color()}",
                 ],
                 [
-                    f"{stats["resistance"].name} {stats["resistance"].icon}: {stats["resistance"].get_color()}",
-                    f"{stats["healingPower"].name} {stats["healingPower"].icon}: {stats["healingPower"].get_color()}",
+                    f"{stats["resistance"].name}: {stats["resistance"].get_color()}",
+                    f"{stats["healingPower"].name}: {stats["healingPower"].get_color()}",
                 ],
                 [
-                    f"{stats["dodge"].name} {stats["dodge"].icon}: {stats["dodge"].get_color()}",
-                    f"{stats["criticalChance"].name} {stats["criticalChance"].icon}: {stats["criticalChance"].get_color()}",
+                    f"{stats["dodge"].name}: {stats["dodge"].get_color()}",
+                    f"{stats["criticalChance"].name}: {stats["criticalChance"].get_color()}",
                 ],
                 [
-                    f"{stats["parry"].name} {stats["parry"].icon}: {stats["parry"].get_color()}",
-                    f"{stats["criticalDamage"].name} {stats["criticalDamage"].icon}: {stats["criticalDamage"].get_color()}",
+                    f"{stats["parry"].name}: {stats["parry"].get_color()}",
+                    f"{stats["criticalDamage"].name}: {stats["criticalDamage"].get_color()}",
                 ],
                 [
-                    f"{stats["regeneration"].name} {stats["regeneration"].icon}: {stats["regeneration"].get_color()}",
-                    f"{stats["armorPenetration"].name} {stats["armorPenetration"].icon}: {stats["armorPenetration"].get_color()}",
+                    f"{stats["regeneration"].name}: {stats["regeneration"].get_color()}",
+                    f"{stats["armorPenetration"].name}: {stats["armorPenetration"].get_color()}",
                 ],
                 [
                     "",
-                    f"{stats["spellPenetration"].name} {stats["spellPenetration"].icon}: {stats["spellPenetration"].get_color()}",
+                    f"{stats["spellPenetration"].name}: {stats["spellPenetration"].get_color()}",
                 ],
             ],
             headers="firstrow",
@@ -60,7 +60,7 @@ class Entities:
         slots = []
 
         for i, spell in enumerate(self.spells):
-            slots.append([f"🔮 Slot {spell}:", self.spells[spell]])
+            slots.append([f"🔮 {spell}:", self.spells[spell]])
 
         table = tabulate(slots, headers=["Slot", "Name"])
 

@@ -1,3 +1,6 @@
+from tabulate import tabulate
+
+
 class Items:
 
     def __init__(self, **kwargs):
@@ -7,12 +10,32 @@ class Items:
     def __str__(self) -> str:
         stats = self.__dict__
 
-        msg = f"({stats['basic']['level']})\t{stats['basic']['name']}\t"
+        level = stats["basic"]["level"]
+        name = stats["basic"]["name"]
+        msg = f"({level}) {name}\t"
 
         for stat in stats["stats"]:
-            msg += f"{stats["stats"][stat].icon} {stats["stats"][stat].get_color()}  "
+            add_stats = stats["stats"][stat]
+
+            msg += f"{add_stats.get_color()}  "
 
         return msg
+
+    def get_tabulate(self):
+        stats = self.__dict__
+
+        level = stats["basic"]["level"]
+        name = stats["basic"]["name"]
+
+        msg = [[f"({level})\t{name}"]]
+
+        for stat in stats["stats"]:
+            add_stats = stats["stats"][stat]
+
+            msg.append([f"{add_stats.icon} {add_stats.get_color()}"])
+        string = tabulate([msg])
+
+        return string
 
 
 class Accessory(Items):

@@ -3,12 +3,16 @@
     {
       "basic": {
         "id": 1,
-        "name": "Cinder Shard",
-        "level": 2
+        "name": "Fire Shard",
+        "level": 2,
+        "description": "Cracks the earth with a strike"
       },
       "stats": {
-        "base": {
-          "spellBase": 23
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 23
+          }
         },
         "scaling": 0.16,
         "cost": 1
@@ -17,13 +21,20 @@
     {
       "basic": {
         "id": 2,
-        "name": "Stormforged Shroud",
-        "level": 1
+        "name": "Storm Cloak",
+        "level": 1,
+        "description": "Unleashes thunderous winds"
       },
       "stats": {
-        "base": {
-          "spellBase": 9,
-          "healBase": 9
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 9
+          },
+          "healing": {
+            "target": "caster",
+            "value": 9
+          }
         },
         "scaling": 0.4,
         "cost": 1
@@ -32,12 +43,16 @@
     {
       "basic": {
         "id": 3,
-        "name": "Spectral Flare",
-        "level": 4
+        "name": "Spirit Blaze",
+        "level": 4,
+        "description": "Releases a whispering blaze"
       },
       "stats": {
-        "base": {
-          "spellBase": 45
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 45
+          }
         },
         "scaling": 0.29,
         "cost": 3
@@ -46,12 +61,16 @@
     {
       "basic": {
         "id": 4,
-        "name": "Cinder Quake",
-        "level": 3
+        "name": "Fire Tremor",
+        "level": 3,
+        "description": "Lashes out with force"
       },
       "stats": {
-        "base": {
-          "spellBase": 28
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 28
+          }
         },
         "scaling": 0.19,
         "cost": 2
@@ -60,12 +79,16 @@
     {
       "basic": {
         "id": 5,
-        "name": "Verdant Cascade",
-        "level": 2
+        "name": "Leaf Fall",
+        "level": 2,
+        "description": "Shakes the forest's heart"
       },
       "stats": {
-        "base": {
-          "spellBase": 21
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 21
+          }
         },
         "scaling": 0.5,
         "cost": 2
@@ -74,12 +97,16 @@
     {
       "basic": {
         "id": 6,
-        "name": "Shadowed Rift",
-        "level": 3
+        "name": "Night Rift",
+        "level": 3,
+        "description": "Tears open the void"
       },
       "stats": {
-        "base": {
-          "spellBase": 31
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 31
+          }
         },
         "scaling": 0.26,
         "cost": 1
@@ -88,12 +115,16 @@
     {
       "basic": {
         "id": 7,
-        "name": "Ember Tempest",
-        "level": 2
+        "name": "Flame Storm",
+        "level": 2,
+        "description": "Ignites a crackling vortex"
       },
       "stats": {
-        "base": {
-          "spellBase": 12
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 12
+          }
         },
         "scaling": 0.13,
         "cost": 1
@@ -102,12 +133,16 @@
     {
       "basic": {
         "id": 8,
-        "name": "Searing Vortex",
-        "level": 3
+        "name": "Heat Swirl",
+        "level": 3,
+        "description": "Cracks the earth with a strike"
       },
       "stats": {
-        "base": {
-          "spellBase": 35
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 35
+          }
         },
         "scaling": 0.27,
         "cost": 4
@@ -116,13 +151,20 @@
     {
       "basic": {
         "id": 9,
-        "name": "Moonlit Maelstrom",
-        "level": 3
+        "name": "Moon Storm",
+        "level": 3,
+        "description": "Unleashes thunderous winds"
       },
       "stats": {
-        "base": {
-          "spellBase": 34,
-          "healBase": 22
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 34
+          },
+          "healing": {
+            "target": "caster",
+            "value": 22
+          }
         },
         "scaling": 0.24,
         "cost": 3
@@ -131,13 +173,20 @@
     {
       "basic": {
         "id": 10,
-        "name": "Shadowed Lance",
-        "level": 3
+        "name": "Dark Spear",
+        "level": 3,
+        "description": "Tears open the void"
       },
       "stats": {
-        "base": {
-          "attackBase": 18,
-          "spellBase": 18
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 18
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 18
+          }
         },
         "scaling": 0.18,
         "cost": 4
@@ -146,13 +195,20 @@
     {
       "basic": {
         "id": 11,
-        "name": "Ember Lance",
-        "level": 3
+        "name": "Flame Spear",
+        "level": 3,
+        "description": "Lashes out with force"
       },
       "stats": {
-        "base": {
-          "attackBase": 19,
-          "spellBase": 19
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 19
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 19
+          }
         },
         "scaling": 0.31,
         "cost": 3
@@ -161,12 +217,16 @@
     {
       "basic": {
         "id": 12,
-        "name": "Stormforged Vortex",
-        "level": 4
+        "name": "Storm Swirl",
+        "level": 4,
+        "description": "Ignites a crackling vortex"
       },
       "stats": {
-        "base": {
-          "spellBase": 36
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 36
+          }
         },
         "scaling": 0.28,
         "cost": 3
@@ -175,13 +235,20 @@
     {
       "basic": {
         "id": 13,
-        "name": "Ironclad Fury",
-        "level": 4
+        "name": "Iron Rage",
+        "level": 4,
+        "description": "Smashes armor and bone"
       },
       "stats": {
-        "base": {
-          "attackBase": 48,
-          "spellBase": 10
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 48
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 10
+          }
         },
         "scaling": 0.15,
         "cost": 1
@@ -190,12 +257,16 @@
     {
       "basic": {
         "id": 14,
-        "name": "Obsidian Vortex",
-        "level": 1
+        "name": "Stone Swirl",
+        "level": 1,
+        "description": "Pierces with brutal precision"
       },
       "stats": {
-        "base": {
-          "spellBase": 8
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 8
+          }
         },
         "scaling": 0.38,
         "cost": 2
@@ -204,14 +275,24 @@
     {
       "basic": {
         "id": 15,
-        "name": "Astral Maelstrom",
-        "level": 1
+        "name": "Star Storm",
+        "level": 1,
+        "description": "Unleashes thunderous winds"
       },
       "stats": {
-        "base": {
-          "attackBase": 5,
-          "spellBase": 8,
-          "healBase": 8
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 5
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 8
+          },
+          "healing": {
+            "target": "caster",
+            "value": 8
+          }
         },
         "scaling": 0.68,
         "cost": 2
@@ -220,13 +301,20 @@
     {
       "basic": {
         "id": 16,
-        "name": "Verdant Bolt",
-        "level": 4
+        "name": "Leaf Bolt",
+        "level": 4,
+        "description": "Calls vines from the earth"
       },
       "stats": {
-        "base": {
-          "spellBase": 23,
-          "healBase": 38
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 23
+          },
+          "healing": {
+            "target": "caster",
+            "value": 38
+          }
         },
         "scaling": 0.23,
         "cost": 2
@@ -235,12 +323,16 @@
     {
       "basic": {
         "id": 17,
-        "name": "Frostbound Quake",
-        "level": 3
+        "name": "Ice Tremor",
+        "level": 3,
+        "description": "Forms jagged crystals"
       },
       "stats": {
-        "base": {
-          "spellBase": 23
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 23
+          }
         },
         "scaling": 0.33,
         "cost": 1
@@ -249,12 +341,16 @@
     {
       "basic": {
         "id": 18,
-        "name": "Thunderous Torrent",
-        "level": 3
+        "name": "Thunder Rush",
+        "level": 3,
+        "description": "Rages with electric fury"
       },
       "stats": {
-        "base": {
-          "spellBase": 28
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 28
+          }
         },
         "scaling": 0.27,
         "cost": 3
@@ -263,12 +359,16 @@
     {
       "basic": {
         "id": 19,
-        "name": "Searing Bolt",
-        "level": 3
+        "name": "Heat Bolt",
+        "level": 3,
+        "description": "Smashes armor and bone"
       },
       "stats": {
-        "base": {
-          "spellBase": 24
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 24
+          }
         },
         "scaling": 0.12,
         "cost": 4
@@ -277,13 +377,20 @@
     {
       "basic": {
         "id": 20,
-        "name": "Stormforged Lance",
-        "level": 3
+        "name": "Storm Spear",
+        "level": 3,
+        "description": "Crashes a tempest down"
       },
       "stats": {
-        "base": {
-          "attackBase": 19,
-          "spellBase": 19
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 19
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 19
+          }
         },
         "scaling": 0.31,
         "cost": 1
@@ -292,12 +399,16 @@
     {
       "basic": {
         "id": 41,
-        "name": "Eclipse Blitz",
-        "level": 1
+        "name": "Eclipse Strike",
+        "level": 1,
+        "description": "Cracks the earth with a strike"
       },
       "stats": {
-        "base": {
-          "spellBase": 11
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 11
+          }
         },
         "scaling": 0.62,
         "cost": 2
@@ -306,12 +417,16 @@
     {
       "basic": {
         "id": 42,
-        "name": "Void Rend",
-        "level": 3
+        "name": "Abyss Rip",
+        "level": 3,
+        "description": "Lashes out with force"
       },
       "stats": {
-        "base": {
-          "spellBase": 30
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 30
+          }
         },
         "scaling": 0.21,
         "cost": 4,
@@ -321,12 +436,16 @@
     {
       "basic": {
         "id": 43,
-        "name": "Mystic Crescendo",
-        "level": 3
+        "name": "Magic Rise",
+        "level": 3,
+        "description": "Lashes out with force"
       },
       "stats": {
-        "base": {
-          "spellBase": 18
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 18
+          }
         },
         "scaling": 0.2,
         "cost": 2,
@@ -336,12 +455,16 @@
     {
       "basic": {
         "id": 44,
-        "name": "Gale Torrent",
-        "level": 2
+        "name": "Wind Rush",
+        "level": 2,
+        "description": "Summons a cutting gale"
       },
       "stats": {
-        "base": {
-          "spellBase": 15
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 15
+          }
         },
         "scaling": 0.36,
         "cost": 2
@@ -350,12 +473,16 @@
     {
       "basic": {
         "id": 45,
-        "name": "Nightfall Crescendo",
-        "level": 4
+        "name": "Night Rise",
+        "level": 4,
+        "description": "Weaves threads of night"
       },
       "stats": {
-        "base": {
-          "spellBase": 47
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 47
+          }
         },
         "scaling": 0.11,
         "cost": 5,
@@ -365,12 +492,16 @@
     {
       "basic": {
         "id": 46,
-        "name": "Mystic Surge",
-        "level": 5
+        "name": "Magic Burst",
+        "level": 5,
+        "description": "Pierces with brutal precision"
       },
       "stats": {
-        "base": {
-          "spellBase": 44
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 44
+          }
         },
         "scaling": 0.23,
         "cost": 1
@@ -379,14 +510,24 @@
     {
       "basic": {
         "id": 47,
-        "name": "Celestial Cleave",
-        "level": 3
+        "name": "Star Slash",
+        "level": 3,
+        "description": "Pierces with brutal precision"
       },
       "stats": {
-        "base": {
-          "attackBase": 22,
-          "spellBase": 22,
-          "healBase": 20
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 22
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 22
+          },
+          "healing": {
+            "target": "caster",
+            "value": 20
+          }
         },
         "scaling": 0.31,
         "cost": 2
@@ -395,13 +536,20 @@
     {
       "basic": {
         "id": 48,
-        "name": "Radiant Cleave",
-        "level": 1
+        "name": "Light Slash",
+        "level": 1,
+        "description": "Bursts with radiant energy"
       },
       "stats": {
-        "base": {
-          "attackBase": 9,
-          "spellBase": 9
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 9
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 9
+          }
         },
         "scaling": 0.37,
         "cost": 1
@@ -410,12 +558,16 @@
     {
       "basic": {
         "id": 49,
-        "name": "Blazing Surge",
-        "level": 5
+        "name": "Flame Burst",
+        "level": 5,
+        "description": "Cracks the earth with a strike"
       },
       "stats": {
-        "base": {
-          "spellBase": 56
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 56
+          }
         },
         "scaling": 0.16,
         "cost": 3,
@@ -425,12 +577,16 @@
     {
       "basic": {
         "id": 50,
-        "name": "Wildfire Surge",
-        "level": 4
+        "name": "Fire Burst",
+        "level": 4,
+        "description": "Lashes out with force"
       },
       "stats": {
-        "base": {
-          "spellBase": 42
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 42
+          }
         },
         "scaling": 0.26,
         "cost": 5,
@@ -440,12 +596,16 @@
     {
       "basic": {
         "id": 51,
-        "name": "Nightfall Rift",
-        "level": 1
+        "name": "Dusk Rift",
+        "level": 1,
+        "description": "Cracks the earth with a strike"
       },
       "stats": {
-        "base": {
-          "spellBase": 11
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 11
+          }
         },
         "scaling": 0.7,
         "cost": 2
@@ -454,13 +614,20 @@
     {
       "basic": {
         "id": 52,
-        "name": "Eclipse Cleave",
-        "level": 1
+        "name": "Moon Slash",
+        "level": 1,
+        "description": "Lashes out with force"
       },
       "stats": {
-        "base": {
-          "attackBase": 12,
-          "spellBase": 12
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 12
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 12
+          }
         },
         "scaling": 0.46,
         "cost": 1
@@ -469,12 +636,16 @@
     {
       "basic": {
         "id": 53,
-        "name": "Sunder",
-        "level": 3
+        "name": "Break",
+        "level": 3,
+        "description": "Pierces with brutal precision"
       },
       "stats": {
-        "base": {
-          "attackBase": 22
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 22
+          }
         },
         "scaling": 0.23,
         "cost": 3
@@ -483,13 +654,20 @@
     {
       "basic": {
         "id": 54,
-        "name": "Specter Blitz",
-        "level": 4
+        "name": "Ghost Strike",
+        "level": 4,
+        "description": "Cracks the earth with a strike"
       },
       "stats": {
-        "base": {
-          "spellBase": 11,
-          "healBase": 22
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 11
+          },
+          "healing": {
+            "target": "caster",
+            "value": 22
+          }
         },
         "scaling": 0.09,
         "cost": 4,
@@ -499,12 +677,16 @@
     {
       "basic": {
         "id": 55,
-        "name": "Gale Surge",
-        "level": 5
+        "name": "Wind Burst",
+        "level": 5,
+        "description": "Carves the air like a blade"
       },
       "stats": {
-        "base": {
-          "spellBase": 36
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 36
+          }
         },
         "scaling": 0.2,
         "cost": 5
@@ -513,12 +695,16 @@
     {
       "basic": {
         "id": 56,
-        "name": "Nightfall Torrent",
-        "level": 4
+        "name": "Night Rush",
+        "level": 4,
+        "description": "Weaves threads of night"
       },
       "stats": {
-        "base": {
-          "spellBase": 37
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 37
+          }
         },
         "scaling": 0.18,
         "cost": 3,
@@ -528,12 +714,16 @@
     {
       "basic": {
         "id": 57,
-        "name": "Shimmering Bolt",
-        "level": 1
+        "name": "Light Bolt",
+        "level": 1,
+        "description": "Bursts with radiant energy"
       },
       "stats": {
-        "base": {
-          "spellBase": 6
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 6
+          }
         },
         "scaling": 0.54,
         "cost": 1
@@ -542,12 +732,16 @@
     {
       "basic": {
         "id": 58,
-        "name": "Shimmering Wave",
-        "level": 3
+        "name": "Light Wave",
+        "level": 3,
+        "description": "Sculpts beams of brilliance"
       },
       "stats": {
-        "base": {
-          "spellBase": 20
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 20
+          }
         },
         "scaling": 0.24,
         "cost": 2,
@@ -557,13 +751,20 @@
     {
       "basic": {
         "id": 59,
-        "name": "Nightfall Rend",
-        "level": 5
+        "name": "Night Rip",
+        "level": 5,
+        "description": "Tears open the void"
       },
       "stats": {
-        "base": {
-          "attackBase": 27,
-          "spellBase": 27
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 27
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 27
+          }
         },
         "scaling": 0.24,
         "cost": 5,
@@ -573,14 +774,24 @@
     {
       "basic": {
         "id": 60,
-        "name": "Gale Rend",
-        "level": 3
+        "name": "Wind Rip",
+        "level": 3,
+        "description": "Spirals wind into a lance"
       },
       "stats": {
-        "base": {
-          "attackBase": 32,
-          "spellBase": 32,
-          "healBase": 26
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 32
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 32
+          },
+          "healing": {
+            "target": "caster",
+            "value": 26
+          }
         },
         "scaling": 0.34,
         "cost": 2
@@ -591,14 +802,24 @@
     {
       "basic": {
         "id": 21,
-        "name": "Ebon Warden",
-        "level": 3
+        "name": "Dark Guard",
+        "level": 3,
+        "description": "Weaves threads of night"
       },
       "stats": {
-        "base": {
-          "attackBase": 4,
-          "spellBase": 4,
-          "healBase": 4
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 4
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 4
+          },
+          "healing": {
+            "target": "caster",
+            "value": 4
+          }
         },
         "scaling": 0.06,
         "cost": 3,
@@ -608,12 +829,16 @@
     {
       "basic": {
         "id": 22,
-        "name": "Wild Veil",
-        "level": 5
+        "name": "Forest Veil",
+        "level": 5,
+        "description": "Erupts a verdant blast"
       },
       "stats": {
-        "base": {
-          "spellBase": 17
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 17
+          }
         },
         "scaling": 0.08,
         "cost": 1,
@@ -623,12 +848,16 @@
     {
       "basic": {
         "id": 23,
-        "name": "Silent Frost",
-        "level": 5
+        "name": "Quiet Ice",
+        "level": 5,
+        "description": "Unleashes a polar burst"
       },
       "stats": {
-        "base": {
-          "spellBase": 5
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 5
+          }
         },
         "scaling": 0.04,
         "cost": 4,
@@ -638,12 +867,16 @@
     {
       "basic": {
         "id": 24,
-        "name": "Stone Barrier",
-        "level": 1
+        "name": "Rock Wall",
+        "level": 1,
+        "description": "Bathes in rejuvenating light"
       },
       "stats": {
-        "base": {
-          "healBase": 8
+        "effect": {
+          "healing": {
+            "target": "caster",
+            "value": 8
+          }
         },
         "scaling": 0.07,
         "cost": 1,
@@ -653,12 +886,16 @@
     {
       "basic": {
         "id": 25,
-        "name": "Wild Banner",
-        "level": 2
+        "name": "Forest Banner",
+        "level": 2,
+        "description": "Stitches wounds with magic"
       },
       "stats": {
-        "base": {
-          "healBase": 3
+        "effect": {
+          "healing": {
+            "target": "caster",
+            "value": 3
+          }
         },
         "scaling": 0.17,
         "cost": 3,
@@ -668,13 +905,20 @@
     {
       "basic": {
         "id": 28,
-        "name": "Ebon Embrace",
-        "level": 2
+        "name": "Dark Embrace",
+        "level": 2,
+        "description": "Casts a chilling darkness"
       },
       "stats": {
-        "base": {
-          "spellBase": 3,
-          "healBase": 5
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 3
+          },
+          "healing": {
+            "target": "caster",
+            "value": 5
+          }
         },
         "scaling": 0.11,
         "cost": 3,
@@ -684,12 +928,16 @@
     {
       "basic": {
         "id": 29,
-        "name": "Arcane Oath",
-        "level": 2
+        "name": "Magic Oath",
+        "level": 2,
+        "description": "Lashes out with force"
       },
       "stats": {
-        "base": {
-          "spellBase": 6
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 6
+          }
         },
         "scaling": 0.13,
         "cost": 1,
@@ -699,12 +947,16 @@
     {
       "basic": {
         "id": 30,
-        "name": "Phantom Barrier",
-        "level": 1
+        "name": "Ghost Wall",
+        "level": 1,
+        "description": "Cracks the earth with a strike"
       },
       "stats": {
-        "base": {
-          "spellBase": 3
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 3
+          }
         },
         "scaling": 0.12,
         "cost": 2,
@@ -714,12 +966,16 @@
     {
       "basic": {
         "id": 33,
-        "name": "Wild Barrier",
-        "level": 4
+        "name": "Forest Wall",
+        "level": 4,
+        "description": "Bathes in rejuvenating light"
       },
       "stats": {
-        "base": {
-          "healBase": 14
+        "effect": {
+          "healing": {
+            "target": "caster",
+            "value": 14
+          }
         },
         "scaling": 0.07,
         "cost": 1,
@@ -729,12 +985,16 @@
     {
       "basic": {
         "id": 34,
-        "name": "Arcane Aura",
-        "level": 2
+        "name": "Magic Aura",
+        "level": 2,
+        "description": "Pierces with brutal precision"
       },
       "stats": {
-        "base": {
-          "spellBase": 5
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 5
+          }
         },
         "scaling": 0.15,
         "cost": 1,
@@ -744,14 +1004,24 @@
     {
       "basic": {
         "id": 35,
-        "name": "Phantom Mantle",
-        "level": 1
+        "name": "Ghost Mantle",
+        "level": 1,
+        "description": "Cracks the earth with a strike"
       },
       "stats": {
-        "base": {
-          "attackBase": 3,
-          "spellBase": 3,
-          "healBase": 3
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 3
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 3
+          },
+          "healing": {
+            "target": "caster",
+            "value": 3
+          }
         },
         "scaling": 0.07,
         "cost": 1,
@@ -761,13 +1031,20 @@
     {
       "basic": {
         "id": 36,
-        "name": "Radiant Barrier",
-        "level": 2
+        "name": "Light Wall",
+        "level": 2,
+        "description": "Washes foes in pure light"
       },
       "stats": {
-        "base": {
-          "spellBase": 3,
-          "healBase": 7
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 3
+          },
+          "healing": {
+            "target": "caster",
+            "value": 7
+          }
         },
         "scaling": 0.13,
         "cost": 2,
@@ -777,12 +1054,16 @@
     {
       "basic": {
         "id": 37,
-        "name": "Glacial Echo",
-        "level": 4
+        "name": "Ice Echo",
+        "level": 4,
+        "description": "Chills the marrow"
       },
       "stats": {
-        "base": {
-          "spellBase": 7
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 7
+          }
         },
         "scaling": 0.12,
         "cost": 4,
@@ -792,12 +1073,16 @@
     {
       "basic": {
         "id": 38,
-        "name": "Silent Aura",
-        "level": 5
+        "name": "Quiet Aura",
+        "level": 5,
+        "description": "Cracks the earth with a strike"
       },
       "stats": {
-        "base": {
-          "spellBase": 18
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 18
+          }
         },
         "scaling": 0.07,
         "cost": 3,
@@ -807,13 +1092,20 @@
     {
       "basic": {
         "id": 39,
-        "name": "Echoing Ward",
-        "level": 2
+        "name": "Echo Guard",
+        "level": 2,
+        "description": "Pierces with brutal precision"
       },
       "stats": {
-        "base": {
-          "attackBase": 6,
-          "spellBase": 6
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 6
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 6
+          }
         },
         "scaling": 0.1,
         "cost": 3,
@@ -823,12 +1115,16 @@
     {
       "basic": {
         "id": 40,
-        "name": "Soul Echo",
-        "level": 1
+        "name": "Spirit Echo",
+        "level": 1,
+        "description": "Sends out haunting energies"
       },
       "stats": {
-        "base": {
-          "spellBase": 1
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 1
+          }
         },
         "scaling": 0.18,
         "cost": 2,
@@ -838,12 +1134,16 @@
     {
       "basic": {
         "id": 61,
-        "name": "Aegis Halo",
-        "level": 2
+        "name": "Shield Ring",
+        "level": 2,
+        "description": "Stitches wounds with magic"
       },
       "stats": {
-        "base": {
-          "healBase": 8
+        "effect": {
+          "healing": {
+            "target": "caster",
+            "value": 8
+          }
         },
         "scaling": 0.17,
         "cost": 1,
@@ -853,12 +1153,16 @@
     {
       "basic": {
         "id": 62,
-        "name": "Crystal Beacon",
-        "level": 3
+        "name": "Gem Light",
+        "level": 3,
+        "description": "Sculpts beams of brilliance"
       },
       "stats": {
-        "base": {
-          "spellBase": 5
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 5
+          }
         },
         "scaling": 0.13,
         "cost": 1,
@@ -869,12 +1173,16 @@
     {
       "basic": {
         "id": 63,
-        "name": "Stalwart Shroud",
-        "level": 2
+        "name": "Solid Cloak",
+        "level": 2,
+        "description": "Mends flesh and spirit"
       },
       "stats": {
-        "base": {
-          "healBase": 6
+        "effect": {
+          "healing": {
+            "target": "caster",
+            "value": 6
+          }
         },
         "scaling": 0.12,
         "cost": 2,
@@ -884,12 +1192,16 @@
     {
       "basic": {
         "id": 65,
-        "name": "Frost Ward",
-        "level": 1
+        "name": "Ice Guard",
+        "level": 1,
+        "description": "Unleashes a polar burst"
       },
       "stats": {
-        "base": {
-          "spellBase": 4
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 4
+          }
         },
         "scaling": 0.29,
         "cost": 1,
@@ -900,12 +1212,16 @@
     {
       "basic": {
         "id": 66,
-        "name": "Verdant Beacon",
-        "level": 5
+        "name": "Leaf Light",
+        "level": 5,
+        "description": "Stitches wounds with magic"
       },
       "stats": {
-        "base": {
-          "healBase": 15
+        "effect": {
+          "healing": {
+            "target": "caster",
+            "value": 15
+          }
         },
         "scaling": 0.04,
         "cost": 3,
@@ -916,12 +1232,16 @@
     {
       "basic": {
         "id": 67,
-        "name": "Aegis Omen",
-        "level": 3
+        "name": "Shield Omen",
+        "level": 3,
+        "description": "Weaves healing currents"
       },
       "stats": {
-        "base": {
-          "healBase": 6
+        "effect": {
+          "healing": {
+            "target": "caster",
+            "value": 6
+          }
         },
         "scaling": 0.09,
         "cost": 1,
@@ -932,12 +1252,16 @@
     {
       "basic": {
         "id": 68,
-        "name": "Ember Embrace",
-        "level": 4
+        "name": "Flame Embrace",
+        "level": 4,
+        "description": "Pierces with brutal precision"
       },
       "stats": {
-        "base": {
-          "spellBase": 5
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 5
+          }
         },
         "scaling": 0.03,
         "cost": 4,
@@ -947,12 +1271,16 @@
     {
       "basic": {
         "id": 69,
-        "name": "Ironhide Seal",
-        "level": 4
+        "name": "Iron Seal",
+        "level": 4,
+        "description": "Cracks the earth with a strike"
       },
       "stats": {
-        "base": {
-          "attackBase": 10
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 10
+          }
         },
         "scaling": 0.1,
         "cost": 2,
@@ -963,12 +1291,16 @@
     {
       "basic": {
         "id": 70,
-        "name": "Stalwart Barrier",
-        "level": 3
+        "name": "Solid Wall",
+        "level": 3,
+        "description": "Lashes out with force"
       },
       "stats": {
-        "base": {
-          "attackBase": 4
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 4
+          }
         },
         "scaling": 0.09,
         "cost": 4,
@@ -978,14 +1310,24 @@
     {
       "basic": {
         "id": 71,
-        "name": "Vigilant Enchantment",
-        "level": 5
+        "name": "Watch Ward",
+        "level": 5,
+        "description": "Lashes out with force"
       },
       "stats": {
-        "base": {
-          "attackBase": 9,
-          "spellBase": 9,
-          "healBase": 7
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 9
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 9
+          },
+          "healing": {
+            "target": "caster",
+            "value": 7
+          }
         },
         "scaling": 0.03,
         "cost": 5,
@@ -996,14 +1338,24 @@
     {
       "basic": {
         "id": 73,
-        "name": "Ebon Beacon",
-        "level": 1
+        "name": "Dark Light",
+        "level": 1,
+        "description": "Casts a chilling darkness"
       },
       "stats": {
-        "base": {
-          "attackBase": 3,
-          "spellBase": 3,
-          "healBase": 3
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 3
+          },
+          "spell": {
+            "target": "enemy",
+            "value": 3
+          },
+          "healing": {
+            "target": "caster",
+            "value": 3
+          }
         },
         "scaling": 0.17,
         "cost": 1,
@@ -1013,12 +1365,16 @@
     {
       "basic": {
         "id": 74,
-        "name": "Phantasmal Echo",
-        "level": 2
+        "name": "Ghost Echo",
+        "level": 2,
+        "description": "Smashes armor and bone"
       },
       "stats": {
-        "base": {
-          "spellBase": 3
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 3
+          }
         },
         "scaling": 0.16,
         "cost": 1,
@@ -1028,13 +1384,20 @@
     {
       "basic": {
         "id": 75,
-        "name": "Rune Sanctuary",
-        "level": 1
+        "name": "Rune Haven",
+        "level": 1,
+        "description": "Smashes armor and bone"
       },
       "stats": {
-        "base": {
-          "spellBase": 1,
-          "healBase": 1
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 1
+          },
+          "healing": {
+            "target": "caster",
+            "value": 1
+          }
         },
         "scaling": 0.27,
         "cost": 2,
@@ -1044,12 +1407,16 @@
     {
       "basic": {
         "id": 76,
-        "name": "Aegis Enchantment",
-        "level": 3
+        "name": "Shield Spell",
+        "level": 3,
+        "description": "Stitches wounds with magic"
       },
       "stats": {
-        "base": {
-          "healBase": 11
+        "effect": {
+          "healing": {
+            "target": "caster",
+            "value": 11
+          }
         },
         "scaling": 0.04,
         "cost": 4,
@@ -1060,12 +1427,16 @@
     {
       "basic": {
         "id": 77,
-        "name": "Vigilant Barrier",
-        "level": 5
+        "name": "Watch Wall",
+        "level": 5,
+        "description": "Lashes out with force"
       },
       "stats": {
-        "base": {
-          "attackBase": 9
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 9
+          }
         },
         "scaling": 0.04,
         "cost": 5,
@@ -1075,12 +1446,16 @@
     {
       "basic": {
         "id": 78,
-        "name": "Ironhide Barrier",
-        "level": 2
+        "name": "Iron Wall",
+        "level": 2,
+        "description": "Smashes armor and bone"
       },
       "stats": {
-        "base": {
-          "attackBase": 4
+        "effect": {
+          "attack": {
+            "target": "enemy",
+            "value": 4
+          }
         },
         "scaling": 0.11,
         "cost": 1,
@@ -1090,12 +1465,16 @@
     {
       "basic": {
         "id": 79,
-        "name": "Ember Sanctuary",
-        "level": 4
+        "name": "Flame Haven",
+        "level": 4,
+        "description": "Smashes armor and bone"
       },
       "stats": {
-        "base": {
-          "spellBase": 5
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 5
+          }
         },
         "scaling": 0.04,
         "cost": 5,
@@ -1106,13 +1485,20 @@
     {
       "basic": {
         "id": 80,
-        "name": "Hallowed Shroud",
-        "level": 2
+        "name": "Holy Cloak",
+        "level": 2,
+        "description": "Bursts with radiant energy"
       },
       "stats": {
-        "base": {
-          "spellBase": 3,
-          "healBase": 3
+        "effect": {
+          "spell": {
+            "target": "enemy",
+            "value": 3
+          },
+          "healing": {
+            "target": "caster",
+            "value": 3
+          }
         },
         "scaling": 0.17,
         "cost": 2,

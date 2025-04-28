@@ -19,7 +19,7 @@ class ArmorPenetration(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"️‍{red(self.value)}"
+        color = f"️‍{red(self.value)} {self.icon}"
         return color
 
 
@@ -34,7 +34,7 @@ class AttackPower(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{red(self.value)}"
+        color = f"{red(self.value)} {self.icon}"
         return color
 
 
@@ -49,7 +49,7 @@ class CriticalChance(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{bright(red(f"{int(self.value * 100)}"))}%"
+        color = f"{bright(red(f"{int(self.value * 100)}"))}% {self.icon}"
         return color
 
 
@@ -64,7 +64,7 @@ class CriticalDamage(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{bright(red(f"{int(self.value * 100)}"))}%"
+        color = f"{bright(red(f"{int(self.value * 100)}"))}% {self.icon}"
         return color
 
 
@@ -79,7 +79,7 @@ class Defense(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{bright(yellow(self.value))}"
+        color = f"{bright(yellow(self.value))} {self.icon}"
         return color
 
 
@@ -94,7 +94,7 @@ class Dodge(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{int(self.value * 100)}%"
+        color = f"{int(self.value * 100)}% {self.icon}"
         return color
 
 
@@ -109,7 +109,7 @@ class Energy(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{yellow(self.value)}"
+        color = f"{yellow(self.value)} {self.icon}"
         return color
 
 
@@ -124,7 +124,7 @@ class HealingPower(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"️‍{bright(green(self.value))}"
+        color = f"️‍{bright(green(self.value))} {self.icon}"
         return color
 
 
@@ -139,7 +139,7 @@ class Health(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{green(self.value)}"
+        color = f"{green(self.value)} {self.icon}"
         return color
 
 
@@ -154,7 +154,7 @@ class Momentum(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{self.value}"
+        color = f"{self.value} {self.icon}"
         return color
 
 
@@ -169,7 +169,7 @@ class Parry(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{int(self.value * 100)}%"
+        color = f"{int(self.value * 100)}% {self.icon}"
         return color
 
 
@@ -184,7 +184,7 @@ class Regeneration(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{magenta(f"{int(self.value * 100)}")}%"
+        color = f"{magenta(f"{int(self.value * 100)}")}% {self.icon}"
         return color
 
 
@@ -199,7 +199,7 @@ class Resistance(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{bright(cyan(self.value))}"
+        color = f"{bright(cyan(self.value))} {self.icon}"
         return color
 
 
@@ -214,7 +214,7 @@ class SpellPenetration(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{dim(blue(f"{int(self.value * 100)}"))}%"
+        color = f"{dim(blue(f"{int(self.value * 100)}"))}% {self.icon}"
         return color
 
 
@@ -229,7 +229,7 @@ class SpellPower(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{bright(magenta(self.value))}"
+        color = f"{bright(magenta(self.value))} {self.icon}"
         return color
 
 
@@ -244,7 +244,7 @@ class AttackBase(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{red(self.value)}"
+        color = f"{red(self.value)} {self.icon}"
         return color
 
 
@@ -259,7 +259,7 @@ class SpellBase(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{bright(magenta(self.value))}"
+        color = f"{bright(magenta(self.value))} {self.icon}"
         return color
 
 
@@ -274,7 +274,7 @@ class HealingBase(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"️{bright(green(self.value))}"
+        color = f"️{bright(green(self.value))} {self.icon}"
         return color
 
 
@@ -288,7 +288,7 @@ class Scaling(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = dim(f"{int(self.value * 100)}%")
+        color = dim(f"{int(self.value * 100)}% {self.icon}")
         return color
 
 
@@ -302,7 +302,7 @@ class Cost(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{red("-")}{yellow(self.value)}"
+        color = f"{red("-")}{yellow(self.value)} {self.icon}"
         return color
 
 
@@ -316,7 +316,7 @@ class Rounds(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{self.value}x"
+        color = f"{self.value} {self.icon}"
         return color
 
 
@@ -330,5 +330,5 @@ class Gain(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"{green("+")}{yellow(self.value)}"
+        color = f"{green("+")}{yellow(self.value)} {self.icon}"
         return color

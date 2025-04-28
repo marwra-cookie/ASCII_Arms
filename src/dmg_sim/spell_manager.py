@@ -14,25 +14,30 @@ def load_spells():
 
     with open(f"database/spells.json", "r") as file:
         data = json.load(file)
-
         for g in spell_types:
             for spell in data[g]:
 
                 for stat in spell["stats"]:
-                    if stat == "base":
-                        for base in spell["stats"]["base"]:
+                    if stat == "effect":
+                        for base in spell["stats"]["effect"]:
                             match base:
-                                case "attackBase":
-                                    spell["stats"]["base"][base] = AttackBase(
-                                        spell["stats"]["base"][base]
+                                case "attack":
+                                    spell["stats"]["effect"]["attack"]["value"] = (
+                                        AttackBase(
+                                            spell["stats"]["effect"]["attack"]["value"]
+                                        )
                                     )
-                                case "spellBase":
-                                    spell["stats"]["base"][base] = SpellBase(
-                                        spell["stats"]["base"][base]
+                                case "spell":
+                                    spell["stats"]["effect"]["spell"]["value"] = (
+                                        SpellBase(
+                                            spell["stats"]["effect"]["spell"]["value"]
+                                        )
                                     )
-                                case "healingBase":
-                                    spell["stats"]["base"][base] = HealingBase(
-                                        spell["stats"]["base"][base]
+                                case "healing":
+                                    spell["stats"]["effect"]["healing"]["value"] = (
+                                        HealingBase(
+                                            spell["stats"]["effect"]["healing"]["value"]
+                                        )
                                     )
                     else:
                         match stat:

@@ -4,6 +4,16 @@ from launcher import *
 import game as Game
 import time
 
+test_name = "TEST BOT 🤖"
+
+
+def set_starter_inventory(player):
+    player.add_item(get_item_name("Necklace"))
+    player.add_item(get_item_name("Leather set"))
+    player.add_item(get_item_name("Set of shoes"))
+    player.add_item(get_item_name("Short sword"))
+    player.spells["Slot 1"] = get_spell_id(1)
+
 
 def new_save():
     update()
@@ -12,12 +22,7 @@ def new_save():
 
     player = Player(name)
 
-    player.add_item(get_item_name("Necklace"))
-    player.add_item(get_item_name("Leather set"))
-    player.add_item(get_item_name("Set of shoes"))
-    player.add_item(get_item_name("Short sword"))
-    player.spells["1"] = get_spell_id(1)
-
+    set_starter_inventory(player)
     Game.player = player
 
 
@@ -32,13 +37,13 @@ def open_save():
     data = Game
     """
     print("\n1. 📂 Open Save File" "\n2. 🧙‍♂️ Start New Game")
-    player = Player("Test")
+    player = Player(test_name)
 
     player.add_item(get_item_name("Necklace"))
     player.add_item(get_item_name("Leather set"))
     player.add_item(get_item_name("Set of shoes"))
     player.add_item(get_item_name("Short sword"))
-    player.spells["1"] = get_spell_id(1)
+    player.spells["Slot 1"] = get_spell_id(1)
     Game.player = player
 
 
@@ -57,7 +62,7 @@ def select_save():
 
 
 def load_game():
-    if Game.player.name != "TEST BOT 🤖":
+    if Game.player.name != test_name:
         r = "■" * rows
         tot = 100
         percent = tot / rows

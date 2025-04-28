@@ -1,8 +1,23 @@
 from launcher import update
+from item_manager import *
 from sub import *
 
 player = None
 slain = 0
+
+
+def menu_instructions():
+    while True:
+        update()
+
+        with open(f"database/instructions.txt", "r") as file:
+            data = file.read()
+            print(f"🦽 Gameplay Instructions 📃" f"\n{data}" f"\n\n3. 🔙 Back")
+
+        choice = input("> ")
+
+        if choice == "3":
+            break
 
 
 def menu_combat():
@@ -53,6 +68,7 @@ def menu_items():
     while True:
         update()
         print(f"🧰 Inventory" f"\n\n{player.get_items()}" f"\n\n3. 🔙 Back")
+
         choice = input("> ")
 
         if choice == "3":
@@ -63,7 +79,6 @@ def menu_spells():
     while True:
         update()
         print(f"📖 Spellbook" f"\n\n{player.get_spells()}" f"\n\n3. 🔙 Back")
-
         choice = input("> ")
 
         if choice == "3":
@@ -82,12 +97,12 @@ def menu():
         update()
 
         print(
-            f"⚔️ DMG SIM 🛡️"
-            f"\n🎖️ {player.name} | lvl.{player.level}"
+            f"🎖️ {player.name} | lvl.{player.level}"
             f"\n\n1. ⚔️ Combat"
             f"\n2. 🧙 Character"
             f"\n3. 💾 Save"
-            f"\n\n4. 🚪 Quit"
+            f"\n4. 🦽 Instructions"
+            f"\n\n5. 🚪 Quit"
         )
 
         choice = input("> ")
@@ -99,5 +114,7 @@ def menu():
         elif choice == "3":
             menu_save()
         elif choice == "4":
+            menu_instructions()
+        elif choice == "5":
             print("Exiting game...")
             break

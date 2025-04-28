@@ -14,6 +14,37 @@ armory = {
 }
 
 
+def compare_items(item1, item2) -> str:
+    stats1 = item1.stats
+    stats2 = item2.stats
+
+    msg = []
+
+    for stat in stats1:
+        msg.append([f"{stat.capitalize()}: {stats1[stat].get_color()}", f""])
+    for i, stat in enumerate(stats2):
+        if i < len(stats1):
+            msg[i][1] = f"{stat.capitalize()}: {stats2[stat].get_color()}"
+        else:
+            msg.append([f"", f"{stat.capitalize()}: {stats2[stat].get_color()}"])
+
+    msg.insert(0, ["Current:", "Dropped:"])
+    msg.insert(
+        1,
+        [
+            f"({item1.basic["level"]}) {item1.basic["name"]}",
+            f"({item2.basic["level"]}) {item2.basic["name"]}",
+        ],
+    )
+
+    msg = tabulate(
+        msg,
+        headers="firstrow",
+    )
+
+    return msg
+
+
 def create_random_item(level):
     item_types = list(armory.keys())
 

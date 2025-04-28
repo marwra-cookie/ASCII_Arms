@@ -1,2 +1,13 @@
-[tool.poetry.scripts]
-dmg-sim = "dmg_sim.main:start_screen"
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dmg_sim"
+version = "1.0"
+dependencies = [
+    "colorama",
+    "tabulate",
+    "black",
+]
+requires-python = ">= 3.13"
