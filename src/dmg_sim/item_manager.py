@@ -32,8 +32,8 @@ def compare_items(item1, item2) -> str:
     msg.insert(
         1,
         [
-            f"({item1.basic["level"]}) {item1.basic["name"]}",
-            f"({item2.basic["level"]}) {item2.basic["name"]}",
+            f"({item1.info["level"]}) {item1.info["name"]}",
+            f"({item2.info["level"]}) {item2.info["name"]}",
         ],
     )
 
@@ -125,7 +125,7 @@ def set_item_stats(slot, level) -> dict:
             name = set_identity(name, base_stats)
 
             stats = {
-                "basic": {"id": get_last_id() + 1, "name": name, "level": level},
+                "info": {"id": get_last_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -155,7 +155,7 @@ def set_item_stats(slot, level) -> dict:
             name = set_identity(name, base_stats)
 
             stats = {
-                "basic": {"id": get_last_id() + 1, "name": name, "level": level},
+                "info": {"id": get_last_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -182,7 +182,7 @@ def set_item_stats(slot, level) -> dict:
             name = set_identity(name, base_stats)
 
             stats = {
-                "basic": {"id": get_last_id() + 1, "name": name, "level": level},
+                "info": {"id": get_last_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -219,7 +219,7 @@ def set_item_stats(slot, level) -> dict:
                 quantity -= 1
 
             stats = {
-                "basic": {"id": get_last_id() + 1, "name": name, "level": level},
+                "info": {"id": get_last_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -262,7 +262,7 @@ def set_item_stats(slot, level) -> dict:
             name = set_identity(f"{name} {weapon}", base_stats)
 
             stats = {
-                "basic": {"id": get_last_id() + 1, "name": name, "level": level},
+                "info": {"id": get_last_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -517,7 +517,6 @@ def save_item(slot, item):
 
 
 def load_items():
-    """"""
 
     item_types = list(armory.keys())
 
@@ -588,7 +587,7 @@ def get_last_id():
 def get_item_name(name):
     for slot in armory:
         for item in armory[slot]:
-            if item.basic["name"] == name:
+            if item.info["name"] == name:
                 return item
     return None
 
@@ -596,6 +595,6 @@ def get_item_name(name):
 def get_item_id(i):
     for slot in armory:
         for item in armory[slot]:
-            if item.basic["id"] == i:
+            if item.info["id"] == i:
                 return item
     return None

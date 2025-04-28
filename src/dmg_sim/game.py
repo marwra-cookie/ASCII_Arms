@@ -1,5 +1,5 @@
 from launcher import update
-from item_manager import *
+from entity_manager import *
 from sub import *
 
 player = None
@@ -97,7 +97,7 @@ def menu():
         update()
 
         print(
-            f"🎖️ {player.name} | lvl.{player.level}"
+            f"🎖️ {player.info["name"]} | lvl.{player.info["level"]}"
             f"\n\n1. ⚔️ Combat"
             f"\n2. 🧙 Character"
             f"\n3. 💾 Save"

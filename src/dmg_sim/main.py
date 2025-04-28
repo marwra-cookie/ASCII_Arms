@@ -1,10 +1,9 @@
 from item_manager import *
 from spell_manager import *
+from entity_manager import *
 from launcher import *
 import game as Game
 import time
-
-test_name = "TEST BOT 🤖"
 
 
 def set_starter_inventory(player):
@@ -37,13 +36,9 @@ def open_save():
     data = Game
     """
     print("\n1. 📂 Open Save File" "\n2. 🧙‍♂️ Start New Game")
-    player = Player(test_name)
+    player = load_player(0)
 
-    player.add_item(get_item_name("Necklace"))
-    player.add_item(get_item_name("Leather set"))
-    player.add_item(get_item_name("Set of shoes"))
-    player.add_item(get_item_name("Short sword"))
-    player.spells["Slot 1"] = get_spell_id(1)
+    set_starter_inventory(player)
     Game.player = player
 
 
@@ -62,14 +57,14 @@ def select_save():
 
 
 def load_game():
-    if Game.player.name != test_name:
+    if Game.player.info["name"] != "TEST.BOT":
         r = "■" * rows
         tot = 100
         percent = tot / rows
 
         while len(r) > 0:
             update()
-            print(f"Entering game as {Game.player.name}!\n")
+            print(f"Entering game as {Game.player.info["name"]}!\n")
             print(f"🔄 {tot}% {r}")
             tot -= percent
             r = r[:-1]
@@ -86,6 +81,7 @@ def start_screen():
 
     load_items()
     load_spells()
+    load_enemies()
 
     select_save()
     load_game()

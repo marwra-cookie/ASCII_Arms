@@ -3,14 +3,14 @@ class Spells:
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
 
-        self.basic["description"] += self.create_description()
+        self.info["description"] += self.create_description()
 
     def __str__(self) -> str:
         stats = self.__dict__
 
         class_type = type(self).__name__
-        level = stats["basic"]["level"]
-        name = stats["basic"]["name"]
+        level = stats["info"]["level"]
+        name = stats["info"]["name"]
 
         msg = f"[{level}] {name}\t/{class_type.lower()}\t\t"
 

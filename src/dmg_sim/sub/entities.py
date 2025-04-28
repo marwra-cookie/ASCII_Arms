@@ -14,8 +14,11 @@ class Entities:
             "Slot 4": None,
         }
 
+    def __str__(self):
+        return f"{self.info["id"]}:\t{self.info["name"]} {self.info["icon"]}  lvl.{self.info["level"]}"
+
     def get_stats(self) -> str:
-        stats = self.__dict__
+        stats = self.stats
 
         str = tabulate(
             [
@@ -69,24 +72,7 @@ class Entities:
 
 class Player(Entities):
 
-    def __init__(self, name):
-        self.base = {
-            "base_attackPower": 10,
-            "base_spellPower": 10,
-            "base_healingPower": 10,
-            "base_criticalChance": 0.1,
-            "base_criticalDamage": 1.5,
-            "base_armorPenetration": 0,
-            "base_spellPenetration": 0,
-            "base_health": 100,
-            "base_defense": 0,
-            "base_resistance": 0,
-            "base_dodge": 0.05,
-            "base_parry": 0.05,
-            "base_regeneration": 0,
-            "base_energy": 3,
-            "base_momentum": 100,
-        }
+    def __init__(self, **stats):
 
         self.items = {
             "accessory": None,
@@ -97,32 +83,14 @@ class Player(Entities):
             "weapon": None,
         }
 
-        stats = {
-            "name": name,
-            "level": 1,
-            "attackPower": AttackPower(self.base["base_attackPower"]),
-            "spellPower": SpellPower(self.base["base_spellPower"]),
-            "healingPower": HealingPower(self.base["base_healingPower"]),
-            "criticalChance": CriticalChance(self.base["base_criticalChance"]),
-            "criticalDamage": CriticalDamage(self.base["base_criticalDamage"]),
-            "armorPenetration": ArmorPenetration(self.base["base_armorPenetration"]),
-            "spellPenetration": SpellPenetration(self.base["base_spellPenetration"]),
-            "health": Health(self.base["base_health"]),
-            "defense": Defense(self.base["base_defense"]),
-            "resistance": Resistance(self.base["base_resistance"]),
-            "dodge": Dodge(self.base["base_dodge"]),
-            "parry": Parry(self.base["base_parry"]),
-            "regeneration": Regeneration(self.base["base_regeneration"]),
-            "energy": Energy(self.base["base_energy"]),
-            "momentum": Momentum(self.base["base_momentum"]),
-        }
-
         super().__init__(**stats)
 
     def add_item(self, item):
 
-        for stat in item.stats:
-            getattr(self, stat).value += item.stats[stat].value
+        for item_stat in item.stats:
+            player_stats = self.stats
+            print(player_stats)
+            self.stats[item_stat].value += item.stats[item_stat].value
 
         self.items[f"{type(item).__name__.lower()}"] = item
 
@@ -151,4 +119,6 @@ class Player(Entities):
 
 
 class Enemy(Entities):
-    pass
+
+    def __init__(self, **stats):
+        super().__init__(**stats)

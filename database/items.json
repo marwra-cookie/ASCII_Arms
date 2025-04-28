@@ -1,7 +1,7 @@
 {
     "accessory": [
         {
-            "basic": {
+            "info": {
                 "id": 1,
                 "name": "Necklace",
                 "level": 1
@@ -20,7 +20,7 @@
     ],
     "armor": [
         {
-            "basic": {
+            "info": {
                 "id": 3,
                 "name": "Leather set",
                 "level": 1
@@ -33,7 +33,7 @@
     ],
     "boots": [
         {
-            "basic": {
+            "info": {
                 "id": 6,
                 "name": "Set of shoes",
                 "level": 1
@@ -43,12 +43,11 @@
             }
         }
     ],
-    "helm": {
-    },
+    "helm": {},
     "potion": [],
     "weapon": [
         {
-            "basic": {
+            "info": {
                 "id": 10,
                 "name": "Short sword",
                 "level": 1

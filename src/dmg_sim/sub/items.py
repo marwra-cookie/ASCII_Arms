@@ -10,8 +10,8 @@ class Items:
     def __str__(self) -> str:
         stats = self.__dict__
 
-        level = stats["basic"]["level"]
-        name = stats["basic"]["name"]
+        level = stats["info"]["level"]
+        name = stats["info"]["name"]
         msg = f"({level}) {name}\t"
 
         for stat in stats["stats"]:
@@ -24,8 +24,8 @@ class Items:
     def get_tabulate(self):
         stats = self.__dict__
 
-        level = stats["basic"]["level"]
-        name = stats["basic"]["name"]
+        level = stats["info"]["level"]
+        name = stats["info"]["name"]
 
         msg = [[f"({level})\t{name}"]]
 

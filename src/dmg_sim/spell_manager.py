@@ -70,7 +70,7 @@ def get_last_id():
 def get_spell_name(name):
     for category in spellbook:
         for spell in spellbook[category]:
-            if spell.basic["name"] == name:
+            if spell.info["name"] == name:
                 return spell
     return None
 
@@ -78,6 +78,6 @@ def get_spell_name(name):
 def get_spell_id(i):
     for category in spellbook:
         for spell in spellbook[category]:
-            if spell.basic["id"] == i:
+            if spell.info["id"] == i:
                 return spell
     return None
