@@ -573,7 +573,7 @@ def load_items():
                         armory[g].append(Weapon(**item))
 
 
-def get_last_id():
+def get_last_item_id():
     i = 0
 
     for category in armory:

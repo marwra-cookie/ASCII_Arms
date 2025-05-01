@@ -85,26 +85,25 @@ def menu_spells():
             break
 
 
-# TODO: Save game to file
 def menu_save():
     update()
     print("💾 Saving Progress...")
+    save_player(player)
     print("✅ Game saved successfully!")
+    input("> Press any key to continue...")
 
 
 def menu():
     while True:
         update()
-
         print(
-            f"🎖️ {player.info["name"]} | lvl.{player.info["level"]}"
+            f"Player: {player.info["name"]} {player.info["icon"]} | lvl.{player.info["level"]}"
             f"\n\n1. ⚔️ Combat"
             f"\n2. 🧙 Character"
             f"\n3. 💾 Save"
             f"\n4. 🦽 Instructions"
             f"\n\n5. 🚪 Quit"
         )
-
         choice = input("> ")
 
         if choice == "1":

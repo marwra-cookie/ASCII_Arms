@@ -7,13 +7,6 @@ class Entities:
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
 
-        self.spells = {
-            "Slot 1": None,
-            "Slot 2": None,
-            "Slot 3": None,
-            "Slot 4": None,
-        }
-
     def __str__(self):
         return f"{self.info["id"]}:\t{self.info["name"]} {self.info["icon"]}  lvl.{self.info["level"]}"
 
@@ -73,16 +66,6 @@ class Entities:
 class Player(Entities):
 
     def __init__(self, **stats):
-
-        self.items = {
-            "accessory": None,
-            "armor": None,
-            "boots": None,
-            "helm": None,
-            "potion": None,
-            "weapon": None,
-        }
-
         super().__init__(**stats)
 
     def add_item(self, item):

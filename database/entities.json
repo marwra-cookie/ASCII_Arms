@@ -3,8 +3,47 @@
         {
             "info": {
                 "id": 0,
-                "name": "TEST.BOT",
-                "icon": "🙂",
+                "name": "GM",
+                "icon": "\ud83e\uddd9\u200d\u2642\ufe0f",
+                "level": 100
+            },
+            "stats": {
+                "attackPower": 999,
+                "spellPower": 999,
+                "healingPower": 999,
+                "criticalChance": 1,
+                "criticalDamage": 1,
+                "armorPenetration": 1,
+                "spellPenetration": 1,
+                "health": 10000,
+                "defense": 500,
+                "resistance": 500,
+                "dodge": 1,
+                "parry": 1,
+                "regeneration": 1,
+                "energy": 5,
+                "momentum": 100
+            },
+            "spells": {
+                "Slot 1": 1,
+                "Slot 2": null,
+                "Slot 3": null,
+                "Slot 4": null
+            },
+            "items": {
+                "accessory": 1,
+                "armor": 3,
+                "boots": 6,
+                "helm": null,
+                "potion": null,
+                "weapon": 10
+            }
+        },
+        {
+            "info": {
+                "id": 186,
+                "name": "Cookie",
+                "icon": "\ud83d\ude42",
                 "level": 1
             },
             "stats": {
@@ -23,6 +62,20 @@
                 "regeneration": 0,
                 "energy": 3,
                 "momentum": 100
+            },
+            "spells": {
+                "Slot 1": 1,
+                "Slot 2": null,
+                "Slot 3": null,
+                "Slot 4": null
+            },
+            "items": {
+                "accessory": 1,
+                "armor": 3,
+                "boots": 6,
+                "helm": null,
+                "potion": null,
+                "weapon": 10
             }
         }
     ],
@@ -30,8 +83,8 @@
         {
             "info": {
                 "id": 2,
-                "name": "Boneripper",
-                "icon": "👿",
+                "name": "Dread Fang",
+                "icon": "\ud83d\ude08",
                 "level": 10
             },
             "stats": {
@@ -55,8 +108,8 @@
         {
             "info": {
                 "id": 3,
-                "name": "Shadowclaw",
-                "icon": "👹",
+                "name": "Stonehide Crusher",
+                "icon": "\ud83d\udc79",
                 "level": 8
             },
             "stats": {
@@ -80,8 +133,8 @@
         {
             "info": {
                 "id": 4,
-                "name": "Duskshade",
-                "icon": "👺",
+                "name": "Ashmaw Shade",
+                "icon": "\ud83d\udc7a",
                 "level": 7
             },
             "stats": {
@@ -105,8 +158,8 @@
         {
             "info": {
                 "id": 5,
-                "name": "Frostgaze",
-                "icon": "👻",
+                "name": "Phantom Shade",
+                "icon": "\ud83e\udd77",
                 "level": 6
             },
             "stats": {
@@ -130,8 +183,8 @@
         {
             "info": {
                 "id": 6,
-                "name": "Duskwraith",
-                "icon": "🧟",
+                "name": "Decay Beast",
+                "icon": "\ud83e\udddf\u200d\u2642\ufe0f",
                 "level": 5
             },
             "stats": {
@@ -155,8 +208,8 @@
         {
             "info": {
                 "id": 7,
-                "name": "Stormclaw",
-                "icon": "🧟‍♂️",
+                "name": "Rot Terror",
+                "icon": "\ud83e\udddf\u200d\u2640\ufe0f",
                 "level": 4
             },
             "stats": {
@@ -180,8 +233,8 @@
         {
             "info": {
                 "id": 8,
-                "name": "Frostcrusher",
-                "icon": "🧟‍♀️",
+                "name": "Ghoul Crusher",
+                "icon": "\ud83e\udddf\u200d\u2642\ufe0f",
                 "level": 8
             },
             "stats": {
@@ -205,8 +258,8 @@
         {
             "info": {
                 "id": 9,
-                "name": "Stormripper",
-                "icon": "🧛",
+                "name": "Blood Wraith",
+                "icon": "\ud83e\udddb",
                 "level": 5
             },
             "stats": {
@@ -230,8 +283,8 @@
         {
             "info": {
                 "id": 10,
-                "name": "Duskclaw",
-                "icon": "🧛‍♂️",
+                "name": "Blood Claw",
+                "icon": "\ud83e\udddb\u200d\u2640\ufe0f",
                 "level": 4
             },
             "stats": {
@@ -255,8 +308,8 @@
         {
             "info": {
                 "id": 11,
-                "name": "Grimlurker",
-                "icon": "🧛‍♀️",
+                "name": "Blood Fang",
+                "icon": "\ud83e\udddb\u200d\u2640\ufe0f",
                 "level": 6
             },
             "stats": {
@@ -280,8 +333,8 @@
         {
             "info": {
                 "id": 12,
-                "name": "Darkhowler",
-                "icon": "🧜‍♂️",
+                "name": "Wave Fang",
+                "icon": "\ud83e\udddc\u200d\u2642\ufe0f",
                 "level": 5
             },
             "stats": {
@@ -305,8 +358,8 @@
         {
             "info": {
                 "id": 13,
-                "name": "Stormcrusher",
-                "icon": "🧜‍♀️",
+                "name": "Wave Terror",
+                "icon": "\ud83e\udddc\u200d\u2642\ufe0f",
                 "level": 5
             },
             "stats": {
@@ -330,8 +383,8 @@
         {
             "info": {
                 "id": 14,
-                "name": "Venombeast",
-                "icon": "🧙‍♂️",
+                "name": "Spellbound Wraith",
+                "icon": "\ud83e\uddd9\u200d\u2640\ufe0f",
                 "level": 2
             },
             "stats": {
@@ -355,8 +408,8 @@
         {
             "info": {
                 "id": 15,
-                "name": "Bonewrath",
-                "icon": "🧙‍♀️",
+                "name": "Spellbound Howler",
+                "icon": "\ud83e\uddd9\u200d\u2640\ufe0f",
                 "level": 4
             },
             "stats": {
@@ -380,8 +433,8 @@
         {
             "info": {
                 "id": 16,
-                "name": "Stormterror",
-                "icon": "🧝‍♂️",
+                "name": "Shadowleaf Wraith",
+                "icon": "\ud83e\udddd\u200d\u2640\ufe0f",
                 "level": 2
             },
             "stats": {
@@ -405,8 +458,8 @@
         {
             "info": {
                 "id": 17,
-                "name": "Darkmaw",
-                "icon": "🧝‍♀️",
+                "name": "Glimmer Crusher",
+                "icon": "\ud83e\udddd\u200d\u2642\ufe0f",
                 "level": 7
             },
             "stats": {
@@ -430,8 +483,8 @@
         {
             "info": {
                 "id": 18,
-                "name": "Firebane",
-                "icon": "🧞",
+                "name": "Shade Ripper",
+                "icon": "\ud83e\udd77",
                 "level": 3
             },
             "stats": {
@@ -455,8 +508,8 @@
         {
             "info": {
                 "id": 19,
-                "name": "Soulgaze",
-                "icon": "🧞‍♂️",
+                "name": "Phantom Maw",
+                "icon": "\ud83c\udfc7",
                 "level": 5
             },
             "stats": {
@@ -480,8 +533,8 @@
         {
             "info": {
                 "id": 20,
-                "name": "Ghostwrath",
-                "icon": "🧞‍♀️",
+                "name": "Shade Claw",
+                "icon": "\ud83d\udc7b",
                 "level": 1
             },
             "stats": {
@@ -505,8 +558,8 @@
         {
             "info": {
                 "id": 21,
-                "name": "Nightbeast",
-                "icon": "💀",
+                "name": "Skull Shade",
+                "icon": "\ud83d\udc80",
                 "level": 10
             },
             "stats": {
@@ -530,8 +583,8 @@
         {
             "info": {
                 "id": 22,
-                "name": "Dusklurker",
-                "icon": "☠️",
+                "name": "Grave Maw",
+                "icon": "\u2620\ufe0f",
                 "level": 7
             },
             "stats": {
@@ -555,8 +608,8 @@
         {
             "info": {
                 "id": 23,
-                "name": "Irongaze",
-                "icon": "🐍",
+                "name": "Serpent Terror",
+                "icon": "\ud83e\udd96",
                 "level": 3
             },
             "stats": {
@@ -580,8 +633,8 @@
         {
             "info": {
                 "id": 24,
-                "name": "Ironfiend",
-                "icon": "🐉",
+                "name": "Shade Beast",
+                "icon": "\ud83e\uddcc",
                 "level": 8
             },
             "stats": {
@@ -605,8 +658,8 @@
         {
             "info": {
                 "id": 25,
-                "name": "Firewrath",
-                "icon": "🦖",
+                "name": "Venom Terror",
+                "icon": "\ud83d\udc0d",
                 "level": 9
             },
             "stats": {
@@ -630,8 +683,8 @@
         {
             "info": {
                 "id": 26,
-                "name": "Venomterror",
-                "icon": "🦕",
+                "name": "Scaleblade Howler",
+                "icon": "\ud83e\udd96",
                 "level": 9
             },
             "stats": {
@@ -655,8 +708,8 @@
         {
             "info": {
                 "id": 27,
-                "name": "Darkwraith",
-                "icon": "🕷️",
+                "name": "Stinger Beast",
+                "icon": "\ud83e\udd82",
                 "level": 9
             },
             "stats": {
@@ -680,8 +733,8 @@
         {
             "info": {
                 "id": 28,
-                "name": "Grimwrath",
-                "icon": "🦂",
+                "name": "Crawler Ripper",
+                "icon": "\ud83d\udc1c",
                 "level": 3
             },
             "stats": {
@@ -705,8 +758,8 @@
         {
             "info": {
                 "id": 29,
-                "name": "Ghostterror",
-                "icon": "🦈",
+                "name": "Sharkfin Terror",
+                "icon": "\ud83e\udd88",
                 "level": 6
             },
             "stats": {
@@ -730,8 +783,8 @@
         {
             "info": {
                 "id": 30,
-                "name": "Irongaze",
-                "icon": "🦅",
+                "name": "Fang Ripper",
+                "icon": "\ud83d\udc17",
                 "level": 10
             },
             "stats": {
@@ -755,8 +808,8 @@
         {
             "info": {
                 "id": 31,
-                "name": "Darkbeast",
-                "icon": "🕷️",
+                "name": "Weaver Ripper",
+                "icon": "\ud83d\udc1c",
                 "level": 5
             },
             "stats": {
@@ -780,8 +833,8 @@
         {
             "info": {
                 "id": 32,
-                "name": "Boneclaw",
-                "icon": "🐍",
+                "name": "Scaleblade Claw",
+                "icon": "\ud83d\udc0d",
                 "level": 4
             },
             "stats": {
@@ -805,8 +858,8 @@
         {
             "info": {
                 "id": 33,
-                "name": "Ashcrusher",
-                "icon": "👹",
+                "name": "Ashmaw Terror",
+                "icon": "\ud83d\udc79",
                 "level": 5
             },
             "stats": {
@@ -830,8 +883,8 @@
         {
             "info": {
                 "id": 34,
-                "name": "Venomripper",
-                "icon": "🐍",
+                "name": "Scaleblade Shade",
+                "icon": "\ud83e\udd8e",
                 "level": 2
             },
             "stats": {
@@ -855,8 +908,8 @@
         {
             "info": {
                 "id": 35,
-                "name": "Venomlurker",
-                "icon": "💀",
+                "name": "Bone Wraith",
+                "icon": "\ud83d\udc80",
                 "level": 2
             },
             "stats": {
@@ -880,8 +933,8 @@
         {
             "info": {
                 "id": 36,
-                "name": "Stormbane",
-                "icon": "🦈",
+                "name": "Sharkfin Beast",
+                "icon": "\ud83d\udc21",
                 "level": 4
             },
             "stats": {
@@ -905,8 +958,8 @@
         {
             "info": {
                 "id": 37,
-                "name": "Ashfiend",
-                "icon": "🦕",
+                "name": "Venom Wraith",
+                "icon": "\ud83e\udd96",
                 "level": 4
             },
             "stats": {
@@ -930,8 +983,8 @@
         {
             "info": {
                 "id": 38,
-                "name": "Darkshade",
-                "icon": "👹",
+                "name": "Stonehide Claw",
+                "icon": "\ud83d\udc7a",
                 "level": 3
             },
             "stats": {
@@ -955,8 +1008,8 @@
         {
             "info": {
                 "id": 39,
-                "name": "Nightlurker",
-                "icon": "👻",
+                "name": "Shade Crusher",
+                "icon": "\ud83c\udfc7",
                 "level": 3
             },
             "stats": {
@@ -980,8 +1033,8 @@
         {
             "info": {
                 "id": 40,
-                "name": "Nightcrusher",
-                "icon": "🧟",
+                "name": "Rot Ripper",
+                "icon": "\ud83e\udddf\u200d\u2642\ufe0f",
                 "level": 4
             },
             "stats": {
@@ -1005,8 +1058,8 @@
         {
             "info": {
                 "id": 41,
-                "name": "Darkripper",
-                "icon": "🕷️",
+                "name": "Stinger Shade",
+                "icon": "\ud83d\udd77\ufe0f",
                 "level": 5
             },
             "stats": {
@@ -1030,8 +1083,8 @@
         {
             "info": {
                 "id": 42,
-                "name": "Stormlurker",
-                "icon": "🦈",
+                "name": "Tide Howler",
+                "icon": "\ud83e\udd88",
                 "level": 4
             },
             "stats": {
@@ -1055,8 +1108,8 @@
         {
             "info": {
                 "id": 43,
-                "name": "Venomwrath",
-                "icon": "👿",
+                "name": "Dread Crusher",
+                "icon": "\ud83d\ude08",
                 "level": 3
             },
             "stats": {
@@ -1080,8 +1133,8 @@
         {
             "info": {
                 "id": 44,
-                "name": "Stonewrath",
-                "icon": "👿",
+                "name": "Hellfire Fang",
+                "icon": "\ud83d\ude08",
                 "level": 4
             },
             "stats": {
@@ -1105,8 +1158,8 @@
         {
             "info": {
                 "id": 45,
-                "name": "Soulmaw",
-                "icon": "🐉",
+                "name": "Ghost Shade",
+                "icon": "\ud83d\udc7b",
                 "level": 4
             },
             "stats": {
@@ -1130,8 +1183,8 @@
         {
             "info": {
                 "id": 46,
-                "name": "Ghostfang",
-                "icon": "🧟‍♂️",
+                "name": "Decay Maw",
+                "icon": "\ud83e\udddf",
                 "level": 4
             },
             "stats": {
@@ -1155,8 +1208,8 @@
         {
             "info": {
                 "id": 47,
-                "name": "Ghostshade",
-                "icon": "🦈",
+                "name": "Deepfang Claw",
+                "icon": "\ud83e\udd88",
                 "level": 3
             },
             "stats": {
@@ -1180,8 +1233,8 @@
         {
             "info": {
                 "id": 48,
-                "name": "Ghostbeast",
-                "icon": "🧜‍♀️",
+                "name": "Trident Howler",
+                "icon": "\ud83e\udddc\u200d\u2642\ufe0f",
                 "level": 5
             },
             "stats": {
@@ -1205,8 +1258,8 @@
         {
             "info": {
                 "id": 49,
-                "name": "Shadowcrusher",
-                "icon": "🦕",
+                "name": "Venom Claw",
+                "icon": "\ud83e\udd96",
                 "level": 2
             },
             "stats": {
@@ -1230,8 +1283,8 @@
         {
             "info": {
                 "id": 50,
-                "name": "Ghostclaw",
-                "icon": "🧜‍♀️",
+                "name": "Sea Beast",
+                "icon": "\ud83e\udddc\u200d\u2642\ufe0f",
                 "level": 2
             },
             "stats": {
@@ -1255,8 +1308,8 @@
         {
             "info": {
                 "id": 51,
-                "name": "Darklurker",
-                "icon": "👻",
+                "name": "Ghost Howler",
+                "icon": "\ud83e\udd77",
                 "level": 3
             },
             "stats": {
@@ -1280,8 +1333,8 @@
         {
             "info": {
                 "id": 52,
-                "name": "Bloodlurker",
-                "icon": "👹",
+                "name": "Stonehide Howler",
+                "icon": "\ud83d\udc7a",
                 "level": 5
             },
             "stats": {
@@ -1305,8 +1358,8 @@
         {
             "info": {
                 "id": 53,
-                "name": "Soulwrath",
-                "icon": "🦕",
+                "name": "Venom Crusher",
+                "icon": "\ud83e\udd96",
                 "level": 2
             },
             "stats": {
@@ -1330,8 +1383,8 @@
         {
             "info": {
                 "id": 54,
-                "name": "Stormfang",
-                "icon": "👹",
+                "name": "Ashmaw Ripper",
+                "icon": "\ud83d\udc79",
                 "level": 2
             },
             "stats": {
@@ -1355,8 +1408,8 @@
         {
             "info": {
                 "id": 55,
-                "name": "Soulterror",
-                "icon": "🧞‍♀️",
+                "name": "Shade Fang",
+                "icon": "\ud83d\udc7d",
                 "level": 4
             },
             "stats": {
@@ -1380,8 +1433,8 @@
         {
             "info": {
                 "id": 56,
-                "name": "Firefang",
-                "icon": "🕷️",
+                "name": "Weaver Wraith",
+                "icon": "\ud83e\udd82",
                 "level": 2
             },
             "stats": {
@@ -1405,8 +1458,8 @@
         {
             "info": {
                 "id": 57,
-                "name": "Ghostripper",
-                "icon": "🦅",
+                "name": "Howler Maw",
+                "icon": "\ud83d\udc2e",
                 "level": 4
             },
             "stats": {
@@ -1430,8 +1483,8 @@
         {
             "info": {
                 "id": 58,
-                "name": "Bonebeast",
-                "icon": "🦅",
+                "name": "Fang Howler",
+                "icon": "\ud83d\udc2f",
                 "level": 1
             },
             "stats": {
@@ -1455,8 +1508,8 @@
         {
             "info": {
                 "id": 59,
-                "name": "Grimwraith",
-                "icon": "👿",
+                "name": "Infernal Maw",
+                "icon": "\ud83d\udc7f",
                 "level": 4
             },
             "stats": {
@@ -1480,8 +1533,8 @@
         {
             "info": {
                 "id": 60,
-                "name": "Duskbane",
-                "icon": "👺",
+                "name": "Bruteblood Crusher",
+                "icon": "\ud83d\udc79",
                 "level": 4
             },
             "stats": {
@@ -1505,8 +1558,8 @@
         {
             "info": {
                 "id": 61,
-                "name": "Frostterror",
-                "icon": "🐉",
+                "name": "Shade Wraith",
+                "icon": "\ud83e\uddcc",
                 "level": 3
             },
             "stats": {
@@ -1530,8 +1583,8 @@
         {
             "info": {
                 "id": 62,
-                "name": "Nightgaze",
-                "icon": "🧞‍♀️",
+                "name": "Phantom Beast",
+                "icon": "\ud83e\udd77",
                 "level": 2
             },
             "stats": {
@@ -1555,8 +1608,8 @@
         {
             "info": {
                 "id": 63,
-                "name": "Grimfang",
-                "icon": "🐍",
+                "name": "Scaleblade Crusher",
+                "icon": "\ud83e\udd8e",
                 "level": 1
             },
             "stats": {
@@ -1580,8 +1633,8 @@
         {
             "info": {
                 "id": 64,
-                "name": "Frostbane",
-                "icon": "🧛",
+                "name": "Night Fang",
+                "icon": "\ud83e\udddb\u200d\u2640\ufe0f",
                 "level": 5
             },
             "stats": {
@@ -1605,8 +1658,8 @@
         {
             "info": {
                 "id": 65,
-                "name": "Frostwrath",
-                "icon": "🧛‍♂️",
+                "name": "Fang Terror",
+                "icon": "\ud83e\udddb\u200d\u2642\ufe0f",
                 "level": 5
             },
             "stats": {
@@ -1630,8 +1683,8 @@
         {
             "info": {
                 "id": 66,
-                "name": "Bonecrusher",
-                "icon": "🧜‍♂️",
+                "name": "Trident Wraith",
+                "icon": "\ud83e\udddc\u200d\u2640\ufe0f",
                 "level": 2
             },
             "stats": {
@@ -1655,8 +1708,8 @@
         {
             "info": {
                 "id": 67,
-                "name": "Frostclaw",
-                "icon": "🧜‍♂️",
+                "name": "Sea Shade",
+                "icon": "\ud83e\udddc\u200d\u2642\ufe0f",
                 "level": 3
             },
             "stats": {
@@ -1680,8 +1733,8 @@
         {
             "info": {
                 "id": 68,
-                "name": "Venomhowler",
-                "icon": "🧙‍♂️",
+                "name": "Mystic Howler",
+                "icon": "\ud83e\uddd9\u200d\u2642\ufe0f",
                 "level": 3
             },
             "stats": {
@@ -1705,8 +1758,8 @@
         {
             "info": {
                 "id": 69,
-                "name": "Darkgaze",
-                "icon": "👿",
+                "name": "Hellfire Terror",
+                "icon": "\ud83d\ude08",
                 "level": 1
             },
             "stats": {
@@ -1730,8 +1783,8 @@
         {
             "info": {
                 "id": 70,
-                "name": "Boneshade",
-                "icon": "💀",
+                "name": "Grave Ripper",
+                "icon": "\ud83d\udc80",
                 "level": 5
             },
             "stats": {
@@ -1755,8 +1808,8 @@
         {
             "info": {
                 "id": 71,
-                "name": "Stormmaw",
-                "icon": "🧟",
+                "name": "Ghoul Fang",
+                "icon": "\ud83e\udddf\u200d\u2642\ufe0f",
                 "level": 2
             },
             "stats": {
@@ -1780,8 +1833,8 @@
         {
             "info": {
                 "id": 72,
-                "name": "Bonewraith",
-                "icon": "☠️",
+                "name": "Skull Beast",
+                "icon": "\ud83d\udc80",
                 "level": 1
             },
             "stats": {
@@ -1805,8 +1858,8 @@
         {
             "info": {
                 "id": 73,
-                "name": "Frostfang",
-                "icon": "🐍",
+                "name": "Venom Maw",
+                "icon": "\ud83e\udd96",
                 "level": 3
             },
             "stats": {
@@ -1830,8 +1883,8 @@
         {
             "info": {
                 "id": 74,
-                "name": "Bonehowler",
-                "icon": "🐍",
+                "name": "Serpent Howler",
+                "icon": "\ud83d\udc0d",
                 "level": 2
             },
             "stats": {
@@ -1855,8 +1908,8 @@
         {
             "info": {
                 "id": 75,
-                "name": "Ashgaze",
-                "icon": "🧜‍♂️",
+                "name": "Sea Ripper",
+                "icon": "\ud83e\udddc\u200d\u2640\ufe0f",
                 "level": 1
             },
             "stats": {
@@ -1880,8 +1933,8 @@
         {
             "info": {
                 "id": 76,
-                "name": "Shadowhowler",
-                "icon": "🦅",
+                "name": "Beast Crusher",
+                "icon": "\ud83d\ude3e",
                 "level": 2
             },
             "stats": {
@@ -1905,8 +1958,8 @@
         {
             "info": {
                 "id": 77,
-                "name": "Stonehowler",
-                "icon": "🧛‍♀️",
+                "name": "Fang Fang",
+                "icon": "\ud83e\udddb\u200d\u2640\ufe0f",
                 "level": 2
             },
             "stats": {
@@ -1930,8 +1983,8 @@
         {
             "info": {
                 "id": 78,
-                "name": "Bonefang",
-                "icon": "🧟‍♀️",
+                "name": "Decay Ripper",
+                "icon": "\ud83e\udddf\u200d\u2640\ufe0f",
                 "level": 3
             },
             "stats": {
@@ -1955,8 +2008,8 @@
         {
             "info": {
                 "id": 79,
-                "name": "Ashbeast",
-                "icon": "🦂",
+                "name": "Crawler Wraith",
+                "icon": "\ud83d\udc1c",
                 "level": 4
             },
             "stats": {
@@ -1980,8 +2033,8 @@
         {
             "info": {
                 "id": 80,
-                "name": "Bloodshade",
-                "icon": "🦈",
+                "name": "Tide Wraith",
+                "icon": "\ud83e\udd88",
                 "level": 4
             },
             "stats": {
@@ -2005,8 +2058,8 @@
         {
             "info": {
                 "id": 81,
-                "name": "Runeshred",
-                "icon": "😈",
+                "name": "Infernal Howler",
+                "icon": "\ud83d\ude08",
                 "level": 10
             },
             "stats": {
@@ -2030,8 +2083,8 @@
         {
             "info": {
                 "id": 82,
-                "name": "Graveshade",
-                "icon": "😈",
+                "name": "Hellfire Wraith",
+                "icon": "\ud83d\udc7f",
                 "level": 5
             },
             "stats": {
@@ -2055,8 +2108,8 @@
         {
             "info": {
                 "id": 83,
-                "name": "Stormdrake",
-                "icon": "😈",
+                "name": "Dread Wraith",
+                "icon": "\ud83d\ude08",
                 "level": 9
             },
             "stats": {
@@ -2080,8 +2133,8 @@
         {
             "info": {
                 "id": 84,
-                "name": "Nightbane",
-                "icon": "😈",
+                "name": "Dread Maw",
+                "icon": "\ud83d\udc7f",
                 "level": 5
             },
             "stats": {
@@ -2105,8 +2158,8 @@
         {
             "info": {
                 "id": 85,
-                "name": "Soulbane",
-                "icon": "😈",
+                "name": "Hellfire Beast",
+                "icon": "\ud83d\ude08",
                 "level": 11
             },
             "stats": {
@@ -2130,8 +2183,8 @@
         {
             "info": {
                 "id": 86,
-                "name": "Gravewrath",
-                "icon": "👿",
+                "name": "Dread Ripper",
+                "icon": "\ud83d\udc7f",
                 "level": 2
             },
             "stats": {
@@ -2155,8 +2208,8 @@
         {
             "info": {
                 "id": 87,
-                "name": "Dreadwrath",
-                "icon": "👿",
+                "name": "Infernal Claw",
+                "icon": "\ud83d\udc7f",
                 "level": 7
             },
             "stats": {
@@ -2180,8 +2233,8 @@
         {
             "info": {
                 "id": 88,
-                "name": "Emberhowler",
-                "icon": "👿",
+                "name": "Hellfire Howler",
+                "icon": "\ud83d\udc7f",
                 "level": 7
             },
             "stats": {
@@ -2205,8 +2258,8 @@
         {
             "info": {
                 "id": 89,
-                "name": "Hexbane",
-                "icon": "👿",
+                "name": "Infernal Terror",
+                "icon": "\ud83d\ude08",
                 "level": 12
             },
             "stats": {
@@ -2230,8 +2283,8 @@
         {
             "info": {
                 "id": 90,
-                "name": "Nightreaver",
-                "icon": "👿",
+                "name": "Dread Claw",
+                "icon": "\ud83d\ude08",
                 "level": 9
             },
             "stats": {
@@ -2255,8 +2308,8 @@
         {
             "info": {
                 "id": 91,
-                "name": "Runecaller",
-                "icon": "👹",
+                "name": "Bruteblood Beast",
+                "icon": "\ud83d\udc7a",
                 "level": 13
             },
             "stats": {
@@ -2280,8 +2333,8 @@
         {
             "info": {
                 "id": 92,
-                "name": "Dreadcaller",
-                "icon": "👹",
+                "name": "Stonehide Wraith",
+                "icon": "\ud83d\udc79",
                 "level": 9
             },
             "stats": {
@@ -2305,8 +2358,8 @@
         {
             "info": {
                 "id": 93,
-                "name": "Ashenhowler",
-                "icon": "👹",
+                "name": "Stonehide Ripper",
+                "icon": "\ud83d\udc79",
                 "level": 8
             },
             "stats": {
@@ -2330,8 +2383,8 @@
         {
             "info": {
                 "id": 94,
-                "name": "Cinderstalker",
-                "icon": "👹",
+                "name": "Stonehide Shade",
+                "icon": "\ud83d\udc79",
                 "level": 12
             },
             "stats": {
@@ -2355,8 +2408,8 @@
         {
             "info": {
                 "id": 95,
-                "name": "Gravestalker",
-                "icon": "👹",
+                "name": "Stonehide Maw",
+                "icon": "\ud83d\udc7a",
                 "level": 8
             },
             "stats": {
@@ -2380,8 +2433,8 @@
         {
             "info": {
                 "id": 96,
-                "name": "Voidterror",
-                "icon": "👺",
+                "name": "Ashmaw Crusher",
+                "icon": "\ud83d\udc79",
                 "level": 2
             },
             "stats": {
@@ -2405,8 +2458,8 @@
         {
             "info": {
                 "id": 97,
-                "name": "Darkbane",
-                "icon": "👺",
+                "name": "Ashmaw Howler",
+                "icon": "\ud83d\udc79",
                 "level": 4
             },
             "stats": {
@@ -2430,8 +2483,8 @@
         {
             "info": {
                 "id": 98,
-                "name": "Soulfiend",
-                "icon": "👺",
+                "name": "Ashmaw Claw",
+                "icon": "\ud83d\udc7a",
                 "level": 3
             },
             "stats": {
@@ -2455,8 +2508,8 @@
         {
             "info": {
                 "id": 99,
-                "name": "Frostcaller",
-                "icon": "👺",
+                "name": "Ashmaw Fang",
+                "icon": "\ud83d\udc7a",
                 "level": 8
             },
             "stats": {
@@ -2480,8 +2533,8 @@
         {
             "info": {
                 "id": 100,
-                "name": "Soulcrusher",
-                "icon": "👺",
+                "name": "Bruteblood Wraith",
+                "icon": "\ud83d\udc7a",
                 "level": 9
             },
             "stats": {
@@ -2505,8 +2558,8 @@
         {
             "info": {
                 "id": 101,
-                "name": "Stormbrand",
-                "icon": "👻",
+                "name": "Ghost Wraith",
+                "icon": "\u26c4",
                 "level": 15
             },
             "stats": {
@@ -2530,8 +2583,8 @@
         {
             "info": {
                 "id": 102,
-                "name": "Gravefiend",
-                "icon": "👻",
+                "name": "Phantom Wraith",
+                "icon": "\ud83e\udd77",
                 "level": 13
             },
             "stats": {
@@ -2555,8 +2608,8 @@
         {
             "info": {
                 "id": 103,
-                "name": "Darkbrand",
-                "icon": "👻",
+                "name": "Phantom Ripper",
+                "icon": "\u26c4",
                 "level": 10
             },
             "stats": {
@@ -2580,8 +2633,8 @@
         {
             "info": {
                 "id": 104,
-                "name": "Froststalker",
-                "icon": "👻",
+                "name": "Phantom Terror",
+                "icon": "\ud83d\udc7b",
                 "level": 7
             },
             "stats": {
@@ -2605,8 +2658,8 @@
         {
             "info": {
                 "id": 105,
-                "name": "Frostwraith",
-                "icon": "👻",
+                "name": "Shade Terror",
+                "icon": "\ud83e\uddcc",
                 "level": 3
             },
             "stats": {
@@ -2630,8 +2683,8 @@
         {
             "info": {
                 "id": 106,
-                "name": "Flamebrand",
-                "icon": "🧟‍♂️",
+                "name": "Decay Howler",
+                "icon": "\ud83e\udddf",
                 "level": 5
             },
             "stats": {
@@ -2655,8 +2708,8 @@
         {
             "info": {
                 "id": 107,
-                "name": "Stormstalker",
-                "icon": "🧟",
+                "name": "Ghoul Claw",
+                "icon": "\ud83e\udddf\u200d\u2640\ufe0f",
                 "level": 15
             },
             "stats": {
@@ -2680,8 +2733,8 @@
         {
             "info": {
                 "id": 108,
-                "name": "Hexseeker",
-                "icon": "🧟‍♀️",
+                "name": "Decay Shade",
+                "icon": "\ud83e\udddf\u200d\u2640\ufe0f",
                 "level": 14
             },
             "stats": {
@@ -2705,8 +2758,8 @@
         {
             "info": {
                 "id": 109,
-                "name": "Boneterror",
-                "icon": "🧟‍♂️",
+                "name": "Rot Wraith",
+                "icon": "\ud83e\udddf\u200d\u2640\ufe0f",
                 "level": 1
             },
             "stats": {
@@ -2730,8 +2783,8 @@
         {
             "info": {
                 "id": 110,
-                "name": "Ghastreaver",
-                "icon": "🧟‍♂️",
+                "name": "Ghoul Ripper",
+                "icon": "\ud83e\udddf\u200d\u2642\ufe0f",
                 "level": 14
             },
             "stats": {
@@ -2755,8 +2808,8 @@
         {
             "info": {
                 "id": 111,
-                "name": "Emberreaver",
-                "icon": "🧛",
+                "name": "Fang Crusher",
+                "icon": "\ud83e\udddb\u200d\u2642\ufe0f",
                 "level": 4
             },
             "stats": {
@@ -2780,8 +2833,8 @@
         {
             "info": {
                 "id": 112,
-                "name": "Dreadbinder",
-                "icon": "🧛‍♀️",
+                "name": "Night Ripper",
+                "icon": "\ud83e\udddb\u200d\u2642\ufe0f",
                 "level": 12
             },
             "stats": {
@@ -2805,8 +2858,8 @@
         {
             "info": {
                 "id": 113,
-                "name": "Ghastbane",
-                "icon": "🧛‍♀️",
+                "name": "Fang Maw",
+                "icon": "\ud83e\udddb\u200d\u2640\ufe0f",
                 "level": 15
             },
             "stats": {
@@ -2830,8 +2883,8 @@
         {
             "info": {
                 "id": 114,
-                "name": "Ashenmaw",
-                "icon": "🧛‍♂️",
+                "name": "Blood Terror",
+                "icon": "\ud83e\udddb\u200d\u2642\ufe0f",
                 "level": 3
             },
             "stats": {
@@ -2855,8 +2908,8 @@
         {
             "info": {
                 "id": 115,
-                "name": "Ghastfiend",
-                "icon": "🧛‍♂️",
+                "name": "Night Wraith",
+                "icon": "\ud83e\udddb",
                 "level": 14
             },
             "stats": {
@@ -2880,8 +2933,8 @@
         {
             "info": {
                 "id": 116,
-                "name": "Gravecaller",
-                "icon": "🧜‍♂️",
+                "name": "Trident Beast",
+                "icon": "\ud83e\udddc\u200d\u2642\ufe0f",
                 "level": 8
             },
             "stats": {
@@ -2905,8 +2958,8 @@
         {
             "info": {
                 "id": 117,
-                "name": "Bonebinder",
-                "icon": "🧜‍♂️",
+                "name": "Sea Terror",
+                "icon": "\ud83e\udddc",
                 "level": 13
             },
             "stats": {
@@ -2930,8 +2983,8 @@
         {
             "info": {
                 "id": 118,
-                "name": "Flameseeker",
-                "icon": "🧜‍♂️",
+                "name": "Wave Crusher",
+                "icon": "\ud83e\udddc",
                 "level": 1
             },
             "stats": {
@@ -2955,8 +3008,8 @@
         {
             "info": {
                 "id": 119,
-                "name": "Flamebane",
-                "icon": "🧜‍♀️",
+                "name": "Sea Claw",
+                "icon": "\ud83e\udddc\u200d\u2642\ufe0f",
                 "level": 13
             },
             "stats": {
@@ -2980,8 +3033,8 @@
         {
             "info": {
                 "id": 120,
-                "name": "Dreadlurker",
-                "icon": "🧜‍♂️",
+                "name": "Trident Shade",
+                "icon": "\ud83e\udddc\u200d\u2640\ufe0f",
                 "level": 9
             },
             "stats": {
@@ -3005,8 +3058,8 @@
         {
             "info": {
                 "id": 121,
-                "name": "Soulshred",
-                "icon": "🧙‍♂️",
+                "name": "Mystic Ripper",
+                "icon": "\ud83e\uddd9",
                 "level": 10
             },
             "stats": {
@@ -3030,8 +3083,8 @@
         {
             "info": {
                 "id": 122,
-                "name": "Runeseeker",
-                "icon": "🧙‍♀️",
+                "name": "Hex Terror",
+                "icon": "\ud83e\uddd9\u200d\u2642\ufe0f",
                 "level": 14
             },
             "stats": {
@@ -3055,8 +3108,8 @@
         {
             "info": {
                 "id": 123,
-                "name": "Ashenlurker",
-                "icon": "🧙‍♀️",
+                "name": "Hex Crusher",
+                "icon": "\ud83e\uddd9\u200d\u2640\ufe0f",
                 "level": 12
             },
             "stats": {
@@ -3080,8 +3133,8 @@
         {
             "info": {
                 "id": 124,
-                "name": "Frostdrake",
-                "icon": "🧙‍♂️",
+                "name": "Mystic Maw",
+                "icon": "\ud83e\uddd9",
                 "level": 12
             },
             "stats": {
@@ -3105,8 +3158,8 @@
         {
             "info": {
                 "id": 125,
-                "name": "Runewraith",
-                "icon": "🧙‍♀️",
+                "name": "Spellbound Fang",
+                "icon": "\ud83e\uddd9\u200d\u2640\ufe0f",
                 "level": 12
             },
             "stats": {
@@ -3130,8 +3183,8 @@
         {
             "info": {
                 "id": 126,
-                "name": "Ironmaw",
-                "icon": "🧝‍♀️",
+                "name": "Shadowleaf Howler",
+                "icon": "\ud83e\udddd\u200d\u2642\ufe0f",
                 "level": 2
             },
             "stats": {
@@ -3155,8 +3208,8 @@
         {
             "info": {
                 "id": 127,
-                "name": "Fellterror",
-                "icon": "🧝‍♀️",
+                "name": "Dawn Crusher",
+                "icon": "\ud83e\udddd\u200d\u2640\ufe0f",
                 "level": 7
             },
             "stats": {
@@ -3180,8 +3233,8 @@
         {
             "info": {
                 "id": 128,
-                "name": "Flamefiend",
-                "icon": "🧝‍♀️",
+                "name": "Shadowleaf Crusher",
+                "icon": "\ud83e\udddd\u200d\u2642\ufe0f",
                 "level": 8
             },
             "stats": {
@@ -3205,8 +3258,8 @@
         {
             "info": {
                 "id": 129,
-                "name": "Flamebinder",
-                "icon": "🧝‍♂️",
+                "name": "Glimmer Shade",
+                "icon": "\ud83e\udddd\u200d\u2642\ufe0f",
                 "level": 3
             },
             "stats": {
@@ -3230,8 +3283,8 @@
         {
             "info": {
                 "id": 130,
-                "name": "Ashenbrand",
-                "icon": "🧝‍♂️",
+                "name": "Dawn Ripper",
+                "icon": "\ud83e\udddd",
                 "level": 13
             },
             "stats": {
@@ -3255,8 +3308,8 @@
         {
             "info": {
                 "id": 131,
-                "name": "Runehaunt",
-                "icon": "🧞‍♀️",
+                "name": "Shade Shade",
+                "icon": "\ud83e\uddcc",
                 "level": 1
             },
             "stats": {
@@ -3280,8 +3333,8 @@
         {
             "info": {
                 "id": 132,
-                "name": "Hexreaver",
-                "icon": "🧞",
+                "name": "Phantom Crusher",
+                "icon": "\ud83e\udd77",
                 "level": 5
             },
             "stats": {
@@ -3305,8 +3358,8 @@
         {
             "info": {
                 "id": 133,
-                "name": "Fellhaunt",
-                "icon": "🧞‍♀️",
+                "name": "Ghost Fang",
+                "icon": "\ud83e\uddcc",
                 "level": 14
             },
             "stats": {
@@ -3330,8 +3383,8 @@
         {
             "info": {
                 "id": 134,
-                "name": "Shadowwraith",
-                "icon": "🧞‍♀️",
+                "name": "Phantom Claw",
+                "icon": "\ud83c\udfc7",
                 "level": 3
             },
             "stats": {
@@ -3355,8 +3408,8 @@
         {
             "info": {
                 "id": 135,
-                "name": "Hexdrake",
-                "icon": "🧞",
+                "name": "Ghost Crusher",
+                "icon": "\ud83e\udd16",
                 "level": 12
             },
             "stats": {
@@ -3380,8 +3433,8 @@
         {
             "info": {
                 "id": 136,
-                "name": "Ironhaunt",
-                "icon": "💀",
+                "name": "Skull Fang",
+                "icon": "\ud83d\udc80",
                 "level": 15
             },
             "stats": {
@@ -3405,8 +3458,8 @@
         {
             "info": {
                 "id": 137,
-                "name": "Boneweaver",
-                "icon": "💀",
+                "name": "Skull Claw",
+                "icon": "\ud83d\udc80",
                 "level": 13
             },
             "stats": {
@@ -3430,8 +3483,8 @@
         {
             "info": {
                 "id": 138,
-                "name": "Soulseeker",
-                "icon": "💀",
+                "name": "Bone Beast",
+                "icon": "\u2620\ufe0f",
                 "level": 4
             },
             "stats": {
@@ -3455,8 +3508,8 @@
         {
             "info": {
                 "id": 139,
-                "name": "Bonemaw",
-                "icon": "💀",
+                "name": "Grave Fang",
+                "icon": "\ud83d\udc80",
                 "level": 11
             },
             "stats": {
@@ -3480,8 +3533,8 @@
         {
             "info": {
                 "id": 140,
-                "name": "Cinderweaver",
-                "icon": "💀",
+                "name": "Grave Crusher",
+                "icon": "\ud83d\udc80",
                 "level": 11
             },
             "stats": {
@@ -3505,8 +3558,8 @@
         {
             "info": {
                 "id": 141,
-                "name": "Blooddrake",
-                "icon": "☠️",
+                "name": "Skull Howler",
+                "icon": "\ud83d\udc80",
                 "level": 4
             },
             "stats": {
@@ -3530,8 +3583,8 @@
         {
             "info": {
                 "id": 142,
-                "name": "Hexweaver",
-                "icon": "☠️",
+                "name": "Bone Claw",
+                "icon": "\ud83d\udc80",
                 "level": 9
             },
             "stats": {
@@ -3555,8 +3608,8 @@
         {
             "info": {
                 "id": 143,
-                "name": "Bonehaunt",
-                "icon": "☠️",
+                "name": "Skull Wraith",
+                "icon": "\ud83d\udc80",
                 "level": 12
             },
             "stats": {
@@ -3580,8 +3633,8 @@
         {
             "info": {
                 "id": 144,
-                "name": "Bloodseeker",
-                "icon": "☠️",
+                "name": "Bone Shade",
+                "icon": "\u2620\ufe0f",
                 "level": 14
             },
             "stats": {
@@ -3605,8 +3658,8 @@
         {
             "info": {
                 "id": 145,
-                "name": "Bloodhowler",
-                "icon": "☠️",
+                "name": "Grave Beast",
+                "icon": "\ud83d\udc80",
                 "level": 4
             },
             "stats": {
@@ -3630,8 +3683,8 @@
         {
             "info": {
                 "id": 146,
-                "name": "Emberhaunt",
-                "icon": "🐍",
+                "name": "Venom Beast",
+                "icon": "\ud83e\udd8e",
                 "level": 6
             },
             "stats": {
@@ -3655,8 +3708,8 @@
         {
             "info": {
                 "id": 147,
-                "name": "Voidwraith",
-                "icon": "🐍",
+                "name": "Venom Fang",
+                "icon": "\ud83e\udd8e",
                 "level": 5
             },
             "stats": {
@@ -3680,8 +3733,8 @@
         {
             "info": {
                 "id": 148,
-                "name": "Dreadstalker",
-                "icon": "🐍",
+                "name": "Serpent Beast",
+                "icon": "\ud83e\udd96",
                 "level": 15
             },
             "stats": {
@@ -3705,8 +3758,8 @@
         {
             "info": {
                 "id": 149,
-                "name": "Ironbrand",
-                "icon": "🐍",
+                "name": "Venom Ripper",
+                "icon": "\ud83d\udc0d",
                 "level": 11
             },
             "stats": {
@@ -3730,8 +3783,8 @@
         {
             "info": {
                 "id": 150,
-                "name": "Ghastbinder",
-                "icon": "🐍",
+                "name": "Scaleblade Beast",
+                "icon": "\ud83e\udd8e",
                 "level": 2
             },
             "stats": {
@@ -3755,8 +3808,8 @@
         {
             "info": {
                 "id": 151,
-                "name": "Ashencrusher",
-                "icon": "🐉",
+                "name": "Ghost Ripper",
+                "icon": "\ud83c\udfc7",
                 "level": 4
             },
             "stats": {
@@ -3780,8 +3833,8 @@
         {
             "info": {
                 "id": 152,
-                "name": "Boneshred",
-                "icon": "🐉",
+                "name": "Phantom Fang",
+                "icon": "\ud83e\udd77",
                 "level": 4
             },
             "stats": {
@@ -3805,8 +3858,8 @@
         {
             "info": {
                 "id": 153,
-                "name": "Flamestalker",
-                "icon": "🐉",
+                "name": "Phantom Howler",
+                "icon": "\ud83d\udc7b",
                 "level": 14
             },
             "stats": {
@@ -3830,8 +3883,8 @@
         {
             "info": {
                 "id": 154,
-                "name": "Frostshred",
-                "icon": "🐉",
+                "name": "Shade Howler",
+                "icon": "\ud83e\uddcc",
                 "level": 10
             },
             "stats": {
@@ -3855,8 +3908,8 @@
         {
             "info": {
                 "id": 155,
-                "name": "Runelurker",
-                "icon": "🐉",
+                "name": "Shade Maw",
+                "icon": "\ud83e\uddcc",
                 "level": 1
             },
             "stats": {
@@ -3880,8 +3933,8 @@
         {
             "info": {
                 "id": 156,
-                "name": "Darkfiend",
-                "icon": "🦖",
+                "name": "Venom Howler",
+                "icon": "\ud83e\udd96",
                 "level": 4
             },
             "stats": {
@@ -3905,8 +3958,8 @@
         {
             "info": {
                 "id": 157,
-                "name": "Voidwrath",
-                "icon": "🦖",
+                "name": "Serpent Crusher",
+                "icon": "\ud83e\udd95",
                 "level": 1
             },
             "stats": {
@@ -3930,8 +3983,8 @@
         {
             "info": {
                 "id": 158,
-                "name": "Ghastwraith",
-                "icon": "🦖",
+                "name": "Serpent Maw",
+                "icon": "\ud83d\udc0a",
                 "level": 2
             },
             "stats": {
@@ -3955,8 +4008,8 @@
         {
             "info": {
                 "id": 159,
-                "name": "Ghastshade",
-                "icon": "🦖",
+                "name": "Scaleblade Terror",
+                "icon": "\ud83d\udc0d",
                 "level": 14
             },
             "stats": {
@@ -3980,8 +4033,8 @@
         {
             "info": {
                 "id": 160,
-                "name": "Cindershred",
-                "icon": "🦖",
+                "name": "Serpent Claw",
+                "icon": "\ud83e\udd95",
                 "level": 12
             },
             "stats": {
@@ -4005,8 +4058,8 @@
         {
             "info": {
                 "id": 161,
-                "name": "Ashenbinder",
-                "icon": "🦕",
+                "name": "Serpent Wraith",
+                "icon": "\ud83e\udd96",
                 "level": 4
             },
             "stats": {
@@ -4030,8 +4083,8 @@
         {
             "info": {
                 "id": 162,
-                "name": "Ironhowler",
-                "icon": "🦕",
+                "name": "Scaleblade Fang",
+                "icon": "\ud83e\udd8e",
                 "level": 3
             },
             "stats": {
@@ -4055,8 +4108,8 @@
         {
             "info": {
                 "id": 163,
-                "name": "Ironlurker",
-                "icon": "🦕",
+                "name": "Venom Shade",
+                "icon": "\ud83e\udd95",
                 "level": 12
             },
             "stats": {
@@ -4080,8 +4133,8 @@
         {
             "info": {
                 "id": 164,
-                "name": "Bloodcaller",
-                "icon": "🦕",
+                "name": "Scaleblade Maw",
+                "icon": "\ud83e\udd95",
                 "level": 5
             },
             "stats": {
@@ -4105,8 +4158,8 @@
         {
             "info": {
                 "id": 165,
-                "name": "Stormbinder",
-                "icon": "🦕",
+                "name": "Scaleblade Wraith",
+                "icon": "\ud83e\udd96",
                 "level": 5
             },
             "stats": {
@@ -4130,8 +4183,8 @@
         {
             "info": {
                 "id": 166,
-                "name": "Gravecrusher",
-                "icon": "🕷️",
+                "name": "Stinger Wraith",
+                "icon": "\ud83d\udd77\ufe0f",
                 "level": 5
             },
             "stats": {
@@ -4155,8 +4208,8 @@
         {
             "info": {
                 "id": 167,
-                "name": "Frostmaw",
-                "icon": "🕷️",
+                "name": "Crawler Beast",
+                "icon": "\ud83d\udc1c",
                 "level": 7
             },
             "stats": {
@@ -4180,8 +4233,8 @@
         {
             "info": {
                 "id": 168,
-                "name": "Bloodbane",
-                "icon": "🕷️",
+                "name": "Weaver Crusher",
+                "icon": "\ud83d\udc1c",
                 "level": 13
             },
             "stats": {
@@ -4205,8 +4258,8 @@
         {
             "info": {
                 "id": 169,
-                "name": "Stormwrath",
-                "icon": "🕷️",
+                "name": "Weaver Beast",
+                "icon": "\ud83d\udd77\ufe0f",
                 "level": 7
             },
             "stats": {
@@ -4230,8 +4283,8 @@
         {
             "info": {
                 "id": 170,
-                "name": "Ironshred",
-                "icon": "🕷️",
+                "name": "Stinger Howler",
+                "icon": "\ud83d\udc1c",
                 "level": 8
             },
             "stats": {
@@ -4255,8 +4308,8 @@
         {
             "info": {
                 "id": 171,
-                "name": "Hexmaw",
-                "icon": "🦂",
+                "name": "Weaver Shade",
+                "icon": "\ud83e\udd82",
                 "level": 1
             },
             "stats": {
@@ -4280,8 +4333,8 @@
         {
             "info": {
                 "id": 172,
-                "name": "Runemaw",
-                "icon": "🦂",
+                "name": "Crawler Fang",
+                "icon": "\ud83d\udd77\ufe0f",
                 "level": 4
             },
             "stats": {
@@ -4305,8 +4358,8 @@
         {
             "info": {
                 "id": 173,
-                "name": "Gravehaunt",
-                "icon": "🦂",
+                "name": "Crawler Terror",
+                "icon": "\ud83e\udd82",
                 "level": 3
             },
             "stats": {
@@ -4330,8 +4383,8 @@
         {
             "info": {
                 "id": 174,
-                "name": "Cinderbane",
-                "icon": "🦂",
+                "name": "Crawler Maw",
+                "icon": "\ud83d\udc1c",
                 "level": 2
             },
             "stats": {
@@ -4355,8 +4408,8 @@
         {
             "info": {
                 "id": 175,
-                "name": "Flameweaver",
-                "icon": "🦂",
+                "name": "Weaver Fang",
+                "icon": "\ud83d\udd77\ufe0f",
                 "level": 8
             },
             "stats": {
@@ -4380,8 +4433,8 @@
         {
             "info": {
                 "id": 176,
-                "name": "Hexfiend",
-                "icon": "🦈",
+                "name": "Tide Beast",
+                "icon": "\ud83e\udd88",
                 "level": 7
             },
             "stats": {
@@ -4405,8 +4458,8 @@
         {
             "info": {
                 "id": 177,
-                "name": "Stormwraith",
-                "icon": "🦈",
+                "name": "Sharkfin Claw",
+                "icon": "\ud83d\udc0b",
                 "level": 13
             },
             "stats": {
@@ -4430,8 +4483,8 @@
         {
             "info": {
                 "id": 178,
-                "name": "Runedrake",
-                "icon": "🦈",
+                "name": "Tide Shade",
+                "icon": "\ud83d\udc0b",
                 "level": 4
             },
             "stats": {
@@ -4455,8 +4508,8 @@
         {
             "info": {
                 "id": 179,
-                "name": "Ashendrake",
-                "icon": "🦈",
+                "name": "Sharkfin Ripper",
+                "icon": "\ud83d\udc0b",
                 "level": 7
             },
             "stats": {
@@ -4480,8 +4533,8 @@
         {
             "info": {
                 "id": 180,
-                "name": "Nighthaunt",
-                "icon": "🦈",
+                "name": "Tide Maw",
+                "icon": "\ud83e\udd88",
                 "level": 1
             },
             "stats": {
@@ -4505,8 +4558,8 @@
         {
             "info": {
                 "id": 181,
-                "name": "Stormshred",
-                "icon": "🦅",
+                "name": "Claw Howler",
+                "icon": "\ud83e\udd87",
                 "level": 14
             },
             "stats": {
@@ -4530,8 +4583,8 @@
         {
             "info": {
                 "id": 182,
-                "name": "Fellwrath",
-                "icon": "🦅",
+                "name": "Claw Crusher",
+                "icon": "\ud83e\udd87",
                 "level": 9
             },
             "stats": {
@@ -4555,8 +4608,8 @@
         {
             "info": {
                 "id": 183,
-                "name": "Fellbinder",
-                "icon": "🦅",
+                "name": "Prowler Terror",
+                "icon": "\ud83d\udc3a",
                 "level": 8
             },
             "stats": {
@@ -4580,8 +4633,8 @@
         {
             "info": {
                 "id": 184,
-                "name": "Bloodmaw",
-                "icon": "🦅",
+                "name": "Beast Maw",
+                "icon": "\ud83d\udc2f",
                 "level": 3
             },
             "stats": {
@@ -4605,8 +4658,8 @@
         {
             "info": {
                 "id": 185,
-                "name": "Cinderfiend",
-                "icon": "🦅",
+                "name": "Howler Beast",
+                "icon": "\ud83d\ude3e",
                 "level": 7
             },
             "stats": {

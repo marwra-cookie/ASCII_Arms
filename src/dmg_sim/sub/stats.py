@@ -132,7 +132,7 @@ class Health(Stats):
 
     def __init__(self, value):
         name = "Health"
-        self.icon = "💖"
+        self.icon = "❤️"
         super().__init__(value, name)
 
     def __str__(self) -> str:
@@ -207,7 +207,7 @@ class SpellPenetration(Stats):
 
     def __init__(self, value):
         name = "Spell Penetration"
-        self.icon = "🌗"
+        self.icon = "💫"
         super().__init__(value, name)
 
     def __str__(self) -> str:
@@ -222,7 +222,7 @@ class SpellPower(Stats):
 
     def __init__(self, value):
         name = "Spell Power"
-        self.icon = "✨"
+        self.icon = "☄"
         super().__init__(value, name)
 
     def __str__(self) -> str:
@@ -252,7 +252,7 @@ class SpellBase(Stats):
 
     def __init__(self, value):
         name = "Base Spell Damage"
-        self.icon = "✨"
+        self.icon = "💫"
         super().__init__(value, name)
 
     def __str__(self) -> str:

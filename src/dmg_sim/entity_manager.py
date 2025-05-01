@@ -1,10 +1,100 @@
+from spell_manager import *
+from item_manager import *
 from sub import *
-
+from copy import deepcopy
 
 import json
 
 
 enemies = {}
+
+base_stats = {
+    "info": {"id": None, "name": None, "icon": "🙂", "level": 1},
+    "stats": {
+        "attackPower": AttackPower(10),
+        "spellPower": SpellPower(10),
+        "healingPower": HealingPower(10),
+        "criticalChance": CriticalChance(0.1),
+        "criticalDamage": CriticalChance(1.5),
+        "armorPenetration": ArmorPenetration(0),
+        "spellPenetration": SpellPenetration(0),
+        "health": Health(500),
+        "defense": Defense(0),
+        "resistance": Resistance(0),
+        "dodge": Dodge(0.1),
+        "parry": Parry(0.1),
+        "regeneration": Regeneration(0),
+        "energy": Energy(3),
+        "momentum": Momentum(100),
+    },
+    "spells": {
+        "Slot 1": None,
+        "Slot 2": None,
+        "Slot 3": None,
+        "Slot 4": None,
+    },
+    "items": {
+        "accessory": None,
+        "armor": None,
+        "boots": None,
+        "helm": None,
+        "potion": None,
+        "weapon": None,
+    },
+}
+
+
+def save_player(player):
+
+    profile = deepcopy(player.__dict__)
+
+    with open(f"database/entities.json", "r", encoding="utf-8") as read_file:
+        data = json.load(read_file)
+
+    found = False
+
+    for i, save in enumerate(data["player"]):
+        if profile["info"]["id"] == save["info"]["id"]:
+            found = True
+
+            for stat in profile["stats"]:
+                profile["stats"][stat] = profile["stats"][stat].value
+
+            for spell in profile["spells"]:
+                if profile["spells"][spell] == None:
+                    profile["spells"][spell] = None
+                else:
+                    profile["spells"][spell] = profile["spells"][spell].info["id"]
+
+            for item in profile["items"]:
+                if profile["items"][item] == None:
+                    profile["items"][item] = None
+                else:
+                    profile["items"][item] = profile["items"][item].info["id"]
+
+            data["player"][i] = profile
+            break
+
+    if found is not True:
+        for stat in profile["stats"]:
+            profile["stats"][stat] = profile["stats"][stat].value
+
+        for spell in profile["spells"]:
+            if profile["spells"][spell] == None:
+                profile["spells"][spell] = None
+            else:
+                profile["spells"][spell] = profile["spells"][spell].info["id"]
+
+        for item in profile["items"]:
+            if profile["items"][item] == None:
+                profile["items"][item] = None
+            else:
+                profile["items"][item] = profile["items"][item].info["id"]
+
+        data["player"].append(profile)
+
+    with open("database/entities.json", "w") as write_file:
+        json.dump(data, write_file, indent=4)
 
 
 def load_player(id):
@@ -55,6 +145,12 @@ def load_player(id):
                         case "regeneration":
                             player["stats"][stat] = Regeneration(player["stats"][stat])
 
+                for spell in player["spells"]:
+                    player["spells"][spell] = get_spell_id(player["spells"][spell])
+
+                for item in player["items"]:
+                    player["items"][item] = get_item_id(player["items"][item])
+
                 return Player(**player)
     return None
 
@@ -101,11 +197,11 @@ def load_enemies():
             enemies[enemy["info"]["id"]] = Enemy(**enemy)
 
 
-def get_last_id():
+def get_last_entity_id():
     i = 0
 
     for enemy in enemies:
-        id = enemy.info["id"]
+        id = enemies[enemy].info["id"]
         if id > i:
             i = id
 
@@ -114,14 +210,14 @@ def get_last_id():
 
 def get_enemy_name(name):
     for enemy in enemies:
-        if name == enemy.info["name"]:
+        if name == enemies[enemy].info["name"]:
             return enemy
     return None
 
 
 def get_enemy_id(i):
     for enemy in enemies:
-        if i == enemy.info["id"]:
+        if i == enemies[enemy].info["id"]:
             return enemy
 
     return None

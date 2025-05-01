@@ -6,58 +6,76 @@ import game as Game
 import time
 
 
-def set_starter_inventory(player):
-    player.add_item(get_item_name("Necklace"))
-    player.add_item(get_item_name("Leather set"))
-    player.add_item(get_item_name("Set of shoes"))
-    player.add_item(get_item_name("Short sword"))
-    player.spells["Slot 1"] = get_spell_id(1)
-
-
-def new_save():
+def menu_new_save():
     update()
-    print("Start New Adventure!\n\n🧙‍♂️ Enter your name:")
+    print("🧙‍♂️ Start New Adventure!\n\nEnter your name:")
     name = input("> ")
 
-    player = Player(name)
+    player_stats = base_stats
 
-    set_starter_inventory(player)
+    player_stats["info"]["name"] = name
+    player_stats["info"]["id"] = get_last_entity_id() + 1
+    player_stats["spells"]["Slot 1"] = get_spell_id(1)
+    player_stats["items"]["accessory"] = get_item_id(1)
+    player_stats["items"]["armor"] = get_item_id(3)
+    player_stats["items"]["boots"] = get_item_id(6)
+    player_stats["items"]["weapon"] = get_item_id(10)
+    player = Player(**player_stats)
+
     Game.player = player
 
 
-# TODO: Open and load from a save file
-def open_save():
-    """
-    root = tk.Tk()
-    root.withdraw()
+def menu_open_save():
+    update()
 
-    filepath = filedialog.askopenfilename()
+    with open(f"database/entities.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
 
-    data = Game
-    """
-    print("\n1. 📂 Open Save File" "\n2. 🧙‍♂️ Start New Game")
-    player = load_player(0)
+    profiles = ""
 
-    set_starter_inventory(player)
-    Game.player = player
+    for player in data["player"]:
+        if player["info"]["id"] != 0:
+            profiles += f"\n({player["info"]["level"]}) {player["info"]["name"]}"
+
+    print(
+        f"📂 Open A Saved Profile!"
+        f"\n{profiles}"
+        f"\n3. 🔙 Back"
+        f"\nEnter profile name:"
+    )
+    name = input("> ")
+
+    if name != "3":
+        for player in data["player"]:
+            if name == player["info"]["name"]:
+                player = load_player(player["info"]["id"])
+                Game.player = player
 
 
-def select_save():
-    print("\n1. 📂 Open Save File" "\n2. 👶 Start New Game")
-
+def menu_start():
+    run = False
     while True:
+        update()
+        print(
+            "⚔️ WELCOME TO DMG SIM 🛡️" "\n🎯 A Damage Simulation Game Build in Python 🐍"
+        )
+        print("\n1. 📂 Open Save File" "\n2. 👶 Start New Game")
+        if Game.player is None and run:
+            print("\nFailed to load profile...")
+        elif Game.player is not None and run:
+            break
         choice = input("> ")
 
         if choice == "1":
-            open_save()
-            break
+            menu_open_save()
+            run = True
         elif choice == "2":
-            new_save()
+            menu_new_save()
             break
 
 
 def load_game():
-    if Game.player.info["name"] != "TEST.BOT":
+    if Game.player.info["id"] != 0:
         r = "■" * rows
         tot = 100
         percent = tot / rows
@@ -76,15 +94,14 @@ def load_game():
     Game.menu()
 
 
-def start_screen():
-    print("⚔️ WELCOME TO DMG SIM 🛡️" "\n🎯 A Damage Simulation Game Build in Python 🐍")
-
+def start():
     load_items()
     load_spells()
     load_enemies()
 
-    select_save()
+    menu_start()
+
     load_game()
 
 
-start_screen()
+start()

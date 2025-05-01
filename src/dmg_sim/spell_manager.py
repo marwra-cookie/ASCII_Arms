@@ -56,7 +56,7 @@ def load_spells():
                         spellbook[g].append(Passive(**spell))
 
 
-def get_last_id():
+def get_last_spell_id():
     i = 0
 
     for category in spellbook:
