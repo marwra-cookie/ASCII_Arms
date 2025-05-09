@@ -6,24 +6,34 @@ import platform
 columns = 80
 rows = 20
 
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.dirname(current_dir)
+project_root = os.path.dirname(src_dir)
+
 
 def update():
     os.system("cls")
 
 
-def open_new_window(path):
+def open_new_window():
     system_platform = platform.system()
+    module_path = "src.dmg_sim.main"
 
     if system_platform == "Windows":
         subprocess.Popen(
-            [sys.executable, path], creationflags=subprocess.CREATE_NEW_CONSOLE
+            [sys.executable, "-m", module_path],
+            creationflags=subprocess.CREATE_NEW_CONSOLE,
         )
 
     elif system_platform == "Linux":
-        subprocess.Popen(["x-terminal-emulator", "-e", f"{sys.executable} {path}"])
+        subprocess.Popen(
+            ["x-terminal-emulator", "-e", f"{sys.executable} -m {module_path}"]
+        )
 
     elif system_platform == "Darwin":  # Darwin = macOS
-        subprocess.Popen(["open", "-a", "Terminal", path])
+        subprocess.Popen(
+            ["open", "-a", "Terminal", "--args", sys.executable, "-m", module_path]
+        )
     else:
         print(f"Unsupported platform: {system_platform}")
 
@@ -31,10 +41,4 @@ def open_new_window(path):
 
 
 if __name__ == "__main__":
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    main_path = os.path.join(current_dir, "main.py")
-
-    if not os.path.exists(main_path):
-        print(f"Error: main.py not found at {main_path}")
-    else:
-        open_new_window(main_path)
+    open_new_window()

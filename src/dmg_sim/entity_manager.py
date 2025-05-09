@@ -1,12 +1,12 @@
-from spell_manager import *
-from item_manager import *
-from sub import *
+from . import *
+from .launcher import project_root
 from copy import deepcopy
-
 import json
+import os
 
 
 enemies = {}
+
 
 base_stats = {
     "info": {"id": None, "name": None, "icon": "🙂", "level": 1},
@@ -48,7 +48,9 @@ def save_player(player):
 
     profile = deepcopy(player.__dict__)
 
-    with open(f"database/entities.json", "r", encoding="utf-8") as read_file:
+    json_path = os.path.join(project_root, "database", "entities.json")
+
+    with open(json_path, "r", encoding="utf-8") as read_file:
         data = json.load(read_file)
 
     found = False
@@ -93,13 +95,15 @@ def save_player(player):
 
         data["player"].append(profile)
 
-    with open("database/entities.json", "w") as write_file:
+    with open(json_path, "w") as write_file:
         json.dump(data, write_file, indent=4)
 
 
 def load_player(id):
 
-    with open(f"database/entities.json", "r", encoding="utf-8") as file:
+    json_path = os.path.join(project_root, "database", "entities.json")
+
+    with open(json_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
         for player in data["player"]:
@@ -157,7 +161,9 @@ def load_player(id):
 
 def load_enemies():
 
-    with open(f"database/entities.json", "r", encoding="utf-8") as file:
+    json_path = os.path.join(project_root, "database", "entities.json")
+
+    with open(json_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
         for enemy in data["enemy"]:

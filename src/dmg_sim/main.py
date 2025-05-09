@@ -1,9 +1,21 @@
-from item_manager import *
-from spell_manager import *
-from entity_manager import *
-from launcher import *
-import game as Game
+from . import *
+from .launcher import project_root
 import time
+
+
+def menu_instructions():
+    while True:
+        update()
+        json_path = os.path.join(project_root, "database", "instructions.txt")
+
+        with open(json_path, "r") as file:
+            data = file.read()
+            print(f"🦽 Gameplay Instructions 📃" f"\n{data}" f"\n\n3. 🔙 Back")
+
+        choice = input("> ")
+
+        if choice == "3":
+            break
 
 
 def menu_new_save():
@@ -22,13 +34,15 @@ def menu_new_save():
     player_stats["items"]["weapon"] = get_item_id(10)
     player = Player(**player_stats)
 
-    Game.player = player
+    game.player = player
 
 
 def menu_open_save():
     update()
 
-    with open(f"database/entities.json", "r", encoding="utf-8") as file:
+    json_path = os.path.join(project_root, "database", "entities.json")
+
+    with open(json_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
     profiles = ""
@@ -49,20 +63,21 @@ def menu_open_save():
         for player in data["player"]:
             if name == player["info"]["name"]:
                 player = load_player(player["info"]["id"])
-                Game.player = player
+                game.player = player
 
 
 def menu_start():
     run = False
+
     while True:
         update()
         print(
             "⚔️ WELCOME TO DMG SIM 🛡️" "\n🎯 A Damage Simulation Game Build in Python 🐍"
         )
-        print("\n1. 📂 Open Save File" "\n2. 👶 Start New Game")
-        if Game.player is None and run:
+        print("\n1. 📂 Open Save File" "\n2. 👶 Start New Game" f"\n3. 🦽 Instructions")
+        if game.player is None and run:
             print("\nFailed to load profile...")
-        elif Game.player is not None and run:
+        elif game.player is not None and run:
             break
         choice = input("> ")
 
@@ -72,17 +87,19 @@ def menu_start():
         elif choice == "2":
             menu_new_save()
             break
+        elif choice == "3":
+            menu_instructions()
 
 
 def load_game():
-    if Game.player.info["id"] != 0:
+    if game.player.info["id"] != 0:
         r = "■" * rows
         tot = 100
         percent = tot / rows
 
         while len(r) > 0:
             update()
-            print(f"Entering game as {Game.player.info["name"]}!\n")
+            print(f"Entering game as {game.player.info["name"]}!\n")
             print(f"🔄 {tot}% {r}")
             tot -= percent
             r = r[:-1]
@@ -91,10 +108,10 @@ def load_game():
     update()
     print("✅ Ready for adventure!")
     input("> Press any key to continue...")
-    Game.menu()
+    game.menu()
 
 
-def start():
+if __name__ == "__main__":
     load_items()
     load_spells()
     load_enemies()
@@ -102,6 +119,3 @@ def start():
     menu_start()
 
     load_game()
-
-
-start()

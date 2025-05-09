@@ -1,8 +1,8 @@
-from sub import *
-
-
+from . import *
+from .launcher import project_root
 import json
 import random
+import os
 
 
 armory = {
@@ -94,7 +94,9 @@ def create_item(slot, level):
 
 def set_item_stats(slot, level) -> dict:
 
-    with open(f"database/randomize.json", "r") as file:
+    json_path = os.path.join(project_root, "database", "randomize.json")
+
+    with open(json_path, "r") as file:
         data = json.load(file)
         tier_names = data[slot]
         size = len(tier_names[str(level)])
@@ -407,7 +409,9 @@ def set_weapon_stats(name) -> list:
 
 
 def set_identity(name, stats):
-    with open(f"database/randomize.json", "r") as file:
+    json_path = os.path.join(project_root, "database", "randomize.json")
+
+    with open(json_path, "r") as file:
         data = json.load(file)
         identities = data["identity"]
 
@@ -509,7 +513,9 @@ def set_momentum(level) -> int:
 
 
 def save_item(slot, item):
-    with open(f"database/items.json", "r+") as file:
+    json_path = os.path.join(project_root, "database", "items.json")
+
+    with open(json_path, "r") as file:
         data = json.load(file)
         data[slot].append(item.__dict__)
         file.seek(0)
@@ -520,7 +526,9 @@ def load_items():
 
     item_types = list(armory.keys())
 
-    with open(f"database/items.json", "r") as file:
+    json_path = os.path.join(project_root, "database", "items.json")
+
+    with open(json_path, "r") as file:
         data = json.load(file)
 
         for g in item_types:

@@ -1,8 +1,8 @@
-from sub import *
-
-
+from . import *
+from .launcher import project_root
 import json
 import random
+import os
 
 
 spellbook = {"direct": [], "passive": []}
@@ -11,8 +11,9 @@ spellbook = {"direct": [], "passive": []}
 def load_spells():
 
     spell_types = list(spellbook.keys())
+    json_path = os.path.join(project_root, "database", "spells.json")
 
-    with open(f"database/spells.json", "r") as file:
+    with open(json_path, "r") as file:
         data = json.load(file)
         for g in spell_types:
             for spell in data[g]:

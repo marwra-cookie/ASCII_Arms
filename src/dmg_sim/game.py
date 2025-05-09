@@ -1,23 +1,7 @@
-from launcher import update
-from entity_manager import *
-from sub import *
+from . import *
 
 player = None
 slain = 0
-
-
-def menu_instructions():
-    while True:
-        update()
-
-        with open(f"database/instructions.txt", "r") as file:
-            data = file.read()
-            print(f"🦽 Gameplay Instructions 📃" f"\n{data}" f"\n\n3. 🔙 Back")
-
-        choice = input("> ")
-
-        if choice == "3":
-            break
 
 
 def menu_combat():
@@ -101,7 +85,6 @@ def menu():
             f"\n\n1. ⚔️ Combat"
             f"\n2. 🧙 Character"
             f"\n3. 💾 Save"
-            f"\n4. 🦽 Instructions"
             f"\n\n5. 🚪 Quit"
         )
         choice = input("> ")
@@ -112,8 +95,6 @@ def menu():
             menu_character()
         elif choice == "3":
             menu_save()
-        elif choice == "4":
-            menu_instructions()
         elif choice == "5":
             print("Exiting game...")
             break
