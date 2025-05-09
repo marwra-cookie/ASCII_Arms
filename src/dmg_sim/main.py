@@ -5,7 +5,7 @@ import time
 
 def menu_new_save():
     update()
-    print("🧙‍♂️ Start New Adventure!\n\nEnter your name:")
+    print("Start New Adventure! 🧙‍♂️\n\nEnter your name:")
     name = input("> ")
 
     player_stats = base_stats
@@ -36,7 +36,7 @@ def menu_open_save() -> bool:
         if player["info"]["id"] != 0:
             profiles += f"\n({player["info"]["level"]}) {player["info"]["name"]}"
 
-    print(f"📂 Open A Saved Profile!" f"\n{profiles}" f"\n\nEnter profile name:")
+    print(f"Enter A Existing Profile 📂!" f"\n{profiles}" f"\n\nEnter profile name:")
     name = input("> ")
 
     for player in data["player"]:
@@ -54,9 +54,10 @@ def menu_start():
     while True:
         update()
         print(
-            "⚔️ WELCOME TO DMG SIM 🛡️" "\n🎯 A Damage Simulation Game Build in Python 🐍"
+            "=== WELCOME TO DMG SIM ==="
+            "\n🎯 A Damage Simulation Game Build in Python 🐍"
         )
-        print("\n1. 📂 Open Save File" "\n2. 👶 Start New Game")
+        print("\n1. Open Save File 📂" "\n2. Start New Game 🆕")
 
         if failed:
             print("\nFailed to load profile...")
@@ -89,7 +90,7 @@ def load_game():
             time.sleep(0.1)
 
     update()
-    print("✅ Ready for adventure!")
+    print("Ready for adventure! ✅")
     input("> Press any key to continue...")
     game.menu()
 

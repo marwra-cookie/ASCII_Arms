@@ -5,7 +5,8 @@
                 "id": 0,
                 "name": "GM",
                 "icon": "\ud83e\uddd9\u200d\u2642\ufe0f",
-                "level": 100
+                "level": 100,
+                "slain": 4
             },
             "stats": {
                 "attackPower": 999,
@@ -44,7 +45,8 @@
                 "id": 186,
                 "name": "Cookie",
                 "icon": "\ud83d\ude42",
-                "level": 1
+                "level": 1,
+                "slain": 0
             },
             "stats": {
                 "attackPower": 10,

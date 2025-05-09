@@ -19,7 +19,7 @@ class ArmorPenetration(Stats):
         return self.name
 
     def get_color(self) -> str:
-        color = f"️‍{red(self.value)} {self.icon}"
+        color = f"{dim(red(f"{int(self.value * 100)}"))}% {self.icon}"
         return color
 
 

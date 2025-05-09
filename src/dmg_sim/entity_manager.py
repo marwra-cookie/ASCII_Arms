@@ -9,7 +9,7 @@ enemies = {}
 
 
 base_stats = {
-    "info": {"id": None, "name": None, "icon": "🙂", "level": 1},
+    "info": {"id": None, "name": None, "icon": "🙂", "level": 1, "slain": 0},
     "stats": {
         "attackPower": AttackPower(10),
         "spellPower": SpellPower(10),

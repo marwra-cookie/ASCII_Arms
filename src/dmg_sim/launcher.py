@@ -3,9 +3,6 @@ import sys
 import os
 import platform
 
-columns = 80
-rows = 20
-
 current_dir = os.path.dirname(os.path.abspath(__file__))
 src_dir = os.path.dirname(current_dir)
 project_root = os.path.dirname(src_dir)

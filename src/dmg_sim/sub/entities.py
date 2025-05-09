@@ -56,7 +56,7 @@ class Entities:
         slots = []
 
         for i, spell in enumerate(self.spells):
-            slots.append([f"🔮 {spell}:", self.spells[spell]])
+            slots.append([f"{spell}:", self.spells[spell]])
 
         table = tabulate(slots, headers=["Slot", "Name"])
 
@@ -67,6 +67,8 @@ class Player(Entities):
 
     def __init__(self, **stats):
         super().__init__(**stats)
+
+        slain = 0
 
     def add_item(self, item):
 
