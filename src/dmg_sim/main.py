@@ -3,21 +3,6 @@ from .launcher import project_root
 import time
 
 
-def menu_instructions():
-    while True:
-        update()
-        json_path = os.path.join(project_root, "database", "instructions.txt")
-
-        with open(json_path, "r") as file:
-            data = file.read()
-            print(f"🦽 Gameplay Instructions 📃" f"\n{data}" f"\n\n3. 🔙 Back")
-
-        choice = input("> ")
-
-        if choice == "3":
-            break
-
-
 def menu_new_save():
     update()
     print("🧙‍♂️ Start New Adventure!\n\nEnter your name:")
@@ -37,7 +22,7 @@ def menu_new_save():
     game.player = player
 
 
-def menu_open_save():
+def menu_open_save() -> bool:
     update()
 
     json_path = os.path.join(project_root, "database", "entities.json")
@@ -51,44 +36,42 @@ def menu_open_save():
         if player["info"]["id"] != 0:
             profiles += f"\n({player["info"]["level"]}) {player["info"]["name"]}"
 
-    print(
-        f"📂 Open A Saved Profile!"
-        f"\n{profiles}"
-        f"\n3. 🔙 Back"
-        f"\nEnter profile name:"
-    )
+    print(f"📂 Open A Saved Profile!" f"\n{profiles}" f"\n\nEnter profile name:")
     name = input("> ")
 
-    if name != "3":
-        for player in data["player"]:
-            if name == player["info"]["name"]:
-                player = load_player(player["info"]["id"])
-                game.player = player
+    for player in data["player"]:
+        if name == player["info"]["name"]:
+            player = load_player(player["info"]["id"])
+            game.player = player
+            return True
+
+    return False
 
 
 def menu_start():
-    run = False
+    failed = False
 
     while True:
         update()
         print(
             "⚔️ WELCOME TO DMG SIM 🛡️" "\n🎯 A Damage Simulation Game Build in Python 🐍"
         )
-        print("\n1. 📂 Open Save File" "\n2. 👶 Start New Game" f"\n3. 🦽 Instructions")
-        if game.player is None and run:
+        print("\n1. 📂 Open Save File" "\n2. 👶 Start New Game")
+
+        if failed:
             print("\nFailed to load profile...")
-        elif game.player is not None and run:
-            break
+
         choice = input("> ")
 
         if choice == "1":
-            menu_open_save()
-            run = True
+            found_save = menu_open_save()
+            if found_save:
+                break
+            else:
+                failed = True
         elif choice == "2":
             menu_new_save()
             break
-        elif choice == "3":
-            menu_instructions()
 
 
 def load_game():
