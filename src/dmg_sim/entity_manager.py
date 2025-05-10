@@ -6,7 +6,7 @@ import os
 
 
 enemies = {}
-
+bosses = {}
 
 base_stats = {
     "info": {"id": None, "name": None, "icon": "🙂", "level": 1, "slain": 0},
@@ -167,6 +167,7 @@ def load_enemies():
         data = json.load(file)
 
         for enemy in data["enemy"]:
+
             for stat in enemy["stats"]:
                 match stat:
                     case "attackPower":
@@ -201,6 +202,62 @@ def load_enemies():
                         enemy["stats"][stat] = Regeneration(enemy["stats"][stat])
 
             enemies[enemy["info"]["id"]] = Enemy(**enemy)
+
+        for boss in data["boss"]:
+            for stat in boss["stats"]:
+                match stat:
+                    case "attackPower":
+                        boss["stats"][stat] = AttackPower(boss["stats"][stat])
+                    case "spellPower":
+                        boss["stats"][stat] = SpellPower(boss["stats"][stat])
+                    case "healingPower":
+                        boss["stats"][stat] = HealingPower(boss["stats"][stat])
+                    case "criticalChance":
+                        boss["stats"][stat] = CriticalChance(boss["stats"][stat])
+                    case "criticalDamage":
+                        boss["stats"][stat] = CriticalDamage(boss["stats"][stat])
+                    case "armorPenetration":
+                        boss["stats"][stat] = ArmorPenetration(boss["stats"][stat])
+                    case "spellPenetration":
+                        boss["stats"][stat] = SpellPenetration(boss["stats"][stat])
+                    case "energy":
+                        boss["stats"][stat] = Energy(boss["stats"][stat])
+                    case "momentum":
+                        boss["stats"][stat] = Momentum(boss["stats"][stat])
+                    case "health":
+                        boss["stats"][stat] = Health(boss["stats"][stat])
+                    case "defense":
+                        boss["stats"][stat] = Defense(boss["stats"][stat])
+                    case "resistance":
+                        boss["stats"][stat] = Resistance(boss["stats"][stat])
+                    case "dodge":
+                        boss["stats"][stat] = Dodge(boss["stats"][stat])
+                    case "parry":
+                        boss["stats"][stat] = Parry(boss["stats"][stat])
+                    case "regeneration":
+                        boss["stats"][stat] = Regeneration(boss["stats"][stat])
+
+            bosses[boss["info"]["id"]] = Enemy(**boss)
+
+
+def find_enemy(level, boss_encounter):
+    matches = {}
+
+    if boss_encounter:
+        for boss in bosses:
+            lvl = bosses[boss].info["level"]
+            if abs(lvl - level) <= 1:
+                matches[boss] = bosses[boss]
+    else:
+        for enemy in enemies:
+            lvl = enemies[enemy].info["level"]
+            if abs(lvl - level) <= 1:
+                matches[enemy] = enemies[enemy]
+
+    who_to_fight = random.choice(list(matches))
+    encounter = matches[who_to_fight]
+
+    return encounter
 
 
 def get_last_entity_id():

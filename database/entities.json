@@ -5,7 +5,7 @@
                 "id": 0,
                 "name": "GM",
                 "icon": "\ud83e\uddd9\u200d\u2642\ufe0f",
-                "level": 100,
+                "level": 15,
                 "slain": 4
             },
             "stats": {
@@ -17,8 +17,8 @@
                 "armorPenetration": 1,
                 "spellPenetration": 1,
                 "health": 10000,
-                "defense": 500,
-                "resistance": 500,
+                "defense": 100,
+                "resistance": 25,
                 "dodge": 1,
                 "parry": 1,
                 "regeneration": 1,
@@ -27,7 +27,7 @@
             },
             "spells": {
                 "Slot 1": 1,
-                "Slot 2": null,
+                "Slot 2": 80,
                 "Slot 3": null,
                 "Slot 4": null
             },
@@ -4680,6 +4680,508 @@
                 "regeneration": 2,
                 "energy": 4,
                 "momentum": 90
+            }
+        }
+    ],
+    "boss": [
+        {
+            "info": {
+                "id": 187,
+                "name": "Azrakul, Harbinger of Ruin",
+                "icon": "\ud83d\udc51",
+                "level": 10
+            },
+            "stats": {
+                "attackPower": 70,
+                "spellPower": 39,
+                "healingPower": 9,
+                "criticalChance": 0.25,
+                "criticalDamage": 2.02,
+                "armorPenetration": 4,
+                "spellPenetration": 3,
+                "health": 1206,
+                "defense": 19,
+                "resistance": 12,
+                "dodge": 0.17,
+                "parry": 0.14,
+                "regeneration": 4,
+                "energy": 2,
+                "momentum": 113
+            }
+        },
+        {
+            "info": {
+                "id": 188,
+                "name": "Vexarion, Scourge Queen",
+                "icon": "\ud83e\udd82",
+                "level": 8
+            },
+            "stats": {
+                "attackPower": 100,
+                "spellPower": 15,
+                "healingPower": 5,
+                "criticalChance": 0.24,
+                "criticalDamage": 1.97,
+                "armorPenetration": 4,
+                "spellPenetration": 2,
+                "health": 1199,
+                "defense": 26,
+                "resistance": 15,
+                "dodge": 0.16,
+                "parry": 0.2,
+                "regeneration": 8,
+                "energy": 3,
+                "momentum": 164
+            }
+        },
+        {
+            "info": {
+                "id": 189,
+                "name": "Vor'Maroth the World-Eater",
+                "icon": "\ud83d\udc09",
+                "level": 7
+            },
+            "stats": {
+                "attackPower": 74,
+                "spellPower": 26,
+                "healingPower": 3,
+                "criticalChance": 0.22,
+                "criticalDamage": 2.02,
+                "armorPenetration": 3,
+                "spellPenetration": 3,
+                "health": 975,
+                "defense": 23,
+                "resistance": 26,
+                "dodge": 0.18,
+                "parry": 0.26,
+                "regeneration": 6,
+                "energy": 3,
+                "momentum": 129
+            }
+        },
+        {
+            "info": {
+                "id": 190,
+                "name": "Malgrith, Lord of Shadows",
+                "icon": "\ud83d\udd77\ufe0f",
+                "level": 6
+            },
+            "stats": {
+                "attackPower": 59,
+                "spellPower": 30,
+                "healingPower": 11,
+                "criticalChance": 0.22,
+                "criticalDamage": 2.17,
+                "armorPenetration": 5,
+                "spellPenetration": 2,
+                "health": 1016,
+                "defense": 22,
+                "resistance": 23,
+                "dodge": 0.29,
+                "parry": 0.22,
+                "regeneration": 6,
+                "energy": 3,
+                "momentum": 126
+            }
+        },
+        {
+            "info": {
+                "id": 191,
+                "name": "Thal'Khar, the Endbringer",
+                "icon": "\ud83d\udc80",
+                "level": 5
+            },
+            "stats": {
+                "attackPower": 71,
+                "spellPower": 31,
+                "healingPower": 4,
+                "criticalChance": 0.22,
+                "criticalDamage": 1.86,
+                "armorPenetration": 3,
+                "spellPenetration": 3,
+                "health": 1159,
+                "defense": 25,
+                "resistance": 24,
+                "dodge": 0.19,
+                "parry": 0.18,
+                "regeneration": 7,
+                "energy": 3,
+                "momentum": 129
+            }
+        },
+        {
+            "info": {
+                "id": 192,
+                "name": "Seraphyx the Blightcaller",
+                "icon": "\u2620\ufe0f",
+                "level": 4
+            },
+            "stats": {
+                "attackPower": 86,
+                "spellPower": 22,
+                "healingPower": 3,
+                "criticalChance": 0.2,
+                "criticalDamage": 1.95,
+                "armorPenetration": 4,
+                "spellPenetration": 4,
+                "health": 1023,
+                "defense": 23,
+                "resistance": 24,
+                "dodge": 0.18,
+                "parry": 0.18,
+                "regeneration": 9,
+                "energy": 2,
+                "momentum": 121
+            }
+        },
+        {
+            "info": {
+                "id": 193,
+                "name": "Kael'Thoris, Flame Sovereign",
+                "icon": "\ud83d\udd25",
+                "level": 2
+            },
+            "stats": {
+                "attackPower": 75,
+                "spellPower": 33,
+                "healingPower": 6,
+                "criticalChance": 0.2,
+                "criticalDamage": 2.02,
+                "armorPenetration": 4,
+                "spellPenetration": 4,
+                "health": 1102,
+                "defense": 24,
+                "resistance": 25,
+                "dodge": 0.2,
+                "parry": 0.17,
+                "regeneration": 7,
+                "energy": 3,
+                "momentum": 118
+            }
+        },
+        {
+            "info": {
+                "id": 194,
+                "name": "Nyxaria of the Abyss",
+                "icon": "\ud83c\udf11",
+                "level": 3
+            },
+            "stats": {
+                "attackPower": 79,
+                "spellPower": 31,
+                "healingPower": 4,
+                "criticalChance": 0.18,
+                "criticalDamage": 1.92,
+                "armorPenetration": 3,
+                "spellPenetration": 3,
+                "health": 943,
+                "defense": 22,
+                "resistance": 25,
+                "dodge": 0.19,
+                "parry": 0.2,
+                "regeneration": 7,
+                "energy": 3,
+                "momentum": 121
+            }
+        },
+        {
+            "info": {
+                "id": 195,
+                "name": "Drakzhar, Storm Tyrant",
+                "icon": "\u26a1",
+                "level": 1
+            },
+            "stats": {
+                "attackPower": 65,
+                "spellPower": 25,
+                "healingPower": 4,
+                "criticalChance": 0.29,
+                "criticalDamage": 1.91,
+                "armorPenetration": 6,
+                "spellPenetration": 3,
+                "health": 847,
+                "defense": 25,
+                "resistance": 19,
+                "dodge": 0.18,
+                "parry": 0.2,
+                "regeneration": 9,
+                "energy": 3,
+                "momentum": 127
+            }
+        },
+        {
+            "info": {
+                "id": 196,
+                "name": "Zul'Morak the Fleshweaver",
+                "icon": "\ud83e\udddf",
+                "level": 9
+            },
+            "stats": {
+                "attackPower": 96,
+                "spellPower": 27,
+                "healingPower": 9,
+                "criticalChance": 0.25,
+                "criticalDamage": 1.96,
+                "armorPenetration": 4,
+                "spellPenetration": 2,
+                "health": 1255,
+                "defense": 22,
+                "resistance": 32,
+                "dodge": 0.19,
+                "parry": 0.18,
+                "regeneration": 6,
+                "energy": 3,
+                "momentum": 146
+            }
+        },
+        {
+            "info": {
+                "id": 197,
+                "name": "Elandrax the Soul Reaper",
+                "icon": "\ud83d\udc7b",
+                "level": 11
+            },
+            "stats": {
+                "attackPower": 90,
+                "spellPower": 64,
+                "healingPower": 2,
+                "criticalChance": 0.21,
+                "criticalDamage": 1.9,
+                "armorPenetration": 2,
+                "spellPenetration": 7,
+                "health": 1523,
+                "defense": 25,
+                "resistance": 21,
+                "dodge": 0.18,
+                "parry": 0.13,
+                "regeneration": 8,
+                "energy": 3,
+                "momentum": 120
+            }
+        },
+        {
+            "info": {
+                "id": 198,
+                "name": "Xerazhul the Unbound",
+                "icon": "\ud83d\udd2e",
+                "level": 12
+            },
+            "stats": {
+                "attackPower": 94,
+                "spellPower": 70,
+                "healingPower": 14,
+                "criticalChance": 0.25,
+                "criticalDamage": 2.02,
+                "armorPenetration": 3,
+                "spellPenetration": 2,
+                "health": 951,
+                "defense": 23,
+                "resistance": 25,
+                "dodge": 0.15,
+                "parry": 0.14,
+                "regeneration": 5,
+                "energy": 3,
+                "momentum": 144
+            }
+        },
+        {
+            "info": {
+                "id": 199,
+                "name": "Ylvaeth the Dread Matron",
+                "icon": "\ud83d\udd78\ufe0f",
+                "level": 13
+            },
+            "stats": {
+                "attackPower": 94,
+                "spellPower": 45,
+                "healingPower": 8,
+                "criticalChance": 0.23,
+                "criticalDamage": 1.89,
+                "armorPenetration": 3,
+                "spellPenetration": 2,
+                "health": 1054,
+                "defense": 20,
+                "resistance": 31,
+                "dodge": 0.18,
+                "parry": 0.21,
+                "regeneration": 9,
+                "energy": 3,
+                "momentum": 171
+            }
+        },
+        {
+            "info": {
+                "id": 200,
+                "name": "Orrak the Stonebane",
+                "icon": "\u26f0\ufe0f",
+                "level": 15
+            },
+            "stats": {
+                "attackPower": 90,
+                "spellPower": 61,
+                "healingPower": 3,
+                "criticalChance": 0.21,
+                "criticalDamage": 1.92,
+                "armorPenetration": 4,
+                "spellPenetration": 5,
+                "health": 1240,
+                "defense": 21,
+                "resistance": 39,
+                "dodge": 0.17,
+                "parry": 0.21,
+                "regeneration": 6,
+                "energy": 3,
+                "momentum": 153
+            }
+        },
+        {
+            "info": {
+                "id": 201,
+                "name": "Velmiron, Tempest King",
+                "icon": "\ud83c\udf2a\ufe0f",
+                "level": 14
+            },
+            "stats": {
+                "attackPower": 110,
+                "spellPower": 45,
+                "healingPower": 8,
+                "criticalChance": 0.27,
+                "criticalDamage": 1.79,
+                "armorPenetration": 4,
+                "spellPenetration": 5,
+                "health": 1339,
+                "defense": 22,
+                "resistance": 22,
+                "dodge": 0.22,
+                "parry": 0.21,
+                "regeneration": 5,
+                "energy": 3,
+                "momentum": 152
+            }
+        },
+        {
+            "info": {
+                "id": 202,
+                "name": "Skor'Veth the Bone Tyrant",
+                "icon": "\ud83e\uddb4",
+                "level": 10
+            },
+            "stats": {
+                "attackPower": 70,
+                "spellPower": 39,
+                "healingPower": 9,
+                "criticalChance": 0.25,
+                "criticalDamage": 2.02,
+                "armorPenetration": 4,
+                "spellPenetration": 3,
+                "health": 1206,
+                "defense": 19,
+                "resistance": 12,
+                "dodge": 0.17,
+                "parry": 0.14,
+                "regeneration": 4,
+                "energy": 2,
+                "momentum": 113
+            }
+        },
+        {
+            "info": {
+                "id": 203,
+                "name": "Kel'Nazar, Warp Fiend",
+                "icon": "\ud83c\udf0c",
+                "level": 8
+            },
+            "stats": {
+                "attackPower": 100,
+                "spellPower": 15,
+                "healingPower": 5,
+                "criticalChance": 0.24,
+                "criticalDamage": 1.97,
+                "armorPenetration": 4,
+                "spellPenetration": 2,
+                "health": 1199,
+                "defense": 26,
+                "resistance": 15,
+                "dodge": 0.16,
+                "parry": 0.2,
+                "regeneration": 8,
+                "energy": 3,
+                "momentum": 164
+            }
+        },
+        {
+            "info": {
+                "id": 204,
+                "name": "Morgulith the Plaguefather",
+                "icon": "\ud83e\uddea",
+                "level": 7
+            },
+            "stats": {
+                "attackPower": 74,
+                "spellPower": 26,
+                "healingPower": 3,
+                "criticalChance": 0.22,
+                "criticalDamage": 2.02,
+                "armorPenetration": 3,
+                "spellPenetration": 3,
+                "health": 975,
+                "defense": 23,
+                "resistance": 26,
+                "dodge": 0.18,
+                "parry": 0.26,
+                "regeneration": 6,
+                "energy": 3,
+                "momentum": 129
+            }
+        },
+        {
+            "info": {
+                "id": 205,
+                "name": "Zarethul the Mindpiercer",
+                "icon": "\ud83e\udde0",
+                "level": 6
+            },
+            "stats": {
+                "attackPower": 59,
+                "spellPower": 30,
+                "healingPower": 11,
+                "criticalChance": 0.22,
+                "criticalDamage": 2.17,
+                "armorPenetration": 5,
+                "spellPenetration": 2,
+                "health": 1016,
+                "defense": 22,
+                "resistance": 23,
+                "dodge": 0.29,
+                "parry": 0.22,
+                "regeneration": 6,
+                "energy": 3,
+                "momentum": 126
+            }
+        },
+        {
+            "info": {
+                "id": 206,
+                "name": "Irridax, Eternal Flame",
+                "icon": "\ud83d\udd25",
+                "level": 5
+            },
+            "stats": {
+                "attackPower": 71,
+                "spellPower": 31,
+                "healingPower": 4,
+                "criticalChance": 0.22,
+                "criticalDamage": 1.86,
+                "armorPenetration": 3,
+                "spellPenetration": 3,
+                "health": 1159,
+                "defense": 25,
+                "resistance": 24,
+                "dodge": 0.19,
+                "parry": 0.18,
+                "regeneration": 7,
+                "energy": 3,
+                "momentum": 129
             }
         }
     ]

@@ -23,22 +23,16 @@ def load_spells():
                         for base in spell["stats"]["effect"]:
                             match base:
                                 case "attack":
-                                    spell["stats"]["effect"]["attack"]["value"] = (
-                                        AttackBase(
-                                            spell["stats"]["effect"]["attack"]["value"]
-                                        )
+                                    spell["stats"]["effect"]["attack"] = AttackBase(
+                                        spell["stats"]["effect"]["attack"]
                                     )
                                 case "spell":
-                                    spell["stats"]["effect"]["spell"]["value"] = (
-                                        SpellBase(
-                                            spell["stats"]["effect"]["spell"]["value"]
-                                        )
+                                    spell["stats"]["effect"]["spell"] = SpellBase(
+                                        spell["stats"]["effect"]["spell"]
                                     )
                                 case "healing":
-                                    spell["stats"]["effect"]["healing"]["value"] = (
-                                        HealingBase(
-                                            spell["stats"]["effect"]["healing"]["value"]
-                                        )
+                                    spell["stats"]["effect"]["healing"] = HealingBase(
+                                        spell["stats"]["effect"]["healing"]
                                     )
                     else:
                         match stat:

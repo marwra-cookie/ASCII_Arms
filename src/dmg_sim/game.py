@@ -4,7 +4,11 @@ player = None
 boss_requirement = 4
 
 
-def menu_combat():
+def menu_combat(enemy):
+    print(enemy)
+
+
+def menu_combat_options():
 
     if player.info["slain"] >= boss_requirement:
         boss_desc = yellow(f"<<< boss available!")
@@ -23,11 +27,13 @@ def menu_combat():
         choice = input("> ")
 
         if choice == "1":
-            # ToDo
+            menu_combat(find_enemy(player.info["level"], False))
             break
         elif choice == "2":
-            # ToDo
-            break
+            if player.slain >= boss_requirement:
+                player.slain -= boss_requirement
+                menu_combat(find_enemy(player.info["level"], True))
+                break
         elif choice == "3":
             break
 
@@ -98,7 +104,7 @@ def menu():
         choice = input("> ")
 
         if choice == "1":
-            menu_combat()
+            menu_combat_options()
         elif choice == "2":
             menu_character()
         elif choice == "3":

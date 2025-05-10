@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 from . import *
 from tabulate import tabulate
 
@@ -5,6 +7,7 @@ from tabulate import tabulate
 class Entities:
 
     def __init__(self, **kwargs):
+        self.base = deepcopy(kwargs)
         self.__dict__.update(kwargs)
 
     def __str__(self):
@@ -62,13 +65,46 @@ class Entities:
 
         return table
 
+    def attack_given(self, spell):
+        damage = 0
+        scaling = spell.stats["scaling"].value
+
+        for effect in spell.stats["effect"]:
+            spell_dmg = spell.stats["effect"][effect]["value"].value
+
+            damage += spell_dmg + (self.stats["attackPower"].value * scaling)
+
+        return damage
+
+    def attack_taken(self, damage):
+        mitigated = damage / (1 + self.stats["defense"].value / 100)
+
+        if self.stats["health"].value - mitigated < 0:
+            self.stats["health"].value = 0
+        else:
+            self.stats["health"].value -= mitigated
+
+    def spell_taken(self, damage):
+        mitigated = damage / (1 + self.stats["resistance"].value / 100)
+
+        if self.stats["health"].value - mitigated < 0:
+            self.stats["health"].value = 0
+        else:
+            self.stats["health"].value -= mitigated
+
+    def heal_taken(self, heal):
+        if (self.stats["health"].value + heal) > self.base["stats"]["health"].value:
+            self.stats["health"].value = self.base["stats"]["health"].value
+        else:
+            self.stats["health"].value += heal
+
 
 class Player(Entities):
 
     def __init__(self, **stats):
         super().__init__(**stats)
 
-        slain = 0
+        self.slain = 0
 
     def add_item(self, item):
 

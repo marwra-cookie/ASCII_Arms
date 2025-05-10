@@ -1,1509 +1,1197 @@
 {
-    "direct": [
-        {
-            "info": {
-                "id": 1,
-                "name": "Fire Shard",
-                "level": 2,
-                "description": "Cracks the earth with a strike"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 23
-                    }
-                },
-                "scaling": 0.16,
-                "cost": 1
-            }
-        },
-        {
-            "info": {
-                "id": 2,
-                "name": "Storm Cloak",
-                "level": 1,
-                "description": "Unleashes thunderous winds"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 9
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 9
-                    }
-                },
-                "scaling": 0.4,
-                "cost": 1
-            }
-        },
-        {
-            "info": {
-                "id": 3,
-                "name": "Spirit Blaze",
-                "level": 4,
-                "description": "Releases a whispering blaze"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 45
-                    }
-                },
-                "scaling": 0.29,
-                "cost": 3
-            }
-        },
-        {
-            "info": {
-                "id": 4,
-                "name": "Fire Tremor",
-                "level": 3,
-                "description": "Lashes out with force"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 28
-                    }
-                },
-                "scaling": 0.19,
-                "cost": 2
-            }
-        },
-        {
-            "info": {
-                "id": 5,
-                "name": "Leaf Fall",
-                "level": 2,
-                "description": "Shakes the forest's heart"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 21
-                    }
-                },
-                "scaling": 0.5,
-                "cost": 2
-            }
-        },
-        {
-            "info": {
-                "id": 6,
-                "name": "Night Rift",
-                "level": 3,
-                "description": "Tears open the void"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 31
-                    }
-                },
-                "scaling": 0.26,
-                "cost": 1
-            }
-        },
-        {
-            "info": {
-                "id": 7,
-                "name": "Flame Storm",
-                "level": 2,
-                "description": "Ignites a crackling vortex"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 12
-                    }
-                },
-                "scaling": 0.13,
-                "cost": 1
-            }
-        },
-        {
-            "info": {
-                "id": 8,
-                "name": "Heat Swirl",
-                "level": 3,
-                "description": "Cracks the earth with a strike"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 35
-                    }
-                },
-                "scaling": 0.27,
-                "cost": 4
-            }
-        },
-        {
-            "info": {
-                "id": 9,
-                "name": "Moon Storm",
-                "level": 3,
-                "description": "Unleashes thunderous winds"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 34
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 22
-                    }
-                },
-                "scaling": 0.24,
-                "cost": 3
-            }
-        },
-        {
-            "info": {
-                "id": 10,
-                "name": "Dark Spear",
-                "level": 3,
-                "description": "Tears open the void"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 18
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 18
-                    }
-                },
-                "scaling": 0.18,
-                "cost": 4
-            }
-        },
-        {
-            "info": {
-                "id": 11,
-                "name": "Flame Spear",
-                "level": 3,
-                "description": "Lashes out with force"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 19
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 19
-                    }
-                },
-                "scaling": 0.31,
-                "cost": 3
-            }
-        },
-        {
-            "info": {
-                "id": 12,
-                "name": "Storm Swirl",
-                "level": 4,
-                "description": "Ignites a crackling vortex"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 36
-                    }
-                },
-                "scaling": 0.28,
-                "cost": 3
-            }
-        },
-        {
-            "info": {
-                "id": 13,
-                "name": "Iron Rage",
-                "level": 4,
-                "description": "Smashes armor and bone"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 48
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 10
-                    }
-                },
-                "scaling": 0.15,
-                "cost": 1
-            }
-        },
-        {
-            "info": {
-                "id": 14,
-                "name": "Stone Swirl",
-                "level": 1,
-                "description": "Pierces with brutal precision"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 8
-                    }
-                },
-                "scaling": 0.38,
-                "cost": 2
-            }
-        },
-        {
-            "info": {
-                "id": 15,
-                "name": "Star Storm",
-                "level": 1,
-                "description": "Unleashes thunderous winds"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 5
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 8
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 8
-                    }
-                },
-                "scaling": 0.68,
-                "cost": 2
-            }
-        },
-        {
-            "info": {
-                "id": 16,
-                "name": "Leaf Bolt",
-                "level": 4,
-                "description": "Calls vines from the earth"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 23
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 38
-                    }
-                },
-                "scaling": 0.23,
-                "cost": 2
-            }
-        },
-        {
-            "info": {
-                "id": 17,
-                "name": "Ice Tremor",
-                "level": 3,
-                "description": "Forms jagged crystals"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 23
-                    }
-                },
-                "scaling": 0.33,
-                "cost": 1
-            }
-        },
-        {
-            "info": {
-                "id": 18,
-                "name": "Thunder Rush",
-                "level": 3,
-                "description": "Rages with electric fury"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 28
-                    }
-                },
-                "scaling": 0.27,
-                "cost": 3
-            }
-        },
-        {
-            "info": {
-                "id": 19,
-                "name": "Heat Bolt",
-                "level": 3,
-                "description": "Smashes armor and bone"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 24
-                    }
-                },
-                "scaling": 0.12,
-                "cost": 4
-            }
-        },
-        {
-            "info": {
-                "id": 20,
-                "name": "Storm Spear",
-                "level": 3,
-                "description": "Crashes a tempest down"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 19
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 19
-                    }
-                },
-                "scaling": 0.31,
-                "cost": 1
-            }
-        },
-        {
-            "info": {
-                "id": 41,
-                "name": "Eclipse Strike",
-                "level": 1,
-                "description": "Cracks the earth with a strike"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 11
-                    }
-                },
-                "scaling": 0.62,
-                "cost": 2
-            }
-        },
-        {
-            "info": {
-                "id": 42,
-                "name": "Abyss Rip",
-                "level": 3,
-                "description": "Lashes out with force"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 30
-                    }
-                },
-                "scaling": 0.21,
-                "cost": 4,
-                "gain": 1
-            }
-        },
-        {
-            "info": {
-                "id": 43,
-                "name": "Magic Rise",
-                "level": 3,
-                "description": "Lashes out with force"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 18
-                    }
-                },
-                "scaling": 0.2,
-                "cost": 2,
-                "gain": 1
-            }
-        },
-        {
-            "info": {
-                "id": 44,
-                "name": "Wind Rush",
-                "level": 2,
-                "description": "Summons a cutting gale"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 15
-                    }
-                },
-                "scaling": 0.36,
-                "cost": 2
-            }
-        },
-        {
-            "info": {
-                "id": 45,
-                "name": "Night Rise",
-                "level": 4,
-                "description": "Weaves threads of night"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 47
-                    }
-                },
-                "scaling": 0.11,
-                "cost": 5,
-                "gain": 3
-            }
-        },
-        {
-            "info": {
-                "id": 46,
-                "name": "Magic Burst",
-                "level": 5,
-                "description": "Pierces with brutal precision"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 44
-                    }
-                },
-                "scaling": 0.23,
-                "cost": 1
-            }
-        },
-        {
-            "info": {
-                "id": 47,
-                "name": "Star Slash",
-                "level": 3,
-                "description": "Pierces with brutal precision"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 22
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 22
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 20
-                    }
-                },
-                "scaling": 0.31,
-                "cost": 2
-            }
-        },
-        {
-            "info": {
-                "id": 48,
-                "name": "Light Slash",
-                "level": 1,
-                "description": "Bursts with radiant energy"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 9
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 9
-                    }
-                },
-                "scaling": 0.37,
-                "cost": 1
-            }
-        },
-        {
-            "info": {
-                "id": 49,
-                "name": "Flame Burst",
-                "level": 5,
-                "description": "Cracks the earth with a strike"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 56
-                    }
-                },
-                "scaling": 0.16,
-                "cost": 3,
-                "gain": 1
-            }
-        },
-        {
-            "info": {
-                "id": 50,
-                "name": "Fire Burst",
-                "level": 4,
-                "description": "Lashes out with force"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 42
-                    }
-                },
-                "scaling": 0.26,
-                "cost": 5,
-                "gain": 3
-            }
-        },
-        {
-            "info": {
-                "id": 51,
-                "name": "Dusk Rift",
-                "level": 1,
-                "description": "Cracks the earth with a strike"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 11
-                    }
-                },
-                "scaling": 0.7,
-                "cost": 2
-            }
-        },
-        {
-            "info": {
-                "id": 52,
-                "name": "Moon Slash",
-                "level": 1,
-                "description": "Lashes out with force"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 12
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 12
-                    }
-                },
-                "scaling": 0.46,
-                "cost": 1
-            }
-        },
-        {
-            "info": {
-                "id": 53,
-                "name": "Break",
-                "level": 3,
-                "description": "Pierces with brutal precision"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 22
-                    }
-                },
-                "scaling": 0.23,
-                "cost": 3
-            }
-        },
-        {
-            "info": {
-                "id": 54,
-                "name": "Ghost Strike",
-                "level": 4,
-                "description": "Cracks the earth with a strike"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 11
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 22
-                    }
-                },
-                "scaling": 0.09,
-                "cost": 4,
-                "gain": 3
-            }
-        },
-        {
-            "info": {
-                "id": 55,
-                "name": "Wind Burst",
-                "level": 5,
-                "description": "Carves the air like a blade"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 36
-                    }
-                },
-                "scaling": 0.2,
-                "cost": 5
-            }
-        },
-        {
-            "info": {
-                "id": 56,
-                "name": "Night Rush",
-                "level": 4,
-                "description": "Weaves threads of night"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 37
-                    }
-                },
-                "scaling": 0.18,
-                "cost": 3,
-                "gain": 3
-            }
-        },
-        {
-            "info": {
-                "id": 57,
-                "name": "Light Bolt",
-                "level": 1,
-                "description": "Bursts with radiant energy"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 6
-                    }
-                },
-                "scaling": 0.54,
-                "cost": 1
-            }
-        },
-        {
-            "info": {
-                "id": 58,
-                "name": "Light Wave",
-                "level": 3,
-                "description": "Sculpts beams of brilliance"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 20
-                    }
-                },
-                "scaling": 0.24,
-                "cost": 2,
-                "gain": 1
-            }
-        },
-        {
-            "info": {
-                "id": 59,
-                "name": "Night Rip",
-                "level": 5,
-                "description": "Tears open the void"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 27
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 27
-                    }
-                },
-                "scaling": 0.24,
-                "cost": 5,
-                "gain": 4
-            }
-        },
-        {
-            "info": {
-                "id": 60,
-                "name": "Wind Rip",
-                "level": 3,
-                "description": "Spirals wind into a lance"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 32
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 32
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 26
-                    }
-                },
-                "scaling": 0.34,
-                "cost": 2
-            }
-        }
-    ],
-    "passive": [
-        {
-            "info": {
-                "id": 21,
-                "name": "Dark Guard",
-                "level": 3,
-                "description": "Weaves threads of night"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 4
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 4
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 4
-                    }
-                },
-                "scaling": 0.06,
-                "cost": 3,
-                "rounds": 4
-            }
-        },
-        {
-            "info": {
-                "id": 22,
-                "name": "Forest Veil",
-                "level": 5,
-                "description": "Erupts a verdant blast"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 17
-                    }
-                },
-                "scaling": 0.08,
-                "cost": 1,
-                "rounds": 2
-            }
-        },
-        {
-            "info": {
-                "id": 23,
-                "name": "Quiet Ice",
-                "level": 5,
-                "description": "Unleashes a polar burst"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 5
-                    }
-                },
-                "scaling": 0.04,
-                "cost": 4,
-                "rounds": 2
-            }
-        },
-        {
-            "info": {
-                "id": 24,
-                "name": "Rock Wall",
-                "level": 1,
-                "description": "Bathes in rejuvenating light"
-            },
-            "stats": {
-                "effect": {
-                    "healing": {
-                        "target": "caster",
-                        "value": 8
-                    }
-                },
-                "scaling": 0.07,
-                "cost": 1,
-                "rounds": 3
-            }
-        },
-        {
-            "info": {
-                "id": 25,
-                "name": "Forest Banner",
-                "level": 2,
-                "description": "Stitches wounds with magic"
-            },
-            "stats": {
-                "effect": {
-                    "healing": {
-                        "target": "caster",
-                        "value": 3
-                    }
-                },
-                "scaling": 0.17,
-                "cost": 3,
-                "rounds": 3
-            }
-        },
-        {
-            "info": {
-                "id": 28,
-                "name": "Dark Embrace",
-                "level": 2,
-                "description": "Casts a chilling darkness"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 3
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 5
-                    }
-                },
-                "scaling": 0.11,
-                "cost": 3,
-                "rounds": 5
-            }
-        },
-        {
-            "info": {
-                "id": 29,
-                "name": "Magic Oath",
-                "level": 2,
-                "description": "Lashes out with force"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 6
-                    }
-                },
-                "scaling": 0.13,
-                "cost": 1,
-                "rounds": 2
-            }
-        },
-        {
-            "info": {
-                "id": 30,
-                "name": "Ghost Wall",
-                "level": 1,
-                "description": "Cracks the earth with a strike"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 3
-                    }
-                },
-                "scaling": 0.12,
-                "cost": 2,
-                "rounds": 4
-            }
-        },
-        {
-            "info": {
-                "id": 33,
-                "name": "Forest Wall",
-                "level": 4,
-                "description": "Bathes in rejuvenating light"
-            },
-            "stats": {
-                "effect": {
-                    "healing": {
-                        "target": "caster",
-                        "value": 14
-                    }
-                },
-                "scaling": 0.07,
-                "cost": 1,
-                "rounds": 6
-            }
-        },
-        {
-            "info": {
-                "id": 34,
-                "name": "Magic Aura",
-                "level": 2,
-                "description": "Pierces with brutal precision"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 5
-                    }
-                },
-                "scaling": 0.15,
-                "cost": 1,
-                "rounds": 3
-            }
-        },
-        {
-            "info": {
-                "id": 35,
-                "name": "Ghost Mantle",
-                "level": 1,
-                "description": "Cracks the earth with a strike"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 3
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 3
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 3
-                    }
-                },
-                "scaling": 0.07,
-                "cost": 1,
-                "rounds": 3
-            }
-        },
-        {
-            "info": {
-                "id": 36,
-                "name": "Light Wall",
-                "level": 2,
-                "description": "Washes foes in pure light"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 3
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 7
-                    }
-                },
-                "scaling": 0.13,
-                "cost": 2,
-                "rounds": 5
-            }
-        },
-        {
-            "info": {
-                "id": 37,
-                "name": "Ice Echo",
-                "level": 4,
-                "description": "Chills the marrow"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 7
-                    }
-                },
-                "scaling": 0.12,
-                "cost": 4,
-                "rounds": 6
-            }
-        },
-        {
-            "info": {
-                "id": 38,
-                "name": "Quiet Aura",
-                "level": 5,
-                "description": "Cracks the earth with a strike"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 18
-                    }
-                },
-                "scaling": 0.07,
-                "cost": 3,
-                "rounds": 6
-            }
-        },
-        {
-            "info": {
-                "id": 39,
-                "name": "Echo Guard",
-                "level": 2,
-                "description": "Pierces with brutal precision"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 6
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 6
-                    }
-                },
-                "scaling": 0.1,
-                "cost": 3,
-                "rounds": 4
-            }
-        },
-        {
-            "info": {
-                "id": 40,
-                "name": "Spirit Echo",
-                "level": 1,
-                "description": "Sends out haunting energies"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 1
-                    }
-                },
-                "scaling": 0.18,
-                "cost": 2,
-                "rounds": 3
-            }
-        },
-        {
-            "info": {
-                "id": 61,
-                "name": "Shield Ring",
-                "level": 2,
-                "description": "Stitches wounds with magic"
-            },
-            "stats": {
-                "effect": {
-                    "healing": {
-                        "target": "caster",
-                        "value": 8
-                    }
-                },
-                "scaling": 0.17,
-                "cost": 1,
-                "rounds": 3
-            }
-        },
-        {
-            "info": {
-                "id": 62,
-                "name": "Gem Light",
-                "level": 3,
-                "description": "Sculpts beams of brilliance"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 5
-                    }
-                },
-                "scaling": 0.13,
-                "cost": 1,
-                "rounds": 3,
-                "gain": 2
-            }
-        },
-        {
-            "info": {
-                "id": 63,
-                "name": "Solid Cloak",
-                "level": 2,
-                "description": "Mends flesh and spirit"
-            },
-            "stats": {
-                "effect": {
-                    "healing": {
-                        "target": "caster",
-                        "value": 6
-                    }
-                },
-                "scaling": 0.12,
-                "cost": 2,
-                "rounds": 3
-            }
-        },
-        {
-            "info": {
-                "id": 65,
-                "name": "Ice Guard",
-                "level": 1,
-                "description": "Unleashes a polar burst"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 4
-                    }
-                },
-                "scaling": 0.29,
-                "cost": 1,
-                "rounds": 2,
-                "gain": 1
-            }
-        },
-        {
-            "info": {
-                "id": 66,
-                "name": "Leaf Light",
-                "level": 5,
-                "description": "Stitches wounds with magic"
-            },
-            "stats": {
-                "effect": {
-                    "healing": {
-                        "target": "caster",
-                        "value": 15
-                    }
-                },
-                "scaling": 0.04,
-                "cost": 3,
-                "rounds": 7,
-                "gain": 1
-            }
-        },
-        {
-            "info": {
-                "id": 67,
-                "name": "Shield Omen",
-                "level": 3,
-                "description": "Weaves healing currents"
-            },
-            "stats": {
-                "effect": {
-                    "healing": {
-                        "target": "caster",
-                        "value": 6
-                    }
-                },
-                "scaling": 0.09,
-                "cost": 1,
-                "rounds": 5,
-                "gain": 2
-            }
-        },
-        {
-            "info": {
-                "id": 68,
-                "name": "Flame Embrace",
-                "level": 4,
-                "description": "Pierces with brutal precision"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 5
-                    }
-                },
-                "scaling": 0.03,
-                "cost": 4,
-                "rounds": 3
-            }
-        },
-        {
-            "info": {
-                "id": 69,
-                "name": "Iron Seal",
-                "level": 4,
-                "description": "Cracks the earth with a strike"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 10
-                    }
-                },
-                "scaling": 0.1,
-                "cost": 2,
-                "rounds": 5,
-                "gain": 1
-            }
-        },
-        {
-            "info": {
-                "id": 70,
-                "name": "Solid Wall",
-                "level": 3,
-                "description": "Lashes out with force"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 4
-                    }
-                },
-                "scaling": 0.09,
-                "cost": 4,
-                "rounds": 6
-            }
-        },
-        {
-            "info": {
-                "id": 71,
-                "name": "Watch Ward",
-                "level": 5,
-                "description": "Lashes out with force"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 9
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 9
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 7
-                    }
-                },
-                "scaling": 0.03,
-                "cost": 5,
-                "rounds": 6,
-                "gain": 2
-            }
-        },
-        {
-            "info": {
-                "id": 73,
-                "name": "Dark Light",
-                "level": 1,
-                "description": "Casts a chilling darkness"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 3
-                    },
-                    "spell": {
-                        "target": "enemy",
-                        "value": 3
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 3
-                    }
-                },
-                "scaling": 0.17,
-                "cost": 1,
-                "rounds": 3
-            }
-        },
-        {
-            "info": {
-                "id": 74,
-                "name": "Ghost Echo",
-                "level": 2,
-                "description": "Smashes armor and bone"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 3
-                    }
-                },
-                "scaling": 0.16,
-                "cost": 1,
-                "rounds": 2
-            }
-        },
-        {
-            "info": {
-                "id": 75,
-                "name": "Rune Haven",
-                "level": 1,
-                "description": "Smashes armor and bone"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 1
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 1
-                    }
-                },
-                "scaling": 0.27,
-                "cost": 2,
-                "rounds": 4
-            }
-        },
-        {
-            "info": {
-                "id": 76,
-                "name": "Shield Spell",
-                "level": 3,
-                "description": "Stitches wounds with magic"
-            },
-            "stats": {
-                "effect": {
-                    "healing": {
-                        "target": "caster",
-                        "value": 11
-                    }
-                },
-                "scaling": 0.04,
-                "cost": 4,
-                "rounds": 5,
-                "gain": 1
-            }
-        },
-        {
-            "info": {
-                "id": 77,
-                "name": "Watch Wall",
-                "level": 5,
-                "description": "Lashes out with force"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 9
-                    }
-                },
-                "scaling": 0.04,
-                "cost": 5,
-                "rounds": 3
-            }
-        },
-        {
-            "info": {
-                "id": 78,
-                "name": "Iron Wall",
-                "level": 2,
-                "description": "Smashes armor and bone"
-            },
-            "stats": {
-                "effect": {
-                    "attack": {
-                        "target": "enemy",
-                        "value": 4
-                    }
-                },
-                "scaling": 0.11,
-                "cost": 1,
-                "rounds": 5
-            }
-        },
-        {
-            "info": {
-                "id": 79,
-                "name": "Flame Haven",
-                "level": 4,
-                "description": "Smashes armor and bone"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 5
-                    }
-                },
-                "scaling": 0.04,
-                "cost": 5,
-                "rounds": 5,
-                "gain": 2
-            }
-        },
-        {
-            "info": {
-                "id": 80,
-                "name": "Holy Cloak",
-                "level": 2,
-                "description": "Bursts with radiant energy"
-            },
-            "stats": {
-                "effect": {
-                    "spell": {
-                        "target": "enemy",
-                        "value": 3
-                    },
-                    "healing": {
-                        "target": "caster",
-                        "value": 3
-                    }
-                },
-                "scaling": 0.17,
-                "cost": 2,
-                "rounds": 3
-            }
-        }
-    ]
+  "direct": [
+    {
+      "info": {
+        "id": 1,
+        "name": "Fire Shard",
+        "level": 2,
+        "description": "Cracks the earth with a strike"
+      },
+      "stats": {
+        "effect": {
+          "spell": 23
+        },
+        "scaling": 0.16,
+        "cost": 1
+      }
+    },
+    {
+      "info": {
+        "id": 2,
+        "name": "Storm Cloak",
+        "level": 1,
+        "description": "Unleashes thunderous winds"
+      },
+      "stats": {
+        "effect": {
+          "spell": 9,
+          "healing": 9
+        },
+        "scaling": 0.4,
+        "cost": 1
+      }
+    },
+    {
+      "info": {
+        "id": 3,
+        "name": "Spirit Blaze",
+        "level": 4,
+        "description": "Releases a whispering blaze"
+      },
+      "stats": {
+        "effect": {
+          "spell": 45
+        },
+        "scaling": 0.29,
+        "cost": 3
+      }
+    },
+    {
+      "info": {
+        "id": 4,
+        "name": "Fire Tremor",
+        "level": 3,
+        "description": "Lashes out with force"
+      },
+      "stats": {
+        "effect": {
+          "spell": 28
+        },
+        "scaling": 0.19,
+        "cost": 2
+      }
+    },
+    {
+      "info": {
+        "id": 5,
+        "name": "Leaf Fall",
+        "level": 2,
+        "description": "Shakes the forest's heart"
+      },
+      "stats": {
+        "effect": {
+          "spell": 21
+        },
+        "scaling": 0.5,
+        "cost": 2
+      }
+    },
+    {
+      "info": {
+        "id": 6,
+        "name": "Night Rift",
+        "level": 3,
+        "description": "Tears open the void"
+      },
+      "stats": {
+        "effect": {
+          "spell": 31
+        },
+        "scaling": 0.26,
+        "cost": 1
+      }
+    },
+    {
+      "info": {
+        "id": 7,
+        "name": "Flame Storm",
+        "level": 2,
+        "description": "Ignites a crackling vortex"
+      },
+      "stats": {
+        "effect": {
+          "spell": 12
+        },
+        "scaling": 0.13,
+        "cost": 1
+      }
+    },
+    {
+      "info": {
+        "id": 8,
+        "name": "Heat Swirl",
+        "level": 3,
+        "description": "Cracks the earth with a strike"
+      },
+      "stats": {
+        "effect": {
+          "spell": 35
+        },
+        "scaling": 0.27,
+        "cost": 4
+      }
+    },
+    {
+      "info": {
+        "id": 9,
+        "name": "Moon Storm",
+        "level": 3,
+        "description": "Unleashes thunderous winds"
+      },
+      "stats": {
+        "effect": {
+          "spell": 34,
+          "healing": 22
+        },
+        "scaling": 0.24,
+        "cost": 3
+      }
+    },
+    {
+      "info": {
+        "id": 10,
+        "name": "Dark Spear",
+        "level": 3,
+        "description": "Tears open the void"
+      },
+      "stats": {
+        "effect": {
+          "attack": 18,
+          "spell": 18
+        },
+        "scaling": 0.18,
+        "cost": 4
+      }
+    },
+    {
+      "info": {
+        "id": 11,
+        "name": "Flame Spear",
+        "level": 3,
+        "description": "Lashes out with force"
+      },
+      "stats": {
+        "effect": {
+          "attack": 19,
+          "spell": 19
+        },
+        "scaling": 0.31,
+        "cost": 3
+      }
+    },
+    {
+      "info": {
+        "id": 12,
+        "name": "Storm Swirl",
+        "level": 4,
+        "description": "Ignites a crackling vortex"
+      },
+      "stats": {
+        "effect": {
+          "spell": 36
+        },
+        "scaling": 0.28,
+        "cost": 3
+      }
+    },
+    {
+      "info": {
+        "id": 13,
+        "name": "Iron Rage",
+        "level": 4,
+        "description": "Smashes armor and bone"
+      },
+      "stats": {
+        "effect": {
+          "attack": 48,
+          "spell": 10
+        },
+        "scaling": 0.15,
+        "cost": 1
+      }
+    },
+    {
+      "info": {
+        "id": 14,
+        "name": "Stone Swirl",
+        "level": 1,
+        "description": "Pierces with brutal precision"
+      },
+      "stats": {
+        "effect": {
+          "spell": 8
+        },
+        "scaling": 0.38,
+        "cost": 2
+      }
+    },
+    {
+      "info": {
+        "id": 15,
+        "name": "Star Storm",
+        "level": 1,
+        "description": "Unleashes thunderous winds"
+      },
+      "stats": {
+        "effect": {
+          "attack": 5,
+          "spell": 8,
+          "healing": 8
+        },
+        "scaling": 0.68,
+        "cost": 2
+      }
+    },
+    {
+      "info": {
+        "id": 16,
+        "name": "Leaf Bolt",
+        "level": 4,
+        "description": "Calls vines from the earth"
+      },
+      "stats": {
+        "effect": {
+          "spell": 23,
+          "healing": 38
+        },
+        "scaling": 0.23,
+        "cost": 2
+      }
+    },
+    {
+      "info": {
+        "id": 17,
+        "name": "Ice Tremor",
+        "level": 3,
+        "description": "Forms jagged crystals"
+      },
+      "stats": {
+        "effect": {
+          "spell": 23
+        },
+        "scaling": 0.33,
+        "cost": 1
+      }
+    },
+    {
+      "info": {
+        "id": 18,
+        "name": "Thunder Rush",
+        "level": 3,
+        "description": "Rages with electric fury"
+      },
+      "stats": {
+        "effect": {
+          "spell": 28
+        },
+        "scaling": 0.27,
+        "cost": 3
+      }
+    },
+    {
+      "info": {
+        "id": 19,
+        "name": "Heat Bolt",
+        "level": 3,
+        "description": "Smashes armor and bone"
+      },
+      "stats": {
+        "effect": {
+          "spell": 24
+        },
+        "scaling": 0.12,
+        "cost": 4
+      }
+    },
+    {
+      "info": {
+        "id": 20,
+        "name": "Storm Spear",
+        "level": 3,
+        "description": "Crashes a tempest down"
+      },
+      "stats": {
+        "effect": {
+          "attack": 19,
+          "spell": 19
+        },
+        "scaling": 0.31,
+        "cost": 1
+      }
+    },
+    {
+      "info": {
+        "id": 41,
+        "name": "Eclipse Strike",
+        "level": 1,
+        "description": "Cracks the earth with a strike"
+      },
+      "stats": {
+        "effect": {
+          "spell": 11
+        },
+        "scaling": 0.62,
+        "cost": 2
+      }
+    },
+    {
+      "info": {
+        "id": 42,
+        "name": "Abyss Rip",
+        "level": 3,
+        "description": "Lashes out with force"
+      },
+      "stats": {
+        "effect": {
+          "spell": 30
+        },
+        "scaling": 0.21,
+        "cost": 4,
+        "gain": 1
+      }
+    },
+    {
+      "info": {
+        "id": 43,
+        "name": "Magic Rise",
+        "level": 3,
+        "description": "Lashes out with force"
+      },
+      "stats": {
+        "effect": {
+          "spell": 18
+        },
+        "scaling": 0.2,
+        "cost": 2,
+        "gain": 1
+      }
+    },
+    {
+      "info": {
+        "id": 44,
+        "name": "Wind Rush",
+        "level": 2,
+        "description": "Summons a cutting gale"
+      },
+      "stats": {
+        "effect": {
+          "spell": 15
+        },
+        "scaling": 0.36,
+        "cost": 2
+      }
+    },
+    {
+      "info": {
+        "id": 45,
+        "name": "Night Rise",
+        "level": 4,
+        "description": "Weaves threads of night"
+      },
+      "stats": {
+        "effect": {
+          "spell": 47
+        },
+        "scaling": 0.11,
+        "cost": 5,
+        "gain": 3
+      }
+    },
+    {
+      "info": {
+        "id": 46,
+        "name": "Magic Burst",
+        "level": 5,
+        "description": "Pierces with brutal precision"
+      },
+      "stats": {
+        "effect": {
+          "spell": 44
+        },
+        "scaling": 0.23,
+        "cost": 1
+      }
+    },
+    {
+      "info": {
+        "id": 47,
+        "name": "Star Slash",
+        "level": 3,
+        "description": "Pierces with brutal precision"
+      },
+      "stats": {
+        "effect": {
+          "attack": 22,
+          "spell": 22,
+          "healing": 20
+        },
+        "scaling": 0.31,
+        "cost": 2
+      }
+    },
+    {
+      "info": {
+        "id": 48,
+        "name": "Light Slash",
+        "level": 1,
+        "description": "Bursts with radiant energy"
+      },
+      "stats": {
+        "effect": {
+          "attack": 9,
+          "spell": 9
+        },
+        "scaling": 0.37,
+        "cost": 1
+      }
+    },
+    {
+      "info": {
+        "id": 49,
+        "name": "Flame Burst",
+        "level": 5,
+        "description": "Cracks the earth with a strike"
+      },
+      "stats": {
+        "effect": {
+          "spell": 56
+        },
+        "scaling": 0.16,
+        "cost": 3,
+        "gain": 1
+      }
+    },
+    {
+      "info": {
+        "id": 50,
+        "name": "Fire Burst",
+        "level": 4,
+        "description": "Lashes out with force"
+      },
+      "stats": {
+        "effect": {
+          "spell": 42
+        },
+        "scaling": 0.26,
+        "cost": 5,
+        "gain": 3
+      }
+    },
+    {
+      "info": {
+        "id": 51,
+        "name": "Dusk Rift",
+        "level": 1,
+        "description": "Cracks the earth with a strike"
+      },
+      "stats": {
+        "effect": {
+          "spell": 11
+        },
+        "scaling": 0.7,
+        "cost": 2
+      }
+    },
+    {
+      "info": {
+        "id": 52,
+        "name": "Moon Slash",
+        "level": 1,
+        "description": "Lashes out with force"
+      },
+      "stats": {
+        "effect": {
+          "attack": 12,
+          "spell": 12
+        },
+        "scaling": 0.46,
+        "cost": 1
+      }
+    },
+    {
+      "info": {
+        "id": 53,
+        "name": "Break",
+        "level": 3,
+        "description": "Pierces with brutal precision"
+      },
+      "stats": {
+        "effect": {
+          "attack": 22
+        },
+        "scaling": 0.23,
+        "cost": 3
+      }
+    },
+    {
+      "info": {
+        "id": 54,
+        "name": "Ghost Strike",
+        "level": 4,
+        "description": "Cracks the earth with a strike"
+      },
+      "stats": {
+        "effect": {
+          "spell": 11,
+          "healing": 22
+        },
+        "scaling": 0.09,
+        "cost": 4,
+        "gain": 3
+      }
+    },
+    {
+      "info": {
+        "id": 55,
+        "name": "Wind Burst",
+        "level": 5,
+        "description": "Carves the air like a blade"
+      },
+      "stats": {
+        "effect": {
+          "spell": 36
+        },
+        "scaling": 0.2,
+        "cost": 5
+      }
+    },
+    {
+      "info": {
+        "id": 56,
+        "name": "Night Rush",
+        "level": 4,
+        "description": "Weaves threads of night"
+      },
+      "stats": {
+        "effect": {
+          "spell": 37
+        },
+        "scaling": 0.18,
+        "cost": 3,
+        "gain": 3
+      }
+    },
+    {
+      "info": {
+        "id": 57,
+        "name": "Light Bolt",
+        "level": 1,
+        "description": "Bursts with radiant energy"
+      },
+      "stats": {
+        "effect": {
+          "spell": 6
+        },
+        "scaling": 0.54,
+        "cost": 1
+      }
+    },
+    {
+      "info": {
+        "id": 58,
+        "name": "Light Wave",
+        "level": 3,
+        "description": "Sculpts beams of brilliance"
+      },
+      "stats": {
+        "effect": {
+          "spell": 20
+        },
+        "scaling": 0.24,
+        "cost": 2,
+        "gain": 1
+      }
+    },
+    {
+      "info": {
+        "id": 59,
+        "name": "Night Rip",
+        "level": 5,
+        "description": "Tears open the void"
+      },
+      "stats": {
+        "effect": {
+          "attack": 27,
+          "spell": 27
+        },
+        "scaling": 0.24,
+        "cost": 5,
+        "gain": 4
+      }
+    },
+    {
+      "info": {
+        "id": 60,
+        "name": "Wind Rip",
+        "level": 3,
+        "description": "Spirals wind into a lance"
+      },
+      "stats": {
+        "effect": {
+          "attack": 32,
+          "spell": 32,
+          "healing": 26
+        },
+        "scaling": 0.34,
+        "cost": 2
+      }
+    }
+  ],
+  "passive": [
+    {
+      "info": {
+        "id": 21,
+        "name": "Dark Guard",
+        "level": 3,
+        "description": "Weaves threads of night"
+      },
+      "stats": {
+        "effect": {
+          "attack": 4,
+          "spell": 4,
+          "healing": 4
+        },
+        "scaling": 0.06,
+        "cost": 3,
+        "rounds": 4
+      }
+    },
+    {
+      "info": {
+        "id": 22,
+        "name": "Forest Veil",
+        "level": 5,
+        "description": "Erupts a verdant blast"
+      },
+      "stats": {
+        "effect": {
+          "spell": 17
+        },
+        "scaling": 0.08,
+        "cost": 1,
+        "rounds": 2
+      }
+    },
+    {
+      "info": {
+        "id": 23,
+        "name": "Quiet Ice",
+        "level": 5,
+        "description": "Unleashes a polar burst"
+      },
+      "stats": {
+        "effect": {
+          "spell": 5
+        },
+        "scaling": 0.04,
+        "cost": 4,
+        "rounds": 2
+      }
+    },
+    {
+      "info": {
+        "id": 24,
+        "name": "Rock Wall",
+        "level": 1,
+        "description": "Bathes in rejuvenating light"
+      },
+      "stats": {
+        "effect": {
+          "healing": 8
+        },
+        "scaling": 0.07,
+        "cost": 1,
+        "rounds": 3
+      }
+    },
+    {
+      "info": {
+        "id": 25,
+        "name": "Forest Banner",
+        "level": 2,
+        "description": "Stitches wounds with magic"
+      },
+      "stats": {
+        "effect": {
+          "healing": 3
+        },
+        "scaling": 0.17,
+        "cost": 3,
+        "rounds": 3
+      }
+    },
+    {
+      "info": {
+        "id": 28,
+        "name": "Dark Embrace",
+        "level": 2,
+        "description": "Casts a chilling darkness"
+      },
+      "stats": {
+        "effect": {
+          "spell": 3,
+          "healing": 5
+        },
+        "scaling": 0.11,
+        "cost": 3,
+        "rounds": 5
+      }
+    },
+    {
+      "info": {
+        "id": 29,
+        "name": "Magic Oath",
+        "level": 2,
+        "description": "Lashes out with force"
+      },
+      "stats": {
+        "effect": {
+          "spell": 6
+        },
+        "scaling": 0.13,
+        "cost": 1,
+        "rounds": 2
+      }
+    },
+    {
+      "info": {
+        "id": 30,
+        "name": "Ghost Wall",
+        "level": 1,
+        "description": "Cracks the earth with a strike"
+      },
+      "stats": {
+        "effect": {
+          "spell": 3
+        },
+        "scaling": 0.12,
+        "cost": 2,
+        "rounds": 4
+      }
+    },
+    {
+      "info": {
+        "id": 33,
+        "name": "Forest Wall",
+        "level": 4,
+        "description": "Bathes in rejuvenating light"
+      },
+      "stats": {
+        "effect": {
+          "healing": 14
+        },
+        "scaling": 0.07,
+        "cost": 1,
+        "rounds": 6
+      }
+    },
+    {
+      "info": {
+        "id": 34,
+        "name": "Magic Aura",
+        "level": 2,
+        "description": "Pierces with brutal precision"
+      },
+      "stats": {
+        "effect": {
+          "spell": 5
+        },
+        "scaling": 0.15,
+        "cost": 1,
+        "rounds": 3
+      }
+    },
+    {
+      "info": {
+        "id": 35,
+        "name": "Ghost Mantle",
+        "level": 1,
+        "description": "Cracks the earth with a strike"
+      },
+      "stats": {
+        "effect": {
+          "attack": 3,
+          "spell": 3,
+          "healing": 3
+        },
+        "scaling": 0.07,
+        "cost": 1,
+        "rounds": 3
+      }
+    },
+    {
+      "info": {
+        "id": 36,
+        "name": "Light Wall",
+        "level": 2,
+        "description": "Washes foes in pure light"
+      },
+      "stats": {
+        "effect": {
+          "spell": 3,
+          "healing": 7
+        },
+        "scaling": 0.13,
+        "cost": 2,
+        "rounds": 5
+      }
+    },
+    {
+      "info": {
+        "id": 37,
+        "name": "Ice Echo",
+        "level": 4,
+        "description": "Chills the marrow"
+      },
+      "stats": {
+        "effect": {
+          "spell": 7
+        },
+        "scaling": 0.12,
+        "cost": 4,
+        "rounds": 6
+      }
+    },
+    {
+      "info": {
+        "id": 38,
+        "name": "Quiet Aura",
+        "level": 5,
+        "description": "Cracks the earth with a strike"
+      },
+      "stats": {
+        "effect": {
+          "spell": 18
+        },
+        "scaling": 0.07,
+        "cost": 3,
+        "rounds": 6
+      }
+    },
+    {
+      "info": {
+        "id": 39,
+        "name": "Echo Guard",
+        "level": 2,
+        "description": "Pierces with brutal precision"
+      },
+      "stats": {
+        "effect": {
+          "attack": 6,
+          "spell": 6
+        },
+        "scaling": 0.1,
+        "cost": 3,
+        "rounds": 4
+      }
+    },
+    {
+      "info": {
+        "id": 40,
+        "name": "Spirit Echo",
+        "level": 1,
+        "description": "Sends out haunting energies"
+      },
+      "stats": {
+        "effect": {
+          "spell": 1
+        },
+        "scaling": 0.18,
+        "cost": 2,
+        "rounds": 3
+      }
+    },
+    {
+      "info": {
+        "id": 61,
+        "name": "Shield Ring",
+        "level": 2,
+        "description": "Stitches wounds with magic"
+      },
+      "stats": {
+        "effect": {
+          "healing": 8
+        },
+        "scaling": 0.17,
+        "cost": 1,
+        "rounds": 3
+      }
+    },
+    {
+      "info": {
+        "id": 62,
+        "name": "Gem Light",
+        "level": 3,
+        "description": "Sculpts beams of brilliance"
+      },
+      "stats": {
+        "effect": {
+          "spell": 5
+        },
+        "scaling": 0.13,
+        "cost": 1,
+        "rounds": 3,
+        "gain": 2
+      }
+    },
+    {
+      "info": {
+        "id": 63,
+        "name": "Solid Cloak",
+        "level": 2,
+        "description": "Mends flesh and spirit"
+      },
+      "stats": {
+        "effect": {
+          "healing": 6
+        },
+        "scaling": 0.12,
+        "cost": 2,
+        "rounds": 3
+      }
+    },
+    {
+      "info": {
+        "id": 65,
+        "name": "Ice Guard",
+        "level": 1,
+        "description": "Unleashes a polar burst"
+      },
+      "stats": {
+        "effect": {
+          "spell": 4
+        },
+        "scaling": 0.29,
+        "cost": 1,
+        "rounds": 2,
+        "gain": 1
+      }
+    },
+    {
+      "info": {
+        "id": 66,
+        "name": "Leaf Light",
+        "level": 5,
+        "description": "Stitches wounds with magic"
+      },
+      "stats": {
+        "effect": {
+          "healing": 15
+        },
+        "scaling": 0.04,
+        "cost": 3,
+        "rounds": 7,
+        "gain": 1
+      }
+    },
+    {
+      "info": {
+        "id": 67,
+        "name": "Shield Omen",
+        "level": 3,
+        "description": "Weaves healing currents"
+      },
+      "stats": {
+        "effect": {
+          "healing": 6
+        },
+        "scaling": 0.09,
+        "cost": 1,
+        "rounds": 5,
+        "gain": 2
+      }
+    },
+    {
+      "info": {
+        "id": 68,
+        "name": "Flame Embrace",
+        "level": 4,
+        "description": "Pierces with brutal precision"
+      },
+      "stats": {
+        "effect": {
+          "spell": 5
+        },
+        "scaling": 0.03,
+        "cost": 4,
+        "rounds": 3
+      }
+    },
+    {
+      "info": {
+        "id": 69,
+        "name": "Iron Seal",
+        "level": 4,
+        "description": "Cracks the earth with a strike"
+      },
+      "stats": {
+        "effect": {
+          "attack": 10
+        },
+        "scaling": 0.1,
+        "cost": 2,
+        "rounds": 5,
+        "gain": 1
+      }
+    },
+    {
+      "info": {
+        "id": 70,
+        "name": "Solid Wall",
+        "level": 3,
+        "description": "Lashes out with force"
+      },
+      "stats": {
+        "effect": {
+          "attack": 4
+        },
+        "scaling": 0.09,
+        "cost": 4,
+        "rounds": 6
+      }
+    },
+    {
+      "info": {
+        "id": 71,
+        "name": "Watch Ward",
+        "level": 5,
+        "description": "Lashes out with force"
+      },
+      "stats": {
+        "effect": {
+          "attack": 9,
+          "spell": 9,
+          "healing": 7
+        },
+        "scaling": 0.03,
+        "cost": 5,
+        "rounds": 6,
+        "gain": 2
+      }
+    },
+    {
+      "info": {
+        "id": 73,
+        "name": "Dark Light",
+        "level": 1,
+        "description": "Casts a chilling darkness"
+      },
+      "stats": {
+        "effect": {
+          "attack": 3,
+          "spell": 3,
+          "healing": 3
+        },
+        "scaling": 0.17,
+        "cost": 1,
+        "rounds": 3
+      }
+    },
+    {
+      "info": {
+        "id": 74,
+        "name": "Ghost Echo",
+        "level": 2,
+        "description": "Smashes armor and bone"
+      },
+      "stats": {
+        "effect": {
+          "spell": 3
+        },
+        "scaling": 0.16,
+        "cost": 1,
+        "rounds": 2
+      }
+    },
+    {
+      "info": {
+        "id": 75,
+        "name": "Rune Haven",
+        "level": 1,
+        "description": "Smashes armor and bone"
+      },
+      "stats": {
+        "effect": {
+          "spell": 1,
+          "healing": 1
+        },
+        "scaling": 0.27,
+        "cost": 2,
+        "rounds": 4
+      }
+    },
+    {
+      "info": {
+        "id": 76,
+        "name": "Shield Spell",
+        "level": 3,
+        "description": "Stitches wounds with magic"
+      },
+      "stats": {
+        "effect": {
+          "healing": 11
+        },
+        "scaling": 0.04,
+        "cost": 4,
+        "rounds": 5,
+        "gain": 1
+      }
+    },
+    {
+      "info": {
+        "id": 77,
+        "name": "Watch Wall",
+        "level": 5,
+        "description": "Lashes out with force"
+      },
+      "stats": {
+        "effect": {
+          "attack": 9
+        },
+        "scaling": 0.04,
+        "cost": 5,
+        "rounds": 3
+      }
+    },
+    {
+      "info": {
+        "id": 78,
+        "name": "Iron Wall",
+        "level": 2,
+        "description": "Smashes armor and bone"
+      },
+      "stats": {
+        "effect": {
+          "attack": 4
+        },
+        "scaling": 0.11,
+        "cost": 1,
+        "rounds": 5
+      }
+    },
+    {
+      "info": {
+        "id": 79,
+        "name": "Flame Haven",
+        "level": 4,
+        "description": "Smashes armor and bone"
+      },
+      "stats": {
+        "effect": {
+          "spell": 5
+        },
+        "scaling": 0.04,
+        "cost": 5,
+        "rounds": 5,
+        "gain": 2
+      }
+    },
+    {
+      "info": {
+        "id": 80,
+        "name": "Holy Cloak",
+        "level": 2,
+        "description": "Bursts with radiant energy"
+      },
+      "stats": {
+        "effect": {
+          "spell": 3,
+          "healing": 3
+        },
+        "scaling": 0.17,
+        "cost": 2,
+        "rounds": 3
+      }
+    }
+  ]
 }

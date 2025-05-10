@@ -17,7 +17,7 @@ class Spells:
         for stat in stats["stats"]:
             if stat == "effect":
                 for base in stats["stats"]["effect"]:
-                    stat_class = stats["stats"]["effect"][base]["value"]
+                    stat_class = stats["stats"]["effect"][base]
 
                     msg += f"{stat_class.get_color()}  "
             else:
@@ -38,11 +38,11 @@ class Spells:
         for base in effects:
             match base:
                 case "attack":
-                    stat = effects["attack"]["value"]
+                    stat = effects["attack"]
                     msg += f" dealing {stat.get_color()} (+ {scaling.get_color()}) physical damage"
                     first_run += 1
                 case "spell":
-                    stat = effects["spell"]["value"]
+                    stat = effects["spell"]
 
                     if first_run == 0:
                         msg += f" dealing {stat.get_color()} (+ {scaling.get_color()}) spell damage"
@@ -53,7 +53,7 @@ class Spells:
                         msg += f" and {stat.get_color()} (+ {scaling.get_color()}) spell damage"
 
                 case "healing":
-                    stat = effects["healing"]["value"]
+                    stat = effects["healing"]
 
                     if first_run == 0:
                         msg += f" healing the caster for {stat.get_color()} (+ {scaling.get_color()})"
