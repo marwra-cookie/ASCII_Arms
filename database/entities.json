@@ -5,7 +5,7 @@
                 "id": 0,
                 "name": "GM",
                 "icon": "\ud83e\uddd9\u200d\u2642\ufe0f",
-                "level": 15,
+                "level": 255,
                 "slain": 4
             },
             "stats": {
@@ -27,7 +27,7 @@
             },
             "spells": {
                 "Slot 1": 1,
-                "Slot 2": 80,
+                "Slot 2": null,
                 "Slot 3": null,
                 "Slot 4": null
             },

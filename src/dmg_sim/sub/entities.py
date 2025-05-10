@@ -65,6 +65,31 @@ class Entities:
 
         return table
 
+    def get_status(self) -> str:
+        tot_nr = int(self.base["stats"]["health"].value)
+        curr_nr = int(self.stats["health"].value)
+        curr_percent = curr_nr / tot_nr
+
+        bars = 20
+        filled_bars = round(curr_percent * bars)
+
+        health_bar = f"{self.info["name"]} lvl.{self.info["level"]}\n["
+
+        for i in range(bars):
+            if i < filled_bars:
+                if curr_percent > 0.66:
+                    health_bar += green("■")
+                elif curr_percent > 0.33:
+                    health_bar += yellow("■")
+                else:
+                    health_bar += red("■")
+            else:
+                health_bar += " "
+
+        health_bar += f"] {int(curr_percent * 100)}%\n{tot_nr}/{curr_nr}"
+
+        return health_bar
+
     def attack_given(self, spell):
         damage = 0
         scaling = spell.stats["scaling"].value

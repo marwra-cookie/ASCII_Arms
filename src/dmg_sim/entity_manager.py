@@ -254,6 +254,9 @@ def find_enemy(level, boss_encounter):
             if abs(lvl - level) <= 1:
                 matches[enemy] = enemies[enemy]
 
+    if len(matches) == 0:
+        matches = enemies
+
     who_to_fight = random.choice(list(matches))
     encounter = matches[who_to_fight]
 
