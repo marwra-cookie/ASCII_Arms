@@ -5,12 +5,11 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
 
 ---
 
-### 🛠 Requirements
+## 🛠 Requirements
 - Python 3.13 or higher
 - Git (optional, if cloning the repo)
 
-### 💻 Installation
-## Windows, Mac OS, or Linux
+## 💻 Installation
 
 1. **Clone repository**
    ```bash
@@ -21,12 +20,12 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
    ```bash
     python -m venv .venv
    ```
-   ## Windows
+   ### Windows
    ```bash
    PowerShell: .\.venv\Scripts\Activate.ps1
    Command Prompt: .\.venv\Scripts\Activate.bat
    ```
-   # Mac OS / Linux
+   ### Mac OS / Linux
    ```bash
    source .venv/bin/activate
    ```
