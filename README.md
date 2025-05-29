@@ -24,17 +24,17 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
    ```
    **Windows**
    
-   &nbsp;PowerShell
+   &nbsp; PowerShell
    ```bash
-   &nbsp;.\.venv\Scripts\Activate.ps1
+   .\.venv\Scripts\Activate.ps1
    ```
-   &nbsp;Command Prompt
+   &nbsp; Command Prompt
    ```bash
-   &nbsp;.\.venv\Scripts\Activate.bat
+   .\.venv\Scripts\Activate.bat
    ```
    **Mac OS / Linux**
    ```bash
-   &nbsp;source .venv/bin/activate
+   source .venv/bin/activate
    ```
 3. **Install dependencies**
    ```bash
