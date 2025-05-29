@@ -44,6 +44,19 @@ base_stats = {
 }
 
 
+def make_serializable(obj):
+    if isinstance(obj, dict):
+        return {key: make_serializable(value) for key, value in obj.items()}
+    elif isinstance(obj, list):
+        return [make_serializable(item) for item in obj]
+    elif hasattr(obj, "value"):
+        return obj.value
+    elif hasattr(obj, "info") and isinstance(obj.info, dict) and "id" in obj.info:
+        return obj.info["id"]
+    else:
+        return obj
+
+
 def save_player(player):
 
     profile = deepcopy(player.__dict__)
@@ -53,46 +66,36 @@ def save_player(player):
     with open(json_path, "r", encoding="utf-8") as read_file:
         data = json.load(read_file)
 
+    profile["stats"] = {stat: profile["stats"][stat].value for stat in profile["stats"]}
+
+    profile["spells"] = {
+        spell: (
+            None
+            if profile["spells"][spell] is None
+            else profile["spells"][spell].info["id"]
+        )
+        for spell in profile["spells"]
+    }
+
+    profile["items"] = {
+        item: (
+            None
+            if profile["items"][item] is None
+            else profile["items"][item].info["id"]
+        )
+        for item in profile["items"]
+    }
+
+    profile = make_serializable(profile)
     found = False
 
     for i, save in enumerate(data["player"]):
         if profile["info"]["id"] == save["info"]["id"]:
             found = True
-
-            for stat in profile["stats"]:
-                profile["stats"][stat] = profile["stats"][stat].value
-
-            for spell in profile["spells"]:
-                if profile["spells"][spell] == None:
-                    profile["spells"][spell] = None
-                else:
-                    profile["spells"][spell] = profile["spells"][spell].info["id"]
-
-            for item in profile["items"]:
-                if profile["items"][item] == None:
-                    profile["items"][item] = None
-                else:
-                    profile["items"][item] = profile["items"][item].info["id"]
-
             data["player"][i] = profile
             break
 
     if found is not True:
-        for stat in profile["stats"]:
-            profile["stats"][stat] = profile["stats"][stat].value
-
-        for spell in profile["spells"]:
-            if profile["spells"][spell] == None:
-                profile["spells"][spell] = None
-            else:
-                profile["spells"][spell] = profile["spells"][spell].info["id"]
-
-        for item in profile["items"]:
-            if profile["items"][item] == None:
-                profile["items"][item] = None
-            else:
-                profile["items"][item] = profile["items"][item].info["id"]
-
         data["player"].append(profile)
 
     with open(json_path, "w") as write_file:

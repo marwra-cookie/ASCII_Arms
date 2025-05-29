@@ -22,7 +22,7 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
    ```bash
     python -m venv .venv
    ```
-3. **Windows**
+   **Windows**
    
    PowerShell
    ```bash

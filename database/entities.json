@@ -1,6 +1,46 @@
 {
     "player": [
         {
+            "base": {
+                "info": {
+                    "id": 0,
+                    "name": "GM",
+                    "icon": "\ud83e\uddd9\u200d\u2642\ufe0f",
+                    "level": 255,
+                    "slain": 4
+                },
+                "stats": {
+                    "attackPower": 999,
+                    "spellPower": 999,
+                    "healingPower": 999,
+                    "criticalChance": 1,
+                    "criticalDamage": 1,
+                    "armorPenetration": 1,
+                    "spellPenetration": 1,
+                    "health": 10000,
+                    "defense": 100,
+                    "resistance": 25,
+                    "dodge": 1,
+                    "parry": 1,
+                    "regeneration": 1,
+                    "energy": 5,
+                    "momentum": 100
+                },
+                "spells": {
+                    "Slot 1": 1,
+                    "Slot 2": null,
+                    "Slot 3": null,
+                    "Slot 4": null
+                },
+                "items": {
+                    "accessory": 1,
+                    "armor": 3,
+                    "boots": 6,
+                    "helm": null,
+                    "potion": null,
+                    "weapon": 10
+                }
+            },
             "info": {
                 "id": 0,
                 "name": "GM",
@@ -38,9 +78,50 @@
                 "helm": null,
                 "potion": null,
                 "weapon": 10
-            }
+            },
+            "slain": 0
         },
         {
+            "base": {
+                "info": {
+                    "id": 186,
+                    "name": "Cookie",
+                    "icon": "\ud83d\ude42",
+                    "level": 1,
+                    "slain": 0
+                },
+                "stats": {
+                    "attackPower": 10,
+                    "spellPower": 10,
+                    "healingPower": 10,
+                    "criticalChance": 0.1,
+                    "criticalDamage": 1.5,
+                    "armorPenetration": 0,
+                    "spellPenetration": 0,
+                    "health": 500,
+                    "defense": 0,
+                    "resistance": 0,
+                    "dodge": 0.1,
+                    "parry": 0.1,
+                    "regeneration": 0,
+                    "energy": 3,
+                    "momentum": 100
+                },
+                "spells": {
+                    "Slot 1": 1,
+                    "Slot 2": null,
+                    "Slot 3": null,
+                    "Slot 4": null
+                },
+                "items": {
+                    "accessory": 1,
+                    "armor": 3,
+                    "boots": 6,
+                    "helm": null,
+                    "potion": null,
+                    "weapon": 10
+                }
+            },
             "info": {
                 "id": 186,
                 "name": "Cookie",
@@ -78,7 +159,8 @@
                 "helm": null,
                 "potion": null,
                 "weapon": 10
-            }
+            },
+            "slain": 0
         }
     ],
     "enemy": [
