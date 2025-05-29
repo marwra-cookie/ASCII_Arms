@@ -5,26 +5,36 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
 
 ---
 
-## 🛠 Installation [WIP]
-
-### 📦 Prerequisites
+### 🛠 Requirements
 - Python 3.13 or higher
 - Git (optional, if cloning the repo)
 
-### 💻 Windows, Mac OS, or Linux
+### 💻 Installation
+## Windows, Mac OS, or Linux
 
-1. **Clone the repository**
+1. **Clone repository**
    ```bash
    git clone <repository-url>
    cd DMG-SIM
-2. **Create a virtual environment (recommended)**
+   ```
+2. **Create virtual environment (recommended)**
    ```bash
     python -m venv .venv
-    source .venv/bin/activate    # macOS/Linux
-    .venv\Scripts\activate       # Windows
+   ```
+   ## Windows
+   ```bash
+   PowerShell: .\.venv\Scripts\Activate.ps1
+   Command Prompt: .\.venv\Scripts\Activate.bat
+   ```
+   # Mac OS / Linux
+   ```bash
+   source .venv/bin/activate
+   ```
 3. **Install dependencies**
    ```bash
-   pip install -r requirements.txt
-4. **Run the game simulation**
+   pip install .
+   ```
+4. **Run game**
    ```bash
-   python src/dmg_sim/launcher.py
+   python -m src.dmg_sim.main
+   ```

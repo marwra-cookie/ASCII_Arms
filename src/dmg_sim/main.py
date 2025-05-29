@@ -76,6 +76,8 @@ def menu_start():
 
 
 def load_game():
+    rows = 20
+
     if game.player.info["id"] != 0:
         r = "■" * rows
         tot = 100
