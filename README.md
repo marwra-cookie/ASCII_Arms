@@ -14,6 +14,8 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
 1. **Clone repository**
    ```bash
    git clone <repository-url>
+   ```
+   ```bash
    cd DMG-SIM
    ```
 2. **Create virtual environment (recommended)**
@@ -21,9 +23,13 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
     python -m venv .venv
    ```
    ### Windows
+3. #### PowerShell
    ```bash
-   PowerShell: .\.venv\Scripts\Activate.ps1
-   Command Prompt: .\.venv\Scripts\Activate.bat
+   .\.venv\Scripts\Activate.ps1
+   ```
+   #### Command Prompt
+   ```bash
+   .\.venv\Scripts\Activate.bat
    ```
    ### Mac OS / Linux
    ```bash
