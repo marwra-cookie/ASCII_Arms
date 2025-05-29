@@ -23,12 +23,6 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
     python -m venv .venv
    ```
    **Windows**
-   
-   &nbsp; PowerShell
-   ```bash
-   .\.venv\Scripts\Activate.ps1
-   ```
-   &nbsp; Command Prompt
    ```bash
    .\.venv\Scripts\Activate.bat
    ```
