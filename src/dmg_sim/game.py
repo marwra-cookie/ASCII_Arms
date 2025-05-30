@@ -5,11 +5,12 @@ boss_requirement = 4
 
 
 def menu_combat(enemy):
+    """ """
     print(enemy)
 
 
 def menu_combat_options():
-
+    """ """
     if player.info["slain"] >= boss_requirement:
         boss_desc = yellow(f"<<< boss available!")
     else:
@@ -39,6 +40,7 @@ def menu_combat_options():
 
 
 def menu_character():
+    """ """
     while True:
         update()
 
@@ -61,6 +63,7 @@ def menu_character():
 
 
 def menu_items():
+    """ """
     while True:
         update()
         print(f"Inventory 💰" f"\n\n{player.get_items()}" f"\n\n3. 🔙 Back")
@@ -72,6 +75,7 @@ def menu_items():
 
 
 def menu_spells():
+    """ """
     while True:
         update()
         print(f"Spellbook 🔮" f"\n\n{player.get_spells()}" f"\n\n3. 🔙 Back")
@@ -82,6 +86,7 @@ def menu_spells():
 
 
 def menu_save():
+    """ """
     update()
     print("Saving Progress... 💾")
     save_player(player)
@@ -90,6 +95,7 @@ def menu_save():
 
 
 def menu():
+    """ """
     while True:
         update()
         print(

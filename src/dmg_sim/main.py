@@ -4,6 +4,7 @@ import time
 
 
 def menu_new_save():
+    """ """
     update()
     print("Start New Adventure! 🧙‍♂️\n\nEnter your name:")
     name = input("> ")
@@ -23,6 +24,10 @@ def menu_new_save():
 
 
 def menu_open_save() -> bool:
+    """
+
+    :return:
+    """
     update()
 
     json_path = os.path.join(project_root, "database", "entities.json")
@@ -49,6 +54,7 @@ def menu_open_save() -> bool:
 
 
 def menu_start():
+    """ """
     failed = False
 
     while True:
@@ -76,6 +82,7 @@ def menu_start():
 
 
 def load_game():
+    """ """
     rows = 20
 
     if game.player.info["id"] != 0:
@@ -86,7 +93,14 @@ def load_game():
         while len(r) > 0:
             update()
             print(f"Entering game as {game.player.info["name"]}!\n")
-            print(f"🔄 {tot}% {r}")
+
+            if tot > 66:
+                print(f"🔄 {tot}% {green(r)}")
+            elif tot > 33:
+                print(f"🔄 {tot}% {yellow(r)}")
+            else:
+                print(f"🔄 {tot}% {red(r)}")
+
             tot -= percent
             r = r[:-1]
             time.sleep(0.1)
@@ -97,6 +111,7 @@ def load_game():
     game.menu()
 
 
+#
 if __name__ == "__main__":
     load_items()
     load_spells()

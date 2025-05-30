@@ -1,13 +1,17 @@
 from tabulate import tabulate
 
 
-class Items:
+class Item:
 
     def __init__(self, **kwargs):
         self.stats = kwargs
         self.__dict__.update(kwargs)
 
     def __str__(self) -> str:
+        """
+
+        :return:
+        """
         stats = self.__dict__
 
         level = stats["info"]["level"]
@@ -17,11 +21,15 @@ class Items:
         for stat in stats["stats"]:
             add_stats = stats["stats"][stat]
 
-            msg += f"{add_stats.get_color()}  "
+            msg += f"{add_stats.get_value_color()}  "
 
         return msg
 
-    def get_tabulate(self):
+    def get_tabulate(self) -> str:
+        """
+
+        :return:
+        """
         stats = self.__dict__
 
         level = stats["info"]["level"]
@@ -32,25 +40,25 @@ class Items:
         for stat in stats["stats"]:
             add_stats = stats["stats"][stat]
 
-            msg.append([f"{add_stats.icon} {add_stats.get_color()}"])
+            msg.append([f"{add_stats.icon} {add_stats.get_value_color()}"])
         string = tabulate([msg])
 
         return string
 
 
-class Accessory(Items):
+class Accessory(Item):
     pass
 
 
-class Armor(Items):
+class Armor(Item):
     pass
 
 
-class Boots(Items):
+class Boots(Item):
     pass
 
 
-class Helm(Items):
+class Helm(Item):
     pass
 
 
@@ -60,5 +68,5 @@ class Potion:
         self.__dict__.update(kwargs)
 
 
-class Weapon(Items):
+class Weapon(Item):
     pass

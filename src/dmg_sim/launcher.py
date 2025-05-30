@@ -9,10 +9,12 @@ project_root = os.path.dirname(src_dir)
 
 
 def update():
+    """ """
     os.system("cls")
 
 
 def open_new_window():
+    """ """
     system_platform = platform.system()
     module_path = "src.dmg_sim.main"
 
@@ -37,5 +39,6 @@ def open_new_window():
     sys.exit()
 
 
+#
 if __name__ == "__main__":
     open_new_window()

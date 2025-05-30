@@ -4,6 +4,7 @@ from copy import deepcopy
 import json
 import os
 
+json_path = os.path.join(project_root, "database", "entities.json")
 
 enemies = {}
 bosses = {}
@@ -44,27 +45,16 @@ base_stats = {
 }
 
 
-def make_serializable(obj):
-    if isinstance(obj, dict):
-        return {key: make_serializable(value) for key, value in obj.items()}
-    elif isinstance(obj, list):
-        return [make_serializable(item) for item in obj]
-    elif hasattr(obj, "value"):
-        return obj.value
-    elif hasattr(obj, "info") and isinstance(obj.info, dict) and "id" in obj.info:
-        return obj.info["id"]
-    else:
-        return obj
-
-
 def save_player(player):
+    """
 
-    profile = deepcopy(player.__dict__)
-
-    json_path = os.path.join(project_root, "database", "entities.json")
-
-    with open(json_path, "r", encoding="utf-8") as read_file:
-        data = json.load(read_file)
+    :param player:
+    """
+    profile = {}
+    profile["info"] = player.info
+    profile["stats"] = player.stats
+    profile["spells"] = player.spells
+    profile["items"] = player.items
 
     profile["stats"] = {stat: profile["stats"][stat].value for stat in profile["stats"]}
 
@@ -86,8 +76,11 @@ def save_player(player):
         for item in profile["items"]
     }
 
-    profile = make_serializable(profile)
+    print(profile)
     found = False
+
+    with open(json_path, "r", encoding="utf-8") as read_file:
+        data = json.load(read_file)
 
     for i, save in enumerate(data["player"]):
         if profile["info"]["id"] == save["info"]["id"]:
@@ -103,9 +96,11 @@ def save_player(player):
 
 
 def load_player(id):
+    """
 
-    json_path = os.path.join(project_root, "database", "entities.json")
-
+    :param id:
+    :return:
+    """
     with open(json_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
@@ -163,9 +158,7 @@ def load_player(id):
 
 
 def load_enemies():
-
-    json_path = os.path.join(project_root, "database", "entities.json")
-
+    """ """
     with open(json_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
@@ -244,6 +237,12 @@ def load_enemies():
 
 
 def find_enemy(level, boss_encounter):
+    """
+
+    :param level:
+    :param boss_encounter:
+    :return:
+    """
     matches = {}
 
     if boss_encounter:
@@ -266,7 +265,11 @@ def find_enemy(level, boss_encounter):
     return encounter
 
 
-def get_last_entity_id():
+def get_last_entity_id() -> int:
+    """
+
+    :return:
+    """
     i = 0
 
     for enemy in enemies:
@@ -274,17 +277,35 @@ def get_last_entity_id():
         if id > i:
             i = id
 
+    with open(json_path, "r", encoding="utf-8") as read_file:
+        data = json.load(read_file)
+
+    for player in data["player"]:
+        id = player["info"]["id"]
+        if id > i:
+            i = id
+
     return i
 
 
-def get_enemy_name(name):
+def get_enemy_name(name) -> Entity:
+    """
+
+    :param name:
+    :return:
+    """
     for enemy in enemies:
         if name == enemies[enemy].info["name"]:
             return enemy
     return None
 
 
-def get_enemy_id(i):
+def get_enemy_id(i) -> Entity:
+    """
+
+    :param i:
+    :return:
+    """
     for enemy in enemies:
         if i == enemies[enemy].info["id"]:
             return enemy

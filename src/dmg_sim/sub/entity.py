@@ -4,50 +4,58 @@ from . import *
 from tabulate import tabulate
 
 
-class Entities:
+class Entity:
 
     def __init__(self, **kwargs):
         self.base = deepcopy(kwargs)
         self.__dict__.update(kwargs)
 
     def __str__(self):
+        """
+
+        :return:
+        """
         return f"{self.info["id"]}:\t{self.info["name"]} {self.info["icon"]}  lvl.{self.info["level"]}"
 
     def get_stats(self) -> str:
+        """
+
+        :return:
+        """
         stats = self.stats
 
         str = tabulate(
             [
                 ["Defensive", "Offensive", "Extra"],
                 [
-                    f"{stats["health"].name}: {stats["health"].get_color()}",
-                    f"{stats["attackPower"].name}: {stats["attackPower"].get_color()}",
-                    f"{stats["momentum"].name}: {stats["momentum"].get_color()}",
+                    f"{stats["health"].name}: {stats["health"].get_value_color()}",
+                    f"{stats["attackPower"].name}: {stats["attackPower"].get_value_color()}",
+                    f"{stats["momentum"].name}: {stats["momentum"].get_value_color()}",
                 ],
                 [
-                    f"{stats["defense"].name}: {stats["defense"].get_color()}",
-                    f"{stats["spellPower"].name}: {stats["spellPower"].get_color()}",
-                    f"{stats["energy"].name}: {stats["energy"].get_color()}",
+                    f"{stats["defense"].name}: {stats["defense"].get_value_color()}",
+                    f"{stats["spellPower"].name}: {stats["spellPower"].get_value_color()}",
+                    f"{stats["energy"].name}: {stats["energy"].get_value_color()}",
                 ],
                 [
-                    f"{stats["resistance"].name}: {stats["resistance"].get_color()}",
-                    f"{stats["healingPower"].name}: {stats["healingPower"].get_color()}",
+                    f"{stats["resistance"].name}: {stats["resistance"].get_value_color()}",
+                    f"{stats["healingPower"].name}: {stats["healingPower"].get_value_color()}",
                 ],
                 [
-                    f"{stats["dodge"].name}: {stats["dodge"].get_color()}",
-                    f"{stats["criticalChance"].name}: {stats["criticalChance"].get_color()}",
+                    f"{stats["dodge"].name}: {stats["dodge"].get_value_color()}",
+                    f"{stats["criticalChance"].name}: {stats["criticalChance"].get_value_color()}",
                 ],
                 [
-                    f"{stats["parry"].name}: {stats["parry"].get_color()}",
-                    f"{stats["criticalDamage"].name}: {stats["criticalDamage"].get_color()}",
+                    f"{stats["parry"].name}: {stats["parry"].get_value_color()}",
+                    f"{stats["criticalDamage"].name}: {stats["criticalDamage"].get_value_color()}",
                 ],
                 [
-                    f"{stats["regeneration"].name}: {stats["regeneration"].get_color()}",
-                    f"{stats["armorPenetration"].name}: {stats["armorPenetration"].get_color()}",
+                    f"{stats["regeneration"].name}: {stats["regeneration"].get_value_color()}",
+                    f"{stats["armorPenetration"].name}: {stats["armorPenetration"].get_value_color()}",
                 ],
                 [
                     "",
-                    f"{stats["spellPenetration"].name}: {stats["spellPenetration"].get_color()}",
+                    f"{stats["spellPenetration"].name}: {stats["spellPenetration"].get_value_color()}",
                 ],
             ],
             headers="firstrow",
@@ -56,6 +64,10 @@ class Entities:
         return str
 
     def get_spells(self) -> str:
+        """
+
+        :return:
+        """
         slots = []
 
         for i, spell in enumerate(self.spells):
@@ -66,6 +78,10 @@ class Entities:
         return table
 
     def get_status(self) -> str:
+        """
+
+        :return:
+        """
         tot_nr = int(self.base["stats"]["health"].value)
         curr_nr = int(self.stats["health"].value)
         curr_percent = curr_nr / tot_nr
@@ -91,6 +107,10 @@ class Entities:
         return health_bar
 
     def attack_given(self, spell):
+        """
+
+        :param spell:
+        """
         damage = 0
         scaling = spell.stats["scaling"].value
 
@@ -102,6 +122,10 @@ class Entities:
         return damage
 
     def attack_taken(self, damage):
+        """
+
+        :param damage:
+        """
         mitigated = damage / (1 + self.stats["defense"].value / 100)
 
         if self.stats["health"].value - mitigated < 0:
@@ -110,6 +134,10 @@ class Entities:
             self.stats["health"].value -= mitigated
 
     def spell_taken(self, damage):
+        """
+
+        :param damage:
+        """
         mitigated = damage / (1 + self.stats["resistance"].value / 100)
 
         if self.stats["health"].value - mitigated < 0:
@@ -118,13 +146,17 @@ class Entities:
             self.stats["health"].value -= mitigated
 
     def heal_taken(self, heal):
+        """
+
+        :param heal:
+        """
         if (self.stats["health"].value + heal) > self.base["stats"]["health"].value:
             self.stats["health"].value = self.base["stats"]["health"].value
         else:
             self.stats["health"].value += heal
 
 
-class Player(Entities):
+class Player(Entity):
 
     def __init__(self, **stats):
         super().__init__(**stats)
@@ -132,6 +164,10 @@ class Player(Entities):
         self.slain = 0
 
     def add_item(self, item):
+        """
+
+        :param item:
+        """
 
         for item_stat in item.stats:
             player_stats = self.stats
@@ -141,13 +177,20 @@ class Player(Entities):
         self.items[f"{type(item).__name__.lower()}"] = item
 
     def remove_item(self, item):
+        """
 
+        :param item:
+        """
         for stat in item.stats:
             getattr(self, stat).value -= item.stats[stat].value
 
         self.items[f"{type(item).__name__.lower()}"] = None
 
     def get_items(self) -> str:
+        """
+
+        :return:
+        """
         table = tabulate(
             [
                 ["Slot", "Item"],
@@ -164,7 +207,7 @@ class Player(Entities):
         return table
 
 
-class Enemy(Entities):
+class Enemy(Entity):
 
     def __init__(self, **stats):
         super().__init__(**stats)

@@ -15,18 +15,24 @@ armory = {
 
 
 def compare_items(item1, item2) -> str:
+    """
+
+    :param item1:
+    :param item2:
+    :return:
+    """
     stats1 = item1.stats
     stats2 = item2.stats
 
     msg = []
 
     for stat in stats1:
-        msg.append([f"{stat.capitalize()}: {stats1[stat].get_color()}", f""])
+        msg.append([f"{stat.capitalize()}: {stats1[stat].get_value_color()}", f""])
     for i, stat in enumerate(stats2):
         if i < len(stats1):
-            msg[i][1] = f"{stat.capitalize()}: {stats2[stat].get_color()}"
+            msg[i][1] = f"{stat.capitalize()}: {stats2[stat].get_value_color()}"
         else:
-            msg.append([f"", f"{stat.capitalize()}: {stats2[stat].get_color()}"])
+            msg.append([f"", f"{stat.capitalize()}: {stats2[stat].get_value_color()}"])
 
     msg.insert(0, ["Current:", "Dropped:"])
     msg.insert(
@@ -46,6 +52,11 @@ def compare_items(item1, item2) -> str:
 
 
 def create_random_item(level):
+    """
+
+    :param level:
+    :return:
+    """
     item_types = list(armory.keys())
 
     slots = len(item_types) - 1
@@ -57,7 +68,12 @@ def create_random_item(level):
 
 
 def create_item(slot, level):
+    """
 
+    :param slot:
+    :param level:
+    :return:
+    """
     match slot:
         case "helm":
             helm = Helm(**set_item_stats(slot, level))
@@ -93,7 +109,12 @@ def create_item(slot, level):
 
 
 def set_item_stats(slot, level) -> dict:
+    """
 
+    :param slot:
+    :param level:
+    :return:
+    """
     json_path = os.path.join(project_root, "database", "randomize.json")
 
     with open(json_path, "r") as file:
@@ -127,7 +148,7 @@ def set_item_stats(slot, level) -> dict:
             name = set_identity(name, base_stats)
 
             stats = {
-                "info": {"id": get_last_id() + 1, "name": name, "level": level},
+                "info": {"id": get_last_item_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -157,7 +178,7 @@ def set_item_stats(slot, level) -> dict:
             name = set_identity(name, base_stats)
 
             stats = {
-                "info": {"id": get_last_id() + 1, "name": name, "level": level},
+                "info": {"id": get_last_item_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -184,7 +205,7 @@ def set_item_stats(slot, level) -> dict:
             name = set_identity(name, base_stats)
 
             stats = {
-                "info": {"id": get_last_id() + 1, "name": name, "level": level},
+                "info": {"id": get_last_item_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -221,7 +242,7 @@ def set_item_stats(slot, level) -> dict:
                 quantity -= 1
 
             stats = {
-                "info": {"id": get_last_id() + 1, "name": name, "level": level},
+                "info": {"id": get_last_item_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -264,7 +285,7 @@ def set_item_stats(slot, level) -> dict:
             name = set_identity(f"{name} {weapon}", base_stats)
 
             stats = {
-                "info": {"id": get_last_id() + 1, "name": name, "level": level},
+                "info": {"id": get_last_item_id() + 1, "name": name, "level": level},
                 "stats": {},
             }
 
@@ -276,6 +297,12 @@ def set_item_stats(slot, level) -> dict:
 
 
 def set_stat(name, level):
+    """
+
+    :param name:
+    :param level:
+    :return:
+    """
     match name:
         case "attackPower":
             return AttackPower(set_attack_power(level))
@@ -311,6 +338,11 @@ def set_stat(name, level):
 
 
 def set_weapon_stats(name) -> list:
+    """
+
+    :param name:
+    :return:
+    """
     match name:
         case "Sword":
             base_stats = {
@@ -409,6 +441,12 @@ def set_weapon_stats(name) -> list:
 
 
 def set_identity(name, stats):
+    """
+
+    :param name:
+    :param stats:
+    :return:
+    """
     json_path = os.path.join(project_root, "database", "randomize.json")
 
     with open(json_path, "r") as file:
@@ -423,96 +461,175 @@ def set_identity(name, stats):
 
 
 def set_attack_power(level) -> int:
+    """
+
+    :param level:
+    :return:
+    """
     stat = random.randint(1, 20) * level
 
     return stat
 
 
 def set_spell_power(level) -> int:
+    """
+
+    :param level:
+    :return:
+    """
     stat = random.randint(1, 20) * level
 
     return stat
 
 
 def set_healing_power(level) -> int:
+    """
+
+    :param level:
+    :return:
+    """
     stat = random.randint(1, 20) * level
 
     return stat
 
 
 def set_armor_penetration(level) -> float:
+    """
+
+    :param level:
+    :return:
+    """
     stat = (random.randint(1, 5) * level) / 100
 
     return stat
 
 
 def set_spell_penetration(level) -> float:
+    """
+
+    :param level:
+    :return:
+    """
     stat = (random.randint(1, 5) * level) / 100
 
     return stat
 
 
 def set_critical_chance(level) -> float:
+    """
+
+    :param level:
+    :return:
+    """
     stat = (random.randint(1, 5) * level) / 100
 
     return stat
 
 
 def set_critical_damage(level) -> float:
+    """
+
+    :param level:
+    :return:
+    """
     stat = (random.randint(1, 5) * level) / 100
 
     return stat
 
 
 def set_health(level) -> int:
+    """
+
+    :param level:
+    :return:
+    """
     stat = random.randint(1, 200) * level
 
     return stat
 
 
 def set_defense(level) -> int:
+    """
+
+    :param level:
+    :return:
+    """
     stat = random.randint(1, 20) * level
 
     return stat
 
 
 def set_resistance(level) -> int:
+    """
+
+    :param level:
+    :return:
+    """
     stat = random.randint(1, 20) * level
 
     return stat
 
 
 def set_parry(level) -> float:
+    """
+
+    :param level:
+    :return:
+    """
     stat = (random.randint(1, 5) * level) / 100
 
     return stat
 
 
 def set_dodge(level) -> float:
+    """
+
+    :param level:
+    :return:
+    """
     stat = (random.randint(1, 5) * level) / 100
 
     return stat
 
 
 def set_regeneration(level) -> float:
+    """
+
+    :param level:
+    :return:
+    """
     stat = (random.randint(1, 5) * level) / 100
 
     return stat
 
 
 def set_energy() -> int:
+    """
+
+    :return:
+    """
     stat = random.randint(1, 4)
 
     return stat
 
 
 def set_momentum(level) -> int:
+    """
+
+    :param level:
+    :return:
+    """
     stat = random.randint(1, 10) * level
 
     return stat
 
 
 def save_item(slot, item):
+    """
+
+    :param slot:
+    :param item:
+    """
     json_path = os.path.join(project_root, "database", "items.json")
 
     with open(json_path, "r") as file:
@@ -523,7 +640,7 @@ def save_item(slot, item):
 
 
 def load_items():
-
+    """ """
     item_types = list(armory.keys())
 
     json_path = os.path.join(project_root, "database", "items.json")
@@ -581,7 +698,11 @@ def load_items():
                         armory[g].append(Weapon(**item))
 
 
-def get_last_item_id():
+def get_last_item_id() -> int:
+    """
+
+    :return:
+    """
     i = 0
 
     for category in armory:
@@ -592,7 +713,12 @@ def get_last_item_id():
     return i
 
 
-def get_item_name(name):
+def get_item_name(name) -> Item:
+    """
+
+    :param name:
+    :return:
+    """
     for slot in armory:
         for item in armory[slot]:
             if item.info["name"] == name:
@@ -600,7 +726,12 @@ def get_item_name(name):
     return None
 
 
-def get_item_id(i):
+def get_item_id(i) -> Item:
+    """
+
+    :param i:
+    :return:
+    """
     for slot in armory:
         for item in armory[slot]:
             if item.info["id"] == i:

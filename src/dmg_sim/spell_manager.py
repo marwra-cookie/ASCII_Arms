@@ -9,7 +9,7 @@ spellbook = {"direct": [], "passive": []}
 
 
 def load_spells():
-
+    """ """
     spell_types = list(spellbook.keys())
     json_path = os.path.join(project_root, "database", "spells.json")
 
@@ -51,7 +51,11 @@ def load_spells():
                         spellbook[g].append(Passive(**spell))
 
 
-def get_last_spell_id():
+def get_last_spell_id() -> int:
+    """
+
+    :return:
+    """
     i = 0
 
     for category in spellbook:
@@ -62,7 +66,12 @@ def get_last_spell_id():
     return i
 
 
-def get_spell_name(name):
+def get_spell_name(name) -> Spell:
+    """
+
+    :param name:
+    :return:
+    """
     for category in spellbook:
         for spell in spellbook[category]:
             if spell.info["name"] == name:
@@ -70,7 +79,12 @@ def get_spell_name(name):
     return None
 
 
-def get_spell_id(i):
+def get_spell_id(i) -> Spell:
+    """
+
+    :param i:
+    :return:
+    """
     for category in spellbook:
         for spell in spellbook[category]:
             if spell.info["id"] == i:
