@@ -1,63 +1,286 @@
 {
-    "accessory": [
-        {
+    "plate": {
+        "helmet": {
             "info": {
                 "id": 1,
-                "name": "Necklace",
-                "level": 1
-            },
-            "stats": {
-                "attackPower": 1,
-                "spellPower": 1,
-                "healingPower": 1,
-                "health": 1,
-                "defense": 1,
-                "resistance": 1,
-                "dodge": 0.1,
-                "parry": 0.1
-            }
-        }
-    ],
-    "armor": [
-        {
-            "info": {
-                "id": 3,
-                "name": "Leather set",
+                "name": "Helm",
                 "level": 1
             },
             "stats": {
                 "health": 100,
-                "defense": 1
+                "defense": 25,
+                "resistance": 25,
+                "mana": 100,
+                "penetration": 0.1
+            }
+        },
+        "armor": {
+            "info": {
+                "id": 2,
+                "name": "Chestplate",
+                "level": 1
+            },
+            "stats": {
+                "health": 100,
+                "defense": 25,
+                "resistance": 25,
+                "mana": 100,
+                "penetration": 0.1
+            }
+        },
+        "boots": {
+            "info": {
+                "id": 3,
+                "name": "Boots",
+                "level": 1
+            },
+            "stats": {
+                "defense": 25,
+                "resistance": 25,
+                "dodge": 0.1,
+                "momentum": 0.1,
+                "penetration": 0.1
+            }
+        },
+        "weapon": {
+            "info": {
+                "id": 4,
+                "name": "Claymore",
+                "level": 1
+            },
+            "stats": {
+                "defense": 25,
+                "resistance": 25,
+                "mana": 100,
+                "life_steal": 0.1,
+                "penetration": 0.1
+            }
+        },
+        "accessory": {
+            "info": {
+                "id": 5,
+                "name": "Shield",
+                "level": 1
+            },
+            "stats": {
+                "defense": 1,
+                "resistance": 1,
+                "mana": 100,
+                "life_steal": 0.1,
+                "penetration": 0.1
             }
         }
-    ],
-    "boots": [
-        {
+    },
+    "mail": {
+        "helmet": {
             "info": {
                 "id": 6,
-                "name": "Set of shoes",
+                "name": "Hood",
                 "level": 1
             },
             "stats": {
-                "dodge": 0.1
+                "health": 100,
+                "defense": 25,
+                "resistance": 25,
+                "mana": 100,
+                "momentum": 25
             }
-        }
-    ],
-    "helm": {},
-    "potion": [],
-    "weapon": [
-        {
+        },
+        "armor": {
+            "info": {
+                "id": 7,
+                "name": "Jack",
+                "level": 1
+            },
+            "stats": {
+                "health": 100,
+                "defense": 25,
+                "resistance": 25,
+                "mana": 100,
+                "momentum": 25
+            }
+        },
+        "boots": {
+            "info": {
+                "id": 8,
+                "name": "Sabatons",
+                "level": 1
+            },
+            "stats": {
+                "defense": 25,
+                "resistance": 25,
+                "dodge": 0.1,
+                "momentum": 0.1
+            }
+        },
+        "weapon": {
+            "info": {
+                "id": 9,
+                "name": "Sidearms",
+                "level": 1
+            },
+            "stats": {
+                "spell_power": 10,
+                "critical_damage": 0.1,
+                "mana": 100,
+                "life_steal": 0.1,
+                "momentum": 25
+            }
+        },
+        "accessory": {
             "info": {
                 "id": 10,
-                "name": "Short sword",
+                "name": "Utility Belt",
                 "level": 1
             },
             "stats": {
-                "attackPower": 10,
-                "criticalDamage": 0.1,
-                "parry": 0.1,
-                "energy": 1
+                "spell_power": 10,
+                "critical_damage": 0.1,
+                "mana": 100,
+                "life_steal": 0.1,
+                "momentum": 25
             }
         }
-    ]
+    },
+    "leather": {
+        "helmet": {
+            "info": {
+                "id": 11,
+                "name": "Cowl",
+                "level": 1
+            },
+            "stats": {
+                "health": 100,
+                "defense": 25,
+                "resistance": 25,
+                "mana": 100,
+                "dodge": 0.1
+            }
+        },
+        "armor": {
+            "info": {
+                "id": 12,
+                "name": "Vest",
+                "level": 1
+            },
+            "stats": {
+                "health": 100,
+                "defense": 25,
+                "resistance": 25,
+                "mana": 100,
+                "dodge": 0.1
+            }
+        },
+        "boots": {
+            "info": {
+                "id": 13,
+                "name": "Treads",
+                "level": 1
+            },
+            "stats": {
+                "defense": 25,
+                "resistance": 25,
+                "dodge": 0.1,
+                "momentum": 0.1
+            }
+        },
+        "weapon": {
+            "info": {
+                "id": 14,
+                "name": "Longbow",
+                "level": 1
+            },
+            "stats": {
+                "life_steal": 0.1,
+                "critical_chance": 0.1,
+                "momentum": 25,
+                "penetration": 0.1,
+                "critical_damage": 0.1
+            }
+        },
+        "accessory": {
+            "info": {
+                "id": 15,
+                "name": "Quiver",
+                "level": 1
+            },
+            "stats": {
+                "life_steal": 0.1,
+                "critical_chance": 0.1,
+                "momentum": 25,
+                "penetration": 10,
+                "critical_damage": 0.1
+            }
+        }
+    },
+    "cloth": {
+        "helmet": {
+            "info": {
+                "id": 16,
+                "name": "Halo",
+                "level": 1
+            },
+            "stats": {
+                "health": 100,
+                "defense": 25,
+                "resistance": 25,
+                "mana": 100
+            }
+        },
+        "armor": {
+            "info": {
+                "id": 17,
+                "name": "Robes",
+                "level": 1
+            },
+            "stats": {
+                "health": 100,
+                "defense": 25,
+                "resistance": 25,
+                "mana": 100
+            }
+        },
+        "boots": {
+            "info": {
+                "id": 18,
+                "name": "Slippers",
+                "level": 1
+            },
+            "stats": {
+                "defense": 25,
+                "resistance": 25,
+                "dodge": 0.1,
+                "momentum": 0.1,
+                "mana": 100
+            }
+        },
+        "weapon": {
+            "info": {
+                "id": 19,
+                "name": "Scepter",
+                "level": 1
+            },
+            "stats": {
+                "spell_power": 10,
+                "mana": 100,
+                "critical_chance": 0.1,
+                "critical_damage": 0.1,
+                "penetration": 0.1
+            }
+        },
+        "accessory": {
+            "info": {
+                "id": 20,
+                "name": "Talisman",
+                "level": 1
+            },
+            "stats": {
+                "spell_power": 10,
+                "mana": 100,
+                "critical_chance": 0.1,
+                "critical_damage": 0.1,
+                "penetration": 0.1
+            }
+        }
+    }
 }

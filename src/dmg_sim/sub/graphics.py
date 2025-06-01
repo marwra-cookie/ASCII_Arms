@@ -18,6 +18,48 @@ Style.DIM + 'and in dim text' + Style.RESET_ALL
 error = "Invalid option... Please try again!"
 
 
+def str_to_color(msg, color) -> str:
+    """
+
+    :param str:
+    :return:
+    """
+    match color:
+        case "white":
+            return white(msg)
+        case "red":
+            return red(msg)
+        case "green":
+            return green(msg)
+        case "yellow":
+            return yellow(msg)
+        case "blue":
+            return blue(msg)
+        case "magenta":
+            return magenta(msg)
+        case "cyan":
+            return cyan(msg)
+        case "fill_cyan":
+            return fill_cyan(msg)
+        case "fill_red":
+            return fill_red(msg)
+        case "fill_green":
+            return fill_green(msg)
+        case "fill_yellow":
+            return fill_yellow(msg)
+        case "fill_blue":
+            return fill_blue(msg)
+        case "fill_magenta":
+            return fill_magenta(msg)
+        case "fill_cyan":
+            return fill_cyan(msg)
+        case "dim":
+            return dim(msg)
+        case "bright":
+            return bright(msg)
+    return None
+
+
 def white(msg) -> str:
     """
 

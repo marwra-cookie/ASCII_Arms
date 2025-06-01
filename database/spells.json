@@ -3,680 +3,102 @@
     {
       "info": {
         "id": 1,
-        "name": "Firelash",
+        "name": "Fireball",
+        "color": "fill_red",
         "level": 1,
-        "icon": "\ud83d\udd25",
-        "description": "Unleash a whip of flame that scorches everything in its path"
+        "description": "Launch a fiery ball"
       },
       "stats": {
         "effect": {
-          "spell": 23
+          "spell": 100
         },
+        "cost": 200,
         "scaling": 0.16,
-        "cost": 1
+        "passive": 4
       }
     },
     {
       "info": {
         "id": 2,
-        "name": "Lava Coil",
-        "icon": "\ud83d\udd25",
-        "level": 3,
-        "description": "A swirling spiral of molten lava that burns enemies on contact"
+        "name": "Mighty Strike",
+        "color": "bright",
+        "level": 1,
+        "description": "Deal a devastating blow to the target"
       },
       "stats": {
         "effect": {
-          "spell": 23
+          "spell": 150
         },
-        "passive": 27,
+        "cost": 100,
         "scaling": 0.16,
-        "cost": 1
+        "passive": 5
       }
     },
     {
       "info": {
         "id": 3,
-        "name": "Inferno Shot",
-        "icon": "\ud83d\udd25",
+        "name": "Lesser Prayer",
+        "color": "fill_green",
         "level": 2,
-        "description": "Launch a fiery projectile that explodes on impact"
+        "description": "Cast a weaker healing prayer"
       },
       "stats": {
         "effect": {
-          "attack": 23,
-          "spell": 23
+          "spell": 200
         },
-        "passive": 30,
+        "cost": 300,
         "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 4,
-        "name": "Winter Bite",
-        "icon": "\u2744\ufe0f",
-        "level": 1,
-        "description": "A chilling strike that freezes foes in their tracks"
-      },
-      "stats": {
-        "effect": {
-          "attack": 23,
-          "spell": 23
-        },
-        "passive": 29,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 5,
-        "name": "Rimecut",
-        "icon": "\u2744\ufe0f",
-        "level": 5,
-        "description": "A slicing blast of icy wind that slows and slashes"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23
-        },
-        "passive": 30,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 6,
-        "name": "Bolt Strike",
-        "icon": "\u26a1",
-        "level": 5,
-        "description": "Summon a bolt of lightning to electrocute your target"
-      },
-      "stats": {
-        "effect": {
-          "attack": 23,
-          "spell": 23
-        },
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 7,
-        "name": "Thunder Snap",
-        "icon": "\u26a1",
-        "level": 4,
-        "description": "Crackling thunder erupts, stunning nearby enemies"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23
-        },
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 8,
-        "name": "Crackflash",
-        "icon": "\u26a1",
-        "level": 3,
-        "description": "A blinding flash followed by a deafening crack of lightning"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23
-        },
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 9,
-        "name": "Shadow Grip",
-        "icon": "\ud83c\udf11",
-        "level": 3,
-        "description": "Dark tendrils bind the enemy, sapping their strength"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23
-        },
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 10,
-        "name": "Umbral Shard",
-        "icon": "\ud83c\udf11",
-        "level": 1,
-        "description": "Launch a shard of pure shadow that pierces armor"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23
-        },
-        "passive": 32,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 11,
-        "name": "Light Beam",
-        "icon": "\ud83c\udf15",
-        "level": 3,
-        "description": "Channel a concentrated beam of holy light"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23,
-          "healing": 23
-        },
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 12,
-        "name": "Divine Touch",
-        "icon": "\ud83c\udf15",
-        "level": 4,
-        "description": "A gentle touch that heals or harms, depending on intent"
-      },
-      "stats": {
-        "effect": {
-          "healing": 23
-        },
-        "passive": 31,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 13,
-        "name": "Thorn Lash",
-        "icon": "\ud83c\udf3f",
-        "level": 5,
-        "description": "Whip enemies with barbed vines that cause bleeding"
-      },
-      "stats": {
-        "effect": {
-          "attack": 23,
-          "spell": 23
-        },
-        "passive": 33,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 14,
-        "name": "Root Slam",
-        "icon": "\ud83c\udf3f",
-        "level": 4,
-        "description": "Roots burst from the ground, smashing foes upward"
-      },
-      "stats": {
-        "effect": {
-          "attack": 23
-        },
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 15,
-        "name": "Mind Jolt",
-        "icon": "\ud83e\udde0",
-        "level": 5,
-        "description": "A psychic pulse that disorients and confuses"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23
-        },
-        "passive": 34,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 16,
-        "name": "Bone Spike",
-        "icon": "\ud83d\udc80",
-        "level": 5,
-        "description": "A sharp spike of bone impales from below"
-      },
-      "stats": {
-        "effect": {
-          "attack": 23
-        },
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 17,
-        "name": "From the Grave",
-        "icon": "\ud83d\udc80",
-        "level": 3,
-        "description": "Call forth skeletal hands to drag enemies down"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23
-        },
-        "passive": 35,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 18,
-        "name": "Mana Burst",
-        "icon": "\ud83c\udf00",
-        "level": 1,
-        "description": "A volatile surge of arcane energy erupts outward"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23
-        },
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 19,
-        "name": "Mystic Spark",
-        "icon": "\ud83c\udf00",
-        "level": 1,
-        "description": "A flicker of magic that jumps between targets"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23
-        },
-        "passive": 36,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 20,
-        "name": "Life Drain",
-        "icon": "\ud83e\ude78",
-        "level": 5,
-        "description": "Siphon life force from an enemy to heal yourself"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23,
-          "healing": 23
-        },
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 21,
-        "name": "Sanguine Touch",
-        "icon": "\ud83e\ude78",
-        "level": 1,
-        "description": "Inflict a cursed touch that causes bleeding over time"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23,
-          "healing": 23
-        },
-        "passive": 37,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 22,
-        "name": "Blade Spin",
-        "icon": "\ud83d\udde1\ufe0f",
-        "level": 4,
-        "description": "Spin in a deadly arc, slicing all nearby foes"
-      },
-      "stats": {
-        "effect": {
-          "attack": 23
-        },
-        "passive": 37,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 23,
-        "name": "Toxin Breath",
-        "icon": "\ud83d\udc0d",
-        "level": 2,
-        "description": "Exhale a poisonous mist that weakens opponents"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23
-        },
-        "passive": 39,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 24,
-        "name": "Rot Sting",
-        "icon": "\ud83d\udc0d",
-        "level": 3,
-        "description": "A venomous jab that decays flesh rapidly"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23
-        },
-        "passive": 38,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 25,
-        "name": "Rotate Clock",
-        "icon": "\ud83d\udd51",
-        "level": 4,
-        "description": "Turn back time to undo the last action"
-      },
-      "stats": {
-        "effect": {
-          "healing": 23
-        },
-        "passive": 40,
-        "scaling": 0.16,
-        "cost": 1
-      }
-    },
-    {
-      "info": {
-        "id": 26,
-        "name": "Time Snap",
-        "icon": "\ud83d\udd51",
-        "level": 5,
-        "description": "Freeze a moment, locking all actions in place"
-      },
-      "stats": {
-        "effect": {
-          "spell": 23
-        },
-        "scaling": 0.16,
-        "cost": 1
+        "passive": 6
       }
     }
   ],
   "passive": [
     {
       "info": {
-        "id": 27,
+        "id": 4,
         "name": "Burn",
-        "icon": "\ud83d\udd25",
-        "level": 4,
-        "description": "Enemies suffer ongoing fire damage over time"
+        "color": "fill_yellow",
+        "level": 1,
+        "description": "Burn over time"
       },
       "stats": {
         "effect": {
-          "spell": 4
+          "spell": 40
         },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
+        "rounds": 4,
+        "scaling": 0.06
       }
     },
     {
       "info": {
-        "id": 28,
-        "name": "Heatwave",
-        "icon": "\ud83d\udd25",
-        "level": 4,
-        "description": "Radiate heat that weakens nearby foes"
+        "id": 5,
+        "name": "Bleed",
+        "color": "fill_red",
+        "level": 1,
+        "description": "Cause a bleed"
       },
       "stats": {
         "effect": {
-          "spell": 4
+          "attack": 60
         },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
+        "rounds": 2,
+        "scaling": 0.08
       }
     },
     {
       "info": {
-        "id": 29,
-        "name": "Frostbite",
-        "icon": "\u2744\ufe0f",
-        "level": 2,
-        "description": "Reduces enemy movement speed with icy chills"
+        "id": 6,
+        "name": "Renew",
+        "color": "fill_green",
+        "level": 1,
+        "description": "Get blessed by a prayer"
       },
       "stats": {
         "effect": {
-          "spell": 4
+          "healing": 40
         },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
-      }
-    },
-    {
-      "info": {
-        "id": 30,
-        "name": "Chillstep",
-        "icon": "\u2744\ufe0f",
-        "level": 4,
-        "description": "Each step you take leaves a freezing trail"
-      },
-      "stats": {
-        "effect": {
-          "spell": 4
-        },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
-      }
-    },
-    {
-      "info": {
-        "id": 31,
-        "name": "Holy Mark",
-        "icon": "\ud83c\udf15",
-        "level": 2,
-        "description": "Mark an enemy to take increased damage from light"
-      },
-      "stats": {
-        "effect": {
-          "healing": 4
-        },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
-      }
-    },
-    {
-      "info": {
-        "id": 32,
-        "name": "Mark of Death",
-        "icon": "\ud83c\udf11",
-        "level": 3,
-        "description": "Target is cursed, becoming vulnerable to shadow"
-      },
-      "stats": {
-        "effect": {
-          "spell": 4
-        },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
-      }
-    },
-    {
-      "info": {
-        "id": 33,
-        "name": "Implant Seed",
-        "icon": "\ud83c\udf3f",
-        "level": 2,
-        "description": "Plants a seed that grows to ensnare enemies"
-      },
-      "stats": {
-        "effect": {
-          "attack": 4,
-          "spell": 4
-        },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
-      }
-    },
-    {
-      "info": {
-        "id": 34,
-        "name": "Memory Snap",
-        "icon": "\ud83e\udde0",
-        "level": 5,
-        "description": "Disrupts enemies by causing memory lapses"
-      },
-      "stats": {
-        "effect": {
-          "spell": 4
-        },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
-      }
-    },
-    {
-      "info": {
-        "id": 35,
-        "name": "Death Grip",
-        "icon": "\ud83d\udc80",
-        "level": 3,
-        "description": "Pulls enemies toward their inevitable doom"
-      },
-      "stats": {
-        "effect": {
-          "spell": 4
-        },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
-      }
-    },
-    {
-      "info": {
-        "id": 36,
-        "name": "Arcane Sigil",
-        "icon": "\ud83c\udf00",
-        "level": 5,
-        "description": "Inscribes a magical rune that boosts spell power"
-      },
-      "stats": {
-        "effect": {
-          "spell": 4
-        },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
-      }
-    },
-    {
-      "info": {
-        "id": 37,
-        "name": "Hemorrhage",
-        "icon": "\ud83d\udde1\ufe0f",
-        "level": 4,
-        "description": "Critical hits cause additional bleeding"
-      },
-      "stats": {
-        "effect": {
-          "attack": 4
-        },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
-      }
-    },
-    {
-      "info": {
-        "id": 38,
-        "name": "Decay",
-        "icon": "\ud83d\udc0d",
-        "level": 2,
-        "description": "Enemies struck begin to rot and weaken"
-      },
-      "stats": {
-        "effect": {
-          "spell": 4
-        },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
-      }
-    },
-    {
-      "info": {
-        "id": 39,
-        "name": "Deadly Poison",
-        "icon": "\ud83d\udc0d",
-        "level": 2,
-        "description": "Enhances attacks with lethal venom"
-      },
-      "stats": {
-        "effect": {
-          "spell": 4
-        },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
-      }
-    },
-    {
-      "info": {
-        "id": 40,
-        "name": "Phase Swift",
-        "icon": "\ud83d\udd51",
-        "level": 4,
-        "description": "Gain a burst of healing by shifting through time"
-      },
-      "stats": {
-        "effect": {
-          "healing": 4
-        },
-        "scaling": 0.06,
-        "cost": 3,
-        "rounds": 4
+        "rounds": 2,
+        "scaling": 0.10
       }
     }
   ]

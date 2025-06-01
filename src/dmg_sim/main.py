@@ -1,5 +1,4 @@
 from . import *
-from .launcher import project_root
 import time
 
 
@@ -9,17 +8,15 @@ def menu_new_save():
     print("Start New Adventure! 🧙‍♂️\n\nEnter your name:")
     name = input("> ")
 
-    player_stats = base_stats
+    base_stats["info"]["id"] = get_last_entity_id() + 1
+    base_stats["info"]["name"] = name
+    base_stats["spells"]["1"] = get_spell_id(1)
+    base_stats["items"]["armor"] = get_item_id(12)
+    base_stats["items"]["boots"] = get_item_id(18)
+    base_stats["items"]["weapon"] = get_item_id(4)
 
-    player_stats["info"]["name"] = name
-    player_stats["info"]["id"] = get_last_entity_id() + 1
-    player_stats["spells"]["Slot 1"] = get_spell_id(1)
-    player_stats["items"]["accessory"] = get_item_id(1)
-    player_stats["items"]["armor"] = get_item_id(3)
-    player_stats["items"]["boots"] = get_item_id(6)
-    player_stats["items"]["weapon"] = get_item_id(10)
-    player = Player(**player_stats)
-
+    player = Player(**base_stats)
+    print(player.xp)
     game.player = player
 
 
@@ -63,7 +60,10 @@ def menu_start():
             "=== WELCOME TO DMG SIM ==="
             "\n🎯 A Damage Simulation Game Build in Python 🐍"
         )
-        print("\n1. Open Save File 📂" "\n2. Start New Game 🆕")
+        print(
+            f"\n1. {"Open Save File".ljust(20)}📂"
+            f"\n2. {"Start New Game".ljust(20)}🆕"
+        )
 
         if failed:
             print("\nFailed to load profile...")
