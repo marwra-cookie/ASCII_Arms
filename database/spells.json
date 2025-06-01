@@ -27,7 +27,7 @@
       },
       "stats": {
         "effect": {
-          "spell": 150
+          "attack": 150
         },
         "cost": 100,
         "scaling": 0.16,
@@ -95,7 +95,7 @@
       },
       "stats": {
         "effect": {
-          "healing": 40
+          "spell": 40
         },
         "rounds": 2,
         "scaling": 0.10

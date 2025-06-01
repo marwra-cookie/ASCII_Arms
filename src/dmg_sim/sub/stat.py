@@ -64,7 +64,7 @@ class Dodge(Stat):
 
     def __init__(self, value):
         name = "Dodge"
-        self.icon = "👟"
+        self.icon = "🏃‍♂️‍➡️"
         self.color = white(f"{int(value * 100)}%")
         super().__init__(value, name)
 
@@ -100,7 +100,7 @@ class LifeSteal(Stat):
 
     def __init__(self, value):
         name = "Life Steal"
-        self.icon = "🦇"
+        self.icon = "🩸"
         self.color = magenta(f"{int(value * 100)}%")
         super().__init__(value, name)
 
@@ -118,7 +118,7 @@ class SpellPower(Stat):
 
     def __init__(self, value):
         name = "Spell Power"
-        self.icon = "☄ "
+        self.icon = "☄️"
         self.color = bright(magenta(value))
         super().__init__(value, name)
 
@@ -136,7 +136,7 @@ class SpellBase(Stat):
 
     def __init__(self, value):
         name = "Base Spell Damage"
-        self.icon = "💫"
+        self.icon = "☄️"
         self.color = bright(magenta(value))
         super().__init__(value, name)
 

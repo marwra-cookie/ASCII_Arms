@@ -56,10 +56,19 @@ class Entity:
         spells = self.spells
         for i, spell in enumerate(spells):
             if spells[spell] is not None:
-                slots.append([f"Slot {i + 1}:", spells[spell].get_details()])
+                level = spells[spell].info["level"]
+                name = spells[spell].info["name"]
+
+                slots.append(
+                    [
+                        f"Slot {i + 1}:",
+                        f"{name.ljust(15)} [{level}]",
+                        spells[spell].get_stats(),
+                    ]
+                )
             else:
                 slots.append([f"Slot {i + 1}:", ""])
-        table = tabulate(slots, headers=["Slot", "Name"])
+        table = tabulate(slots, headers=["Slot", "Name", "Stats"])
 
         return table
 
@@ -158,23 +167,75 @@ class Player(Entity):
         :return:
         """
 
-        helmet = self.items["helmet"].get_details() if self.items["helmet"] else ""
-        armor = self.items["armor"].get_details() if self.items["armor"] else ""
-        boots = self.items["boots"].get_details() if self.items["boots"] else ""
-        weapon = self.items["weapon"].get_details() if self.items["weapon"] else ""
-        accessory = (
-            self.items["accessory"].get_details() if self.items["accessory"] else ""
-        )
+        tab = [["Slot", "Item", "Stats"]]
+
+        if self.items["helmet"]:
+            helmet = self.items["helmet"]
+
+            tab.append(
+                [
+                    f"{"Helmet".ljust(12)}🪖:",
+                    f"{helmet.info["name"]} [{helmet.info["level"]}]".ljust(15),
+                    helmet.get_stats(),
+                ]
+            )
+        else:
+            tab.append([""])
+
+        if self.items["armor"]:
+            armor = self.items["armor"]
+
+            tab.append(
+                [
+                    f"{"Armor".ljust(12)}👕:",
+                    f"{armor.info["name"]} [{armor.info["level"]}]".ljust(15),
+                    armor.get_stats(),
+                ]
+            )
+        else:
+            tab.append([""])
+
+        if self.items["boots"]:
+            boots = self.items["boots"]
+
+            tab.append(
+                [
+                    f"{"Boots".ljust(12)}🥾:",
+                    f"{boots.info["name"]} [{boots.info["level"]}]".ljust(15),
+                    boots.get_stats(),
+                ]
+            )
+        else:
+            tab.append([""])
+
+        if self.items["weapon"]:
+            weapon = self.items["weapon"]
+
+            tab.append(
+                [
+                    f"{"Weapon".ljust(12)}🗡️:",
+                    f"{weapon.info["name"]} [{weapon.info["level"]}]".ljust(15),
+                    weapon.get_stats(),
+                ]
+            )
+        else:
+            tab.append([""])
+
+        if self.items["accessory"]:
+            accessory = self.items["accessory"]
+
+            tab.append(
+                [
+                    f"{"Accessory".ljust(12)}📿:",
+                    f"{accessory.info["name"]} [{accessory.info["level"]}]".ljust(15),
+                    accessory.get_stats(),
+                ]
+            )
+        else:
+            tab.append([""])
 
         table = tabulate(
-            [
-                ["Slot", "Item"],
-                [f"{"Helmet".ljust(12)}🪖:", helmet],
-                [f"{"Armor".ljust(12)}👕:", armor],
-                [f"{"Boots".ljust(12)}🥾:", boots],
-                [f"{"Weapon".ljust(12)}🗡️:", weapon],
-                [f"{"Accessory".ljust(12)}📿:", accessory],
-            ],
+            tab,
             headers="firstrow",
         )
 

@@ -3,17 +3,14 @@ class Spell:
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
 
-    def get_details(self) -> str:
+    def get_stats(self) -> str:
         """
 
         :return:
         """
         stats = self.__dict__
 
-        level = stats["info"]["level"]
-        name = stats["info"]["name"]
-
-        msg = f"{name} [{level}]".ljust(30)
+        msg = ""
 
         for stat in stats["stats"]:
             if stat == "effect":
@@ -24,7 +21,7 @@ class Spell:
             elif stat == "passive":
                 add_stat = stats["stats"][stat]
 
-                msg += f"({add_stat.info["name"]} [{add_stat.info["level"]}] {add_stat.stats["rounds"].value}x)"
+                msg += f"({add_stat.info["name"]} [{add_stat.info["level"]}] {add_stat.stats["rounds"].value}{add_stat.stats["rounds"].icon})"
             else:
                 add_stat = stats["stats"][stat]
 

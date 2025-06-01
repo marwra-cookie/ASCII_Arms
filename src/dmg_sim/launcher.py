@@ -39,6 +39,5 @@ def open_new_window():
     sys.exit()
 
 
-#
 if __name__ == "__main__":
     open_new_window()

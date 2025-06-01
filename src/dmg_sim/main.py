@@ -58,7 +58,7 @@ def menu_start():
         update()
         print(
             "=== WELCOME TO DMG SIM ==="
-            "\n🎯 A Damage Simulation Game Build in Python 🐍"
+            "\n🎯 A Damage Simulation Game Build In Python 🐍"
         )
         print(
             f"\n1. {"Open Save File".ljust(20)}📂"
@@ -111,7 +111,6 @@ def load_game():
     game.menu()
 
 
-#
 if __name__ == "__main__":
     load_items()
     load_spells()
