@@ -268,6 +268,7 @@ def get_enemy_id(i) -> Entity:
 # endregion
 
 
+# TODO: Fix stats added to player
 # region Item Manager
 def str_to_item(slot, item) -> Item:
     """

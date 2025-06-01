@@ -1,6 +1,4 @@
 from copy import deepcopy
-from ensurepip import bootstrap
-
 from . import *
 from tabulate import tabulate
 
@@ -65,7 +63,6 @@ class Entity:
 
         return table
 
-    # TODO: Create a general bar and/or xp-bar
     def get_health_bar(self) -> str:
         """
 
