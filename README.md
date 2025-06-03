@@ -36,7 +36,7 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
    ```
 4. **Run game**
    
-   _RUN GAME AS MODULE:_** -m_**
+   _RUN GAME AS MODULE:_ **-m**
    ```bash
    python -m src.dmg_sim.main
    ```
