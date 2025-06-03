@@ -19,7 +19,7 @@ class Penetration(Stat):
 
     def __init__(self, value):
         name = "Penetration"
-        self.icon = "⛓️‍💥"
+        self.icon = "🔻"
         self.color = dim(red(f"{int(value * 100)}%"))
         super().__init__(value, name)
 
@@ -64,7 +64,7 @@ class Dodge(Stat):
 
     def __init__(self, value):
         name = "Dodge"
-        self.icon = "🏃‍♂️‍➡️"
+        self.icon = "🏃"
         self.color = white(f"{int(value * 100)}%")
         super().__init__(value, name)
 
@@ -153,7 +153,7 @@ class Cost(Stat):
     def __init__(self, value):
         name = "Cost amount"
         self.icon = "🔵"
-        self.color = f" {red("-")}{yellow(value)}"
+        self.color = f" {red('-')}{yellow(value)}"
         super().__init__(value, name)
 
 
@@ -169,5 +169,5 @@ class Gain(Stat):
     def __init__(self, value):
         name = "Energy gained"
         self.icon = "🔵"
-        self.color = f" {green("+")}{yellow(value)}"
+        self.color = f" {green('+')}{yellow(value)}"
         super().__init__(value, name)

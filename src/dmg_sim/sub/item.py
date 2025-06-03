@@ -16,8 +16,8 @@ class Item:
 
         msg = ""
 
-        for stat in stats["stats"]:
-            add_stats = stats["stats"][stat]
+        for stat in stats['stats']:
+            add_stats = stats['stats'][stat]
 
             msg += f"{add_stats.get_value_color()}  "
 

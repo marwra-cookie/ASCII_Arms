@@ -20,26 +20,26 @@ class Entity:
             [
                 ["Defensive", "Offensive", "Extra"],
                 [
-                    f"{stats["health"].name.ljust(10)} {stats["health"].icon}: {stats["health"].color.ljust(5)}",
-                    f"{stats["attack_power"].name.ljust(20)} {stats["attack_power"].icon}: {stats["attack_power"].color.ljust(5)}",
-                    f"{stats["momentum"].name.ljust(15)} {stats["momentum"].icon}: {stats["momentum"].color.ljust(5)}",
+                    f"{str_to_length(stats['health'].name, 10)} {stats['health'].icon}: {stats['health'].color.ljust(5)}",
+                    f"{stats['attack_power'].name.ljust(20)} {stats['attack_power'].icon}: {stats['attack_power'].color.ljust(5)}",
+                    f"{stats['momentum'].name.ljust(15)} {stats['momentum'].icon}: {stats['momentum'].color.ljust(5)}",
                 ],
                 [
-                    f"{stats["mana"].name.ljust(10)} {stats["mana"].icon}: {stats["mana"].color.ljust(5)}",
-                    f"{stats["spell_power"].name.ljust(20)} {stats["spell_power"].icon}: {stats["spell_power"].color.ljust(5)}",
-                    f"{stats["penetration"].name.ljust(15)} {stats["penetration"].icon}: {stats["penetration"].color.ljust(5)}",
+                    f"{stats['mana'].name.ljust(10)} {stats['mana'].icon}: {stats['mana'].color.ljust(5)}",
+                    f"{stats['spell_power'].name.ljust(20)} {stats['spell_power'].icon}: {stats['spell_power'].color.ljust(5)}",
+                    f"{stats['penetration'].name.ljust(15)} {stats['penetration'].icon}: {stats['penetration'].color.ljust(5)}",
                 ],
                 [
-                    f"{stats["defense"].name.ljust(10)} {stats["defense"].icon}: {stats["defense"].color.ljust(5)}",
-                    f"{stats["critical_chance"].name.ljust(20)} {stats["critical_chance"].icon}: {stats["critical_chance"].color.ljust(5)}",
-                    f"{stats["life_steal"].name.ljust(15)} {stats["life_steal"].icon}: {stats["life_steal"].color.ljust(5)}",
+                    f"{stats['defense'].name.ljust(10)} {stats['defense'].icon}: {stats['defense'].color.ljust(5)}",
+                    f"{stats['critical_chance'].name.ljust(20)} {stats['critical_chance'].icon}: {stats['critical_chance'].color.ljust(5)}",
+                    f"{stats['life_steal'].name.ljust(15)} {stats['life_steal'].icon}: {stats['life_steal'].color.ljust(5)}",
                 ],
                 [
-                    f"{stats["resistance"].name.ljust(10)} {stats["resistance"].icon}: {stats["resistance"].color.ljust(5)}",
-                    f"{stats["critical_damage"].name.ljust(20)} {stats["critical_damage"].icon}: {stats["critical_damage"].color.ljust(5)}",
+                    f"{stats['resistance'].name.ljust(10)} {stats['resistance'].icon}: {stats['resistance'].color.ljust(5)}",
+                    f"{stats['critical_damage'].name.ljust(20)} {stats['critical_damage'].icon}: {stats['critical_damage'].color.ljust(5)}",
                 ],
                 [
-                    f"{stats["dodge"].name.ljust(10)} {stats["dodge"].icon}: {stats["dodge"].color.ljust(5)}",
+                    f"{stats['dodge'].name.ljust(10)} {stats['dodge'].icon}: {stats['dodge'].color.ljust(5)}",
                 ],
             ],
             headers="firstrow",
@@ -56,8 +56,8 @@ class Entity:
         spells = self.spells
         for i, spell in enumerate(spells):
             if spells[spell] is not None:
-                level = spells[spell].info["level"]
-                name = spells[spell].info["name"]
+                level = spells[spell].info['level']
+                name = spells[spell].info['name']
 
                 slots.append(
                     [
@@ -68,7 +68,7 @@ class Entity:
                 )
             else:
                 slots.append([f"Slot {i + 1}:", ""])
-        table = tabulate(slots, headers=["Slot", "Name", "Stats"])
+        table = tabulate(slots, headers=['Slot", "Name", "Stats'])
 
         return table
 
@@ -77,14 +77,14 @@ class Entity:
 
         :return:
         """
-        tot_nr = int(self.base["stats"]["health"].value)
-        curr_nr = int(self.stats["health"].value)
+        tot_nr = int(self.base['stats']['health'].value)
+        curr_nr = int(self.stats['health'].value)
         curr_percent = curr_nr / tot_nr
 
         bars = 20
         filled_bars = round(curr_percent * bars)
 
-        health_bar = f"{self.info["name"]} lvl.{self.info["level"]}\n["
+        health_bar = f"{self.info['name']} lvl.{self.info['level']}\n"
 
         for i in range(bars):
             if i < filled_bars:
@@ -97,7 +97,7 @@ class Entity:
             else:
                 health_bar += " "
 
-        health_bar += f"] {int(curr_percent * 100)}%\n{tot_nr}/{curr_nr}"
+        health_bar += f"{int(curr_percent * 100)}%\n{tot_nr}/{curr_nr}"
 
         return health_bar
 
@@ -107,12 +107,12 @@ class Entity:
         :param spell:
         """
         damage = 0
-        scaling = spell.stats["scaling"].value
+        scaling = spell.stats['scaling'].value
 
-        for effect in spell.stats["effect"]:
-            spell_dmg = spell.stats["effect"][effect]["value"].value
+        for effect in spell.stats['effect']:
+            spell_dmg = spell.stats['effect'][effect]['value'].value
 
-            damage += spell_dmg + (self.stats["attack_power"].value * scaling)
+            damage += spell_dmg + (self.stats['attack_power'].value * scaling)
 
         return damage
 
@@ -121,34 +121,34 @@ class Entity:
 
         :param damage:
         """
-        mitigated = damage / (1 + self.stats["defense"].value / 100)
+        mitigated = damage / (1 + self.stats['defense'].value / 100)
 
-        if self.stats["health"].value - mitigated < 0:
-            self.stats["health"].value = 0
+        if self.stats['health'].value - mitigated < 0:
+            self.stats['health'].value = 0
         else:
-            self.stats["health"].value -= mitigated
+            self.stats['health'].value -= mitigated
 
     def spell_taken(self, damage):
         """
 
         :param damage:
         """
-        mitigated = damage / (1 + self.stats["resistance"].value / 100)
+        mitigated = damage / (1 + self.stats['resistance'].value / 100)
 
-        if self.stats["health"].value - mitigated < 0:
-            self.stats["health"].value = 0
+        if self.stats['health'].value - mitigated < 0:
+            self.stats['health'].value = 0
         else:
-            self.stats["health"].value -= mitigated
+            self.stats['health'].value -= mitigated
 
     def heal_taken(self, heal):
         """
 
         :param heal:
         """
-        if (self.stats["health"].value + heal) > self.base["stats"]["health"].value:
-            self.stats["health"].value = self.base["stats"]["health"].value
+        if (self.stats['health'].value + heal) > self.base['stats']['health'].value:
+            self.stats['health'].value = self.base['stats']['health'].value
         else:
-            self.stats["health"].value += heal
+            self.stats['health'].value += heal
 
 
 class Player(Entity):
@@ -168,71 +168,76 @@ class Player(Entity):
         """
 
         tab = [["Slot", "Item", "Stats"]]
-
-        if self.items["helmet"]:
-            helmet = self.items["helmet"]
+        print( self.items)
+        helmet_desc = f"{'Helmet'.ljust(12)}🪖:"
+        armor_desc = f"{'Armor'.ljust(12)}👕:"
+        boots_desc = f"{'Boots'.ljust(12)}🥾:"
+        weapon_desc = f"{'Weapon'.ljust(12)}🗡️:"
+        accessory_desc = f"{'Accessory'.ljust(12)}📿:"
+        if self.items['helmet']:
+            helmet = self.items['helmet']
 
             tab.append(
                 [
-                    f"{"Helmet".ljust(12)}🪖:",
-                    f"{helmet.info["name"]} [{helmet.info["level"]}]".ljust(15),
+                    helmet_desc,
+                    f"{helmet.info['name']} [{helmet.info['level']}]".ljust(15),
                     helmet.get_stats(),
                 ]
             )
         else:
-            tab.append([""])
+            tab.append([''])
 
-        if self.items["armor"]:
-            armor = self.items["armor"]
+        if self.items['armor']:
+            armor = self.items['armor']
 
             tab.append(
                 [
-                    f"{"Armor".ljust(12)}👕:",
-                    f"{armor.info["name"]} [{armor.info["level"]}]".ljust(15),
+                    armor_desc,
+                    f"{armor.info['name']} [{armor.info['level']}]".ljust(15),
                     armor.get_stats(),
                 ]
             )
         else:
-            tab.append([""])
+            tab.append([''])
 
-        if self.items["boots"]:
-            boots = self.items["boots"]
+        if self.items['boots']:
+            boots = self.items['boots']
 
             tab.append(
                 [
-                    f"{"Boots".ljust(12)}🥾:",
-                    f"{boots.info["name"]} [{boots.info["level"]}]".ljust(15),
+                    boots_desc,
+                    f"{boots.info['name']} [{boots.info['level']}]".ljust(15),
                     boots.get_stats(),
                 ]
             )
         else:
-            tab.append([""])
+            tab.append([''])
 
-        if self.items["weapon"]:
-            weapon = self.items["weapon"]
+        if self.items['weapon']:
+            weapon = self.items['weapon']
 
             tab.append(
                 [
-                    f"{"Weapon".ljust(12)}🗡️:",
-                    f"{weapon.info["name"]} [{weapon.info["level"]}]".ljust(15),
+                    weapon_desc,
+                    f"{weapon.info['name']} [{weapon.info['level']}]".ljust(15),
                     weapon.get_stats(),
                 ]
             )
         else:
-            tab.append([""])
+            tab.append([''])
 
-        if self.items["accessory"]:
-            accessory = self.items["accessory"]
+        if self.items['accessory']:
+            accessory = self.items['accessory']
 
             tab.append(
                 [
-                    f"{"Accessory".ljust(12)}📿:",
-                    f"{accessory.info["name"]} [{accessory.info["level"]}]".ljust(15),
+                    accessory_desc,
+                    f"{accessory.info['name']} [{accessory.info['level']}]".ljust(15),
                     accessory.get_stats(),
                 ]
             )
         else:
-            tab.append([""])
+            tab.append([''])
 
         table = tabulate(
             tab,
@@ -267,7 +272,7 @@ class Player(Entity):
 
         :return:
         """
-        if self.kills["slain"] >= self.boss_requirement:
+        if self.kills['slain'] >= self.boss_requirement:
             return True
         return False
 
@@ -284,10 +289,10 @@ class Player(Entity):
         filled_bars = round(curr_percent * bars)
         empty_bars = bars - filled_bars
 
-        xp_bar = "["
+        xp_bar = ""
         xp_bar += magenta("■") * filled_bars
         xp_bar += "_" * empty_bars
-        xp_bar += f"] {curr_nr}/{tot_nr}"
+        xp_bar += f" {curr_nr}/{tot_nr}"
 
         return xp_bar
 
@@ -298,7 +303,7 @@ class Player(Entity):
         """
         increase = 1.30
 
-        for lvl in range(1, self.info["level"] + 1):
+        for lvl in range(1, self.info['level'] + 1):
             increase *= 1 + (lvl / 100)
             self.max_xp = int(1000 * increase)
 
@@ -307,10 +312,10 @@ class Player(Entity):
 
         :return:
         """
-        if self.info["level"] >= 20:
+        if self.info['level'] >= 20:
             self.xp = self.max_xp
         else:
-            self.xp = self.info["xp"]
+            self.xp = self.info['xp']
 
     def add_xp(self, value) -> bool:
         """
@@ -325,8 +330,8 @@ class Player(Entity):
             remain = self.xp - self.max_xp
             self.xp = remain
 
-            if self.info["level"] < 20:
-                self.info["level"] += 1
+            if self.info['level'] < 20:
+                self.info['level'] += 1
                 self.calc_max_xp()
             else:
                 self.max_xp = "MAX LEVEL"

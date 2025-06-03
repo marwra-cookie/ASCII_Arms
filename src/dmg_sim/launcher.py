@@ -26,7 +26,7 @@ def open_new_window():
 
     elif system_platform == "Linux":
         subprocess.Popen(
-            ["x-terminal-emulator", "-e", f"{sys.executable} -m {module_path}"]
+            ['x-terminal-emulator", "-e", f"{sys.executable} -m {module_path}']
         )
 
     elif system_platform == "Darwin":  # Darwin = macOS

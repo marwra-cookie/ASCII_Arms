@@ -8,12 +8,12 @@ def menu_new_save():
     print("Start New Adventure! 🧙‍♂️\n\nEnter your name:")
     name = input("> ")
 
-    base_stats["info"]["id"] = get_last_entity_id() + 1
-    base_stats["info"]["name"] = name
-    base_stats["spells"]["1"] = get_spell_id(1)
-    base_stats["items"]["armor"] = get_item_id(12)
-    base_stats["items"]["boots"] = get_item_id(18)
-    base_stats["items"]["weapon"] = get_item_id(4)
+    base_stats['info']['id'] = get_last_entity_id() + 1
+    base_stats['info']['name'] = name
+    base_stats['spells']['1'] = get_spell_id(1)
+    base_stats['items']['armor'] = get_item_id(12)
+    base_stats['items']['boots'] = get_item_id(18)
+    base_stats['items']['weapon'] = get_item_id(4)
 
     player = Player(**base_stats)
     print(player.xp)
@@ -34,16 +34,16 @@ def menu_open_save() -> bool:
 
     profiles = ""
 
-    for player in data["player"]:
-        if player["info"]["id"] != 0:
-            profiles += f"\n({player["info"]["level"]}) {player["info"]["name"]}"
+    for player in data['player']:
+        if player['info']['id'] != 0:
+            profiles += f"\n({player['info']['level']}) {player['info']['name']}"
 
     print(f"Enter A Existing Profile 📂!" f"\n{profiles}" f"\n\nEnter profile name:")
     name = input("> ")
 
-    for player in data["player"]:
-        if name == player["info"]["name"]:
-            player = load_player(player["info"]["id"])
+    for player in data['player']:
+        if name == player['info']['name']:
+            player = load_player(player['info']['id'])
             game.player = player
             return True
 
@@ -61,8 +61,8 @@ def menu_start():
             "\n🎯 A Damage Simulation Game Build In Python 🐍"
         )
         print(
-            f"\n1. {"Open Save File".ljust(20)}📂"
-            f"\n2. {"Start New Game".ljust(20)}🆕"
+            f"\n1. {str_to_length('Open Save File', 20)}📂"
+            f"\n2. {str_to_length('Start New Game', 20)}🆕"
         )
 
         if failed:
@@ -85,14 +85,14 @@ def load_game():
     """ """
     rows = 20
 
-    if game.player.info["id"] != 0:
+    if game.player.info['id'] != 0:
         r = "■" * rows
         tot = 100
         percent = tot / rows
 
         while len(r) > 0:
             update()
-            print(f"Entering game as {game.player.info["name"]}!\n")
+            print(f"Entering game as {game.player.info['name']}!\n")
 
             if tot > 66:
                 print(f"🔄 {tot}% {green(r)}")
