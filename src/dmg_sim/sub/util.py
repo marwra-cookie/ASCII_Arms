@@ -1,9 +1,10 @@
 from . import *
 
+
 def str_to_length(msg, length) -> str:
-    """
-    """
+    """ """
     return msg.ljust(length)
+
 
 def value_to_stat(value, stat) -> Stat:
     """
@@ -49,4 +50,3 @@ def value_to_stat(value, stat) -> Stat:
         case "rounds":
             return Rounds(int(value))
     return None
-

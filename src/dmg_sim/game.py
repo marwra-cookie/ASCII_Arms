@@ -28,12 +28,12 @@ def menu_combat_options():
         choice = input("> ")
 
         if choice == "1":
-            menu_combat(find_enemy(player.info['level'], False))
+            menu_combat(find_enemy(player.info["level"], False))
             break
         elif choice == "2":
             if player.check_requirement():
                 player.slain = 0
-                menu_combat(find_enemy(player.info['level'], True))
+                menu_combat(find_enemy(player.info["level"], True))
                 break
         elif choice == "3":
             break
@@ -116,6 +116,8 @@ def menu():
             f"\n3. {str_to_length('Save Progress', 20)}💾"
             f"\n\n4. {str_to_length('Quit', 20)}🚪"
         )
+
+        print(get_last_entity_id())
         choice = input("> ")
 
         if choice == "1":

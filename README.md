@@ -32,7 +32,7 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
    ```
 3. **Install dependencies**
    ```bash
-   pip install .
+   python -m pip install .
    ```
 4. **Run game**
    

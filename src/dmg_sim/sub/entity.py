@@ -56,8 +56,8 @@ class Entity:
         spells = self.spells
         for i, spell in enumerate(spells):
             if spells[spell] is not None:
-                level = spells[spell].info['level']
-                name = spells[spell].info['name']
+                level = spells[spell].info["level"]
+                name = spells[spell].info["name"]
 
                 slots.append(
                     [
@@ -77,8 +77,8 @@ class Entity:
 
         :return:
         """
-        tot_nr = int(self.base['stats']['health'].value)
-        curr_nr = int(self.stats['health'].value)
+        tot_nr = int(self.base["stats"]["health"].value)
+        curr_nr = int(self.stats["health"].value)
         curr_percent = curr_nr / tot_nr
 
         bars = 20
@@ -107,12 +107,12 @@ class Entity:
         :param spell:
         """
         damage = 0
-        scaling = spell.stats['scaling'].value
+        scaling = spell.stats["scaling"].value
 
-        for effect in spell.stats['effect']:
-            spell_dmg = spell.stats['effect'][effect]['value'].value
+        for effect in spell.stats["effect"]:
+            spell_dmg = spell.stats["effect"][effect]["value"].value
 
-            damage += spell_dmg + (self.stats['attack_power'].value * scaling)
+            damage += spell_dmg + (self.stats["attack_power"].value * scaling)
 
         return damage
 
@@ -121,34 +121,34 @@ class Entity:
 
         :param damage:
         """
-        mitigated = damage / (1 + self.stats['defense'].value / 100)
+        mitigated = damage / (1 + self.stats["defense"].value / 100)
 
-        if self.stats['health'].value - mitigated < 0:
-            self.stats['health'].value = 0
+        if self.stats["health"].value - mitigated < 0:
+            self.stats["health"].value = 0
         else:
-            self.stats['health'].value -= mitigated
+            self.stats["health"].value -= mitigated
 
     def spell_taken(self, damage):
         """
 
         :param damage:
         """
-        mitigated = damage / (1 + self.stats['resistance'].value / 100)
+        mitigated = damage / (1 + self.stats["resistance"].value / 100)
 
-        if self.stats['health'].value - mitigated < 0:
-            self.stats['health'].value = 0
+        if self.stats["health"].value - mitigated < 0:
+            self.stats["health"].value = 0
         else:
-            self.stats['health'].value -= mitigated
+            self.stats["health"].value -= mitigated
 
     def heal_taken(self, heal):
         """
 
         :param heal:
         """
-        if (self.stats['health'].value + heal) > self.base['stats']['health'].value:
-            self.stats['health'].value = self.base['stats']['health'].value
+        if (self.stats["health"].value + heal) > self.base["stats"]["health"].value:
+            self.stats["health"].value = self.base["stats"]["health"].value
         else:
-            self.stats['health'].value += heal
+            self.stats["health"].value += heal
 
 
 class Player(Entity):
@@ -168,14 +168,14 @@ class Player(Entity):
         """
 
         tab = [["Slot", "Item", "Stats"]]
-        print( self.items)
+        print(self.items)
         helmet_desc = f"{'Helmet'.ljust(12)}🪖:"
         armor_desc = f"{'Armor'.ljust(12)}👕:"
         boots_desc = f"{'Boots'.ljust(12)}🥾:"
         weapon_desc = f"{'Weapon'.ljust(12)}🗡️:"
         accessory_desc = f"{'Accessory'.ljust(12)}📿:"
-        if self.items['helmet']:
-            helmet = self.items['helmet']
+        if self.items["helmet"]:
+            helmet = self.items["helmet"]
 
             tab.append(
                 [
@@ -185,10 +185,10 @@ class Player(Entity):
                 ]
             )
         else:
-            tab.append([''])
+            tab.append([""])
 
-        if self.items['armor']:
-            armor = self.items['armor']
+        if self.items["armor"]:
+            armor = self.items["armor"]
 
             tab.append(
                 [
@@ -198,10 +198,10 @@ class Player(Entity):
                 ]
             )
         else:
-            tab.append([''])
+            tab.append([""])
 
-        if self.items['boots']:
-            boots = self.items['boots']
+        if self.items["boots"]:
+            boots = self.items["boots"]
 
             tab.append(
                 [
@@ -211,10 +211,10 @@ class Player(Entity):
                 ]
             )
         else:
-            tab.append([''])
+            tab.append([""])
 
-        if self.items['weapon']:
-            weapon = self.items['weapon']
+        if self.items["weapon"]:
+            weapon = self.items["weapon"]
 
             tab.append(
                 [
@@ -224,10 +224,10 @@ class Player(Entity):
                 ]
             )
         else:
-            tab.append([''])
+            tab.append([""])
 
-        if self.items['accessory']:
-            accessory = self.items['accessory']
+        if self.items["accessory"]:
+            accessory = self.items["accessory"]
 
             tab.append(
                 [
@@ -237,7 +237,7 @@ class Player(Entity):
                 ]
             )
         else:
-            tab.append([''])
+            tab.append([""])
 
         table = tabulate(
             tab,
@@ -272,7 +272,7 @@ class Player(Entity):
 
         :return:
         """
-        if self.kills['slain'] >= self.boss_requirement:
+        if self.kills["slain"] >= self.boss_requirement:
             return True
         return False
 
@@ -289,10 +289,10 @@ class Player(Entity):
         filled_bars = round(curr_percent * bars)
         empty_bars = bars - filled_bars
 
-        xp_bar = ""
+        xp_bar = "["
         xp_bar += magenta("■") * filled_bars
         xp_bar += "_" * empty_bars
-        xp_bar += f" {curr_nr}/{tot_nr}"
+        xp_bar += f"] {curr_nr}/{tot_nr}"
 
         return xp_bar
 
@@ -303,7 +303,7 @@ class Player(Entity):
         """
         increase = 1.30
 
-        for lvl in range(1, self.info['level'] + 1):
+        for lvl in range(1, self.info["level"] + 1):
             increase *= 1 + (lvl / 100)
             self.max_xp = int(1000 * increase)
 
@@ -312,10 +312,10 @@ class Player(Entity):
 
         :return:
         """
-        if self.info['level'] >= 20:
+        if self.info["level"] >= 20:
             self.xp = self.max_xp
         else:
-            self.xp = self.info['xp']
+            self.xp = self.info["xp"]
 
     def add_xp(self, value) -> bool:
         """
@@ -330,8 +330,8 @@ class Player(Entity):
             remain = self.xp - self.max_xp
             self.xp = remain
 
-            if self.info['level'] < 20:
-                self.info['level'] += 1
+            if self.info["level"] < 20:
+                self.info["level"] += 1
                 self.calc_max_xp()
             else:
                 self.max_xp = "MAX LEVEL"

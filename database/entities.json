@@ -11,15 +11,15 @@
             "stats": {
                 "attack_power": 999,
                 "spell_power": 999,
-                "critical_chance": 1,
-                "critical_damage": 1,
-                "penetration": 1,
+                "critical_chance": 1.0,
+                "critical_damage": 1.0,
+                "penetration": 1.0,
                 "health": 10000,
                 "mana": 10000,
                 "defense": 999,
                 "resistance": 999,
-                "dodge": 1,
-                "life_steal": 1,
+                "dodge": 1.0,
+                "life_steal": 1.0,
                 "momentum": 200
             },
             "spells": {
@@ -34,11 +34,42 @@
                 "boots": 18,
                 "weapon": 4,
                 "accessory": null
+            }
+        },
+        {
+            "info": {
+                "id": 3,
+                "name": "Cokie2 ",
+                "icon": "\ud83d\ude42",
+                "level": 1,
+                "xp": 0
             },
-            "kills": {
-                "enemies": 999,
-                "bosses": 999,
-                "slain": 4
+            "stats": {
+                "attack_power": 10,
+                "spell_power": 10,
+                "critical_chance": 0.1,
+                "critical_damage": 1.5,
+                "penetration": 0,
+                "health": 500,
+                "mana": 250,
+                "defense": 25,
+                "resistance": 25,
+                "dodge": 0.1,
+                "life_steal": 0,
+                "momentum": 100
+            },
+            "spells": {
+                "1": 1,
+                "2": null,
+                "3": null,
+                "4": null
+            },
+            "items": {
+                "helmet": null,
+                "armor": 12,
+                "boots": 18,
+                "weapon": 4,
+                "accessory": null
             }
         }
     ],

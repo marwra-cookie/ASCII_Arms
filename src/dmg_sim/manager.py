@@ -57,35 +57,35 @@ def save_player(player):
     :param player:
     """
     profile = {}
-    profile['info'] = player.info
-    profile['stats'] = player.stats
-    profile['spells'] = player.spells
-    profile['items'] = player.items
+    profile["info"] = player.info
+    profile["stats"] = player.stats
+    profile["spells"] = player.spells
+    profile["items"] = player.items
 
-    for stat in profile['stats']:
-        profile['stats'][stat] = profile['stats'][stat].value
+    for stat in profile["stats"]:
+        profile["stats"][stat] = profile["stats"][stat].value
 
-    for spell in profile['spells']:
-        if profile['spells'][spell] is None:
-            profile['spells'][spell] = None
+    for spell in profile["spells"]:
+        if profile["spells"][spell] is None:
+            profile["spells"][spell] = None
         else:
-            profile['spells'][spell] = profile['spells'][spell].info['id']
+            profile["spells"][spell] = profile["spells"][spell].info["id"]
 
-    for item in profile['items']:
-        if profile['items'][item] is None:
-            profile['items'][item] = None
+    for item in profile["items"]:
+        if profile["items"][item] is None:
+            profile["items"][item] = None
         else:
-            profile['items'][item] = profile['items'][item].info['id']
+            profile["items"][item] = profile["items"][item].info["id"]
 
     with open(entity_path, "r", encoding="utf-8") as read_file:
         data = json.load(read_file)
 
-    for i, save in enumerate(data['player']):
-        if save['info']['id'] == profile['info']['id']:
-            data['player'][i] = profile
+    for i, save in enumerate(data["player"]):
+        if save["info"]["id"] == profile["info"]["id"]:
+            data["player"][i] = profile
             break
     else:
-        data['player'].append(profile)
+        data["player"].append(profile)
 
     with open(entity_path, "w") as write_file:
         json.dump(data, write_file, indent=4)
@@ -100,24 +100,24 @@ def load_player(id):
     with open(entity_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
-    for player in data['player']:
-        for stat in player['stats']:
-            value = int(player['stats'][stat])
-            player['stats'][stat] = value_to_stat(value, stat)
+    for player in data["player"]:
+        for stat in player["stats"]:
+            value = int(player["stats"][stat])
+            player["stats"][stat] = value_to_stat(value, stat)
 
-        for spell in player['spells']:
-            player['spells'][spell] = get_spell_id(player['spells'][spell])
+        for spell in player["spells"]:
+            player["spells"][spell] = get_spell_id(player["spells"][spell])
 
-        for item in player['items']:
-            player['items'][item] = get_item_id(player['items'][item])
+        for item in player["items"]:
+            player["items"][item] = get_item_id(player["items"][item])
 
         player_object = Player(**player)
-        players[player['info']['id']] = player_object
+        players[player["info"]["id"]] = player_object
 
-        if id == player['info']['id']:
-            return player_object
-
-    return None
+    if players[id]:
+        return players[id]
+    else:
+        return None
 
 
 def load_enemies():
@@ -125,19 +125,19 @@ def load_enemies():
     with open(entity_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
-    for enemy in data['enemy']:
-        for stat in enemy['stats']:
-            value = int(enemy['stats'][stat])
-            enemy['stats'][stat] = value_to_stat(value, stat)
+    for enemy in data["enemy"]:
+        for stat in enemy["stats"]:
+            value = int(enemy["stats"][stat])
+            enemy["stats"][stat] = value_to_stat(value, stat)
 
-        enemies[enemy['info']['id']] = Enemy(**enemy)
+        enemies[enemy["info"]["id"]] = Enemy(**enemy)
 
-    for boss in data['boss']:
-        for stat in boss['stats']:
-            value = int(boss['stats'][stat])
-            boss['stats'][stat] = value_to_stat(value, stat)
+    for boss in data["boss"]:
+        for stat in boss["stats"]:
+            value = int(boss["stats"][stat])
+            boss["stats"][stat] = value_to_stat(value, stat)
 
-        bosses[boss['info']['id']] = Enemy(**boss)
+        bosses[boss["info"]["id"]] = Enemy(**boss)
 
 
 def find_enemy(level, boss_encounter):
@@ -151,12 +151,12 @@ def find_enemy(level, boss_encounter):
 
     if boss_encounter:
         for boss in bosses:
-            lvl = bosses[boss].info['level']
+            lvl = bosses[boss].info["level"]
             if abs(lvl - level) <= 1:
                 matches[boss] = bosses[boss]
     else:
         for enemy in enemies:
-            lvl = enemies[enemy].info['level']
+            lvl = enemies[enemy].info["level"]
             if abs(lvl - level) <= 1:
                 matches[enemy] = enemies[enemy]
 
@@ -177,20 +177,17 @@ def get_last_entity_id() -> int:
     i = 0
 
     for enemy in enemies:
-        id = enemies[enemy].info['id']
+        id = enemies[enemy].info["id"]
         if id > i:
             i = id
-
     for boss in bosses:
-        id = bosses[boss].info['id']
+        id = bosses[boss].info["id"]
         if id > i:
             i = id
-
     for player in players:
-        id = player['info']['id']
+        id = players[player].info["id"]
         if id > i:
             i = id
-
     return i
 
 
@@ -201,7 +198,7 @@ def get_enemy_name(name) -> Entity:
     :return:
     """
     for enemy in enemies:
-        if name == enemies[enemy].info['name']:
+        if name == enemies[enemy].info["name"]:
             return enemy
     return None
 
@@ -213,7 +210,7 @@ def get_enemy_id(i) -> Entity:
     :return:
     """
     for enemy in enemies:
-        if i == enemies[enemy].info['id']:
+        if i == enemies[enemy].info["id"]:
             return enemy
 
     return None
@@ -255,11 +252,11 @@ def load_items():
         for slot in data[type]:
             item = data[type][slot]
 
-            for stat in item['stats']:
+            for stat in item["stats"]:
 
-                value = item['stats'][stat]
-                item['stats'][stat] = value_to_stat(value, stat)
-                armory[item['info']['id']] = str_to_item(slot, item)
+                value = item["stats"][stat]
+                item["stats"][stat] = value_to_stat(value, stat)
+                armory[item["info"]["id"]] = str_to_item(slot, item)
 
 
 def compare_items(item1, item2) -> str:
@@ -321,7 +318,7 @@ def get_item_name(name) -> Item:
     :return:
     """
     for item in armory:
-        if name == armory[item].info['name']:
+        if name == armory[item].info["name"]:
             return armory[item]
     return None
 
@@ -350,30 +347,30 @@ def load_spells():
 
     for type in ("passive", "direct"):
         for spell in data[type]:
-            spell['info']['name'] = str_to_color(
-                spell['info']['name'], spell['info']['color']
+            spell["info"]["name"] = str_to_color(
+                spell["info"]["name"], spell["info"]["color"]
             )
 
-            for stat in spell['stats']:
+            for stat in spell["stats"]:
                 if stat == "effect":
-                    for base in spell['stats']['effect']:
-                        value = int(spell['stats']['effect'][base])
+                    for base in spell["stats"]["effect"]:
+                        value = int(spell["stats"]["effect"][base])
 
-                        spell['stats']['effect'][base] = value_to_stat(value, base)
+                        spell["stats"]["effect"][base] = value_to_stat(value, base)
                 elif stat == "passive":
-                    value = spell['stats'][stat]
+                    value = spell["stats"][stat]
 
-                    spell['stats'][stat] = get_spell_id(int(value))
+                    spell["stats"][stat] = get_spell_id(int(value))
                 else:
-                    value = spell['stats'][stat]
+                    value = spell["stats"][stat]
 
-                    spell['stats'][stat] = value_to_stat(value, stat)
+                    spell["stats"][stat] = value_to_stat(value, stat)
 
             match type:
                 case "direct":
-                    spellbook['direct'][spell['info']['id']] = Direct(**spell)
+                    spellbook["direct"][spell["info"]["id"]] = Direct(**spell)
                 case "passive":
-                    spellbook['passive'][spell['info']['id']] = Passive(**spell)
+                    spellbook["passive"][spell["info"]["id"]] = Passive(**spell)
 
 
 def get_last_spell_id() -> int:
@@ -399,7 +396,7 @@ def get_spell_name(name) -> Spell:
     """
     for category in spellbook:
         for spell in spellbook[category]:
-            if spellbook[category][spell].info['name'] == name:
+            if spellbook[category][spell].info["name"] == name:
                 return spellbook[category][spell]
     return None
 
