@@ -1,6 +1,6 @@
 from . import *
 
-game_name = "ASCII Arms"
+name = "ASCII Arms"
 player = None
 
 
@@ -19,7 +19,7 @@ def menu_combat_options():
     while True:
         update()
         print(
-            f"⚔️ Combat Options"
+            f"{"Combat Options".upper()}"
             f"\nTotal: {player.kills['enemies']}\tBosses: {player.kills['bosses']}"
             f"\n\n1. {str_to_length('Normal Fight', 20)}🥊"
             f"\n2. {str_to_length('Boss Encounter', 20)}👹 {boss_desc}"
@@ -46,7 +46,7 @@ def menu_character():
         update()
 
         print(
-            f"{"CHARACTER".upper()}"
+            f"{"Character".upper()}"
             f"\n\n{player.get_stats()}"
             f"\n\n1. {str_to_length('Inventory', 20)}💰"
             f"\n2. {str_to_length('Spellbook', 20)}🔮"
@@ -108,7 +108,7 @@ def menu():
     while True:
         update()
         print(
-            f"=== {game_name.upper()} ==="
+            f"=== {name.upper()} ==="
             f"\nName: {player.info['name']} {player.info['icon']}"
             f"\nLevel: {player.info['level']}"
             f"\n{player.get_xp_bar()}"
@@ -118,7 +118,6 @@ def menu():
             f"\n\n4. {str_to_length('Quit', 20)}🚪"
         )
 
-        print(player.kills)
         choice = input("> ")
 
         if choice == "1":

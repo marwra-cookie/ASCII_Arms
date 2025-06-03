@@ -5,7 +5,7 @@ import time
 def menu_new_save():
     """ """
     update()
-    print("Start New Adventure! 🧙\n\nEnter your name:")
+    print(f"Start New Adventure! 🧙\n\nEnter your name:")
     name = input("> ")
 
     base_stats["info"]["id"] = get_last_entity_id() + 1
@@ -57,8 +57,8 @@ def menu_start():
     while True:
         update()
         print(
-            "=== WELCOME TO DMG SIM ==="
-            "\n🎯 A Damage Simulation Game Build In Python 🐍"
+            f"=== Welcome To {game.name.upper()} ==="
+            "\n🎯 A ASCII-Based Damage Simulation Game Build In Python 🐍"
         )
         print(
             f"\n1. {str_to_length('Open Save File', 20)}📂"

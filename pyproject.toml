@@ -3,11 +3,10 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "dmg_sim"
+name = "ascii_arms"
 version = "1.0"
 dependencies = [
     "colorama",
     "tabulate",
-    "black",
 ]
 requires-python = ">= 3.11"

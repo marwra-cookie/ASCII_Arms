@@ -56,8 +56,15 @@ def save_player(player):
 
     :param player:
     """
-    profile = deepcopy(player).__dict__
+    p = deepcopy(player)
+    profile = {}
+    profile["info"] = p.info
+    profile["stats"] = p.stats
+    profile["spells"] = p.spells
+    profile["items"] = p.items
+    profile["kills"] = p.kills
 
+    print(profile)
     for stat in profile["stats"]:
         profile["stats"][stat] = profile["stats"][stat].value
 
@@ -72,7 +79,7 @@ def save_player(player):
             profile["items"][item] = None
         else:
             profile["items"][item] = profile["items"][item].info["id"]
-    
+
     for kill in profile["kills"]:
         profile["kills"][kill] = profile["kills"][kill]
 
@@ -86,6 +93,7 @@ def save_player(player):
     else:
         data["player"].append(profile)
 
+    print(profile)
     with open(entity_path, "w") as write_file:
         json.dump(data, write_file, indent=4)
 
@@ -113,10 +121,8 @@ def load_player(id):
         player_object = Player(**player)
         players[player["info"]["id"]] = player_object
 
-    if players[id]:
-        return players[id]
-    else:
-        return None
+    return players[id]
+
 
 
 def load_enemies():
@@ -179,14 +185,17 @@ def get_last_entity_id() -> int:
         id = enemies[enemy].info["id"]
         if id > i:
             i = id
+
     for boss in bosses:
         id = bosses[boss].info["id"]
         if id > i:
             i = id
+
     for player in players:
         id = players[player].info["id"]
         if id > i:
             i = id
+
     return i
 
 
