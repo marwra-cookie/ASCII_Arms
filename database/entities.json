@@ -4,7 +4,7 @@
             "info": {
                 "id": 0,
                 "name": "GM",
-                "icon": "\ud83e\uddd9\u200d\u2642\ufe0f",
+                "icon": "\ud83c\udfa9",
                 "level": 20,
                 "xp": 0
             },
@@ -34,12 +34,17 @@
                 "boots": 18,
                 "weapon": 4,
                 "accessory": null
+            },
+            "kills": {
+                "enemies": 99,
+                "bosses": 99,
+                "slain": 4
             }
         },
         {
             "info": {
                 "id": 3,
-                "name": "Mort",
+                "name": "Cookie",
                 "icon": "\ud83d\ude42",
                 "level": 1,
                 "xp": 0
@@ -70,6 +75,11 @@
                 "boots": 18,
                 "weapon": 4,
                 "accessory": null
+            },
+            "kills": {
+                "enemies": 0,
+                "bosses": 0,
+                "slain": 0
             }
         }
     ],

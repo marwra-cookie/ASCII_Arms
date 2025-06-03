@@ -56,11 +56,7 @@ def save_player(player):
 
     :param player:
     """
-    profile = {}
-    profile["info"] = player.info
-    profile["stats"] = player.stats
-    profile["spells"] = player.spells
-    profile["items"] = player.items
+    profile = deepcopy(player).__dict__
 
     for stat in profile["stats"]:
         profile["stats"][stat] = profile["stats"][stat].value
@@ -76,6 +72,9 @@ def save_player(player):
             profile["items"][item] = None
         else:
             profile["items"][item] = profile["items"][item].info["id"]
+    
+    for kill in profile["kills"]:
+        profile["kills"][kill] = profile["kills"][kill]
 
     with open(entity_path, "r", encoding="utf-8") as read_file:
         data = json.load(read_file)

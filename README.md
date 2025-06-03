@@ -1,5 +1,5 @@
-# DMG-SIM
-**DMG-SIM** is a modular CLI based damage simulation system, built with Python. 
+# ASCII_Arms
+**ASCII Arms** is a modular CLI based damage simulation system, built with Python. 
 It simulates interactions between game entities, items, and spells using customizable data from JSON configuration files. 
 This tool is useful for prototyping game mechanics, balancing combat systems, or serving as a backend module in larger game engines.
 
@@ -16,7 +16,7 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
    git clone <repository-url>
    ```
    ```bash
-   cd DMG-SIM
+   cd ASCII_Arms
    ```
 2. **Create virtual environment (recommended)**
    ```bash
@@ -38,5 +38,5 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
    
    _RUN GAME AS MODULE:_ **-m**
    ```bash
-   python -m src.dmg_sim.main
+   python -m src.ascii_arms.main
    ```

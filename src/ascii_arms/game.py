@@ -1,5 +1,6 @@
 from . import *
 
+game_name = "ASCII Arms"
 player = None
 
 
@@ -45,7 +46,7 @@ def menu_character():
         update()
 
         print(
-            f"🧙‍♂️ Character"
+            f"{"CHARACTER".upper()}"
             f"\n\n{player.get_stats()}"
             f"\n\n1. {str_to_length('Inventory', 20)}💰"
             f"\n2. {str_to_length('Spellbook', 20)}🔮"
@@ -67,7 +68,7 @@ def menu_items():
     while True:
         update()
         print(
-            f"{str_to_length('Inventory', 20)}💰"
+            f"{"Inventory".upper()}"
             f"\n\n{player.get_items()}"
             f"\n\n3. {str_to_length('Back', 20)}🔙"
         )
@@ -83,7 +84,7 @@ def menu_spells():
     while True:
         update()
         print(
-            f"{str_to_length('Spellbook', 20)}🔮"
+            f"{"Spellbook".upper()}"
             f"\n\n{player.get_spells()}"
             f"\n\n3. {str_to_length('Back', 20)}🔙"
         )
@@ -107,7 +108,7 @@ def menu():
     while True:
         update()
         print(
-            f"=== PLAYER INFO ==="
+            f"=== {game_name.upper()} ==="
             f"\nName: {player.info['name']} {player.info['icon']}"
             f"\nLevel: {player.info['level']}"
             f"\n{player.get_xp_bar()}"
@@ -117,7 +118,7 @@ def menu():
             f"\n\n4. {str_to_length('Quit', 20)}🚪"
         )
 
-        print(get_last_entity_id())
+        print(player.kills)
         choice = input("> ")
 
         if choice == "1":
