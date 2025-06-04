@@ -19,7 +19,7 @@ def menu_combat_options():
     while True:
         update()
         print(
-            f"{"Combat Options".upper()}"
+            f"{'Combat Options'.upper()}"
             f"\nTotal: {player.kills['enemies']}\tBosses: {player.kills['bosses']}"
             f"\n\n1. {str_to_length('Normal Fight', 20)}🥊"
             f"\n2. {str_to_length('Boss Encounter', 20)}👹 {boss_desc}"
@@ -46,7 +46,7 @@ def menu_character():
         update()
 
         print(
-            f"{"Character".upper()}"
+            f"{'Character'.upper()}"
             f"\n\n{player.get_stats()}"
             f"\n\n1. {str_to_length('Inventory', 20)}💰"
             f"\n2. {str_to_length('Spellbook', 20)}🔮"
@@ -68,7 +68,7 @@ def menu_items():
     while True:
         update()
         print(
-            f"{"Inventory".upper()}"
+            f"{'Inventory'.upper()}"
             f"\n\n{player.get_items()}"
             f"\n\n3. {str_to_length('Back', 20)}🔙"
         )
@@ -84,7 +84,7 @@ def menu_spells():
     while True:
         update()
         print(
-            f"{"Spellbook".upper()}"
+            f"{'Spellbook'.upper()}"
             f"\n\n{player.get_spells()}"
             f"\n\n3. {str_to_length('Back', 20)}🔙"
         )
@@ -109,7 +109,7 @@ def menu():
         update()
         print(
             f"=== {name.upper()} ==="
-            f"\nName: {player.info['name']} {player.info['icon']}"
+            f"\n\nName: {player.info['name']} {player.info['icon']}"
             f"\nLevel: {player.info['level']}"
             f"\n{player.get_xp_bar()}"
             f"\n\n1. {str_to_length('Enter Battle', 20)}⚔️"

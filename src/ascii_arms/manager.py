@@ -124,7 +124,6 @@ def load_player(id):
     return players[id]
 
 
-
 def load_enemies():
     """ """
     with open(entity_path, "r", encoding="utf-8") as file:
@@ -356,7 +355,7 @@ def load_spells():
     for type in ("passive", "direct"):
         for spell in data[type]:
             spell["info"]["name"] = str_to_color(
-                spell["info"]["name"], spell["info"]["color"]
+                f" {spell['info']['name']} ", spell["info"]["color"]
             )
 
             for stat in spell["stats"]:

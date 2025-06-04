@@ -68,7 +68,7 @@ class Entity:
                 )
             else:
                 slots.append([f"Slot {i + 1}:", ""])
-        table = tabulate(slots, headers=['Slot", "Name", "Stats'])
+        table = tabulate(slots, headers=["Slot", "Name", "Stats"])
 
         return table
 
@@ -168,7 +168,7 @@ class Player(Entity):
         """
 
         tab = [["Slot", "Item", "Stats"]]
-        print(self.items)
+
         helmet_desc = f"{'Helmet'.ljust(12)}🪖:"
         armor_desc = f"{'Armor'.ljust(12)}👕:"
         boots_desc = f"{'Boots'.ljust(12)}🥾:"
