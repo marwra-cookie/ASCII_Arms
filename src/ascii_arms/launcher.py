@@ -9,12 +9,16 @@ project_root = os.path.dirname(src_dir)
 
 
 def update():
-    """ """
+    """
+    Clears the terminal screen (Windows-specific).
+    """
     os.system("cls")
 
 
 def open_new_window():
-    """ """
+    """
+    Launches a new terminal window and runs the main game module appropriate for the OS.
+    """
     system_platform = platform.system()
     module_path = "src.dmg_sim.main"
 

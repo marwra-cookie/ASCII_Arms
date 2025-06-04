@@ -9,8 +9,9 @@ class Item:
 
     def get_stats(self) -> str:
         """
+        Constructs a formatted string displaying all stat values of this item.
 
-        :return:
+        :return: A space-separated string of stat values with color and icon formatting.
         """
         stats = self.__dict__
 

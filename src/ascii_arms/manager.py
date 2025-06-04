@@ -53,8 +53,10 @@ base_stats = {
 
 def save_player(player):
     """
+    Converts a Player object into a JSON-compatible dictionary and updates or appends it
+    to the persistent player data file.
 
-    :param player:
+    :param player: Player instance to be serialized and saved.
     """
     p = deepcopy(player)
     profile = {}
@@ -64,7 +66,6 @@ def save_player(player):
     profile["items"] = p.items
     profile["kills"] = p.kills
 
-    print(profile)
     for stat in profile["stats"]:
         profile["stats"][stat] = profile["stats"][stat].value
 
@@ -98,11 +99,9 @@ def save_player(player):
         json.dump(data, write_file, indent=4)
 
 
-def load_player(id):
+def load_entities():
     """
-
-    :param id:
-    :return:
+    Loads enemy and boss data from JSON files and populates the enemies and bosses dicts.
     """
     with open(entity_path, "r", encoding="utf-8") as file:
         data = json.load(file)
@@ -118,16 +117,7 @@ def load_player(id):
         for item in player["items"]:
             player["items"][item] = get_item_id(player["items"][item])
 
-        player_object = Player(**player)
-        players[player["info"]["id"]] = player_object
-
-    return players[id]
-
-
-def load_enemies():
-    """ """
-    with open(entity_path, "r", encoding="utf-8") as file:
-        data = json.load(file)
+        players[player["info"]["id"]] = Player(**player)
 
     for enemy in data["enemy"]:
         for stat in enemy["stats"]:
@@ -146,10 +136,11 @@ def load_enemies():
 
 def find_enemy(level, boss_encounter):
     """
+    Finds an enemy or boss close to the given level.
 
-    :param level:
-    :param boss_encounter:
-    :return:
+    :param level: The level of the player.
+    :param boss_encounter: Boolean indicating whether to search for a boss.
+    :return: A matching enemy or boss entity.
     """
     matches = {}
 
@@ -175,8 +166,9 @@ def find_enemy(level, boss_encounter):
 
 def get_last_entity_id() -> int:
     """
+    Finds the highest used ID among all entities.
 
-    :return:
+    :return: Maximum integer ID used by any player, enemy, or boss.
     """
     i = 0
 
@@ -200,9 +192,10 @@ def get_last_entity_id() -> int:
 
 def get_enemy_name(name) -> Entity:
     """
+    Retrieves an enemy by its name.
 
-    :param name:
-    :return:
+    :param name: Name string to match.
+    :return: Matching enemy entity or None.
     """
     for enemy in enemies:
         if name == enemies[enemy].info["name"]:
@@ -212,9 +205,10 @@ def get_enemy_name(name) -> Entity:
 
 def get_enemy_id(i) -> Entity:
     """
+    Retrieves an enemy by its ID.
 
-    :param i:
-    :return:
+    :param i: Numeric ID to match.
+    :return: Matching enemy entity or None.
     """
     for enemy in enemies:
         if i == enemies[enemy].info["id"]:
@@ -226,14 +220,14 @@ def get_enemy_id(i) -> Entity:
 # endregion
 
 
-# TODO: Fix stats added to player
 # region Item Manager
 def str_to_item(slot, item) -> Item:
     """
+    Instantiates an item object of the correct subclass based on the slot.
 
-    :param slot:
-    :param item:
-    :return:
+    :param slot: Slot name (e.g., "helmet", "weapon").
+    :param item: Dictionary with item attributes.
+    :return: Item subclass instance or None.
     """
     match slot:
         case "helmet":
@@ -250,7 +244,9 @@ def str_to_item(slot, item) -> Item:
 
 
 def load_items():
-    """ """
+    """
+    Loads item data from JSON and populates the armory with instantiated items.
+    """
 
     with open(item_path, "r") as file:
         data = json.load(file)
@@ -268,11 +264,13 @@ def load_items():
 
 def compare_items(item1, item2) -> str:
     """
+    Compares two items and returns a formatted string showing their stats side by side.
 
-    :param item1:
-    :param item2:
-    :return:
+    :param item1: Currently equipped item.
+    :param item2: New item being compared.
+    :return: A string table comparing the two items.
     """
+
     stats1 = item1.stats
     stats2 = item2.stats
 
@@ -320,9 +318,10 @@ def get_last_item_id() -> int:
 
 def get_item_name(name) -> Item:
     """
+    Finds an item in the armory by its name.
 
-    :param name:
-    :return:
+    :param name: Name of the item to find.
+    :return: Item object or None.
     """
     for item in armory:
         if name == armory[item].info["name"]:
@@ -332,9 +331,9 @@ def get_item_name(name) -> Item:
 
 def get_item_id(i) -> Item:
     """
+    Retrieves the highest used item ID from the armory.
 
-    :param i:
-    :return:
+    :return: Maximum integer item ID.
     """
     for id in armory:
         if i == id:
@@ -347,7 +346,9 @@ def get_item_id(i) -> Item:
 
 # region Spell Manager
 def load_spells():
-    """ """
+    """
+    Loads all spells from the database, formats them, and adds them to the global spellbook.
+    """
 
     with open(spell_path, "r") as file:
         data = json.load(file)
@@ -382,8 +383,9 @@ def load_spells():
 
 def get_last_spell_id() -> int:
     """
+    Retrieves the highest spell ID from the spellbook.
 
-    :return:
+    :return: Maximum integer spell ID.
     """
     i = 0
 
@@ -397,9 +399,10 @@ def get_last_spell_id() -> int:
 
 def get_spell_name(name) -> Spell:
     """
+    Finds a spell in the spellbook by its display name.
 
-    :param name:
-    :return:
+    :param name: Display name of the spell.
+    :return: Spell object or None.
     """
     for category in spellbook:
         for spell in spellbook[category]:
@@ -410,9 +413,10 @@ def get_spell_name(name) -> Spell:
 
 def get_spell_id(i) -> Spell:
     """
+    Retrieves a spell object by its ID.
 
-    :param i:
-    :return:
+    :param i: Integer ID of the spell.
+    :return: Spell object or None.
     """
     for category in spellbook:
         for spell in spellbook[category]:

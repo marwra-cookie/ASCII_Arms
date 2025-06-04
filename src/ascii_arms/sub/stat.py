@@ -9,8 +9,9 @@ class Stat:
 
     def get_value_color(self) -> str:
         """
+        Formats the stat's value with its corresponding icon and color styling.
 
-        :return:
+        :return: A string representing the colored stat value.
         """
         return f"{self.icon}{self.color}"
 

@@ -3,7 +3,9 @@ import time
 
 
 def menu_new_save():
-    """ """
+    """
+    Starts a new game by prompting for a player name and initializing base stats and items.
+    """
     update()
     print(f"Start New Adventure! 🧙\n\nEnter your name:")
     name = input("> ")
@@ -16,34 +18,29 @@ def menu_new_save():
     base_stats["items"]["weapon"] = get_item_id(4)
 
     player = Player(**base_stats)
-    print(player.xp)
     game.player = player
 
 
 def menu_open_save() -> bool:
     """
+    Attempts to load a save file based on player input.
 
-    :return:
+    :return: True if a valid profile is loaded, False otherwise.
     """
     update()
-
-    json_path = os.path.join(project_root, "database", "entities.json")
-
-    with open(json_path, "r", encoding="utf-8") as file:
-        data = json.load(file)
-
+    # TODO: Fix loading players
     profiles = ""
-
-    for player in data["player"]:
-        if player["info"]["id"] != 0:
-            profiles += f"\n({player['info']['level']}) {player['info']['name']}"
+    print(players)
+    for i, player in enumerate(players):
+        print(players[player].__dict__)
+        if players[player]["info"]["id"] != 0:
+            profiles += f"\n{i + 1}. ({players[player].info['level']}) {players[player].info['name']}"
 
     print(f"Enter A Existing Profile 📂!" f"\n{profiles}" f"\n\nEnter profile name:")
     name = input("> ")
 
-    for player in data["player"]:
+    for player in players:
         if name == player["info"]["name"]:
-            player = load_player(player["info"]["id"])
             game.player = player
             return True
 
@@ -51,7 +48,9 @@ def menu_open_save() -> bool:
 
 
 def menu_start():
-    """ """
+    """
+    Displays the starting menu for opening a save or creating a new game.
+    """
     failed = False
 
     while True:
@@ -85,7 +84,9 @@ def menu_start():
 
 
 def load_game():
-    """ """
+    """
+    Animates a loading screen and enters the main game loop for the loaded player.
+    """
     rows = 20
 
     if game.player.info["id"] != 0:
@@ -115,11 +116,11 @@ def load_game():
 
 
 if __name__ == "__main__":
-    load_items()
-    load_spells()
-    load_enemies()
-
     while True:
+        load_items()
+        load_spells()
+        load_entities()
+        print(players)
         menu_start()
         load_game()
         game.player = None

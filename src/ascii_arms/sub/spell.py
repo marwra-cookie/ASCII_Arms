@@ -5,8 +5,9 @@ class Spell:
 
     def get_stats(self) -> str:
         """
+        Returns a string representation of the spell's stats, including passive or effect attributes.
 
-        :return:
+        :return: A formatted string of spell attributes and values.
         """
         stats = self.__dict__
 

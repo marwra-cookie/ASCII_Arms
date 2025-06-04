@@ -11,8 +11,10 @@ class Entity:
 
     def get_stats(self) -> str:
         """
+        Constructs a tabulated string of the entity’s stats, grouped into categories
+        like defensive, offensive, and miscellaneous.
 
-        :return:
+        :return: A string displaying the formatted stat table.
         """
         stats = self.stats
 
@@ -49,8 +51,10 @@ class Entity:
 
     def get_spells(self) -> str:
         """
+        Generates a formatted table of the player's equipped spells, including names,
+        levels, and stat summaries for each slot.
 
-        :return:
+        :return: A string-formatted table displaying all equipped spells.
         """
         slots = []
         spells = self.spells
@@ -74,8 +78,9 @@ class Entity:
 
     def get_health_bar(self) -> str:
         """
+        Creates a health bar visualization based on current and total health values.
 
-        :return:
+        :return: A string showing the entity's health bar and percentage.
         """
         tot_nr = int(self.base["stats"]["health"].value)
         curr_nr = int(self.stats["health"].value)
@@ -103,8 +108,10 @@ class Entity:
 
     def attack_given(self, spell):
         """
+        Calculates the total damage dealt by an attack spell based on scaling and stats.
 
-        :param spell:
+        :param spell: The spell object used in the attack.
+        :return: Total computed damage value.
         """
         damage = 0
         scaling = spell.stats["scaling"].value
@@ -118,8 +125,9 @@ class Entity:
 
     def attack_taken(self, damage):
         """
+        Reduces the entity's health based on incoming physical damage after defense mitigation.
 
-        :param damage:
+        :param damage: Incoming raw damage value.
         """
         mitigated = damage / (1 + self.stats["defense"].value / 100)
 
@@ -130,8 +138,9 @@ class Entity:
 
     def spell_taken(self, damage):
         """
+        Reduces the entity's health based on incoming spell damage after resistance mitigation.
 
-        :param damage:
+        :param damage: Incoming raw spell damage value.
         """
         mitigated = damage / (1 + self.stats["resistance"].value / 100)
 
@@ -142,8 +151,9 @@ class Entity:
 
     def heal_taken(self, heal):
         """
+        Restores the entity's health up to its maximum cap.
 
-        :param heal:
+        :param heal: Amount of healing to apply.
         """
         if (self.stats["health"].value + heal) > self.base["stats"]["health"].value:
             self.stats["health"].value = self.base["stats"]["health"].value
@@ -163,10 +173,10 @@ class Player(Entity):
 
     def get_items(self) -> str:
         """
+        Builds a formatted table of all equipped items and their stat summaries.
 
-        :return:
+        :return: String-formatted inventory display with slots, names, and stats.
         """
-
         tab = [["Slot", "Item", "Stats"]]
 
         helmet_desc = f"{'Helmet'.ljust(12)}🪖:"
@@ -248,8 +258,9 @@ class Player(Entity):
 
     def add_item(self, item):
         """
+        Equips an item to the player and updates relevant stats accordingly.
 
-        :param item:
+        :param item: The item object to equip.
         """
 
         for item_stat in item.stats:
@@ -259,18 +270,20 @@ class Player(Entity):
 
     def remove_item(self, item):
         """
+        Unequips an item from the player and reverses its stat effects.
 
-        :param item:
+        :param item: The item object to remove.
         """
         for stat in item.stats:
             getattr(self, stat).value -= item.stats[stat].value
 
         self.items[f"{type(item).__name__.lower()}"] = None
 
-    def check_requirement(self) -> bool:
+    def check_boss_requirement(self) -> bool:
         """
+        Checks if the player meets the requirement to challenge a boss.
 
-        :return:
+        :return: True if requirement is met, otherwise False.
         """
         if self.kills["slain"] >= self.boss_requirement:
             return True
@@ -278,8 +291,9 @@ class Player(Entity):
 
     def get_xp_bar(self) -> str:
         """
+        Displays the player's current XP as a visual bar.
 
-        :return:
+        :return: A formatted string showing progress toward next level.
         """
         tot_nr = int(self.max_xp)
         curr_nr = int(self.xp)
@@ -298,9 +312,9 @@ class Player(Entity):
 
     def calc_max_xp(self):
         """
-
-        :return:
+        Recalculates the maximum XP needed for the current level.
         """
+
         increase = 1.30
 
         for lvl in range(1, self.info["level"] + 1):
@@ -309,8 +323,7 @@ class Player(Entity):
 
     def calc_curr_xp(self):
         """
-
-        :return:
+        Sets the current XP value based on player level.
         """
         if self.info["level"] >= 20:
             self.xp = self.max_xp
@@ -319,9 +332,10 @@ class Player(Entity):
 
     def add_xp(self, value) -> bool:
         """
+        Adds experience to the player and handles level-up logic.
 
-        :param value:
-        :return:
+        :param value: Amount of XP to add.
+        :return: True if the player levels up, otherwise False.
         """
         self.xp += value
 

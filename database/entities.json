@@ -40,6 +40,88 @@
                 "bosses": 99,
                 "slain": 4
             }
+        },
+        {
+            "info": {
+                "id": 3,
+                "name": "COOKIE",
+                "icon": "\ud83d\ude42",
+                "level": 1,
+                "xp": 0
+            },
+            "stats": {
+                "attack_power": 10,
+                "spell_power": 10,
+                "critical_chance": 0.1,
+                "critical_damage": 1.5,
+                "penetration": 0,
+                "health": 500,
+                "mana": 250,
+                "defense": 25,
+                "resistance": 25,
+                "dodge": 0.1,
+                "life_steal": 0,
+                "momentum": 100
+            },
+            "spells": {
+                "1": 1,
+                "2": null,
+                "3": null,
+                "4": null
+            },
+            "items": {
+                "helmet": null,
+                "armor": 12,
+                "boots": 18,
+                "weapon": 4,
+                "accessory": null
+            },
+            "kills": {
+                "enemies": 0,
+                "bosses": 0,
+                "slain": 0
+            }
+        },
+        {
+            "info": {
+                "id": 4,
+                "name": "MORT",
+                "icon": "\ud83d\ude42",
+                "level": 1,
+                "xp": 0
+            },
+            "stats": {
+                "attack_power": 10,
+                "spell_power": 10,
+                "critical_chance": 0.1,
+                "critical_damage": 1.5,
+                "penetration": 0,
+                "health": 500,
+                "mana": 250,
+                "defense": 25,
+                "resistance": 25,
+                "dodge": 0.1,
+                "life_steal": 0,
+                "momentum": 100
+            },
+            "spells": {
+                "1": 1,
+                "2": null,
+                "3": null,
+                "4": null
+            },
+            "items": {
+                "helmet": null,
+                "armor": 12,
+                "boots": 18,
+                "weapon": 4,
+                "accessory": null
+            },
+            "kills": {
+                "enemies": 0,
+                "bosses": 0,
+                "slain": 0
+            }
         }
     ],
     "enemy": [

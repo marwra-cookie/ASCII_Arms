@@ -5,13 +5,19 @@ player = None
 
 
 def menu_combat(enemy):
-    """ """
+    """
+    Initiates a combat sequence with the provided enemy object.
+
+    :param enemy: The enemy Entity object to fight.
+    """
     print(enemy)
 
 
 def menu_combat_options():
-    """ """
-    if player.check_requirement():
+    """
+    Displays the combat menu with options to fight a normal enemy, boss, or go back.
+    """
+    if player.check_boss_requirement():
         boss_desc = yellow(f"<<< boss available!")
     else:
         boss_desc = dim(f"[{player.kills['slain']}/4]")
@@ -41,7 +47,9 @@ def menu_combat_options():
 
 
 def menu_character():
-    """ """
+    """
+    Shows the player's character screen with options to view inventory or spellbook.
+    """
     while True:
         update()
 
@@ -64,7 +72,9 @@ def menu_character():
 
 
 def menu_items():
-    """ """
+    """
+    Displays the player's inventory and handles the menu loop for item view.
+    """
     while True:
         update()
         print(
@@ -80,7 +90,9 @@ def menu_items():
 
 
 def menu_spells():
-    """ """
+    """
+    Displays the player's spellbook and handles the menu loop for spell view.
+    """
     while True:
         update()
         print(
@@ -95,7 +107,9 @@ def menu_spells():
 
 
 def menu_save():
-    """ """
+    """
+    Saves the player's current progress and confirms save operation.
+    """
     update()
     print("Saving Progress... 💾")
     save_player(player)
@@ -104,7 +118,9 @@ def menu_save():
 
 
 def menu():
-    """ """
+    """
+    Displays the main in-game menu and handles player navigation between game features.
+    """
     while True:
         update()
         print(
@@ -118,6 +134,7 @@ def menu():
             f"\n\n4. {str_to_length('Quit', 20)}🚪"
         )
 
+        print(players, get_last_entity_id())
         choice = input("> ")
 
         if choice == "1":
