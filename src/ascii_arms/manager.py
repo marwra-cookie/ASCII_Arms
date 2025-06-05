@@ -29,6 +29,9 @@ def save_player(player):
     save_data = {}
     save_data["info"] = save.info
     save_data["stats"] = save.stats
+    del save_data["stats"]["base_health"]
+    del save_data["stats"]["base_mana"]
+
     save_data["spells"] = save.spells
     save_data["items"] = save.items
     save_data["kills"] = save.kills

@@ -163,8 +163,12 @@ class Entity:
 class Player(Entity):
     def __init__(self, **stats):
         super().__init__(**stats)
-        self.max_level = 20
-        self.max_xp = 1000
+        self.stats["base_health"] = self.stats["health"]
+        self.stats["base_mana"] = self.stats["mana"]
+
+        self.info["max_level"] = 20
+        self.info["max_xp"] = 1000
+
         self.calc_max_xp()
         self.calc_curr_xp()
 
@@ -294,8 +298,8 @@ class Player(Entity):
 
         :return: A formatted string showing progress toward next level.
         """
-        tot_nr = int(self.max_xp)
-        curr_nr = int(self.xp)
+        tot_nr = int(self.info["max_xp"])
+        curr_nr = int(self.info["xp"])
         curr_percent = curr_nr / tot_nr if tot_nr > 0 else 0
 
         bars = 20
@@ -318,16 +322,16 @@ class Player(Entity):
 
         for lvl in range(1, self.info["level"] + 1):
             increase *= 1 + (lvl / 100)
-            self.max_xp = int(1000 * increase)
+            self.info["max_xp"] = int(1000 * increase)
 
     def calc_curr_xp(self):
         """
         Sets the current XP value based on player level.
         """
         if self.info["level"] >= 20:
-            self.xp = self.max_xp
+            self.info["xp"] = self.info["max_xp"]
         else:
-            self.xp = self.info["xp"]
+            self.info["xp"] = self.info["xp"]
 
     def add_xp(self, value) -> bool:
         """
@@ -341,16 +345,16 @@ class Player(Entity):
         if self.xp >= self.max_xp:
             level_up = True
             remain = self.xp - self.max_xp
-            self.xp = remain
+            self.info["xp"] = remain
 
             if self.info["level"] < 20:
                 self.info["level"] += 1
                 self.calc_max_xp()
             else:
-                self.max_xp = "MAX LEVEL"
+                self.info["max_xp"] = "MAX LEVEL"
         else:
             level_up = False
-            self.xp += value
+            self.info["xp"] += value
 
         return level_up
 

@@ -1,6 +1,18 @@
 from . import *
 
 
+def check_name(name) -> bool:
+    """
+    Checks if the input string is a valid player name.
+    Only allows alphabetic characters and optional spaces or underscores.
+
+    :param name: The input string to check.
+    :return: True if the string is valid, False otherwise.
+    """
+    # Only letters
+    return name.isalpha()
+
+
 def str_to_length(msg, length) -> str:
     """
     Pads a string with spaces to ensure it reaches the specified length.
@@ -33,9 +45,9 @@ def value_to_stat(value, stat) -> Stat:
             return Penetration(float(value))
         case "momentum":
             return Momentum(int(value))
-        case "health":
+        case "health" | "base_health":
             return Health(int(value))
-        case "mana":
+        case "mana" | "base_mana":
             return Mana(int(value))
         case "defense":
             return Defense(int(value))

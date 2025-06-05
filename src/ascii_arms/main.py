@@ -40,11 +40,15 @@ def menu_open_save() -> bool:
     print(f"Enter A Existing Profile 📂!" f"\n{profiles}" f"\n\nEnter profile name:")
     name = input("> ")
 
+    # TODO: This return correct but not correct :/
+    correct = check_name(name)
+    if not correct:
+        return False
+
     for player in players:
         if name == players[player].info["name"]:
             game.player = players[player]
             return True
-
     return False
 
 
@@ -98,7 +102,7 @@ def load_game():
         while len(r) > 0:
             update()
             print(f"Entering game as {game.player.info['name']}!\n")
-
+            print(check_name(game.player.info["name"]))
             if tot > 66:
                 print(f"🔄 {tot}% {green(r)}")
             elif tot > 33:
@@ -121,6 +125,7 @@ if __name__ == "__main__":
         load_items()
         load_spells()
         load_entities()
+
         menu_start()
         load_game()
         game.player = None
