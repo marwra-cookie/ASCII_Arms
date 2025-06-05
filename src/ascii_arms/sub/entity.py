@@ -8,6 +8,7 @@ class Entity:
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
 
+    # region Attributes
     def get_stats(self) -> str:
         """
         Constructs a tabulated string of the entity’s stats, grouped into categories
@@ -21,7 +22,7 @@ class Entity:
             [
                 ["Defensive", "Offensive", "Extra"],
                 [
-                    f"{str_to_length(stats['health'].name, 10)} {stats['health'].icon}: {stats['health'].color.ljust(5)}",
+                    f"{pad(stats['health'].name, 10)} {stats['health'].icon}: {stats['health'].color.ljust(5)}",
                     f"{stats['attack_power'].name.ljust(20)} {stats['attack_power'].icon}: {stats['attack_power'].color.ljust(5)}",
                     f"{stats['momentum'].name.ljust(15)} {stats['momentum'].icon}: {stats['momentum'].color.ljust(5)}",
                 ],
@@ -105,6 +106,9 @@ class Entity:
 
         return health_bar
 
+    # endregion
+
+    # region Combat
     def attack_given(self, spell):
         """
         Calculates the total damage dealt by an attack spell based on scaling and stats.
@@ -159,6 +163,8 @@ class Entity:
         else:
             self.stats["health"].value += heal
 
+    # endregion
+
 
 class Player(Entity):
     def __init__(self, **stats):
@@ -174,6 +180,17 @@ class Player(Entity):
 
         self.boss_requirement = 4
 
+    def check_requirement(self) -> bool:
+        """
+        Checks if the player meets the requirement to challenge a boss.
+
+        :return: True if requirement is met, otherwise False.
+        """
+        if self.kills["slain"] >= self.boss_requirement:
+            return True
+        return False
+
+    # region Items
     def get_items(self) -> str:
         """
         Builds a formatted table of all equipped items and their stat summaries.
@@ -282,16 +299,9 @@ class Player(Entity):
 
         self.items[f"{type(item).__name__.lower()}"] = None
 
-    def check_boss_requirement(self) -> bool:
-        """
-        Checks if the player meets the requirement to challenge a boss.
+    # endregion
 
-        :return: True if requirement is met, otherwise False.
-        """
-        if self.kills["slain"] >= self.boss_requirement:
-            return True
-        return False
-
+    # region XP
     def get_xp_bar(self) -> str:
         """
         Displays the player's current XP as a visual bar.
@@ -357,6 +367,8 @@ class Player(Entity):
             self.info["xp"] += value
 
         return level_up
+
+    # endregion
 
 
 class Enemy(Entity):

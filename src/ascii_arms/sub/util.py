@@ -1,19 +1,19 @@
 from . import *
 
 
-def check_name(name) -> bool:
+def check_string(msg) -> bool:
     """
-    Checks if the input string is a valid player name.
+    Checks if the input string characters.
     Only allows alphabetic characters and optional spaces or underscores.
 
     :param name: The input string to check.
     :return: True if the string is valid, False otherwise.
     """
     # Only letters
-    return name.isalpha()
+    return msg.isalpha()
 
 
-def str_to_length(msg, length) -> str:
+def pad(msg, length) -> str:
     """
     Pads a string with spaces to ensure it reaches the specified length.
 
@@ -22,6 +22,72 @@ def str_to_length(msg, length) -> str:
     :return: The padded string.
     """
     return msg.ljust(length)
+
+
+def str_to_color(msg, color) -> str:
+    """
+    Returns a string wrapped in ANSI codes based on the requested color.
+
+    :param msg: The string to be colored.
+    :param color: Color name or style (e.g., "red", "fill_blue", "bright").
+    :return: ANSI-formatted colored string.
+    """
+    match color:
+        case "white":
+            return white(msg)
+        case "red":
+            return red(msg)
+        case "green":
+            return green(msg)
+        case "yellow":
+            return yellow(msg)
+        case "blue":
+            return blue(msg)
+        case "magenta":
+            return magenta(msg)
+        case "cyan":
+            return cyan(msg)
+        case "fill_cyan":
+            return fill_cyan(msg)
+        case "fill_red":
+            return fill_red(msg)
+        case "fill_green":
+            return fill_green(msg)
+        case "fill_yellow":
+            return fill_yellow(msg)
+        case "fill_blue":
+            return fill_blue(msg)
+        case "fill_magenta":
+            return fill_magenta(msg)
+        case "fill_cyan":
+            return fill_cyan(msg)
+        case "dim":
+            return dim(msg)
+        case "bright":
+            return bright(msg)
+    return None
+
+
+def str_to_item(slot, item) -> Item:
+    """
+    Instantiates an item object of the correct subclass based on the slot.
+
+    :param slot: Slot name (e.g., "helmet", "weapon").
+    :param item: Dictionary with item attributes.
+    :return: Item subclass instance or None.
+    """
+    match slot:
+        case "helmet":
+            return Helmet(**item)
+        case "armor":
+            return Armor(**item)
+        case "boots":
+            return Boots(**item)
+        case "weapon":
+            return Weapon(**item)
+        case "accessory":
+            return Accessory(**item)
+    return None
 
 
 def value_to_stat(value, stat) -> Stat:

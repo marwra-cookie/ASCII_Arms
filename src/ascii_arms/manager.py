@@ -5,11 +5,6 @@ import json
 import os
 
 
-entity_path = os.path.join(project_root, "database", "entities.json")
-item_path = os.path.join(project_root, "database", "items.json")
-spell_path = os.path.join(project_root, "database", "spells.json")
-
-
 players = {}
 enemies = {}
 bosses = {}
@@ -18,6 +13,9 @@ spellbook = {"direct": {}, "passive": {}}
 
 
 # region Entity Manager
+entity_path = os.path.join(project_root, "database", "entities.json")
+
+
 def save_player(player):
     """
     Converts a Player object into a JSON-compatible dictionary and updates or appends it
@@ -190,26 +188,7 @@ def get_enemy_id(i) -> Entity:
 
 
 # region Item Manager
-def str_to_item(slot, item) -> Item:
-    """
-    Instantiates an item object of the correct subclass based on the slot.
-
-    :param slot: Slot name (e.g., "helmet", "weapon").
-    :param item: Dictionary with item attributes.
-    :return: Item subclass instance or None.
-    """
-    match slot:
-        case "helmet":
-            return Helmet(**item)
-        case "armor":
-            return Armor(**item)
-        case "boots":
-            return Boots(**item)
-        case "weapon":
-            return Weapon(**item)
-        case "accessory":
-            return Accessory(**item)
-    return None
+item_path = os.path.join(project_root, "database", "items.json")
 
 
 def set_item_quality(name, level) -> str:
@@ -252,17 +231,17 @@ def load_items():
                 armory[item["info"]["id"]] = str_to_item(slot, item)
 
 
-def compare_items(item1, item2) -> str:
+def compare_items(item_a, item_b) -> str:
     """
     Compares two items and returns a formatted string showing their stats side by side.
 
-    :param item1: Currently equipped item.
-    :param item2: New item being compared.
+    :param item_a: Currently equipped item.
+    :param item_b: New item being compared.
     :return: A string table comparing the two items.
     """
 
-    stats1 = item1.stats
-    stats2 = item2.stats
+    stats1 = item_a.stats
+    stats2 = item_b.stats
 
     msg = []
 
@@ -278,8 +257,8 @@ def compare_items(item1, item2) -> str:
     msg.insert(
         1,
         [
-            f"({item1.info['level']}) {item1.info['name']}",
-            f"({item2.info['level']}) {item2.info['name']}",
+            f"({item_a.info['level']}) {item_a.info['name']}",
+            f"({item_b.info['level']}) {item_b.info['name']}",
         ],
     )
 
@@ -335,6 +314,9 @@ def get_item_id(i) -> Item:
 
 
 # region Spell Manager
+spell_path = os.path.join(project_root, "database", "spells.json")
+
+
 def load_spells():
     """
     Loads all spells from the database, formats them, and adds them to the global spellbook.

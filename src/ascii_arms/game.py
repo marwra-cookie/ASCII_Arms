@@ -4,6 +4,7 @@ name = "ASCII Arms"
 player = None
 
 
+# region Combat
 def menu_combat(enemy):
     """
     Initiates a combat sequence with the provided enemy object.
@@ -17,7 +18,7 @@ def menu_combat_options():
     """
     Displays the combat menu with options to fight a normal enemy, boss, or go back.
     """
-    if player.check_boss_requirement():
+    if player.check_requirement():
         boss_desc = yellow(f"<<< boss available!")
     else:
         boss_desc = dim(f"[{player.kills['slain']}/4]")
@@ -27,9 +28,9 @@ def menu_combat_options():
         print(
             f"{'Combat Options'.upper()}"
             f"\nTotal: {player.kills['enemies']}\tBosses: {player.kills['bosses']}"
-            f"\n\n1. {str_to_length('Normal Fight', 20)}🥊"
-            f"\n2. {str_to_length('Boss Encounter', 20)}👹 {boss_desc}"
-            f"\n\n3. {str_to_length('Back', 20)}🔙"
+            f"\n\n1. {pad('Normal Fight', 20)}🥊"
+            f"\n2. {pad('Boss Encounter', 20)}👹 {boss_desc}"
+            f"\n\n3. {pad('Back', 20)}🔙"
         )
 
         choice = input("> ")
@@ -38,7 +39,7 @@ def menu_combat_options():
             menu_combat(find_enemy(player.info["level"], False))
             break
         elif choice == "2":
-            if player.check_boss_requirement():
+            if player.check_requirement():
                 player.slain = 0
                 menu_combat(find_enemy(player.info["level"], True))
                 break
@@ -46,6 +47,10 @@ def menu_combat_options():
             break
 
 
+# endregion
+
+
+# region Save
 def menu_character():
     """
     Shows the player's character screen with options to view inventory or spellbook.
@@ -56,9 +61,9 @@ def menu_character():
         print(
             f"{'Character'.upper()}"
             f"\n\n{player.get_stats()}"
-            f"\n\n1. {str_to_length('Inventory', 20)}💰"
-            f"\n2. {str_to_length('Spellbook', 20)}🔮"
-            f"\n\n3. {str_to_length('Back', 20)}🔙"
+            f"\n\n1. {pad('Inventory', 20)}💰"
+            f"\n2. {pad('Spellbook', 20)}🔮"
+            f"\n\n3. {pad('Back', 20)}🔙"
         )
 
         choice = input("> ")
@@ -80,7 +85,7 @@ def menu_items():
         print(
             f"{'Inventory'.upper()}"
             f"\n\n{player.get_items()}"
-            f"\n\n3. {str_to_length('Back', 20)}🔙"
+            f"\n\n3. {pad('Back', 20)}🔙"
         )
 
         choice = input("> ")
@@ -98,7 +103,7 @@ def menu_spells():
         print(
             f"{'Spellbook'.upper()}"
             f"\n\n{player.get_spells()}"
-            f"\n\n3. {str_to_length('Back', 20)}🔙"
+            f"\n\n3. {pad('Back', 20)}🔙"
         )
         choice = input("> ")
 
@@ -117,6 +122,9 @@ def menu_save():
     input("> Press any key to continue...")
 
 
+# endregion
+
+
 def menu():
     """
     Displays the main in-game menu and handles player navigation between game features.
@@ -128,10 +136,10 @@ def menu():
             f"\n\nName: {player.info['name']} {player.info['icon']}"
             f"\nLevel: {player.info['level']}"
             f"\n{player.get_xp_bar()}"
-            f"\n\n1. {str_to_length('Enter Battle', 20)}⚔️"
-            f"\n2. {str_to_length('Character Info', 20)}🧙"
-            f"\n3. {str_to_length('Save Progress', 20)}💾"
-            f"\n\n4. {str_to_length('Quit', 20)}🚪"
+            f"\n\n1. {pad('Enter Battle', 20)}⚔️"
+            f"\n2. {pad('Character Info', 20)}🧙"
+            f"\n3. {pad('Save Progress', 20)}💾"
+            f"\n\n4. {pad('Quit', 20)}🚪"
         )
 
         choice = input("> ")

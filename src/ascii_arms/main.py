@@ -10,16 +10,21 @@ def menu_new_save():
     print(f"Start New Adventure! 🧙\n\nEnter your name:")
     name = input("> ")
 
-    new_player = deepcopy(players[-1])
+    correct = check_name(name)
+    if not correct:
+        return False
+    else:
+        new_player = deepcopy(players[-1])
 
-    new_player.info["id"] = get_last_entity_id() + 1
-    new_player.info["name"] = name
-    new_player.spells["1"] = get_spell_id(1)
-    new_player.items["armor"] = get_item_id(12)
-    new_player.items["boots"] = get_item_id(18)
-    new_player.items["weapon"] = get_item_id(4)
+        new_player.info["id"] = get_last_entity_id() + 1
+        new_player.info["name"] = name
+        new_player.spells["1"] = get_spell_id(1)
+        new_player.items["armor"] = get_item_id(12)
+        new_player.items["boots"] = get_item_id(18)
+        new_player.items["weapon"] = get_item_id(4)
 
-    game.player = new_player
+        game.player = new_player
+        return True
 
 
 def menu_open_save() -> bool:
@@ -40,11 +45,6 @@ def menu_open_save() -> bool:
     print(f"Enter A Existing Profile 📂!" f"\n{profiles}" f"\n\nEnter profile name:")
     name = input("> ")
 
-    # TODO: This return correct but not correct :/
-    correct = check_name(name)
-    if not correct:
-        return False
-
     for player in players:
         if name == players[player].info["name"]:
             game.player = players[player]
@@ -62,15 +62,14 @@ def menu_start():
         update()
         print(
             f"=== Welcome To {game.name.upper()} ==="
-            "\n🎯 A ASCII-Based Damage Simulation Game Build In Python 🐍"
+            "\n🎯 A ASCII Based Damage Simulation Game Build In Python 🐍"
         )
         print(
-            f"\n1. {str_to_length('Open Save File', 20)}📂"
-            f"\n2. {str_to_length('Start New Game', 20)}🆕"
+            f"\n1. {pad('Open Save File', 20)}📂" f"\n2. {pad('Start New Game', 20)}🆕"
         )
 
         if failed:
-            print("\nFailed to load profile...")
+            print("\nInvalid input...")
 
         choice = input("> ")
 
@@ -81,8 +80,11 @@ def menu_start():
             else:
                 failed = True
         elif choice == "2":
-            menu_new_save()
-            break
+            found_save = menu_new_save()
+            if found_save:
+                break
+            else:
+                failed = True
         else:
             failed = True
             update()
