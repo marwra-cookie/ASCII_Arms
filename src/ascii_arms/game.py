@@ -134,7 +134,6 @@ def menu():
             f"\n\n4. {str_to_length('Quit', 20)}🚪"
         )
 
-        print(players, get_last_entity_id())
         choice = input("> ")
 
         if choice == "1":

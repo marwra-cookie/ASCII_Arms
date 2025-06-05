@@ -10,15 +10,16 @@ def menu_new_save():
     print(f"Start New Adventure! 🧙\n\nEnter your name:")
     name = input("> ")
 
-    base_stats["info"]["id"] = get_last_entity_id() + 1
-    base_stats["info"]["name"] = name
-    base_stats["spells"]["1"] = get_spell_id(1)
-    base_stats["items"]["armor"] = get_item_id(12)
-    base_stats["items"]["boots"] = get_item_id(18)
-    base_stats["items"]["weapon"] = get_item_id(4)
+    new_player = deepcopy(players[-1])
 
-    player = Player(**base_stats)
-    game.player = player
+    new_player.info["id"] = get_last_entity_id() + 1
+    new_player.info["name"] = name
+    new_player.spells["1"] = get_spell_id(1)
+    new_player.items["armor"] = get_item_id(12)
+    new_player.items["boots"] = get_item_id(18)
+    new_player.items["weapon"] = get_item_id(4)
+
+    game.player = new_player
 
 
 def menu_open_save() -> bool:
@@ -28,20 +29,20 @@ def menu_open_save() -> bool:
     :return: True if a valid profile is loaded, False otherwise.
     """
     update()
-    # TODO: Fix loading players
     profiles = ""
-    print(players)
-    for i, player in enumerate(players):
-        print(players[player].__dict__)
-        if players[player]["info"]["id"] != 0:
-            profiles += f"\n{i + 1}. ({players[player].info['level']}) {players[player].info['name']}"
+    index = 1
+
+    for player in players:
+        if players[player].info["id"] not in (-1, 0):
+            profiles += f"\n{index}) {players[player].info['name']} [lvl.{players[player].info['level']}]"
+            index += 1
 
     print(f"Enter A Existing Profile 📂!" f"\n{profiles}" f"\n\nEnter profile name:")
     name = input("> ")
 
     for player in players:
-        if name == player["info"]["name"]:
-            game.player = player
+        if name == players[player].info["name"]:
+            game.player = players[player]
             return True
 
     return False
@@ -89,7 +90,7 @@ def load_game():
     """
     rows = 20
 
-    if game.player.info["id"] != 0:
+    if game.player.info["id"] != -1:
         r = "■" * rows
         tot = 100
         percent = tot / rows
@@ -120,7 +121,6 @@ if __name__ == "__main__":
         load_items()
         load_spells()
         load_entities()
-        print(players)
         menu_start()
         load_game()
         game.player = None

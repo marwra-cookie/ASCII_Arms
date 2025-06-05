@@ -18,39 +18,6 @@ spellbook = {"direct": {}, "passive": {}}
 
 
 # region Entity Manager
-base_stats = {
-    "info": {"id": None, "name": None, "icon": "🙂", "level": 1, "xp": 0},
-    "stats": {
-        "attack_power": AttackPower(10),
-        "spell_power": SpellPower(10),
-        "critical_chance": CriticalChance(0.1),
-        "critical_damage": CriticalChance(1.5),
-        "penetration": Penetration(0),
-        "health": Health(500),
-        "mana": Mana(250),
-        "defense": Defense(25),
-        "resistance": Resistance(25),
-        "dodge": Dodge(0.1),
-        "life_steal": LifeSteal(0),
-        "momentum": Momentum(100),
-    },
-    "spells": {
-        "1": None,
-        "2": None,
-        "3": None,
-        "4": None,
-    },
-    "items": {
-        "helmet": None,
-        "armor": None,
-        "boots": None,
-        "weapon": None,
-        "accessory": None,
-    },
-    "kills": {"enemies": 0, "bosses": 0, "slain": 0},
-}
-
-
 def save_player(player):
     """
     Converts a Player object into a JSON-compatible dictionary and updates or appends it
@@ -58,43 +25,42 @@ def save_player(player):
 
     :param player: Player instance to be serialized and saved.
     """
-    p = deepcopy(player)
-    profile = {}
-    profile["info"] = p.info
-    profile["stats"] = p.stats
-    profile["spells"] = p.spells
-    profile["items"] = p.items
-    profile["kills"] = p.kills
+    save = deepcopy(player)
+    save_data = {}
+    save_data["info"] = save.info
+    save_data["stats"] = save.stats
+    save_data["spells"] = save.spells
+    save_data["items"] = save.items
+    save_data["kills"] = save.kills
 
-    for stat in profile["stats"]:
-        profile["stats"][stat] = profile["stats"][stat].value
+    for stat in save_data["stats"]:
+        save_data["stats"][stat] = save_data["stats"][stat].value
 
-    for spell in profile["spells"]:
-        if profile["spells"][spell] is None:
-            profile["spells"][spell] = None
+    for spell in save_data["spells"]:
+        if save_data["spells"][spell] is None:
+            save_data["spells"][spell] = None
         else:
-            profile["spells"][spell] = profile["spells"][spell].info["id"]
+            save_data["spells"][spell] = save_data["spells"][spell].info["id"]
 
-    for item in profile["items"]:
-        if profile["items"][item] is None:
-            profile["items"][item] = None
+    for item in save_data["items"]:
+        if save_data["items"][item] is None:
+            save_data["items"][item] = None
         else:
-            profile["items"][item] = profile["items"][item].info["id"]
+            save_data["items"][item] = save_data["items"][item].info["id"]
 
-    for kill in profile["kills"]:
-        profile["kills"][kill] = profile["kills"][kill]
+    for kill in save_data["kills"]:
+        save_data["kills"][kill] = save_data["kills"][kill]
 
     with open(entity_path, "r", encoding="utf-8") as read_file:
         data = json.load(read_file)
 
     for i, save in enumerate(data["player"]):
-        if save["info"]["id"] == profile["info"]["id"]:
-            data["player"][i] = profile
+        if save["info"]["id"] == save_data["info"]["id"]:
+            data["player"][i] = save_data
             break
     else:
-        data["player"].append(profile)
+        data["player"].append(save_data)
 
-    print(profile)
     with open(entity_path, "w") as write_file:
         json.dump(data, write_file, indent=4)
 

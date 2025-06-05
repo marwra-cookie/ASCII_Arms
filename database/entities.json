@@ -2,6 +2,47 @@
     "player": [
         {
             "info": {
+                "id": -1,
+                "name": "NEW_CHARACTER_TEMPLATE",
+                "icon": "\ud83d\ude42",
+                "level": 1,
+                "xp": 0
+            },
+            "stats": {
+                "attack_power": 10,
+                "spell_power": 10,
+                "critical_chance": 0.1,
+                "critical_damage": 0.1,
+                "penetration": 0,
+                "health": 500,
+                "mana": 250,
+                "defense": 25,
+                "resistance": 25,
+                "dodge": 0.1,
+                "life_steal": 0,
+                "momentum": 100
+            },
+            "spells": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null
+            },
+            "items": {
+                "helmet": null,
+                "armor": null,
+                "boots": null,
+                "weapon": null,
+                "accessory": null
+            },
+            "kills": {
+                "enemies": 0,
+                "bosses": 0,
+                "slain": 0
+            }
+        },
+        {
+            "info": {
                 "id": 0,
                 "name": "GM",
                 "icon": "\ud83c\udfa9",
@@ -12,10 +53,12 @@
                 "attack_power": 999,
                 "spell_power": 999,
                 "critical_chance": 1.0,
-                "critical_damage": 1.0,
+                "critical_damage": 2.0,
                 "penetration": 1.0,
                 "health": 10000,
+                "base_health": 10000,
                 "mana": 10000,
+                "base_mana": 10000,
                 "defense": 999,
                 "resistance": 999,
                 "dodge": 1.0,
@@ -44,7 +87,7 @@
         {
             "info": {
                 "id": 3,
-                "name": "COOKIE",
+                "name": "COOKIE TEST",
                 "icon": "\ud83d\ude42",
                 "level": 1,
                 "xp": 0
@@ -52,15 +95,15 @@
             "stats": {
                 "attack_power": 10,
                 "spell_power": 10,
-                "critical_chance": 0.1,
-                "critical_damage": 1.5,
-                "penetration": 0,
+                "critical_chance": 0.0,
+                "critical_damage": 0.0,
+                "penetration": 0.0,
                 "health": 500,
                 "mana": 250,
                 "defense": 25,
                 "resistance": 25,
-                "dodge": 0.1,
-                "life_steal": 0,
+                "dodge": 0.0,
+                "life_steal": 0.0,
                 "momentum": 100
             },
             "spells": {
@@ -85,7 +128,7 @@
         {
             "info": {
                 "id": 4,
-                "name": "MORT",
+                "name": "COOOOOKIE",
                 "icon": "\ud83d\ude42",
                 "level": 1,
                 "xp": 0
@@ -93,15 +136,15 @@
             "stats": {
                 "attack_power": 10,
                 "spell_power": 10,
-                "critical_chance": 0.1,
-                "critical_damage": 1.5,
-                "penetration": 0,
+                "critical_chance": 0.0,
+                "critical_damage": 0.0,
+                "penetration": 0.0,
                 "health": 500,
                 "mana": 250,
                 "defense": 25,
                 "resistance": 25,
-                "dodge": 0.1,
-                "life_steal": 0,
+                "dodge": 0.0,
+                "life_steal": 0.0,
                 "momentum": 100
             },
             "spells": {
