@@ -127,6 +127,7 @@ if __name__ == "__main__":
         load_items()
         load_spells()
         load_entities()
+        load_terrain()
 
         menu_start()
         load_game()

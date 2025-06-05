@@ -141,7 +141,6 @@ def menu():
             f"\n3. {pad('Save Progress', 20)}💾"
             f"\n\n4. {pad('Quit', 20)}🚪"
         )
-
         choice = input("> ")
 
         if choice == "1":

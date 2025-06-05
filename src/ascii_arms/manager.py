@@ -10,7 +10,7 @@ enemies = {}
 bosses = {}
 armory = {}
 spellbook = {"direct": {}, "passive": {}}
-
+terrain = {}
 
 # region Entity Manager
 entity_path = os.path.join(project_root, "database", "entities.json")
@@ -395,6 +395,21 @@ def get_spell_id(i) -> Spell:
             if spell == i:
                 return spellbook[category][spell]
     return None
+
+
+# endregion
+
+# region Terrain Manager
+terrain_path = os.path.join(project_root, "database", "textures.json")
+
+
+def load_terrain():
+    """ """
+    with open(terrain_path, "r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    for sort in data["terrain"]:
+        terrain[sort] = data["terrain"][sort]
 
 
 # endregion
