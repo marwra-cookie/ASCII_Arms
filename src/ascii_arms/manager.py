@@ -240,18 +240,18 @@ def compare_items(item_a, item_b) -> str:
     :return: A string table comparing the two items.
     """
 
-    stats1 = item_a.stats
-    stats2 = item_b.stats
+    stats_a = item_a.stats
+    stats_b = item_b.stats
 
     msg = []
 
-    for stat in stats1:
-        msg.append([f"{stat.capitalize()}: {stats1[stat].get_value_color()}", f""])
-    for i, stat in enumerate(stats2):
-        if i < len(stats1):
-            msg[i][1] = f"{stat.capitalize()}: {stats2[stat].get_value_color()}"
+    for stat in stats_a:
+        msg.append([f"{stat.capitalize()}: {stats_a[stat].get_value_color()}", f""])
+    for i, stat in enumerate(stats_b):
+        if i < len(stats_a):
+            msg[i][1] = f"{stat.capitalize()}: {stats_b[stat].get_value_color()}"
         else:
-            msg.append([f"", f"{stat.capitalize()}: {stats2[stat].get_value_color()}"])
+            msg.append([f"", f"{stat.capitalize()}: {stats_b[stat].get_value_color()}"])
 
     msg.insert(0, ['Current:", "Dropped:'])
     msg.insert(

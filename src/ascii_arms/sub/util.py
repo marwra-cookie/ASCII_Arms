@@ -9,7 +9,6 @@ def check_string(msg) -> bool:
     :param name: The input string to check.
     :return: True if the string is valid, False otherwise.
     """
-    # Only letters
     return msg.isalpha()
 
 
