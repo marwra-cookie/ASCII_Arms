@@ -38,7 +38,7 @@ def menu_combat_options():
             menu_combat(find_enemy(player.info["level"], False))
             break
         elif choice == "2":
-            if player.check_requirement():
+            if player.check_boss_requirement():
                 player.slain = 0
                 menu_combat(find_enemy(player.info["level"], True))
                 break
