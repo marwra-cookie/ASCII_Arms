@@ -90,7 +90,7 @@ def load_game():
     """
     rows = 20
 
-    if game.player.info["id"] != -1:
+    if game.player.info["id"] != 0:
         r = "■" * rows
         tot = 100
         percent = tot / rows

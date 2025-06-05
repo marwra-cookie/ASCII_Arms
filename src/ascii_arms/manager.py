@@ -209,6 +209,24 @@ def str_to_item(slot, item) -> Item:
     return None
 
 
+def set_item_quality(name, level) -> str:
+    """
+    WIP
+    """
+
+    match level:
+        case 1:
+            return dim(name)
+        case 2:
+            return dim(green(name))
+        case 3:
+            return dim(blue(name))
+        case 4:
+            return dim(magenta(name))
+        case 5:
+            return dim(yellow(name))
+
+
 def load_items():
     """
     Loads item data from JSON and populates the armory with instantiated items.
@@ -221,8 +239,11 @@ def load_items():
         for slot in data[type]:
             item = data[type][slot]
 
-            for stat in item["stats"]:
+            item["info"]["name"] = set_item_quality(
+                item["info"]["name"], item["info"]["level"]
+            )
 
+            for stat in item["stats"]:
                 value = item["stats"][stat]
                 item["stats"][stat] = value_to_stat(value, stat)
                 armory[item["info"]["id"]] = str_to_item(slot, item)

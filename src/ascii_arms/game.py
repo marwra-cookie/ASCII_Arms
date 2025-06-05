@@ -133,7 +133,7 @@ def menu():
             f"\n3. {str_to_length('Save Progress', 20)}💾"
             f"\n\n4. {str_to_length('Quit', 20)}🚪"
         )
-
+        print(player.items["armor"].info["name"])
         choice = input("> ")
 
         if choice == "1":
