@@ -1,7 +1,9 @@
 from . import *
 
+error = dim("Invalid option... Please try again!")
 
-def check_string(msg) -> bool:
+
+def check_name(name) -> bool:
     """
     Checks if the input string characters.
     Only allows alphabetic characters and optional spaces or underscores.
@@ -9,7 +11,7 @@ def check_string(msg) -> bool:
     :param name: The input string to check.
     :return: True if the string is valid, False otherwise.
     """
-    return msg.isalpha()
+    return name.isalpha()
 
 
 def pad(msg, length) -> str:

@@ -37,6 +37,13 @@ This tool is useful for prototyping game mechanics, balancing combat systems, or
 4. **Run game**
    
    _RUN GAME AS MODULE:_ **-m**
+
+   **Windows**
+   ```bash
+   Use run.bat
+   ```
+
+   **Terminal**
    ```bash
    python -m src.ascii_arms.main
    ```

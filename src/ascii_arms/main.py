@@ -2,9 +2,11 @@ from . import *
 import time
 
 
-def menu_new_save():
+def menu_new_save() -> bool:
     """
     Starts a new game by prompting for a player name and initializing base stats and items.
+
+    :return: True if a valid profile is created, False otherwise.
     """
     update()
     print(f"Start New Adventure! 🧙\n\nEnter your name:")
@@ -56,9 +58,10 @@ def menu_start():
     """
     Displays the starting menu for opening a save or creating a new game.
     """
-    failed = False
+    success = True
 
     while True:
+
         update()
         print(
             f"=== Welcome To {game.name.upper()} ==="
@@ -68,26 +71,22 @@ def menu_start():
             f"\n1. {pad('Open Save File', 20)}📂" f"\n2. {pad('Start New Game', 20)}🆕"
         )
 
-        if failed:
-            print("\nInvalid input...")
+        if not success:
+            print(f"\n{error}")
 
         choice = input("> ")
 
-        if choice == "1":
-            found_save = menu_open_save()
-            if found_save:
-                break
-            else:
-                failed = True
-        elif choice == "2":
-            found_save = menu_new_save()
-            if found_save:
-                break
-            else:
-                failed = True
-        else:
-            failed = True
-            update()
+        match choice:
+            case "1":
+                success = menu_open_save()
+                if success:
+                    break
+            case "2":
+                success = menu_new_save()
+                if success:
+                    break
+            case _:
+                success = False
 
 
 def load_game():
@@ -130,5 +129,5 @@ if __name__ == "__main__":
         load_terrain()
 
         menu_start()
-        load_game()
+        load_game()  # <- Game loop
         game.player = None

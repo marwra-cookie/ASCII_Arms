@@ -6,10 +6,14 @@ import os
 
 
 players = {}
+
 enemies = {}
 bosses = {}
+
 armory = {}
-spellbook = {"direct": {}, "passive": {}}
+
+spellbook = {"passive": {}, "direct": {}}
+
 terrain = {}
 
 # region Entity Manager
@@ -325,7 +329,7 @@ def load_spells():
     with open(spell_path, "r") as file:
         data = json.load(file)
 
-    for type in ("passive", "direct"):
+    for type in spellbook.keys():
         for spell in data[type]:
             spell["info"]["name"] = str_to_color(
                 f" {spell['info']['name']} ", spell["info"]["color"]
@@ -398,6 +402,7 @@ def get_spell_id(i) -> Spell:
 
 
 # endregion
+
 
 # region Terrain Manager
 terrain_path = os.path.join(project_root, "database", "textures.json")

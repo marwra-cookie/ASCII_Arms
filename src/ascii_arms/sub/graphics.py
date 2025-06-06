@@ -15,10 +15,8 @@ Back.GREEN + 'and with a green background' + Back.Reset
 Style.DIM + 'and in dim text' + Style.RESET_ALL
 """
 
-error = "Invalid option... Please try again!"
 
-
-# region Text
+# region Fore
 def white(msg) -> str:
     """
     Wraps the input string in white text.
@@ -92,7 +90,7 @@ def cyan(msg) -> str:
 # endregion
 
 
-# region Fill
+# region Back
 def fill_red(msg) -> str:
     """
     Applies a red background to the message.
@@ -162,6 +160,7 @@ def fill_cyan(msg) -> str:
 # endregion
 
 
+# region Style
 def dim(msg) -> str:
     """
     Applies dim style to the message.
@@ -183,5 +182,7 @@ def bright(msg) -> str:
 
     return Style.BRIGHT + f"{msg}" + Style.RESET_ALL
 
+
+# endregion
 
 init(convert=True)
