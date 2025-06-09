@@ -1,9 +1,11 @@
 from . import *
-from .launcher import project_root
 import random
 import json
 import os
 
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.dirname(current_dir)
+project_root = os.path.dirname(src_dir)
 
 players = {}
 
@@ -18,6 +20,39 @@ terrain = {}
 
 # region Entity Manager
 entity_path = os.path.join(project_root, "database", "entities.json")
+
+player_template = {
+    "info": {
+        "id": None,
+        "name": None,
+        "icon": "🙂",
+        "level": 1,
+        "xp": 0,
+    },
+    "stats": {
+        "attack_power": 10,
+        "spell_power": 10,
+        "critical_chance": 0.1,
+        "critical_damage": 0.1,
+        "penetration": 0,
+        "health": 500,
+        "mana": 250,
+        "defense": 25,
+        "resistance": 25,
+        "dodge": 0.1,
+        "life_steal": 0,
+        "momentum": 100,
+    },
+    "spells": {"1": None, "2": None, "3": None, "4": None},
+    "items": {
+        "helmet": None,
+        "armor": None,
+        "boots": None,
+        "weapon": None,
+        "accessory": None,
+    },
+    "kills": {"enemies": 0, "bosses": 0, "slain": 0},
+}
 
 
 def save_player(player):
@@ -56,17 +91,18 @@ def save_player(player):
     for kill in save_data["kills"]:
         save_data["kills"][kill] = save_data["kills"][kill]
 
+    # TODO: FIX ME
     with open(entity_path, "r", encoding="utf-8") as read_file:
         data = json.load(read_file)
 
-    for i, save in enumerate(data["player"]):
+    for i, save in enumerate(players):
         if save["info"]["id"] == save_data["info"]["id"]:
-            data["player"][i] = save_data
+            data["player"][i] = encode(save_data)
             break
     else:
-        data["player"].append(save_data)
+        data["player"].append(encode(save_data))
 
-    with open(entity_path, "w") as write_file:
+    with open(entity_path, "w", encoding="utf-8") as write_file:
         json.dump(data, write_file, indent=4)
 
 
@@ -78,31 +114,37 @@ def load_entities():
         data = json.load(file)
 
     for player in data["player"]:
-        for stat in player["stats"]:
-            value = int(player["stats"][stat])
-            player["stats"][stat] = value_to_stat(value, stat)
-
-        for spell in player["spells"]:
-            player["spells"][spell] = get_spell_id(player["spells"][spell])
-
-        for item in player["items"]:
-            player["items"][item] = get_item_id(player["items"][item])
-
-        players[player["info"]["id"]] = Player(**player)
+        player = decode(player)
+        players[player["info"]["id"]] = load_player(player)
 
     for enemy in data["enemy"]:
-        for stat in enemy["stats"]:
-            value = int(enemy["stats"][stat])
-            enemy["stats"][stat] = value_to_stat(value, stat)
-
-        enemies[enemy["info"]["id"]] = Enemy(**enemy)
+        enemies[enemy["info"]["id"]] = load_enemy(enemy)
 
     for boss in data["boss"]:
-        for stat in boss["stats"]:
-            value = int(boss["stats"][stat])
-            boss["stats"][stat] = value_to_stat(value, stat)
+        bosses[boss["info"]["id"]] = load_enemy(boss)
 
-        bosses[boss["info"]["id"]] = Enemy(**boss)
+
+def load_player(player) -> Player:
+    """ """
+    for stat in player["stats"]:
+        value = player["stats"][stat]
+        player["stats"][stat] = value_to_stat(value, stat)
+
+    for spell in player["spells"]:
+        player["spells"][spell] = get_spell_id(player["spells"][spell])
+
+    for item in player["items"]:
+        player["items"][item] = get_item_id(player["items"][item])
+
+    return Player(**player)
+
+
+def load_enemy(enemy) -> Enemy:
+    """ """
+    for stat in enemy["stats"]:
+        value = enemy["stats"][stat]
+        enemy["stats"][stat] = value_to_stat(value, stat)
+    return Enemy(**enemy)
 
 
 def find_enemy(level, boss_encounter):
@@ -218,7 +260,7 @@ def load_items():
     Loads item data from JSON and populates the armory with instantiated items.
     """
 
-    with open(item_path, "r") as file:
+    with open(item_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
     for type in data:
@@ -326,7 +368,7 @@ def load_spells():
     Loads all spells from the database, formats them, and adds them to the global spellbook.
     """
 
-    with open(spell_path, "r") as file:
+    with open(spell_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
     for type in spellbook.keys():

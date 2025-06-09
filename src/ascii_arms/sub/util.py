@@ -1,6 +1,16 @@
 from . import *
+import os
+import base64
+import json
 
 error = dim("Invalid option... Please try again!")
+
+
+def update():
+    """
+    Clears the terminal screen (Windows-specific).
+    """
+    os.system("cls")
 
 
 def check_name(name) -> bool:
@@ -137,3 +147,19 @@ def value_to_stat(value, stat) -> Stat:
         case "rounds":
             return Rounds(int(value))
     return None
+
+
+def encode(msg) -> str:
+    """"""
+    bytes = json.dumps(msg).encode("utf-8")
+
+    encoded = base64.b64encode(bytes).decode("utf-8")
+    return encoded
+
+
+def decode(msg) -> str:
+    """"""
+    bytes = base64.b64decode(msg)
+
+    decoded = json.loads(bytes.decode("utf-8"))
+    return decoded

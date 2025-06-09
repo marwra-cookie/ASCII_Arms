@@ -318,8 +318,12 @@ class Player(Entity):
 
         xp_bar = "["
         xp_bar += magenta("■") * filled_bars
-        xp_bar += "_" * empty_bars
-        xp_bar += f"] {curr_nr}/{tot_nr}"
+        xp_bar += f"{"_" * empty_bars}] "
+
+        if self.info["level"] >= self.info["max_level"]:
+            xp_bar += "MAX"
+        else:
+            xp_bar += f"{curr_nr}/{tot_nr}"
 
         return xp_bar
 
@@ -338,7 +342,7 @@ class Player(Entity):
         """
         Sets the current XP value based on player level.
         """
-        if self.info["level"] >= 20:
+        if self.info["level"] >= self.info["max_level"]:
             self.info["xp"] = self.info["max_xp"]
         else:
             self.info["xp"] = self.info["xp"]
@@ -357,11 +361,9 @@ class Player(Entity):
             remain = self.xp - self.max_xp
             self.info["xp"] = remain
 
-            if self.info["level"] < 20:
+            if self.info["level"] < self.info["max_level"]:
                 self.info["level"] += 1
                 self.calc_max_xp()
-            else:
-                self.info["max_xp"] = "MAX LEVEL"
         else:
             level_up = False
             self.info["xp"] += value

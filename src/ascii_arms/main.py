@@ -1,6 +1,15 @@
 from . import *
 import time
 
+"""
+TODO: Encrypt json data
+TODO: Decide gameplay
+TODO: Apply item stats
+TODO: Lock item stats, based on level
+TODO: Redo JSON
+TODO: 
+"""
+
 
 def menu_new_save() -> bool:
     """
@@ -16,7 +25,7 @@ def menu_new_save() -> bool:
     if not correct:
         return False
     else:
-        new_player = deepcopy(players[-1])
+        new_player = load_player(player_template)
 
         new_player.info["id"] = get_last_entity_id() + 1
         new_player.info["name"] = name
@@ -40,7 +49,7 @@ def menu_open_save() -> bool:
     index = 1
 
     for player in players:
-        if players[player].info["id"] not in (-1, 0):
+        if players[player].info["id"] != 0:
             profiles += f"\n{index}) {players[player].info['name']} [lvl.{players[player].info['level']}]"
             index += 1
 
@@ -129,5 +138,4 @@ if __name__ == "__main__":
         load_terrain()
 
         menu_start()
-        load_game()  # <- Game loop
-        game.player = None
+        load_game()  # <- Game loop here
